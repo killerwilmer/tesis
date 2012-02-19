@@ -148,10 +148,9 @@ input[type="text"]{
     outline: none;
 }
 
-#input2[type="text"]{
+#text1{
     border-radius:8px;
-    width: 150px;
-    padding-left: 8px;
+    width: 145px;
     outline: none;
 }
 

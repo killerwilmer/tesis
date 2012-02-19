@@ -22,7 +22,7 @@
              //Funcion de agregar campos
              function AgregarCampos() {
                  campoNuevo = campoNuevo + 1;
-                 campo = '<br/><div><label>Etapa ' + campoNuevo + ' </label><input type="text" size="25" name="etapa' + campoNuevo + '"  /></div>';
+                 campo = '<div><label>Sub Linea ' + campoNuevo + ' </label><textarea name="sub' + campoNuevo + '"  /></div>';
                  $("#cont").append(campo);
              }
              //
@@ -33,17 +33,17 @@
             <h1>Grupo de Investigación</h1>
             <div id="fielx">
                 <fieldset id="fiel1">
-                    Grupo de Investigación<input id="input2" type="text" name="gp1" maxlength="150"/><br/><br/>            
+                    Grupo de Investigación<textarea id="text1"></textarea><br/>          
                 </fieldset>
                 <fieldset id="fiel2">
                     Linea de Investigación
                     <textarea></textarea><br/>                
                 </fieldset>
                 <fieldset id="fiel3">
-                    Sub Linea 1 <input type="text" name="etapa1" maxlength="150"/><br/><br/>
-                    Sub Linea 2 <input type="text" name="etapa2" maxlength="150"/><br/><br/>
-                    Sub Linea 3 <input type="text" name="etapa3" maxlength="150"/>
-                    <div id="cont"></div><br/><br/>
+                    Sub Linea 1 <textarea name="sub1"></textarea><br/>
+                    Sub Linea 2 <textarea name="sub2"></textarea><br/>
+                    Sub Linea 3 <textarea name="sub3"></textarea>
+                    <div id="cont"></div><br/>
                     <span id="span2" class="win7 win7yellow" onclick="AgregarCampos(this);"><a href="#">Agregar Campo</a></span>                       
                 </fieldset>
             </div>
