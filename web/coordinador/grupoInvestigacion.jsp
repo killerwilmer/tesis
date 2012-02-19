@@ -33,12 +33,11 @@
             <h1>Grupo de Investigación</h1>
             <div id="fielx">
                 <fieldset id="fiel1">
-                    Grupo de Investigación<input id="input2" type="text" name="gp1" maxlength="150"/><br/><br/>
-                    <div id="con"></div><br/>                 
+                    Grupo de Investigación<input id="input2" type="text" name="gp1" maxlength="150"/><br/><br/>            
                 </fieldset>
                 <fieldset id="fiel2">
-                    Linea de Investigación<input type="text" name="etapa1" maxlength="150"/><br/><br/>
-                    <div id="cot"></div><br/>                 
+                    Linea de Investigación
+                    <textarea></textarea><br/>                
                 </fieldset>
                 <fieldset id="fiel3">
                     Sub Linea 1 <input type="text" name="etapa1" maxlength="150"/><br/><br/>

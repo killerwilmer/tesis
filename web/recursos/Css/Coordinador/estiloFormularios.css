@@ -80,20 +80,6 @@ fieldset#fiel3{
     border: none;
 }
 
-input[type="text"]{
-    border-radius:10px;
-    width: 250px;
-    padding-left: 8px;
-    outline: none;
-}
-
-#input2[type="text"]{
-    border-radius:10px;
-    width: 150px;
-    padding-left: 8px;
-    outline: none;
-}
-
 .win7:active{
   position: relative;
   top: 2px;
@@ -135,4 +121,56 @@ h1{
     -moz-box-shadow: 0 0 10px #2671f0;
     -o-box-shadow: 0 0 10px #2671f0;
     -webkit-box-shadow: 0 0 10px #2671f0;
+}
+
+textarea{
+    color:#666;
+    font-size:14px;
+    -moz-border-radius: 8px; -webkit-border-radius: 8px;
+    margin:5px 0px 10px 0px;
+    padding:10px;
+    height:20px;
+    width:240px;
+    border:#999 1px solid;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+}
+
+input[type="text"]{
+    border-radius:8px;
+    width: 250px;
+    padding-left: 8px;
+    outline: none;
+}
+
+#input2[type="text"]{
+    border-radius:8px;
+    width: 150px;
+    padding-left: 8px;
+    outline: none;
+}
+
+textarea:focus{
+    color:#000;
+    outline:none;
+    border:#c44311 1px solid;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+}
+
+input:focus{
+    color:#000;
+    outline:none;
+    border:#c44311 1px solid;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
 }
