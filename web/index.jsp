@@ -334,5 +334,6 @@
                 <h3>Pie de la pagina</h3>
             </footer>
         </div>          
-    </body>  
+    </body>
+    
 </html>
