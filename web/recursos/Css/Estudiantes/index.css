@@ -1,0 +1,165 @@
+/* 
+    Document   : index
+    Created on : 9/11/2011, 11:19:40 PM
+    Author     : Alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body { 
+    margin: 0; 
+    font-size: 90%;
+    min-width:600px;
+    width: 100%;
+    margin:0;
+    padding:0;
+    min-width:600px; 
+}
+
+div#contenedor1
+{
+     margin: 0 8% 0 8%;
+     background: lightgreen;
+     padding: 0 1% 0 1%;
+     font-size: 100%;
+     width: auto;
+}
+
+div#header{
+    background: lightblue;
+    padding-top: 1%;
+    height: 100px;
+    border-radius:0px 0px 10px 10px;
+    width: 100%;
+    font-size: 100%;
+    clear: both;
+    position: relative;
+}
+
+div#menu{
+    clear:left;
+    float:left;
+    width:100%;
+    background:#80C8FF;
+    font-family:Trebuchet MS, Helvetica, sans-serif;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius:10px;
+    height:34px; 
+    position:relative; 
+}
+
+div#wraper{
+    height: 500px;
+    background: blanchedalmond;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius:10px;
+    width: 100%;
+    overflow: auto;
+    overflow-x:hidden;
+    padding-top: 40px;
+}
+
+div#footer{
+    height: 150px;
+    background: lightblue;
+    border-radius:10px 10px 0px 0px;
+}
+
+/***************/
+
+img{
+    display: inline;
+    float: left;
+    width: 150px;
+    margin-top: -30px;
+    position: relative;
+}
+
+h1#titulo{
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+    display: block;
+}
+
+#nav{
+    margin:0 5px; 
+    padding:0px; 
+    position:absolute; 
+    display:block;
+    text-align: center;
+}
+
+#nav > li { 
+    list-style-type:none; 
+    float:left; 
+    display:block; 
+    margin:0px 10px;
+    position:relative; 
+    padding:10px; 
+    width:100px;
+}
+
+#nav > li:hover ul { 
+    display:block; 
+    border-radius:10px;
+}
+
+#nav > li:hover { 
+    background-color:#AAD4FF; 
+    filter: alpha(opacity=90); 
+    opacity: .9;
+    border-radius:10px;
+}
+
+#nav li ul { 
+    margin:0px; 
+    padding:0px; 
+    display:none;
+}
+
+#nav li ul li { 
+    list-style-type:none; 
+    margin:10px 0 0 0;
+}
+
+#nav li ul li a { 
+    display:block; 
+    padding:5px 10px; 
+    color:#FFF; 
+    text-decoration:none;
+}
+
+#nav li ul li:hover a { 
+    background-color:#5BB0DB; 
+    margin:0;
+    border-radius:10px;
+}
+
+#nav li span { 
+    cursor:pointer; 
+    margin:0 10px; 
+    font-weight:bold; 
+    color: #FFF;
+}
+
+#nav li a{
+    text-decoration: none;
+}
+
+#nav li span:active {
+  position: relative;
+  top: 2px;
+}
+
+#nav li ul li:active a{
+   position: relative;
+  top: 2px;
+}

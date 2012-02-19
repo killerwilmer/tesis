@@ -1,0 +1,221 @@
+/* 
+    Document   : registro
+    Created on : 23/10/2011, 02:53:34 AM
+    Author     : Alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background: ghostwhite;
+}
+
+h1, h2{
+    font-family:'Georgia', Times New Roman, Times, serif;
+}
+
+h2{
+    color:#000;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    text-align: center;
+}
+
+fieldset{
+   border-radius:15px;
+   border: none;
+}
+
+ul{
+    padding:20px 0px 20px 0px;
+    margin:0px;
+    list-style:none;
+}
+
+li{
+    padding:12px;
+    display:none;
+    position: relative;
+    margin:2px 2px 2px 2px;
+    list-style:none;
+    clear:both;
+    padding-bottom:10px;
+}
+
+label{
+    font-size:14px;
+    font-weight:bold;
+    width:120px;
+    float:left;
+    margin-top: 8px;
+    padding-right: 10px;
+    color: #ffffff;
+    -webkit-text-shadow: 0.2em 0.2em black;
+    -moz-text-shadow: 0.2em 0.2em black;
+    -o-text-shadow: 0.2em 0.2em black;
+    text-shadow: 0.2em 0.2em black;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -moz-box-shadow: 3px 3px 5px #78D8F2;
+    -webkit-box-shadow: 3px 3px 5px #78D8F2;
+    -o-box-shadow: 3px 3px 5px #78D8F2;
+    box-shadow: 3px 3px 5px #78D8F2;
+    border: 1px solid #05BBED;
+    font-size: 15px;
+    width: 220px;
+    float:left;
+    padding: 6px 6px 6px 15px;
+    outline:none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
+    -webkit-transform: scale(1.10);
+    -moz-transform: scale(1.10);
+    -o-transform: scale(1.10);
+    transform: scale(1.10);
+    outline:none;
+}
+
+select{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 3px 3px 1px #78D8F2;
+    -webkit-box-shadow: 3px 5px 10px #78D8F2;
+    -o-box-shadow: 3px 5px 10px #78D8F2;
+    box-shadow: 3px 5px 10px #78D8F2;
+    border: 2px solid #05BBED;
+    font-size: 15px;
+    padding: 6px;
+    width: 242px;
+    float:left;
+}
+
+#gin{
+   width: 260px;
+}
+
+select:focus{
+    outline:none;
+}
+
+input[type="file"]{
+  font-size: 13px;
+  position: relative;
+  margin-top: 5px; 
+}
+
+input[type="submit"]{
+    font-family: cursive;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 4px;
+    margin-top: 10px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 10px 10px 10px 10px;
+    background: rgba(0,0,0,0.25);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+    -o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+    cursor: pointer; 
+}
+
+input[type="submit"]:active{
+  position: relative;
+  top: 2px;
+}
+
+input[type="submit"]:hover{
+  background: rgba(0,0,0,1.25);
+}
+
+.error{
+    font-size:11px;
+    color:#ff0f0f;
+    font-weight: bold;
+    padding: 4px 4px 4px 4px;
+    margin-top: 15px;
+    margin-right: 860;
+}
+
+#form{
+    width:980px;
+    margin:0 auto;
+    margin-top:30px;   
+}
+
+#form-elements {
+    border: none;
+    background-color: ghostwhite;
+    padding: 14px;    
+}
+
+input:required {
+    background:#FFFFFF url(../Imagenes/index/asterisk_orange.png) no-repeat;
+    background-position: 14.5em;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -moz-box-shadow: 3px 3px 5px #f64344;
+    -webkit-box-shadow: 3px 3px 5px #f64344;
+    -o-box-shadow: 3px 3px 5px #f64344;
+    box-shadow: 3px 3px 5px #f64344;
+    border: 1px solid #f64344;
+    font-size: 15px;
+    width: 220px;
+    float:left;
+    padding: 6px 6px 6px 15px;
+    outline:0px;
+}
+
+
+input[type="text"]:required:valid, input[type="password"]:required:valid, input[type="email"]:required:valid{
+    background:#FFFFFF url(../Imagenes/index/tick.png) no-repeat;
+    background-position: 14.5em;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -moz-box-shadow: 3px 3px 5px #78D8F2;
+    -webkit-box-shadow: 3px 3px 5px #78D8F2;
+    -o-box-shadow: 3px 3px 5px #78D8F2;
+    box-shadow: 3px 3px 5px #78D8F2;
+    border: 1px solid #05BBED;
+    font-size: 15px;
+    width: 220px;
+    float:left;
+    padding: 6px 6px 6px 15px;
+    outline:0px;
+}	
+
+input[type="text"]:focus:invalid, input[type="password"]:focus:invalid, input[type="email"]:focus:invalid{
+    background:#FFFFFF url(../Imagenes/index/cancel.png) no-repeat;
+    background-position: 14.5em;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -moz-box-shadow: 3px 3px 5px #f64344;
+    -webkit-box-shadow: 3px 3px 5px #f64344;
+    -o-box-shadow: 3px 3px 5px #f64344;
+    box-shadow: 3px 3px 5px #f64344;
+    border: 1px solid #f64344;
+    font-size: 15px;
+    width: 220px;
+    float:left;
+    padding: 6px 6px 6px 15px;
+    outline:0px;
+}

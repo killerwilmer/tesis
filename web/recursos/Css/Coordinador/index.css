@@ -1,0 +1,297 @@
+/* 
+    Document   : index
+    Created on : 26/10/2011, 07:21:06 PM
+    Author     : Alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body { 
+    margin: 0; 
+    font-size: 90%;
+    min-width:600px;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+div#contenedor
+{
+     margin: 0 8% 0 8%;
+     background: #222;
+     padding: 0 1% 0 1%;
+     font-size: 100%;
+     /*opacity:0.9;*/
+}
+
+div#header{
+    background: lightblue;
+    padding-top: 1%;
+    height: 90px;
+    border-radius:0px 0px 10px 10px;
+    width: 100%;
+    font-size: 100%;
+    clear: both;
+}
+
+div#wraper{
+    height: 500px;
+    background: blanchedalmond;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:10px;
+    width: 100%;
+    overflow: auto;
+    overflow-x:hidden;
+    padding-top: 40px;
+}
+
+div#footer{
+    height: 150px;
+    background: lightblue;
+    border-radius:10px 10px 0px 0px;
+}
+
+/*-----------------------------------------------------*/
+
+div#header img{
+    height: 110px;
+    width: 110px;
+    margin-top: -15px;
+    border: none;
+    display: inline-block;
+}
+
+div#menu {
+    margin:30px 0 0 95px;
+    height: 52px;
+    padding-left: 6px;
+    width:85%;
+    clear: right;
+    display: inline-block;
+}
+
+div#menu ul {
+    margin-top:-60px;
+    padding: 0;
+    list-style: none;
+    float: right;
+    border-radius:20px;
+    opacity:0.92;
+    display: inline-block;
+}
+
+div#menu ul.menu {
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background: #222;
+    display: inline-block;
+}
+
+div#menu li {
+    position: relative;
+    margin: 0;
+    padding: 0 0px 0 0;
+    float: left;
+    z-index: 9;
+    width: auto;
+    display: inline;
+    list-style: none;
+}
+
+div#menu ul ul li {
+    z-index: 9;
+}
+
+div#menu li div {
+    list-style: none;
+    /*float: left;*/
+    position: absolute;
+    z-index: 11;
+    top: 35px;
+    left: 60px;
+    visibility: hidden;
+    width: 50px;
+    margin: -8px 0 0 -4px;
+    padding: 0; 
+}
+
+div#menu ul ul {
+    z-index: 12;
+    padding: 0px 4px 10px 4px;
+    background: #222;
+    margin: 11px 0 0 0; 
+}
+
+div#menu li:hover>div {
+    visibility: visible;
+}
+
+div#menu a {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    float: left;
+    line-height: 50px;
+    text-decoration: none;
+    margin-top: 1px;
+    white-space: nowrap;
+    width: auto;
+    padding-right:5px;
+    text-align:center;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff;
+    -webkit-box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff; 
+    -o-box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff;
+}
+
+div#menu span {
+    margin-top: 2px;
+    padding: 0px 1px 4px 15px;
+    color: #fff;
+    font: normal 10 Helvetica,Arial,FreeSans,sans-serif;
+    background: none;
+    line-height: 36px;	
+    display: block;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*menu level 1*/
+div#menu a {
+    padding: 0 10px 0 0;
+    line-height: 50px;
+    height: 35px;
+    margin:3px 3px 3px 3px;
+    border-radius:10px;
+    text-transform: uppercase;
+}
+
+div#menu a:hover {
+    /*background:  url(../Imagenes/images/selected-right-sub.png)  no-repeat right -1px;*/
+    border-radius:10px;
+    background-color: #004054;
+}
+
+div#menu a:hover span {
+    /*background: url(../Imagenes/images/selected-left-sub.png) no-repeat 0 -3px;*/
+    border-radius:10px;
+}
+
+div#menu li.current a,
+div#menu ul.menu>li:hover>a {
+    /*background: url(../Imagenes/images/selected-right-sub.png)  no-repeat right -1px;*/
+    border-radius:10px;
+}
+
+div#menu li.current a span,
+div#menu ul.menu>li:hover>a span {
+    /*background: url(../Imagenes/images/selected-left-sub.png) no-repeat 0 -3px;*/
+    border-radius:10px;
+}
+
+div#menu ul.menu>li:hover>a span {
+    color: #24c9ff;
+}
+
+/*menu level 2*/
+div#menu ul ul li {   
+    padding-top: 5px;
+    padding-left: 5px;
+}
+div#menu ul ul a {
+    padding: 0px;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 25px;
+    font-size: 15px;
+    color: #fff;
+    z-index: -1;
+    padding-left: 5px;
+    margin-bottom: 1px;
+    white-space: normal;
+    width: 130px;
+    /*margin: 0 8px;*/
+    text-transform: none;
+}
+
+div#menu ul ul a span {
+    padding: 0 5px;
+    line-height: 25px;
+    font-size: 13px;
+    text-align: center;
+    font-size: 15px;
+    
+}
+
+div#menu li.current ul a,
+div#menu li.current ul a span {
+    background:none;
+}
+
+div#menu ul ul a:hover {
+ background:none;
+ background-color: #004054;
+}
+
+div#menu ul ul a:hover span {
+	background:none;
+	color: #24c9ff;
+}
+
+div#menu ul ul span {	
+    margin-top: 0;
+    text-align: left;
+}
+
+div#menu ul ul li.last { background: none; }
+div#menu ul ul li {
+    width: 100%;
+}
+
+
+/* lava lamp */
+/*div#menu li.back {
+    background: url(../Imagenes/images/selected-left-sub.png) no-repeat 0 0;
+    width: 5px;
+    height: 52px;
+    z-index: 8;
+    position: absolute;
+    padding: 0;
+    margin: 0px 0 0 0;
+}
+
+div#menu li.back .left {
+    padding:0;
+    width:auto;
+    background: url(../Imagenes/images/selected-right-sub.png) no-repeat right 0;
+    height: 52px;
+    margin: 0 0 0 5px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    visibility: visible;
+}*/
+
+#menseg li a{
+    background: none;
+}
+
+div#menseg li a span{
+    width: 10px;
+}
+
+
+
+

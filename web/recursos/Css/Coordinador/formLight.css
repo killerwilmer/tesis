@@ -1,0 +1,116 @@
+
+.clear-both
+{
+  clear:both;
+}
+
+.win7
+{
+	font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+  font-size:12px;
+	height:29px;
+	float:left;
+	background:url(../../Imagenes/Coordinador/imagesLight/nav-bg.png) repeat-x top left;
+	width:100%;
+  position:relative;
+}
+
+ul.win7,
+ul.win7 li
+{
+	padding:0px;
+	margin:0px;
+	list-style-type:none;
+}
+
+ul.win7 li
+{
+	background:url(../../Imagenes/Coordinador/imagesLight/nav-bg.png) repeat-x top left;
+	height:29px;
+	line-height:29px;
+	display:inline;
+	position:relative;
+	float:left;
+	text-align:center;
+}
+
+.win7 div
+{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:29px;
+  background:url(../../Imagenes/Coordinador/imagesLight/active1.png) no-repeat center;
+  z-index:0;
+}
+
+.win7 a
+{
+  text-align:center;
+  display:block;
+  z-index:2;
+  position:relative;
+  padding:0 25px;
+  line-height:29px;
+}
+
+.win7 a:link,
+.win7 a:visited
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.win7green div
+{
+  width:100%;
+	background-image:url(../../Imagenes/Coordinador/imagesLight/active3.png);
+	background-repeat:no-repeat;
+}
+
+.win7blue div
+{
+  width:100%;
+	background-image:url(../../Imagenes/Coordinador/imagesLight/active1.png);
+	background-repeat:no-repeat;
+}
+
+.win7yellow div
+{
+  width:100%;
+	background-image:url(../../Imagenes/Coordinador/imagesLight/active2.png);
+	background-repeat:no-repeat;
+}
+
+.win7red div
+{
+  width:100%;
+	background-image:url(../../Imagenes/Coordinador/imagesLight/active4.png);
+	background-repeat:no-repeat;
+}
+
+span.win7
+{
+  width:auto;
+
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+
+  border:2px solid #deded2;
+  
+  overflow:hidden;
+
+}
+
+span.win7 div {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  border:2px solid #deded2;
+  
+  top:-2px;
+  left:-2px;
+  
+}
