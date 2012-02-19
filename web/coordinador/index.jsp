@@ -13,7 +13,7 @@
 
         <title>Plataforma Coordinador</title>
         
-                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script>
         <script type="text/javascript" src="../recursos/Js/Coordinador/win7.js"></script>
         
         <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -29,6 +29,11 @@
                     $("#wraper").load('grupoInvestigacion.jsp');
                     $.getScript('js/b.js');
                 });
+                
+                $(".boton3").click(function(event) {
+                    $("#wraper").load('registroAspectos.jsp');
+                    $.getScript('js/b.js');
+                });
             });
         </script>
             
@@ -39,12 +44,12 @@
                 <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/Coordinador/images/logo.gif" alt="logo" /></a>
                 <div id="menu">
                     <ul class="menu">
-                        <li><a href="#" class="parent"><span>Home</span></a>
+                        <li><a href="#" class="parent"><span>Registro</span></a>
                             <div>
                                 <ul id="menseg">
                                     <li><a href="#" class="boton"><span>Etapas</span></a></li>
                                     <li><a href="#" class="boton2"><span>G. Investigación</span></a></li>
-                                    <li><a href="#"><span>Indicadores</span></a></li>
+                                    <li><a href="#" class="boton3"><span>Aspectos</span></a></li>
                                     <li><a href="#"><span>Otros</span></a></li>
                                 </ul>
                             </div>

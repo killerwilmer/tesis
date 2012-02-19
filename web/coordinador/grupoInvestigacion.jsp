@@ -46,9 +46,8 @@
                     <div id="cont"></div><br/>
                     <span id="span2" class="win7 win7yellow" onclick="AgregarCampos(this);"><a href="#">Agregar Campo</a></span>                       
                 </fieldset>
+                <br/><span id="btn1"  class="win7 win7blue" name="enviar"><a  href="#" >Guardar</a></span>
             </div>
-
-            <span style="margin: auto"  class="win7 win7blue" name="enviar"><a href="#" >Guardar</a></span>
         </form> 
     </body>
 </html>
