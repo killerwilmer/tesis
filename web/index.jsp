@@ -337,5 +337,4 @@
             </footer>
         </div>          
     </body>
-    <div></div>
 </html>
