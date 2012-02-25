@@ -18,7 +18,5 @@ function presionSubmit()
 
 function llegadaDatos(datos)
 {
-
 	$("#resultados").html(datos);
-	//alert("hola " + datos)
 }
