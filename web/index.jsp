@@ -138,7 +138,8 @@
                         <li><a href="#">Reglamentos</a></li>
                         <li><a href="#">Videos</a></li>
                         <li><a href="#">Ayudas</a></li>
-                        <li><a href="registro.jsp" title="Registro de usuarios" rel="gb_page_center[1000, 600]" id="registro">Registro</a></li>
+                        <%--li><a href="registro.jsp" title="Registro de usuarios" rel="gb_page_center[1000, 600]" id="registro">Registro</a></li--%>
+                        <li><a href="registroWebService.jsp" title="Registro de usuarios" rel="gb_page_center[1000, 600]" id="registro">Registro</a></li>
                     </ul>
                 </nav>
             </header>

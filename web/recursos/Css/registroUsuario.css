@@ -1,0 +1,167 @@
+/* 
+    Document   : registroUsuario
+    Created on : 25-feb-2012, 15:24:01
+    Author     : usuarui
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{
+    padding: 20px;
+    background: ghostwhite;
+}
+
+.myform{
+    margin:0 auto;
+    width:370px;
+    padding:7px;
+    border-radius: 10px;;
+    box-shadow: 0 0 10px #2671f0;
+    -moz-box-shadow: 0 0 10px #2671f0;
+    -o-box-shadow: 0 0 10px #2671f0;
+    -webkit-box-shadow: 0 0 10px #2671f0;
+}
+
+.spacer{
+    clear:both; 
+    height:1px;
+}
+
+#stylized h1 {
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:10px;
+    border-bottom:solid 1px #b7ddf2;
+    box-shadow: 0 8px 6px -6px #2671f0;
+    padding-bottom:10px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+#stylized{
+    border:solid 2px #b7ddf2;
+    background:#ebf4fb;
+}
+
+#stylized label{
+    display:block;
+    font-weight:bold;
+    text-align:right;
+    width:140px;
+    float:left;
+}
+#stylized .small{
+    color:#666666;
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+    text-align:right;
+    width:140px;
+}
+
+#stylized input{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:200px;
+    margin:2px 0 8px 10px;
+    border-radius: 8px;
+    outline: none;
+}
+
+input#boton{
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:100px;
+    margin-left: 150px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 8px 6px -6px #2671f0;
+}
+
+input#boton:hover{
+    background: #9ec0f8;
+    cursor: pointer;
+    box-shadow: inset 2 2 10px #ffffff;
+    opacity:0.9;
+}
+
+input#boton:active{
+    position: relative;
+    top: 2px;
+}
+
+select{
+    float: left;
+    font-size: 12px;
+    padding: 4px 2px;
+    border: solid 1px #aacfe4;
+    margin: 2px 0 8px 10px;
+    width: 205px;
+    border-radius: 8px;
+    outline: none;
+}
+
+form1{
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+#stylized2 input{
+    float:left;
+    font-size:12px;
+    padding:2px 2px;
+    border:solid 1px #aacfe4;
+    width:150px;
+    margin:2px 0 8px 10px;
+    border-radius: 8px;
+    outline: none;
+}
+
+#stylized2{
+    border:solid 2px #b7ddf2;
+    background:#ebf4fb;
+}
+
+#stylized2 label{
+    display:block;
+    font-weight:bold;
+    text-align:right;
+    width:160px;
+    float:left;
+    font-size: 14px;
+}
+
+.myform2{
+    margin:0 auto;
+    width:700px;
+    padding:10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: 0 0 10px #2671f0;
+    -moz-box-shadow: 0 0 10px #2671f0;
+    -o-box-shadow: 0 0 10px #2671f0;
+    -webkit-box-shadow: 0 0 10px #2671f0;
+}
+
+input[type="text"]:focus{
+    color:#000;
+    outline:none;
+    border:#c44311 1px solid;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+}

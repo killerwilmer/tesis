@@ -1,0 +1,193 @@
+/* GENERAL ELEMENTS */
+
+* { margin: 0; padding: 0; }
+
+#main { 
+    text-align: center; 
+}
+
+
+
+/* PAGE ELEMENTS */
+
+/* Content */
+
+#content { 
+    margin: 0em auto;  
+    padding: 0px 0 10px 0; 
+    text-align: left; /* Win IE5 */ }
+
+.content { 
+    margin-left: 4.5em;
+    margin-right: 4.5em; 
+}
+
+
+/* Signup box */
+
+#signupbox {
+  width: 100%;
+  text-align: center;
+  margin: 0em auto;
+}
+
+#signupwrap {
+  border: solid 1px #b7ddf2;
+  box-shadow: 0 8px 6px -6px #2671f0;
+  border-top: 0px;
+  text-align: left;
+  padding: 0px 0px 0px 0px;
+  clear: both;
+}
+
+/* Unsupported browsers */
+
+.orange_rbcontent { padding: 0.4em; }
+.orange_rbroundbox { width: 100%; }
+
+#unsupported {
+  font-weight: bold;
+  text-align: left;
+}
+
+/*#content {
+  padding-top: 15px;
+}*/
+
+/* Signup form */
+
+#signupform table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+#signupform .label {
+  padding-top: 2px;
+  padding-right: 8px;
+  vertical-align: top;
+  text-align: right;
+  width: 125px;
+  white-space: nowrap;
+}
+
+
+#signupform .field {
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+#signupform .status {
+  padding-top: 2px;
+  padding-left: 0px;
+  vertical-align: top;
+  width: 246px;
+  white-space: nowrap;
+}
+
+#signupform .textfield {
+  width: 150px;
+}
+
+#signupform label.error {
+  background: url(../Imagenes/logeo/unchecked.gif) no-repeat 0px 0px;
+  padding-left: 16px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: #EA5200;
+  position: absolute;
+}
+
+#signupform label.checked {
+  background: url(../Imagenes/logeo/checked.gif) no-repeat 0px 0px;
+}
+
+#signupform .success_msg {
+  font-weight: bold;
+  color: #0060BF;
+  margin-left: 19px;
+}
+
+#signupform #dateformatStatus, #signupform #termsStatus {
+  margin-left: 6px;
+}
+
+#signupform #dateformat_eu {
+ vertical-align: middle;
+}
+
+#signupform #ldateformat_eu {
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+#signupform #dateformat_am {
+  vertical-align: middle;
+}
+
+#signupform #ldateformat_am {
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+#signupform #termswrap {
+  float: left;
+}
+
+#signupform #terms {
+  vertical-align: middle;
+  float: left;
+  display: block;
+  margin-right: 5px;
+}
+
+
+
+#signupform #lsignupsubmit {
+  visibility: hidden;
+}
+
+#signupsubmit{
+    font-size:12px;
+    border:solid 1px #aacfe4;
+    width:100px;
+    margin-left: 150px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 8px 6px -6px #2671f0;
+}
+
+#signupsubmit:hover{
+    background: #9ec0f8;
+    cursor: pointer;
+    box-shadow: inset 2 2 10px #ffffff;
+    opacity:0.9;
+}
+
+#signupsubmit:active{
+    position: relative;
+    top: 2px;
+}
+
+#main .small{
+    color:red;
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+    text-align:left;
+    width:140px;
+    margin-left: 17px;
+}
+
+#main input{
+    padding-left: 8px;
+}
+
+#main input:focus{
+    color:#000;
+    outline:none;
+    border:#c44311 1px solid;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+}

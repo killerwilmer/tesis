@@ -29,9 +29,9 @@ public class ConectaDb {
     public ConectaDb()
     {
         user="postgres";
-        pass="postgres";
+        pass="12345";
         driver="org.postgresql.Driver";
-        urlConectar="jdbc:postgresql://localhost:5433/proyecto";
+        urlConectar="jdbc:postgresql://localhost:5432/proyecto";
         try {
             Class.forName(driver);
             conection=DriverManager.getConnection(urlConectar,user,pass);
