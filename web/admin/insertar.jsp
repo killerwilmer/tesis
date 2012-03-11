@@ -26,6 +26,7 @@
                             {
                                 out.print("Error");
                             }
+                        String hola = control.retornoCodigo("", "", "");
                     }                    
                 }               
 %>
