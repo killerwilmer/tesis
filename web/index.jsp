@@ -15,9 +15,9 @@
         <title>Herramienta para los procesos de Investigación</title>
         
         <link rel="stylesheet" href="recursos/Css/index.css" type="text/css" media="screen" />
-         
+        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-            
+             
         <!--para el logeo-->
         <script src="recursos/Js/login.js" type="text/javascript"></script>
             
@@ -30,16 +30,17 @@
         <%-- Inicio de vinculacion Grey Box --%> 
         <script type="text/javascript">
             var GB_ROOT_DIR ="greybox/";
-        </script>
-            
-        <script type="text/javascript" src="recursos/Js/greybox/AJS.js"></script>
+  
+        </script>    
+        <script type="text/javascript" src="recursos/Js/greybox/AJS.js"></script> 
         <script type="text/javascript" src="recursos/Js/greybox/AJS_fx.js"></script>
         <script type="text/javascript" src="recursos/Js/greybox/gb_scripts.js"></script>
         <link href="recursos/Js/greybox/gb_styles.css" rel="stylesheet" type="text/css" media="all" />
         <%-- Fin de vinculacion Grey Box --%>
-            
+        
         <!--para noticia principal-->
-        <script type="text/javascript" src="recursos/Js/jquery-1.3.2.js" ></script>
+        <script type="text/javascript" src="recursos/Js/jquery-1.3.2.js" ></script><!--problemaaaaaaaaaaaaa-->
+        <script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
         <script type="text/javascript" src="recursos/Js/jquery.quickflip.js"></script>
             
         <script type="text/javascript" >
@@ -58,6 +59,7 @@
                     });
                 });
             });
+                     
         </script>
         
         <!-- para noticias secundarias -->
@@ -68,7 +70,6 @@
                 $("ul#ticker01").liScroll();
             });    
         </script>
-        
         
         <!--para el scroll-->
         <script src="recursos/Js/jquery.timer.js" type="text/javascript"></script>
@@ -101,33 +102,45 @@
                 $('#carouselhAuto a').lightBox();
             });
         </script>
-
+        
+        <!--para tooltip--> 
+        <script type="text/javascript">
+            $(function() {
+                $("#loginForm :input").tooltip({
+                    position: "center right",
+                    offset: [-2, 10],
+                    effect: "fade",
+                    opacity: 0.8
+                });
+            });
+        </script>
+                  
     </head>
               
     <body style="background: url(recursos/Imagenes/index/transparente.png) repeat-x, repeat-y, #D3F0FA">
-        <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x;">            
+        <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x; position: relative">            
             <header class="wrapper0">
                 <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Titulo Logo</h1>            
                 <div id="container2">
                     <div id="loginContainer">
-                        <a href="#" id="loginButton" onClick="foco('email');"><span>Login</span></a>           
+                        <a href="#" id="loginButton"  onClick="foco('email');"><span>Login</span></a>           
                         <!--div style="clear:both"></div-->
                         <div id="loginBox">                
                             <form id="loginForm" name="logeo" action="login.jsp" method="post">
                                 <fieldset id="body">
                                     <fieldset>
                                         <label for="usuario">Usuario</label>
-                                        <input type="text" name="usuario" class="email" id="email"/>
+                                        <input type="text" title="Must be at least 8 characters." name="usuario" class="email" id="email"/>
                                     </fieldset>
                                     <fieldset>
                                         <label for="password">Contraseña</label>
-                                        <input type="password" name="password" class="pas" id="password"/>
+                                        <input type="password" name="password" title="Try to make it hard to guess." class="pas" id="password"/>
                                     </fieldset>
                                     <label for="checkbox"><input type="checkbox" id="checkbox" />Recordarme</label>
-                                    <input type="submit" id="login" value="Iniciar" />
+                                    <input type="submit" id="login"  value="Iniciar" />
                                 </fieldset>
                                 <span><a href="#">¿Olvidaste tu contraseña?</a></span>
-                            </form>                                                      
+                            </form>                                                                   
                         </div>            
                     </div>
                 </div>                                
@@ -139,7 +152,7 @@
                         <li><a href="#">Videos</a></li>
                         <li><a href="#">Ayudas</a></li>
                         <%--li><a href="registro.jsp" title="Registro de usuarios" rel="gb_page_center[1000, 600]" id="registro">Registro</a></li--%>
-                        <li><a href="registroWebService.jsp" title="Registro de usuarios" rel="gb_page_center[1000, 600]" id="registro">Registro</a></li>
+                        <li><a href="registroWebService.jsp"  rel="gb_page_fs[]"  id="registro">Registro</a></li>
                     </ul>
                 </nav>
             </header>

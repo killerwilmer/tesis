@@ -88,7 +88,7 @@ public class ConectaDb {
     //------------------------
     //-----------------------------fin del metodo
     //----------------metodo para cerrar el resultado
-      public void cierraResultado(ResultSet resutado){
+    public void cierraResultado(ResultSet resutado){
         try {
 
             resutado.close();
@@ -96,8 +96,9 @@ public class ConectaDb {
             ex.printStackTrace();
         }
     }
+    
     // ---------------------fin del metodo
-       public boolean transaccion(String cadenaSql){
+       public boolean ejecutarOperacion(String cadenaSql){
         //boolean ejecuta= false;
         try {
             statement=conection.createStatement();
@@ -112,10 +113,9 @@ public class ConectaDb {
     //----------------------fin del metodo
 
 
-           //--------------------------metodo retornar valor---------------------
-
+    //--------------------------metodo retornar valor---------------------
     public String retornoCodigo(String inicio, String campo, String fin){
-        String dato="";
+        String date="";
         try {
             ResultSet iden = null;
             String cadeCodigo = inicio + campo + fin;
@@ -124,12 +124,12 @@ public class ConectaDb {
             iden = statement.executeQuery(cadeCodigo);
 
             while (iden != null && iden.next()) {
-                dato = iden.getString(campo);
+                date = iden.getString(campo);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return dato;
+        return date;
     }
     
     

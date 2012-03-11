@@ -426,6 +426,7 @@ fieldset#body {
 .email:focus{
     background: #F2EF66 url(../Imagenes/logeo/usu.gif) no-repeat scroll 0;
     background-position: 4px 4px; 
+    outline: none;
 }
 
 .pas:hover{
@@ -436,6 +437,7 @@ fieldset#body {
 .pas:focus{
     background: #F2EF66 url(../Imagenes/logeo/pas.png) no-repeat scroll 0;
     background-position: 4px 4px; 
+    outline: none;
 }
 
 .email{
@@ -1002,3 +1004,38 @@ estilo para el poput de las fotos
 #errorSesion{
     top: 500px;
 }
+
+/* simple css-based tooltip */
+.tooltip {
+	background-color:#000;
+	padding:10px 15px;
+	width:200px;
+	display:none;
+	color:#fff;
+	text-align:right;
+	font-size:12px;
+        border-top-left-radius: 200px 23px ;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 200px 23px ;
+        z-index:100; 
+	/* outline radius for mozilla/firefox only */
+	-moz-box-shadow:0 0 10px #000;
+	-webkit-box-shadow:0 0 10px #000;
+        border-top: 8px solid #ddd;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 0;
+}
+
+	#overlay {
+		background-image:url(http://static.flowplayer.org/img/overlay/transparent.png);
+		color:#efefef;
+		height:450px;
+	}
+	
+	/* container for external content. uses vertical scrollbar, if needed */
+	div.contentWrap {
+		height:441px;
+		overflow-y:auto;
+	}
