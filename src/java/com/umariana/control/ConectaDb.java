@@ -124,7 +124,7 @@ public class ConectaDb {
             iden = statement.executeQuery(cadeCodigo);
 
             while (iden != null && iden.next()) {
-                date = iden.getString(campo);
+                date = iden.getString("codigo");
             }
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);

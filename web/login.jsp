@@ -42,7 +42,7 @@ if (control.iden(sql))
     String campo = "tipousuario.codigo";
     String fin = " from tipousuario,usuario where usuario.idtipousuario=tipousuario.idtipousuario and usuario.codigo='"+usuario+"';";
     String tipos = control.retornoCodigo(inicio, campo, fin);
-    int tipo = Integer.parseInt(tipos);
+    int tipo = Integer.parseInt(tipos.trim());
     if (tipo == 1)
     {
         sesionOk.setAttribute("estudiante", usuario);

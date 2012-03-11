@@ -386,7 +386,7 @@
                 String SQLIdenprograma = "Select codigo from programa where codigo ='" + codigoprograma + "'";               
                    
                 if (!control.iden(SQLIdenusuario) ) {
-                    String SqlInsertusu = "insert into tipousuario(codigo, nombre) values('" + idusuario + "','" + tipousuario + "');";
+                    String SqlInsertusu = "insert into tipousuario(codigo, nombre) values('"+idusuario.trim()+"','" +tipousuario+"');";
                     con.ejecutarOperacion(SqlInsertusu);
                 } 
                 if(!control.iden(SQLIdenfacultad)){
