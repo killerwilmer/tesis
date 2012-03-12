@@ -33,14 +33,14 @@ else
 
 
 
-String sql = "select usuario.codigo, usuario.contrasena from usuario where usuario.codigo='"+ usuario +"' and usuario.contrasena='"+ clave +"';";
+String sql = "select codigousuario, contrasena from usuario where codigousuario='"+ usuario +"' and contrasena='"+ clave +"';";
 if (control.iden(sql))
 {
     HttpSession sesionOk = request.getSession();
 
     String inicio = "select ";
-    String campo = "tipousuario.codigo";
-    String fin = " from tipousuario,usuario where usuario.idtipousuario=tipousuario.idtipousuario and usuario.codigo='"+usuario+"';";
+    String campo = "codigotipousuario";
+    String fin = " from tipousuario,usuario where tipousuario.idtipousuario=usuario.idtipousuario and codigousuario='"+usuario+"';";
     String tipos = control.retornoCodigo(inicio, campo, fin);
     int tipo = Integer.parseInt(tipos.trim());
     if (tipo == 1)

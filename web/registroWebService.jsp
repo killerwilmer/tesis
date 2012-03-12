@@ -345,6 +345,8 @@
             }
         %>   
     </body>
+    
+    
     <%
         String tipousuario = request.getParameter("tipousuario");
         if (request.getParameter("signup") != null && tipousuario.equals("Estudiante")) {
@@ -380,30 +382,30 @@
                 out.print("<script lenguage=>'Javascript'> alert('Usted no esta Matriculado')</script>");
             } else {
                 String idusuario = "1";
-                String SQLIden = "Select codigo from usuario where codigo ='" + identificacion + "'";
-                String SQLIdenusuario = "Select nombre from tipousuario where nombre ='" + tipousuario + "'";
-                String SQLIdenfacultad = "Select codigo from facultad where codigo ='" + codigofacultad + "'";
-                String SQLIdenprograma = "Select codigo from programa where codigo ='" + codigoprograma + "'";               
+                String SQLIden = "Select codigousuario from usuario where codigousuario ='" + identificacion + "'";
+                String SQLIdenusuario = "Select nombretipousuario from tipousuario where nombretipousuario ='" + tipousuario + "'";
+                String SQLIdenfacultad = "Select codigofacultad from facultad where codigofacultad ='" + codigofacultad + "'";
+                String SQLIdenprograma = "Select codigoprograma from programa where codigoprograma ='" + codigoprograma + "'";               
                    
                 if (!control.iden(SQLIdenusuario) ) {
-                    String SqlInsertusu = "insert into tipousuario(codigo, nombre) values('"+idusuario.trim()+"','" +tipousuario+"');";
+                    String SqlInsertusu = "insert into tipousuario(codigotipousuario, nombretipousuario) values('"+idusuario.trim()+"','" +tipousuario+"');";
                     con.ejecutarOperacion(SqlInsertusu);
                 } 
                 if(!control.iden(SQLIdenfacultad)){
-                    String SqlInsertfacultad = "insert into facultad(codigo, nombre) values('" + codigofacultad + "','" + nombrefacultad + "');";
+                    String SqlInsertfacultad = "insert into facultad(codigofacultad, nombrefacultad) values('" + codigofacultad + "','" + nombrefacultad + "');";
                     con.ejecutarOperacion(SqlInsertfacultad);
                 }
                 if(!control.iden(SQLIdenprograma)){
-                    int idfacultad = control.darTipoUsuario("select ", "idfacultad", " from facultad where nombre='" + nombrefacultad + "';");
-                    String SqlInsertprograma = "insert into programa(idfacultad, codigo, nombre) values('" + idfacultad + "','" + codigoprograma + "','"+ nombreprograma + "');";              
+                    int idfacultad = control.darTipoUsuario("select ", "idfacultad", " from facultad where nombrefacultad='" + nombrefacultad + "';");
+                    String SqlInsertprograma = "insert into programa(idfacultad, codigoprograma, nombreprograma) values('" + idfacultad + "','" + codigoprograma + "','"+ nombreprograma + "');";              
                     con.ejecutarOperacion(SqlInsertprograma);
                 }
                 if (control.iden(SQLIden)) {
                     out.print("<script languaje = javascript> alert('Usuario ya existe'); history.back(); </script>");
                 } 
                 else {
-                    int idTipoUsuario = control.darTipoUsuario("select ", "idtipousuario", " from tipousuario where nombre='" + tipousuario + "';");
-                    String SqlInsert = "insert into usuario(idtipousuario, codigo, genero, estadocivil, codigociudad, nombreciudad, fechanacimiento, nombres, apellidos, codigoprograma, nombreprograma, codigofacultad, nombrefacultad, direccioncasa, email, celular, telefono, eps, rh, contrasena) values('" + idTipoUsuario + "','" + identificacion + "','" + genero + "','" + estadocivil + "','" + codigociudad + "','" + nombreciudad + "','" + fechanacimiento + "','" + nombres + "','" + apellidos + "','" + codigoprograma + "','" + nombreprograma + "','" + codigofacultad + "','" + nombrefacultad + "','" + direccion + "','" + email + "','" + numerocelular + "','" + numerotelefono + "','" + eps + "','" + rh + "','" + contraseña + "');";
+                    int idTipoUsuario = control.darTipoUsuario("select ", "idtipousuario", " from tipousuario where nombretipousuario='" + tipousuario + "';");
+                    String SqlInsert = "insert into usuario(idtipousuario, codigousuario, genero, estadocivil, codigociudad, nombreciudad, fechanacimiento, nombres, apellidos, codigoprograma, nombreprograma, codigofacultad, nombrefacultad, direccioncasa, email, celular, telefono, eps, rh, contrasena) values('" + idTipoUsuario + "','" + identificacion + "','" + genero + "','" + estadocivil + "','" + codigociudad + "','" + nombreciudad + "','" + fechanacimiento + "','" + nombres + "','" + apellidos + "','" + codigoprograma + "','" + nombreprograma + "','" + codigofacultad + "','" + nombrefacultad + "','" + direccion + "','" + email + "','" + numerocelular + "','" + numerotelefono + "','" + eps + "','" + rh + "','" + contraseña + "');";
                     if (con.ejecutarOperacion(SqlInsert)) {
                          ocultar = true;
                     } else {
@@ -454,12 +456,12 @@
             
             else{
                 String idusuario = "2";
-                String SQLIden = "Select codigo from usuario where codigo ='" + identificacionF + "'";
-                String SQLIdenusuario = "Select nombre from tipousuario where nombre ='" + tipousuario + "'";
+                String SQLIden = "Select codigousuario from usuario where codigousuario ='" + identificacionF + "'";
+                String SQLIdenusuario = "Select nombretipousuario from tipousuario where nombretipousuariio ='" + tipousuario + "'";
                 
                 
                 if (!control.iden(SQLIdenusuario) ) {
-                    String SqlInsertusu = "insert into tipousuario(codigo, nombre) values('" + idusuario + "','" + tipousuario + "');";
+                    String SqlInsertusu = "insert into tipousuario(codigotipousuario, nombretipousuario) values('" + idusuario + "','" + tipousuario + "');";
                     con.ejecutarOperacion(SqlInsertusu);
                 }
                 if (control.iden(SQLIden)) {
@@ -467,8 +469,8 @@
                 }
                 
                 else {
-                    int idTipoUsuarioF = control.darTipoUsuario("select ", "idtipousuario", " from tipousuario where nombre='" + tipousuario + "';");
-                    String SqlInsert = "insert into usuario(idtipousuario, codigo, genero, estadocivil, codigociudad, nombreciudad, fechanacimiento, nombres, apellidos, codigoprograma, nombreprograma, codigofacultad, nombrefacultad, direccioncasa, email, celular, telefono, eps, rh, contrasena) values('" + idTipoUsuarioF + "','" + identificacionF + "','" + generoF + "','" + estadocivilF + "','" + codigociudadF + "','" + ciudadnacimientoF + "','" + fechanacimientoF + "','" + nombresF + "','" + apellidosF + "','" + codigoprograma + "','" + nombreprograma + "','" + codigofacultad + "','" + nombrefacultad + "','" + dircasaF + "','" + emailF + "','" + telcasaF + "','" + teloficinaF + "','" + epsF+ "','" + rh + "','" + contraseñaF + "');";
+                    int idTipoUsuarioF = control.darTipoUsuario("select ", "idtipousuario", " from tipousuario where nombretipousuario='" + tipousuario + "';");
+                    String SqlInsert = "insert into usuario(idtipousuario, codigousuario, genero, estadocivil, codigociudad, nombreciudad, fechanacimiento, nombres, apellidos, codigoprograma, nombreprograma, codigofacultad, nombrefacultad, direccioncasa, email, celular, telefono, eps, rh, contrasena) values('" + idTipoUsuarioF + "','" + identificacionF + "','" + generoF + "','" + estadocivilF + "','" + codigociudadF + "','" + ciudadnacimientoF + "','" + fechanacimientoF + "','" + nombresF + "','" + apellidosF + "','" + codigoprograma + "','" + nombreprograma + "','" + codigofacultad + "','" + nombrefacultad + "','" + dircasaF + "','" + emailF + "','" + telcasaF + "','" + teloficinaF + "','" + epsF+ "','" + rh + "','" + contraseñaF + "');";
                     if (con.ejecutarOperacion(SqlInsert)) {
                         ocultar = true;
                         out.print("<script lenguage='Javascript'> alert('Datos Insertados Correctamente')</script>");

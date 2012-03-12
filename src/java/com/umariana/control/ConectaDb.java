@@ -29,7 +29,7 @@ public class ConectaDb {
     public ConectaDb()
     {
         user="postgres";
-        pass="abcdef";
+        pass="12345";
         driver="org.postgresql.Driver";
         urlConectar="jdbc:postgresql://localhost:5432/proyecto";
         try {
@@ -124,7 +124,7 @@ public class ConectaDb {
             iden = statement.executeQuery(cadeCodigo);
 
             while (iden != null && iden.next()) {
-                date = iden.getString("codigo");
+                date = iden.getString(campo);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
