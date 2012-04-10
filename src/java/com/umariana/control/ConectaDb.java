@@ -19,28 +19,28 @@ import javax.swing.DefaultComboBoxModel;
  * @author Administrador
  */
 public class ConectaDb {
-    private String user,pass,urlConectar,driver;// definicion de variables para la coneccion
+
+    private String user, pass, urlConectar, driver;// definicion de variables para la coneccion
     public Connection conection; // variable de la clase conect para conectar la base de datos
     private java.sql.Statement statement; // estatement controla las coneciones y las ejecuciones de las sql
     public String idenTrabajador;
-    private Statement st=null; 
+    private Statement st = null;
     //---------------------metodo constructor para la clase conectar
 
-    public ConectaDb()
-    {
-        user="postgres";
-        pass="12345";
-        driver="org.postgresql.Driver";
-        urlConectar="jdbc:postgresql://localhost:5432/proyecto";
+    public ConectaDb() {
+        user = "postgres";
+        pass = "12345";
+        driver = "org.postgresql.Driver";
+        urlConectar = "jdbc:postgresql://localhost:5432/proyecto";
         try {
             Class.forName(driver);
-            conection=DriverManager.getConnection(urlConectar,user,pass);
+            conection = DriverManager.getConnection(urlConectar, user, pass);
             System.out.println("SI SE CONECTA A LA DB");
 
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
 
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
             System.err.println("No conecto a la db");
         }
@@ -54,28 +54,32 @@ public class ConectaDb {
             ex.printStackTrace();
         }
     }
+    
+    
     //metodo para Generar las consultas
-    public ResultSet consultas(String cadConsulta){
+    public ResultSet consultas(String cadConsulta) {
         ResultSet resultado = null;
         try {
-            statement=conection.createStatement();
-            resultado=statement.executeQuery(cadConsulta);
+            statement = conection.createStatement();
+            resultado = statement.executeQuery(cadConsulta);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         return resultado;
     }
+    
+    
     //------------------------------
     //----------------------metodo modelo de la lista para aplicaciones de escritorio
-     public DefaultComboBoxModel modelo(String parteUno,String  campo1,String finCadena){
+    public DefaultComboBoxModel modelo(String parteUno, String campo1, String finCadena) {
         DefaultComboBoxModel llenaLista = new DefaultComboBoxModel();
         ResultSet datos = null;
-        String cadLista =parteUno +campo1 +finCadena;
+        String cadLista = parteUno + campo1 + finCadena;
         try {
 
             statement = conection.createStatement();
             datos = statement.executeQuery(cadLista);
-            while(datos != null && datos.next()){
+            while (datos != null && datos.next()) {
                 String cadena = datos.getString(campo1);
                 //System.err.println(dato);
                 llenaLista.addElement(cadena);
@@ -85,23 +89,23 @@ public class ConectaDb {
         }
         return llenaLista;
     }
-    //------------------------
-    //-----------------------------fin del metodo
+    
+    
     //----------------metodo para cerrar el resultado
-    public void cierraResultado(ResultSet resutado){
+    public void cierraResultado(ResultSet resutado) {
         try {
-
             resutado.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
+
     
     // ---------------------fin del metodo
-       public boolean ejecutarOperacion(String cadenaSql){
+    public boolean ejecutarOperacion(String cadenaSql) {
         //boolean ejecuta= false;
         try {
-            statement=conection.createStatement();
+            statement = conection.createStatement();
             statement.execute(cadenaSql);
             statement.close();
             return true;
@@ -110,12 +114,11 @@ public class ConectaDb {
         }
         return false;
     }
-    //----------------------fin del metodo
 
 
     //--------------------------metodo retornar valor---------------------
-    public String retornoCodigo(String inicio, String campo, String fin){
-        String date="";
+    public String retornoCodigo(String inicio, String campo, String fin) {
+        String date = "";
         try {
             ResultSet iden = null;
             String cadeCodigo = inicio + campo + fin;
@@ -132,8 +135,8 @@ public class ConectaDb {
         return date;
     }
     
-    
-        public int darTipoUsuario(String inicio, String campo, String fin){
+
+    public int darTipoUsuario(String inicio, String campo, String fin) {
         int dato = 0;
         try {
             ResultSet iden = null;
@@ -150,63 +153,58 @@ public class ConectaDb {
         }
         return dato;
     }
+    
 
-        //----------------------funcion para buscar un codigo
-
-    public boolean iden(String cadCodigo){
-        ResultSet iden= null;
-        int i=0;
+    //----------------------funcion para buscar un codigo
+    public boolean iden(String cadCodigo) {
+        ResultSet iden = null;
+        int i = 0;
         try {
             statement = conection.createStatement();
-            iden= statement.executeQuery(cadCodigo);
-            while(iden != null &&iden.next()){
+            iden = statement.executeQuery(cadCodigo);
+            while (iden != null && iden.next()) {
                 i++;
             }
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        if(i>0){
+        if (i > 0) {
             return true;
-        } else{
+        } else {
             return false;
         }
     }
+    
 
     //Metodo para generar un combo
-    public String combo ( String tabla )
-    {
+    public String combo(String tabla) {
         String consulta = "SELECT * from " + tabla + "";
-        String combo = "<select name='combo'>";
-        try
-        {
+        String combo = "";
+        try {
             ResultSet resultado = this.consultas(consulta);
-            while ( resultado.next() && resultado != null )
-            {
-                combo+= "<option value=" + resultado.getString(1) + ">" + resultado.getString(2) + "</option>";
+            while (resultado.next() && resultado != null) {
+                combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(3) + "</option>";
             }
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return combo + "</select>";
     }
+    
 
-
-     //metodo para retornar el color de la linea
-
-    public String linea(int i){
-    String salida="";
-          if(i%2==0){
-            salida="<tr bgcolor='#e6e6fa'>";
-          }else{
-          salida="<tr bgcolor='#FFFFFF'>";
-          }
-    return salida;
+    //metodo para retornar el color de la linea
+    public String linea(int i) {
+        String salida = "";
+        if (i % 2 == 0) {
+            salida = "<tr bgcolor='#e6e6fa'>";
+        } else {
+            salida = "<tr bgcolor='#FFFFFF'>";
+        }
+        return salida;
     }
+    
 
-        public String retornaInt(String inicio, String campo, String fin){
+    public String retornaInt(String inicio, String campo, String fin) {
         String dato = null;
         try {
             ResultSet iden = null;
@@ -223,4 +221,5 @@ public class ConectaDb {
         }
         return dato;
     }
+    
 }

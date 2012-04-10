@@ -3,8 +3,20 @@
     Created on : 26-oct-2011, 11:33:59
     Author     : zzz
 --%>
+ <%@ page session="true" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@page import="com.umariana.control.ConectaDb" %>
+ <% ConectaDb control = new ConectaDb(); %>
+ <% 
+      HttpSession sesionOk = request.getSession();
+      String estudiante = (String) sesionOk.getAttribute("estudiante") ;
+      
+      String inicio = "select ";
+      String campo = "nombreprograma";
+      String fin = " from usuario where codigousuario='"+estudiante+"';";
+      String tipos = control.retornoCodigo(inicio, campo, fin);
+  %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,11 +24,11 @@
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/index.css" />
         <title>Plataforma Estudiantes</title>
     </head>
-    <body>
+    <body> 
         <div id="contenedor1">
             <div id="header">
                 <img src="../recursos/Imagenes/index/logo1.gif" alt="logo"/>
-                <h1 id="titulo">Titulo del Proyecto Estudiante</h1>           
+                <h1 id="titulo"><%out.print(tipos);%></h1>           
             </div>
             <div id="menu">
                 <ul id="nav">

@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,7 +14,7 @@
 
         <title>Plataforma Admin</title>
         
-                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script>
+         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script>
         <script type="text/javascript" src="../recursos/Js/Coordinador/win7.js"></script>
         
         <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -24,6 +25,14 @@
                     $("#wraper").load('addFacultad.jsp');
                     $.getScript('js/b.js');
                 });
+                $(".boton1").click(function(event) {
+                    $("#wraper").load('addPrograma.jsp');
+                    $.getScript('js/b.js');
+                });
+                $(".boton2").click(function(event) {
+                    $("#wraper").load('addusuario.jsp');
+                    $.getScript('js/b.js');
+                });
             });
         </script>
             
@@ -31,15 +40,16 @@
     <body>
         <div id="contenedor">
             <div id="header">
-                <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/Coordinador/images/logo.gif" alt="logo" /></a>
+                <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/index/logo1.gif" alt="logo"/></a>
+                <h1 id="titulo">Administrador</h1>  
                 <div id="menu">
                     <ul class="menu">
-                        <li><a href="#" class="parent"><span>Inicio</span></a>
+                        <li><a href="#" class="parent"><span>Registro</span></a>
                             <div>
                                 <ul id="menseg">
                                     <li><a href="#" class="boton"><span>Facultades</span></a></li>
-                                    <li><a href="#"><span>Aspectos</span></a></li>
-                                    <li><a href="#"><span>Indicadores</span></a></li>
+                                    <li><a href="#" class="boton1"><span>Programas</span></a></li>
+                                    <li><a href="#" class="boton2"><span>Usuarios</span></a></li>
                                     <li><a href="#"><span>Otros</span></a></li>
                                 </ul>
                             </div>

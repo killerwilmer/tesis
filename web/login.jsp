@@ -53,7 +53,7 @@ if (control.iden(sql))
         sesionOk.setAttribute("coordinador", usuario);
         out.print("<script>window.location='coordinador/index.jsp'</script>");
     }
-    else if ( tipo == 3)
+    else if ( tipo == 39)
     {
         sesionOk.setAttribute("docente", usuario);
         out.print("<script>window.location='principales/indexge.jsp'</script>");
@@ -63,7 +63,7 @@ if (control.iden(sql))
         sesionOk.setAttribute("otro", usuario);
         out.print("<script>window.location='principales/indexge.jsp'</script>");
     }
-    else if ( tipo == 5)
+    else if ( tipo == 3)
     {
         sesionOk.setAttribute("admin", usuario);
         out.print("<script>window.location='admin/index.jsp'</script>");

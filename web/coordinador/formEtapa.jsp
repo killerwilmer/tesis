@@ -64,7 +64,7 @@
                 
                 String SqlInsert = "insert into personas values('" + etapa1 + "','" + etapa2 + "','" + etapa3 + "');";
                     
-                    if (cont.transaccion(SqlInsert)) {
+                    if (cont.ejecutarOperacion(SqlInsert)) {
                         out.print("<script lenguage=>'Javascript'> alert('Datos Insertados Correctamente')</script>");
                     } else {
                         out.print("<script lenguage=>'Javascript'> alert('Error al insertar los datos')</script>");

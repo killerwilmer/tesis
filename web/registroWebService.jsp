@@ -6,7 +6,11 @@
 
 <%@page import="com.umariana.control.ConectaDb"%>
 <%@page import="java.util.StringTokenizer"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" import="java.util.Enumeration" pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
+<%
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=utf-8");
+%>
 <% ConectaDb control = new ConectaDb(); %>
 <!DOCTYPE html>
 <html>

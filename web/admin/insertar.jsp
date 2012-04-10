@@ -2,31 +2,34 @@
 <% ConectaDb control = new ConectaDb();%>
 
 <%
-                String miFacultad = request.getParameter("numero");
-
-                if ( miFacultad.length() == 0 )
+                String miCodigo = request.getParameter("codigof");
+                String miFacultad = request.getParameter("numero");        
+                
+                if ( (miFacultad.length() == 0 ) || (miCodigo.length()==0))
                 {                    
                     out.print("Faltan datos");
-                }
+                } 
+          
                 else
                 {
-                    String SqlIden = "Select * from facultad where nomfacultad = '"+miFacultad+"'";
-                    if ( control.iden(SqlIden))
+                    String SqlIdenumero = "Select * from facultad where codigofacultad = '"+miCodigo+"'";
+                    String SqlIden = "Select * from facultad where nombrefacultad = '"+miFacultad+"'";
+                    if ( control.iden(SqlIdenumero) || control.iden(SqlIden))
                     {
                         out.print("Ya existe");
                     }
                     else
-                    {
-                        String SqlInsert = "insert into facultad (nomfacultad) values('"+miFacultad+"');";
-                        if ( control.transaccion(SqlInsert))
+                    {                       
+                        String SqlInsert = "insert into facultad (codigofacultad,nombrefacultad) values('"+miCodigo+"','"+miFacultad+"');";
+                      
+                        if ( control.ejecutarOperacion(SqlInsert))
                             {
-                                out.print("Exito");
+                                out.print("Datos Insertados Correctamente");
                             }
                             else
                             {
-                                out.print("Error");
-                            }
-                        String hola = control.retornoCodigo("", "", "");
+                                out.print("Error al Insertar los Datos");
+                            }  
                     }                    
-                }               
+                }                            
 %>
