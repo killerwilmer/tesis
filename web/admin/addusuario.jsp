@@ -46,6 +46,7 @@
 	</script>
     </head>
     <body id="d">
+        <br/><br/>
         <div id="stylized" class="myform">
             <form id="form">
             <h1>Registro Usuario</h1>
@@ -139,7 +140,7 @@
                 <option value="AB+">AB+</option>
             </select> 
             
-            <span id="boton2"><input id="boton2" type="submit" value="Guardar" name="enviar"/></span>
+            <span><input id="boton2" type="submit" value="Guardar" name="enviar"/></span>
             
             <div class="spacer"></div>
                       

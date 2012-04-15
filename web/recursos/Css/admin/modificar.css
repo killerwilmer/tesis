@@ -1,0 +1,34 @@
+/* 
+    Document   : modificar
+    Created on : 14-abr-2012, 4:31:37
+    Author     : usuarui
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+select{
+    border-radius: 5px;
+    outline: none;
+    padding: 4px;
+    width: 260px;
+    margin-left: 10px;
+    border: solid 1px #aacfe4;
+}
+
+fieldset#combomodfac{
+    width: 270px;
+    margin: 0 auto;
+    border: none;
+    margin-top: 40px;
+}
+
+#com{
+    margin-left: 30px;
+}
+
+#salida{
+    width: auto;
+    height:auto;
+    overflow:auto;
+    margin: 0 auto;
+}

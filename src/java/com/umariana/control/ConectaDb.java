@@ -191,6 +191,21 @@ public class ConectaDb {
         return combo + "</select>";
     }
     
+    //Metodo para generar un combo
+    public String comboprograma(String tabla) {
+        String consulta = "SELECT * from " + tabla + "";
+        String combo = "";
+        try {
+            ResultSet resultado = this.consultas(consulta);
+            while (resultado.next() && resultado != null) {
+                combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(4).toLowerCase() + "</option>";
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return combo + "</select>";
+    }
+    
 
     //metodo para retornar el color de la linea
     public String linea(int i) {

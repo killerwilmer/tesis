@@ -1,0 +1,133 @@
+/* 
+    Document   : menumodificar
+    Created on : 13-abr-2012, 21:55:36
+    Author     : usuarui
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body{
+    margin: 0px;
+}
+
+.submenu{
+    width: 170px;
+    height: 600px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #b9b9b9 ),to( #eee ));
+    background-image: -webkit-linear-gradient( #b9b9b9,#eee );
+    background-image: -moz-linear-gradient( #b9b9b9,#eee );
+    background-image: -ms-linear-gradient( #b9b9b9,#eee );
+    background-image: -o-linear-gradient( #b9b9b9,#eee );
+    background-image: linear-gradient( #b9b9b9,#eee );
+    border-color: #DADADA;
+    box-shadow: 1px 1px 15px black;
+    float: left;
+}
+
+div#menup ul {
+    list-style-type: none;
+    padding: 0px;
+    width: auto;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    margin-left: 15px;
+    padding-top: 13px;
+}
+
+#menup ul li {
+   background: no-repeat url(../../Imagenes/admin/mod.png);
+   height: 45px;
+   width: 45px;
+   margin-left: 50px;
+   text-align: center;
+   font-size: 12px;
+   margin-top: 15px;
+   padding-right: 20px;
+   opacity: 0.4;
+}
+
+#menup ul li#coor {
+   background: no-repeat url(../../Imagenes/admin/mod.png);
+   background-position: bottom center; 
+   height: 45px;
+   width: 45px;
+   margin-left: 40px;
+   text-align: center;
+   font-size: 12px;
+   margin-top: 15px;
+}
+
+#menup ul li#programa {
+   background: no-repeat url(../../Imagenes/admin/mod.png);
+   background-position: bottom center; 
+   height: 45px;
+   width: 45px;
+   margin-left: 38px;
+   text-align: center;
+   font-size: 12px;
+   margin-top: 15px;
+   padding-left: 6px;
+}
+
+#menup ul li a{
+   text-decoration: none;
+   color: #867f7b;
+   text-align: center;
+}
+
+#menup ul li a:hover{
+    color: #001932;
+    font-size: 12px;
+}
+  
+
+#menup ul li:hover{
+    background: no-repeat url(../../Imagenes/admin/img1238071310.png); 
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    color: #001932;
+    opacity: 0.9;   
+}
+
+#menup ul li#coor:hover,#menup ul li#programa:hover{
+    background: no-repeat url(../../Imagenes/admin/img1238071310.png); 
+    background-position: bottom center; 
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    color: #001932;
+    opacity: 0.9; 
+}
+
+.contenido{
+    overflow: auto;
+    background: #ea5347;
+}
+
+div#span{
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #c0c0c0 ),to( #c0c0c0 ));
+    background-image: -webkit-linear-gradient( #c0c0c0,#c0c0c0 );
+    background-image: -moz-linear-gradient( #c0c0c0,#c0c0c0 );
+    background-image: -ms-linear-gradient( #c0c0c0,#c0c0c0);
+    background-image: -o-linear-gradient( #c0c0c0,#c0c0c0 );
+    background-image: linear-gradient( #c0c0c0,#c0c0c0 );
+    border-color: #c0c0c0;
+    text-align: center;  
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border-bottom:solid 1px #c0c0c0;
+    box-shadow: 0 9px 8px -6px #4a4646;
+    padding-left: 3px;
+    padding-right: 0px;
+    margin-top: 15px;
+    width: 150px;
+}
+
+#titulo{
+    font-family: "Homer Simpson", cursive;
+    font-size: 20px;
+}
+
+

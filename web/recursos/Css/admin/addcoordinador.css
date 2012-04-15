@@ -1,0 +1,174 @@
+/* 
+    Document   : addcoordinador
+    Created on : 13-abr-2012, 15:13:45
+    Author     : usuarui
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.suggestionsBox {
+    position: absolute;
+    left: 600px;
+    margin: 0px 0px 0px 0px;
+    width: 250px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #DADADA ),to( #eee ));
+    background-image: -webkit-linear-gradient( #DADADA,#eee );
+    background-image: -moz-linear-gradient( #DADADA,#eee );
+    background-image: -ms-linear-gradient( #DADADA,#eee );
+    background-image: -o-linear-gradient( #DADADA,#eee );
+    background-image: linear-gradient( #DADADA,#eee );
+    border-radius: 5px;
+    border:solid 1px #aacfe4;
+    text-transform: capitalize;
+}
+
+.suggestionList {
+    margin: 0px;
+    padding: 0px;
+}
+
+.suggestionList li {
+    margin: 0px 0px 3px 0px;
+    padding: 3px;
+    padding-left: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    list-style:none;
+}
+
+.suggestionList li:hover {
+    background-color: #444444;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    list-style:none;
+}
+
+#fiel{
+    width: auto;
+    background: #add8e6  url(../../Imagenes/Coordinador/images/blanco.png); 
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 0 0 10px #2671f0;
+    -moz-box-shadow: 0 0 10px #2671f0;
+    -o-box-shadow: 0 0 10px #2671f0;
+    -webkit-box-shadow: 0 0 10px #2671f0;
+    width:500px;
+    margin:0 auto;
+    padding-left: 20px;
+}
+
+input{
+    font-size:12px;
+    padding:5px;
+    border:solid 1px #aacfe4;
+    width:250px;
+    margin:2px 0 8px 10px;
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus{
+    color:#000;
+    outline:none;
+    box-shadow: 0 0 7px rgba(0, 0, 255, 1);
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
+    -moz-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
+}
+
+h1 {
+    font-weight:bold;
+    margin-bottom:30px;
+    padding-bottom:10px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+select{
+    font-size: 12px;
+    padding: 4px 2px;
+    border: solid 1px #aacfe4;
+    margin: 0 auto;
+    width: 200px;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 150px;
+    margin-top: 6px;
+    text-transform: capitalize;
+}
+
+#sizeSmall{
+    width: 15px; 
+    float: left; 
+    margin-left: 16%;
+}
+
+#label{
+    width: 40px; 
+    float:left;
+    margin-left: 5px;
+}
+
+#sizeMed{
+    width: 15px; 
+    float: left; 
+    margin-left: 43%;
+}
+
+#botoncor{
+    font-size:15px;
+    padding:6px;
+    border:solid 1px #aacfe4;
+    width:300px;
+    margin-left:100px;
+    margin-top: 20px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 8px 6px -6px #2671f0;
+    text-align: center;
+    font-weight: bold;
+    font-weight: 600; 
+    font-family: "Homer Simpson", cursive; 
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #DADADA ),to( #eee ));
+    background-image: -webkit-linear-gradient( #DADADA,#eee );
+    background-image: -moz-linear-gradient( #DADADA,#eee );
+    background-image: -ms-linear-gradient( #DADADA,#eee );
+    background-image: -o-linear-gradient( #DADADA,#eee );
+    background-image: linear-gradient( #DADADA,#eee );
+    border-color: #DADADA;
+}
+
+#botoncor:hover{
+    background: #9ec0f8;
+    cursor: pointer;
+    box-shadow: inset 2 2 10px #ffffff;
+    
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #a6d9f2 ),to( #0071bc ));
+    background-image: -webkit-linear-gradient( #a6d9f2,#0071bc );
+    background-image: -moz-linear-gradient( #a6d9f2,#0071bc);
+    background-image: -ms-linear-gradient( #a6d9f2,#0071bc);
+    background-image: -o-linear-gradient( #a6d9f2,#0071bc );
+    background-image: linear-gradient( #a6d9f2,#0071bc );
+    border-color: #0071bc;
+}
+
+#botoncor:active{
+    position: relative;
+    top: 2px;
+}
+
+#resultados{
+    text-align: center;
+    color: red;
+}

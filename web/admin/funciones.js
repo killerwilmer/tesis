@@ -29,7 +29,7 @@ p.ready(inicializarEventosp);
 function inicializarEventosp()
 {
     var x;
-    x=$("#btn1");
+    x=$("#enviarp");
     x.click(presionSubmitp);
 }
 
@@ -108,6 +108,35 @@ function presionSubmitusu()
     },llegadaDatos); 
     return false;
 }
+
+
+//////////////////Agregar Coordinador////////////////////////
+
+var cdr;
+cdr=$(document);
+cdr.ready(inicializarEventocoor);
+
+function inicializarEventocoor()
+{
+    var x;
+    x=$("#botoncor");
+    x.click(presionSubmitcoor);
+}
+
+function presionSubmitcoor()
+{
+    var nombrecoor=$("#inputString").attr("value");
+    var nomprograma=$("#comboprograma").attr("value");
+    var estado=$("#sizeSmall").attr("value");   
+  
+    $.get("insertarcoordinador.jsp",{
+        idnombrescordinador:nombrecoor,
+        idprograma:nomprograma,
+        idestadoa:estado     
+    },llegadaDatos); 
+    return false;
+}
+
 
 
 

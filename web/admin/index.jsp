@@ -33,6 +33,14 @@
                     $("#wraper").load('addusuario.jsp');
                     $.getScript('js/b.js');
                 });
+                $(".boton3").click(function(event) {
+                    $("#wraper").load('addcoordinador.jsp');
+                    $.getScript('js/b.js');
+                });
+                $(".modif").click(function(event) {
+                    $("#wraper").load('menumodificar.jsp');
+                    $.getScript('js/b.js');
+                });
             });
         </script>
             
@@ -50,11 +58,11 @@
                                     <li><a href="#" class="boton"><span>Facultades</span></a></li>
                                     <li><a href="#" class="boton1"><span>Programas</span></a></li>
                                     <li><a href="#" class="boton2"><span>Usuarios</span></a></li>
-                                    <li><a href="#"><span>Otros</span></a></li>
+                                    <li><a href="#" class="boton3"><span>Coordinador</span></a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#" id="123"><span id="123">JavaScript</span></a></li>
+                        <li><a href="#" class="modif"><span>Modificar</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Graphic Design</span></a></li>
                         <li><a href="#"><span>HTML</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>User Interface</span></a></li>
