@@ -15,7 +15,7 @@
         <title>JSP Page</title>
         
         <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/estiloFormularios.css" />
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script type="text/javascript" src="funciones.js"></script>
     </head>
     <body>

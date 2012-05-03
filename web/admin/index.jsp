@@ -7,6 +7,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+ <%@page import="com.umariana.control.ConectaDb" %>
+ <% ConectaDb control = new ConectaDb(); %>
+ <% 
+      HttpSession sesionOk = request.getSession();
+      String estudiante = (String) sesionOk.getAttribute("administrador") ;    
+ %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,10 +21,8 @@
 
         <title>Plataforma Admin</title>
         
-         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script>
-        <script type="text/javascript" src="../recursos/Js/Coordinador/win7.js"></script>
         
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
+         <script src="../recursos/Js/jquery-1.7.1.js"></script>
         
         <script type="text/javascript">
             $(document).ready(function() {

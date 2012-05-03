@@ -18,57 +18,29 @@
         <title>JSP Page</title>
         
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
-        <link rel="stylesheet" href="../recursos/Css/Coordinador/formLight.css" type="text/css" media="all" />
-        
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script>
-        <script type="text/javascript" src="../recursos/Js/Coordinador/win7.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="../recursos/Js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="funciones.js"></script>
 
-        
-        <script type="text/javascript">
-             campoNuevo = 3;
-             //Funcion de agregar campos
-             function AgregarCampos() {
-                 campoNuevo = campoNuevo + 1;
-                 campo = '<br/><div><label>Etapa ' + campoNuevo + ' </label><input type="text" size="25" name="etapa' + campoNuevo + '"  /></div>';
-                 $("#cont").append(campo);
-             }
-             //
-        </script>
     </head>
     <body onload="formu.etapa1.focus()">
-        <form method="post" id="formu">
-            <h1>Etapas del Proceso de Investigación</h1>
-            
+        <form id="formu">
+            <br/>
+            <h1>Etapas del Proceso de Investigación</h1>        
             <fieldset id="fiel">
-                Etapa 1 <input type="text" name="etapa1" maxlength="100"/><br/><br/>
-                Etapa 2 <input type="text" name="etapa2" maxlength="100"/><br/><br/>
-                Etapa 3 <input type="text" name="etapa3" maxlength="100"/>
-                <div id="cont"></div><br/><br/>
-            
-                <span class="win7 win7blue" name="enviar"><a href="#" >Guardar</a></span>
-                <span class="win7 win7yellow" onclick="AgregarCampos(this);"><a href="#">Agregar Campo</a></span>
-      
+                Nombre <input type="text" name="etapa" id="etapa" maxlength="100"/><br/>
+                <span>
+                <select id="comboprograma" name="comboprograma">
+                    <option selected="" value="*">Seleccione Programa</option>
+                    <%
+                        out.print(cont.comboprograma("programa"));
+                    %>
+                </select>
+                </span><br/><br/>
+                <span><input id="enviar" type="submit" value="Guardar" name="enviar"/></span>
+                <br/>
+                <div id="resultados" >
+                </div>
             </fieldset>
         </form> 
     </body>
 </html>
-
-
-<%
-            if (request.getParameter("enviar") != null)
-            {
-                String etapa1 = request.getParameter("etapa1");
-                String etapa2 = request.getParameter("etapa2");
-                String etapa3 = request.getParameter("etapa3");
-                
-                String SqlInsert = "insert into personas values('" + etapa1 + "','" + etapa2 + "','" + etapa3 + "');";
-                    
-                    if (cont.ejecutarOperacion(SqlInsert)) {
-                        out.print("<script lenguage=>'Javascript'> alert('Datos Insertados Correctamente')</script>");
-                    } else {
-                        out.print("<script lenguage=>'Javascript'> alert('Error al insertar los datos')</script>");
-                    }
-            }
-                
-%>

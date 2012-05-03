@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
-    Created on : 26-oct-2011, 15:11:13
-    Author     : zzz
+    Created on : 29-abr-2012, 12:37:20
+    Author     : usuarui
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,7 +10,7 @@
  <% ConectaDb control = new ConectaDb(); %>
  <% 
       HttpSession sesionOk = request.getSession();
-      String estudiante = (String) sesionOk.getAttribute("coordinador") ;
+      String estudiante = (String) sesionOk.getAttribute("docente") ;
       
       String inicio = "select ";
       String campo = "nombreprograma";
@@ -20,35 +20,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/index.css" />
-
-        <title>Plataforma Coordinador</title>
+        <title>Plataforma Docente</title>
+        <link rel="stylesheet" type="text/css" href="../recursos/Css/Docente/index.css" />
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $(".boton").click(function(event) {
-                    $("#wraper").load('formEtapa.jsp');
-                    $.getScript('js/b.js');
-                });
-                
-                $(".boton2").click(function(event) {
-                    $("#wraper").load('grupoInvestigacion.jsp');
-                    $.getScript('js/b.js');
-                });
-                
-                $(".boton3").click(function(event) {
-                    $("#wraper").load('registroAspectos.jsp');
-                    $.getScript('js/b.js');
-                });
-                
-                $(".boton4").click(function(event) {
-                    $("#wraper").load('proyecto.jsp');
-                    $.getScript('js/b.js');
-                });
-            });
-        </script>
-            
     </head>
     <body>
         <div id="contenedor">
@@ -63,7 +37,7 @@
                                     <li><a href="#" class="boton"><span>Etapas</span></a></li>
                                     <li><a href="#" class="boton2"><span>G. Investigación</span></a></li>
                                     <li><a href="#" class="boton3"><span>Aspectos</span></a></li>
-                                    <li><a href="#" class="boton4"><span>Proyecto</span></a></li>
+                                    <li><a href="#"><span>Otros</span></a></li>
                                 </ul>
                             </div>
                         </li>

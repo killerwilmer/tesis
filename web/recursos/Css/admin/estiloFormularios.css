@@ -10,6 +10,15 @@
    TODO customize this sample style
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
+body{
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #d1ccbf ),to( #eee ));
+    background-image: -webkit-linear-gradient( #d1ccbf,#eee );
+    background-image: -moz-linear-gradient( #d1ccbf,#eee );
+    background-image: -ms-linear-gradient( #d1ccbf,#eee );
+    background-image: -o-linear-gradient( #e8ed60,#eee );
+    background-image: linear-gradient( #e8ed60,#eee );
+    border-color: #e8ed60;
+}
 fieldset#fiel{
     border-radius:10px;
     width: 270px;
@@ -57,11 +66,13 @@ input[type="text"]{
 
 input:focus{
     border-radius:5px;
-    color:#000;
     outline:none;
     box-shadow: 0 0 7px rgba(0, 0, 255, 1);
     -webkit-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
     -moz-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
+     transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
 }
 
 #enviar, #enviarp{
@@ -111,9 +122,6 @@ input:focus{
     color: red;
 }
 
-body{
-    background: ghostwhite;
-}
 
 .spacer{clear:both; height:1px;}
 /* ———– My Form ———– */
@@ -258,6 +266,7 @@ select#combofacultades{
     -moz-width:240px;
     border-radius: 4px;
     outline: none;
+    border:solid 1px #aacfe4;
 }
 
 #stylized #resultados{

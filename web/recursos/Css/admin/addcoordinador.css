@@ -6,46 +6,7 @@
         Purpose of the stylesheet follows.
 */
 
-.suggestionsBox {
-    position: absolute;
-    left: 600px;
-    margin: 0px 0px 0px 0px;
-    width: 250px;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #DADADA ),to( #eee ));
-    background-image: -webkit-linear-gradient( #DADADA,#eee );
-    background-image: -moz-linear-gradient( #DADADA,#eee );
-    background-image: -ms-linear-gradient( #DADADA,#eee );
-    background-image: -o-linear-gradient( #DADADA,#eee );
-    background-image: linear-gradient( #DADADA,#eee );
-    border-radius: 5px;
-    border:solid 1px #aacfe4;
-    text-transform: capitalize;
-}
-
-.suggestionList {
-    margin: 0px;
-    padding: 0px;
-}
-
-.suggestionList li {
-    margin: 0px 0px 3px 0px;
-    padding: 3px;
-    padding-left: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    list-style:none;
-}
-
-.suggestionList li:hover {
-    background-color: #444444;
-    border-radius: 5px;
-    color: #ffffff;
-    text-decoration: none;
-    list-style:none;
-}
-
 #fiel{
-    width: auto;
     background: #add8e6  url(../../Imagenes/Coordinador/images/blanco.png); 
     border-radius: 10px;
     border: 0px;
@@ -58,25 +19,75 @@
     padding-left: 20px;
 }
 
-input{
+input[type="text"]{
     font-size:12px;
     padding:5px;
     border:solid 1px #aacfe4;
     width:250px;
-    margin:2px 0 8px 10px;
+    margin-left: 10px;
     border-radius: 8px;
     outline: none;
+    text-transform: capitalize;
 }
 
-input:focus{
+.ac_over {
+	background-color: #5b5350;
+	color: #ffffff;
+        border-radius: 5px;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: pointer;
+	display: block;
+	color: black;
+	font-family:Arial, Helvetica, sans-serif;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font-size: 10px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+        text-transform: capitalize;
+}
+
+.ac_results {
+	padding: 0px;
+	background-color: white;
+	overflow: hidden;
+        border-radius: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-transform: capitalize;
+}
+
+input[type="text"]:focus{
     color:#000;
     outline:none;
     box-shadow: 0 0 7px rgba(0, 0, 255, 1);
     -webkit-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
     -moz-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
+     transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
 }
 
-h1 {
+#coor{
     font-weight:bold;
     margin-bottom:30px;
     padding-bottom:10px;
@@ -97,13 +108,13 @@ h1 {
 
 select{
     font-size: 12px;
-    padding: 4px 2px;
+    padding: 5px;
     border: solid 1px #aacfe4;
     margin: 0 auto;
-    width: 200px;
+    width: 260px;
     border-radius: 6px;
     outline: none;
-    margin-left: 150px;
+    margin-left: 125px;
     margin-top: 6px;
     text-transform: capitalize;
 }
@@ -124,6 +135,10 @@ select{
     width: 15px; 
     float: left; 
     margin-left: 43%;
+}
+
+#nom{
+    margin-left: 33px;
 }
 
 #botoncor{

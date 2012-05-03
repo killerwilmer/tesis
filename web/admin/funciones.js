@@ -125,7 +125,7 @@ function inicializarEventocoor()
 
 function presionSubmitcoor()
 {
-    var nombrecoor=$("#inputString").attr("value");
+    var nombrecoor=$("#country").attr("value");
     var nomprograma=$("#comboprograma").attr("value");
     var estado=$("#sizeSmall").attr("value");   
   
@@ -136,8 +136,6 @@ function presionSubmitcoor()
     },llegadaDatos); 
     return false;
 }
-
-
 
 
 function llegadaDatos(datos)
