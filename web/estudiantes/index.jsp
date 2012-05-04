@@ -6,6 +6,7 @@
  <%@ page session="true" %>
 
  <%@page import="com.umariana.control.ConectaDb" %>
+ <%@ taglib uri="http://ckeditor.com" prefix="ckeditor" %>
  <% ConectaDb control = new ConectaDb(); %>
  
  <% 
@@ -62,6 +63,11 @@
                 </div>
             </div>
             <div id="wraper">
+                            <form method="post" name="form" action="">
+                <textarea cols="30" rows="2" name="content" id="content">
+                </textarea><br />
+            </form>
+            <ckeditor:replace replace="content" basePath="/ckeditor/" />
             </div>
             <!--object type="text/html" data="Coordinador/formEtapa.jsp" style="width: 400px; height: 400px"> </object--> 
             <div id="footer">
