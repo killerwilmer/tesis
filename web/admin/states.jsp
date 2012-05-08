@@ -14,11 +14,11 @@
     //System.out.println("1"+request.getParameterNames().nextElement());
     response.setHeader("Content-Type", "text/html");
     try {
-        String sql = "select nombres, apellidos from usuario where lower(nombres) LIKE '%" + str.toLowerCase() + "%' LIMIT 10";
+        String sql = "select nombres, apellidos, idusuario from usuario where lower(nombres) LIKE '%" + str.toLowerCase() + "%' LIMIT 10";
         //System.out.print(sql);
         ResultSet rs = control.consultas(sql);
         while (rs.next()) {
-            out.print(rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim() + "\n");
+            out.print(rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim() + "\n"+ "</td><input type='hidden' name='idUsu' value=" + rs.getString("idusuario") + "/>");
         }
     } catch (Exception e) {
         out.println("Exception is ;" + e);

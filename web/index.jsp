@@ -120,7 +120,7 @@
     <body style="background: url(recursos/Imagenes/index/transparente.png) repeat-x, repeat-y, #D3F0FA">
         <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x; position: relative">            
             <header class="wrapper0">
-                <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Titulo Logo</h1>            
+                <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Procesos de Investigación</h1>            
                 <div id="container2">
                     <div id="loginContainer">
                         <a href="#" id="loginButton"  onClick="foco('email');"><span>Login</span></a>           

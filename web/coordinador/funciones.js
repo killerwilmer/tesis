@@ -13,7 +13,6 @@ function inicializarEventos()
 
 function presionSubmit()
 {
-    var a=$("#codigo").attr("value");
     var b=$("#titulop").attr("value");
     var c=$("#tituloabreviado").attr("value");
     var d=$("#institucion").attr("value");
@@ -24,7 +23,6 @@ function presionSubmit()
     var i=$("#activo").attr("value");
 
     $.get("addproyecto.jsp",{
-        codigo:a,
         titulo:b,
         titucorto:c,
         institu:d,

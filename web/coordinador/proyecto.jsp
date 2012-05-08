@@ -43,7 +43,7 @@
         <h1 id="titulos">Registro Proyecto</h1>
         <form id="formularioproy">
             <fieldset id="fieladdproyecto">
-                Codigio<input type="text" name="codigo" id="codigo"/><br/>
+               
                 Titulo<input type="text" name="titulop" id="titulop"/><br/>
                 Titulo Abreviado<input type="text" name="tituloabreviado" id="tituloabreviado"/><br/>
                 Institución<input type="text" name="institucion"  id="institucion"/>

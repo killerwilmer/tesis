@@ -23,7 +23,6 @@ html {
     -webkit-text-size-adjust: 100%; 
     -ms-text-size-adjust: 100%; 
     text-size-adjust: 100%;
-    overflow-x: hidden;
 }
 
 body { 
@@ -31,7 +30,7 @@ body {
     font-size: 13px; 
     line-height: 1.231; 
     width: 100%;
-    min-width:600px;
+    min-width:980px;
 }
 
 body, button, input, select, textarea { 
@@ -133,10 +132,16 @@ h3{
 }
 
 #title{
-    font-size: 60px;
+    font-size: 50px;
     color:white;
     float:left;
     margin-top: 25px;
+    text-shadow: 0 1px 0 #7e7372,
+               0 2px 0 #7e7372,
+               0 3px 0 #7e7372,
+               0 4px 0 #7e7372,
+               0 5px 0 #7e7372;
+    font-family: "Homer Simpson", cursive; 
 }
 
 #logotipo{
@@ -149,7 +154,7 @@ h3{
 
 header nav{
     float:right;
-    margin-top:100px;
+    margin-top:-20px;
 }
 
 header nav ul li{
@@ -280,7 +285,7 @@ a {
 
 #loginButton { 
     display:inline;
-    float:right;
+    float:left;
     background:#339cdf; 
     -webkit-border-radius:15px;
     -moz-border-radius:15px;
@@ -290,7 +295,7 @@ a {
     z-index:30;
     color:white;
     cursor:pointer;
-    margin: 140px 0px -10px -296px;
+    margin: 140px 0px -10px -380px;
     -webkit-box-shadow: inset 5px 5px 10px #ffffff; 
     -moz-box-shadow: inset 5px 5px 10px #ffffff; 
     -o-box-shadow: inset 5px 5px 10px #ffffff;  
@@ -348,7 +353,7 @@ a {
     display:none;
     z-index:29;
     margin-top:155px;
-    margin-right:-88px;
+    margin-right:215px;
 }
 
 

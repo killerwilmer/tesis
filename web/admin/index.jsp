@@ -68,10 +68,9 @@
                             </div>
                         </li>
                         <li><a href="#" class="modif"><span>Modificar</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Graphic Design</span></a></li>
-                        <li><a href="#"><span>HTML</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>User Interface</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>CSS</span></a></li>
+                        <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Reportes</span></a></li>
+                        <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>Noticias</span></a></li>
+                        <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>Eventos</span></a></li>
                     </ul>
                 </div>
             </div>
