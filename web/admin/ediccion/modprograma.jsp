@@ -18,9 +18,9 @@
         
         <script type="text/javascript">
             $(document).ready(function(){
-                $("#combofacultades").click(function(){
+                $("#comboprograma").click(function(){
                     var codigo = $(this).val()
-                    $("#salida").load('ediccion/listafacultad.jsp?codigo='+codigo);
+                    $("#salida").load('ediccion/listaprograma.jsp?codigo='+codigo);
                     $("#salida").slideDown();
                 });
             });
@@ -29,10 +29,10 @@
     <body>
         <fieldset id="combomodfac">
             <span>
-                <select id="combofacultades" name="combofacultades">
-                    <option selected="">Seleccione Facultad a Modificar</option>
+                <select id="comboprograma" name="comboprograma">
+                    <option selected="" value="*">Seleccione Programa a Modificar</option>
                     <%
-                        out.print(control.combo("facultad"));
+                      out.print(control.comboprograma("programa"));
                     %>
                 </select>
             </span>

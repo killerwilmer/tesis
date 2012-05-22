@@ -49,7 +49,7 @@
                 Institución<input type="text" name="institucion"  id="institucion"/>
                 <span>
                     Etapa<select id="comboestado" name="comboestado">
-                        <option selected="">Seleccione Etapa</option>
+                        <option selected="" value="*">Seleccione Etapa</option>
                         <%
                             out.print(control.comboestado("etapa"));
                         %>
@@ -62,7 +62,7 @@
                 </div>
                 Tipo
                 <select id="tipo" name="tipo"  class="required">
-                    <option selected="">Seleccione Tipo</option>
+                    <option selected="" value="*">Seleccione Tipo</option>
                     <option value="trbajogrado">Trabajo de Grado</option>
                 </select><br/><br/><span id="radios">
                 Activo<input type="radio" name="estado" id="activo" value="1">

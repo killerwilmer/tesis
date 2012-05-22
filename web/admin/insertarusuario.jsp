@@ -6,7 +6,16 @@
 
 <%@page import="com.umariana.control.ConectaDb"%>
 <% ConectaDb control = new ConectaDb();%>
-
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="../estudiantes/resources/css/jquery.toastmessage.css" rel="stylesheet"/>
+        <script type="text/javascript" src="../estudiantes/jquerymin.js"></script>
+        <script type="text/javascript" src="../estudiantes/javascript/jquery.toastmessage.js"></script>
+        <script type="text/javascript" src="../recursos/Js/mensajespoput.js"></script>
+        <title>JSP Page</title>       
+    </head>
+    <body>
 <%
       
     String idtipousuario = request.getParameter("comtusu");
@@ -31,9 +40,35 @@
     String contraseña = request.getParameter("clave");
 
 
-    if ((nombres.length() == 0) || (apellidos.length() == 0) || (identificacion.length() == 0) || (contraseña.length() == 0)|| (codigofaculta.length() == 0) || (nombrefaculta.length() == 0) || (codigoprograma.length() == 0) || (nombrePrograma.length() == 0) || (email.length() == 0)) {
-            out.print("Faltan datos");
-        } else {
+    if ((nombres.length() == 0)) {
+            out.print("<script languaje = javascript>showWarningToast('Digite Nombre');</script>");
+        }else if ((apellidos.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Apellidos');</script>");
+        }else if ((identificacion.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Identificación');</script>");
+            }else if ((contraseña.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Contraseña');</script>");
+            }else if ((idtipousuario.equals("*"))) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione un Tipo Usuario');</script>");
+            }else if ((genero.equals("*"))) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione un Genero');</script>");
+            }else if ((codigofaculta.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Codigo Facultad');</script>");
+            }else if ((nombrefaculta.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Nombre Facultad');</script>");
+            }else if ((codigoprograma.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Codigo Programa');</script>");
+            }else if ((nombrePrograma.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Nombre Programa');</script>");
+            }else if ((estadocivil.equals("*"))) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione su Estado Civil');</script>");
+            }else if ((email.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Su E-Mail');</script>");
+            }else if ((rh.equals("*"))) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione un RH');</script>");
+            }
+
+            else {
             String SqlIdenumero = "Select * from usuario where codigousuario = '" + identificacion + "'";
             String SQLIdenfacultad = "Select codigofacultad from facultad where codigofacultad ='" + codigofaculta + "'";
             String SQLIdenprograma = "Select codigoprograma from programa where codigoprograma ='" + codigoprograma + "'";
@@ -48,18 +83,20 @@
                 control.ejecutarOperacion(SqlInsertprograma);
             }
             if (control.iden(SqlIdenumero)) {
-                out.print("Ya Existe Usuario");
+               out.print("<script languaje = javascript>showNoticeToast('Usuario ya existe');</script>");
             } else {
                 int numero = Integer.parseInt(idtipousuario);
                 String SqlInsert = "insert into usuario (idtipousuario,codigousuario,genero,estadocivil,codigociudad,nombreciudad,fechanacimiento,nombres,apellidos,codigoprograma,nombreprograma,codigofacultad,nombrefacultad,direccioncasa,email,celular,telefono,eps,rh,contrasena)"
                         + " values('" + numero + "','" + identificacion + "','" + genero + "','" + estadocivil + "','" + codigociudad + "','" + nombreciudad + "','" + fechanaciomiento + "','" + nombres + "','" + apellidos + "','" + codigoprograma + "','" + nombrePrograma + "','" + codigofaculta + "','" + nombrefaculta + "','" + direccion + "','" + email + "','" + numcelular + "','" + numtelcasa + "','" + eps + "','" + rh + "','" + contraseña + "');";
 
                 if (control.ejecutarOperacion(SqlInsert)) {
-                    out.print("Datos Insertados Correctamente");
+                     out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
                 } else {
-                    out.print("Error al Insertar los Datos");
+                     out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
                 }
             }
         }
 
 %>
+    </body>
+</html>

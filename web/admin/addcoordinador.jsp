@@ -32,7 +32,7 @@
             <label id="nom">Digite Nombre</label><input type="text" id="country" name="country" class="input_text"/> <br/> 
             <span>
                 <select id="comboprograma" name="comboprograma">
-                    <option selected="">Seleccione Programa</option>
+                    <option selected="" value="*">Seleccione Programa</option>
                     <%
                         out.print(control.comboprograma("programa"));
                     %>

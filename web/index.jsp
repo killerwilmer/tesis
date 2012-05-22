@@ -15,8 +15,72 @@
         <title>Herramienta para los procesos de Investigación</title>
         
         <link rel="stylesheet" href="recursos/Css/index.css" type="text/css" media="screen" />
-        
+        <link type="text/css" href="estudiantes/resources/css/jquery.toastmessage.css" rel="stylesheet"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="estudiantes/javascript/jquery.toastmessage.js"></script>
+        <script type="text/javascript">
+
+            function showSuccessToast(mensaje) {
+                $().toastmessage('showSuccessToast', mensaje);
+            }
+            function showStickySuccessToast() {
+                $().toastmessage('showToast', {
+                    text     : 'Success Dialog which is sticky',
+                    sticky   : true,
+                    position : 'middle-center',
+                    type     : 'success',
+                    closeText: '',
+                    close    : function () {
+                        console.log("toast is closed ...");
+                    }
+                });
+
+            }
+            function showNoticeToast(mensaje) {
+                $().toastmessage('showNoticeToast', mensaje);
+            }
+            function showStickyNoticeToast() {
+                $().toastmessage('showToast', {
+                    text     : 'Notice Dialog which is sticky',
+                    sticky   : true,
+                    position : 'middle-center',
+                    type     : 'notice',
+                    closeText: '',
+                    close    : function () {console.log("toast is closed ...");}
+                });
+            }
+            function showWarningToast(mensaje) {
+                $().toastmessage('showWarningToast', mensaje);
+            }
+            function showStickyWarningToast() {
+                $().toastmessage('showToast', {
+                    text     : 'Warning Dialog which is sticky',
+                    sticky   : true,
+                    position : 'middle-center',
+                    type     : 'warning',
+                    closeText: '',
+                    close    : function () {
+                        console.log("toast is closed ...");
+                    }
+                });
+            }
+            function showErrorToast(mensaje) {
+                $().toastmessage('showErrorToast', mensaje);
+            }
+            function showStickyErrorToast() {
+                $().toastmessage('showToast', {
+                    text     : 'Error Dialog which is sticky',
+                    sticky   : true,
+                    position : 'top-center',
+                    type     : 'error',
+                    closeText: '',
+                    close    : function () {
+                        console.log("toast is closed ...");
+                    }
+                });
+            }
+
+        </script>
              
         <!--para el logeo-->
         <script src="recursos/Js/login.js" type="text/javascript"></script>
@@ -106,7 +170,15 @@
         <!--para tooltip--> 
         <script type="text/javascript">
             $(function() {
-                $("#loginForm :input").tooltip({
+                $("#loginForm :input[type='text']").tooltip({
+                    position: "center right",
+                    offset: [-2, 10],
+                    effect: "fade",
+                    opacity: 0.8
+                });
+            });
+               $(function() {
+                $("#loginForm :input[type='password']").tooltip({
                     position: "center right",
                     offset: [-2, 10],
                     effect: "fade",
@@ -114,6 +186,10 @@
                 });
             });
         </script>
+        
+        <!--Para mensajes de aleartas-->
+        
+        
                   
     </head>
               
@@ -137,7 +213,7 @@
                                         <input type="password" name="password" title="Try to make it hard to guess." class="pas" id="password"/>
                                     </fieldset>
                                     <label for="checkbox"><input type="checkbox" id="checkbox" />Recordarme</label>
-                                    <input type="submit" id="login"  value="Iniciar" />
+                                    <input type="submit" id="logueo"  value="Iniciar" />
                                 </fieldset>
                                 <span><a href="#">¿Olvidaste tu contraseña?</a></span>
                             </form>                                                                   
@@ -160,7 +236,8 @@
                        <%
                         if(request.getParameter("error")!=null)
                         {
-                            out.println(request.getParameter("error"));               
+                            String mensa = request.getParameter("error");  
+                            out.print("<script languaje = javascript>showWarningToast("+ mensa +");</script>");                                        
                         }
                        %>
            </div>

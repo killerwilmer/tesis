@@ -59,13 +59,13 @@ div#header{
 
 div#wraper{
     height: 500px;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #ffebcd ),to( #ffffff ));
-    background-image: -webkit-linear-gradient( #ffebcd,#ffffff );
-    background-image: -moz-linear-gradient( #ffebcd,#ffffff );
-    background-image: -ms-linear-gradient( #ffebcd,#ffffff );
-    background-image: -o-linear-gradient( #ffebcd,#ffffff );
-    background-image: linear-gradient( #ffebcd,#ffffff);
-    border-color: #ffebcd;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #feb2b2 ),to( #ffffff ));
+    background-image: -webkit-linear-gradient(#feb2b2,#ffffff );
+    background-image: -moz-linear-gradient( #feb2b2,#ffffff );
+    background-image: -ms-linear-gradient( #feb2b2,#ffffff );
+    background-image: -o-linear-gradient( #feb2b2,#ffffff );
+    background-image: linear-gradient( #feb2b2,#ffffff);
+    border-color: #feb2b2;
     margin-bottom: 10px;
     margin-top: 0px;
     border-radius:10px;

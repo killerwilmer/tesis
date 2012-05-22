@@ -463,7 +463,7 @@ fieldset#body {
     border:0;
 }
 
-#loginForm #login {
+#loginForm #logueo {
     width:auto;
     float:right;
     background:#339cdf;
@@ -477,7 +477,7 @@ fieldset#body {
     -webkit-box-shadow: inset 0 0 10px #E4E4E4;
 }
 
-#loginForm #login:hover{
+#loginForm #logueo:hover{
     background: green;
     opacity:0.8;
     color: black;

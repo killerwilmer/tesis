@@ -8,7 +8,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="javax.naming.spi.DirStateFactory.Result"%>
 <%@page import="com.umariana.control.ConectaDb"%>
-<% ConectaDb control = new ConectaDb(); %>
+<% ConectaDb control = new ConectaDb();%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,29 +16,32 @@
         <title>JSP Page</title>
         <link rel="stylesheet" type="text/css" href="../../recursos/Css/admin/estiloFormularios.css" />
         <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/estiloFormularios.css" />
+        <script src="../recursos/Js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="../admin/ediccion/funcionesModificar.js"></script>
+        
     </head>
     <body>
-        
-            <fieldset id="fiel">
-                
-                <%
-                        String idfacultad = request.getParameter("codigo");
-                        int numero =Integer.parseInt(idfacultad);
-                        String sqlString = "select *  from  facultad where idfacultad = '"+numero+"'";
 
-                        ResultSet resultado = control.consultas(sqlString);
+        <fieldset id="fiel">               
+            <%
+                String idfacultad = request.getParameter("codigo");
+                int numero = Integer.parseInt(idfacultad);
+                String sqlString = "select *  from  facultad where idfacultad = '" + numero + "'";
 
-                        while (resultado.next()) {
-                            out.print(" Codigio<input type='text' name='codigo' maxlength='100' id='codigo' value='"+ resultado.getString("codigofacultad") +"'/>");
-                            out.print(" Nombre<input type='text' name='facultad1' maxlength='100' id='facultad1' value='"+ resultado.getString("nombrefacultad") +"'/>");
-                            out.print("<br/>");out.print("<br/>");
-                            out.print("<span><input id='enviar' type='submit' value='Modificar' name='enviar'/></span>");
-                            out.print("<br/>");
-                            out.println("<a href=eliminarfacultad.jsp?cod=" + resultado.getString("codigofacultad") + ">" +"<img id='imagen' alt='img' src='../recursos/Imagenes/admin/eliminarv.png'>"+ "</a>");
-            
-                        }
-                %>
+                ResultSet resultado = control.consultas(sqlString);
 
-            </fieldset>
+                while (resultado.next()) {
+                    out.print(" <input type='hidden' name='idf' id='idf' value='" + numero + "'/>");
+                    out.print(" Codigio<input type='text' name='codigo' id='codigo' value='" + resultado.getString("codigofacultad") + "'/>");
+                    out.print(" Nombre<input type='text' name='facultad1' id='facultad1' value='" + resultado.getString("nombrefacultad") + "'/>");
+                    out.print("<br/>");
+                    out.print("<br/>");
+                    out.print("<span><input id='enviar' type='submit' value='Modificar' name='enviar'/></span>");
+                    out.print("<br/>");
+                    out.println("<a href='#' id='eliminar' name='eliminar'>" + "<img id='imagen' alt='img' src='../recursos/Imagenes/admin/eliminarv.png'>" + "</a>");
+                    out.print("<div id='resultados'></div>");
+                }
+            %>
+        </fieldset>
     </body>
 </html>

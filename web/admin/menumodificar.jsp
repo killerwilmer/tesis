@@ -19,6 +19,10 @@
                     $("#contenido2").load('ediccion/modificarfacultad.jsp');
                     $.getScript('js/b.js');
                 });
+                $("#programa").click(function(event) {
+                    $("#contenido2").load('ediccion/modprograma.jsp');
+                    $.getScript('js/b.js');
+                });
             });
         </script>
         

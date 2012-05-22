@@ -67,7 +67,7 @@
             <label>Tipo Usuario</label>
             <span>
                 <select id="combotusuario" name="combotusuario" class="{required:true}">
-                    <option selected="" style="border-radius: 4px">Seleccione T. Usuario</option>
+                    <option selected="" value="*" style="border-radius: 4px">Seleccione T. Usuario</option>
                     <%
                         out.print(control.combo("tipousuario"));
                     %>
@@ -76,7 +76,7 @@
 
             <label>Genero</label>
             <select id="genero" name="genero"  class="required">
-                <option selected="">Seleccione su Genero</option>
+                <option selected="" value="*">Seleccione su Genero</option>
                 <option value="masculino">MASCULINO</option>
                 <option value="femenino">FEMENINO</option>
             </select>  
@@ -101,7 +101,7 @@
             
             <label>Estado Civil</label>
             <select id="estadocivil" name="estadocivil">
-                <option selected="">Seleccione su Estado</option>
+                <option selected="" value="*">Seleccione su Estado</option>
                 <option value="soltero">Soltero</option>
                 <option value="casado">Casado</option>
                 <option value="unionlibre">Union Libre</option>
@@ -129,7 +129,7 @@
             
             <label>RH</label>
             <select id="rh" name="rh" class="{required:true}">
-                <option selected="">Seleccione su Tipo</option>
+                <option selected="" value="*">Seleccione su Tipo</option>
                 <option value="O-">O-</option>
                 <option value="O+">O+</option>
                 <option value="A−">A-</option>

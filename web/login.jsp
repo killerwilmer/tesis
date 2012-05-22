@@ -1,6 +1,7 @@
  <%@ page session="true" %>
  <%@page import="com.umariana.control.ConectaDb" %>
  <% ConectaDb control = new ConectaDb(); %>
+ 
 <%
 String usuario = "";
 String clave = "";
@@ -102,3 +103,6 @@ else
         <%
 }
 %>
+   
+ 
+

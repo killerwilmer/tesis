@@ -27,7 +27,7 @@
             <br/><br/>
             <span>
                 <select id="combofacultades" name="combofacultades">
-                    <option selected="">Seleccione Facultad</option>
+                    <option selected="" value="*">Seleccione Facultad</option>
                     <%
                         out.print(control.combo("facultad"));
                     %>
