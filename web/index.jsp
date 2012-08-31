@@ -13,10 +13,10 @@
     <head>       
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Herramienta para los procesos de Investigación</title>
-        
-        <link rel="stylesheet" href="recursos/Css/index.css" type="text/css" media="screen" />
+
+        <link rel="stylesheet" href="recursos/Css/index.css" type="text/css"/>
         <link type="text/css" href="estudiantes/resources/css/jquery.toastmessage.css" rel="stylesheet"/>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="estudiantes/jquerymin.js"></script>
         <script type="text/javascript" src="estudiantes/javascript/jquery.toastmessage.js"></script>
         <script type="text/javascript">
 
@@ -81,16 +81,16 @@
             }
 
         </script>
-             
+
         <!--para el logeo-->
         <script src="recursos/Js/login.js" type="text/javascript"></script>
-            
+
         <script type="text/javascript">
             function foco(idElemento){
                 document.getElementById(idElemento).focus();
             }
         </script>
-        
+
         <%-- Inicio de vinculacion Grey Box --%> 
         <script type="text/javascript">
             var GB_ROOT_DIR ="greybox/";
@@ -101,12 +101,12 @@
         <script type="text/javascript" src="recursos/Js/greybox/gb_scripts.js"></script>
         <link href="recursos/Js/greybox/gb_styles.css" rel="stylesheet" type="text/css" media="all" />
         <%-- Fin de vinculacion Grey Box --%>
-        
+
         <!--para noticia principal-->
         <script type="text/javascript" src="recursos/Js/jquery-1.3.2.js" ></script><!--problemaaaaaaaaaaaaa-->
         <script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
         <script type="text/javascript" src="recursos/Js/jquery.quickflip.js"></script>
-            
+
         <script type="text/javascript" >
             $('document').ready(function(){
                 $('#flip-container').quickFlip();         
@@ -125,16 +125,16 @@
             });
                      
         </script>
-        
+
         <!-- para noticias secundarias -->
         <script src="recursos/Js/jquery.li-scroller.1.0.js" type="text/javascript"></script>
-        
+
         <script language="javascript">
             $(function(){
                 $("ul#ticker01").liScroll();
             });    
         </script>
-        
+
         <!--para el scroll-->
         <script src="recursos/Js/jquery.timer.js" type="text/javascript"></script>
         <script src="recursos/Js/jquery.easing.1.3.js" type="text/javascript"></script>
@@ -145,10 +145,10 @@
                 $("#eventos").dwdinanews();
             })
         </script>
-        
+
         <!--para la zono del slip de fotos-->
         <script src="recursos/Js/jsCarousel-2.0.0.js" type="text/javascript"></script>
-        
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#carouselhAuto').jsCarousel({ 
@@ -157,16 +157,16 @@
                     orientation: 'h' });         
             });                 
         </script>
-        
+
         <!--para el popup de las imagenes--> 
         <script type="text/javascript" src="recursos/Js/jquery.lightbox-0.5.js"></script>
-        
+
         <script type="text/javascript">
             $(function() {
                 $('#carouselhAuto a').lightBox();
             });
         </script>
-        
+
         <!--para tooltip--> 
         <script type="text/javascript">
             $(function() {
@@ -177,7 +177,7 @@
                     opacity: 0.8
                 });
             });
-               $(function() {
+            $(function() {
                 $("#loginForm :input[type='password']").tooltip({
                     position: "center right",
                     offset: [-2, 10],
@@ -186,15 +186,20 @@
                 });
             });
         </script>
-        
+
         <!--Para mensajes de aleartas-->
-        
-        
-                  
+
+
+
     </head>
-              
+
     <body style="background: url(recursos/Imagenes/index/transparente.png) repeat-x, repeat-y, #D3F0FA">
-        <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x; position: relative">            
+        <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x; position: relative">
+            <%
+                String mensa = request.getParameter("error");
+                out.print(mensa);
+                out.print("<script lenguage=>'Javascript'> showNoticeToast('" + mensa + "');</script>");
+            %>
             <header class="wrapper0">
                 <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Procesos de Investigación</h1>            
                 <div id="container2">
@@ -220,7 +225,7 @@
                         </div>            
                     </div>
                 </div>                                
-                
+
                 <nav id="menu">
                     <ul>
                         <li><a href="#">Normas</a></li>
@@ -232,20 +237,12 @@
                     </ul>
                 </nav>
             </header>
-            <div id="errorSesion">
-                       <%
-                        if(request.getParameter("error")!=null)
-                        {
-                            String mensa = request.getParameter("error");  
-                            out.print("<script languaje = javascript>showWarningToast("+ mensa +");</script>");                                        
-                        }
-                       %>
-           </div>
-        </div>
-        
+
+
+        </div>        
 
         <div id="main" class="wrapper" style="background: url(recursos/Imagenes/index/blanco.png)">
-            
+
             <aside style="background: url(recursos/Imagenes/index/even.png) repeat-x;">
                 <h3 id="tituloEvento">Eventos</h3>
                 <div id="eventos">
@@ -323,7 +320,7 @@
                         </ul>  
                     </div>
                 </header>
-                
+
                 <div  id="nsecundarias">
                     <ul id="ticker01">
                         <li><img src="recursos/Imagenes/index/helicoptero_medico.png" style="float: left"/><span>10/10/2007</span>
@@ -347,78 +344,78 @@
                     </ul>
 
                 </div>
-                
+
                 <footer id="foot">
-                  <div id="demo-right">
-                    <div id="hWrapperAuto">
-                        <div id="carouselhAuto">
-                            <div>
-                                <a id="foto" href="recursos/Imagenes/images/img_1.jpg">
-                                   <img alt="" src="recursos/Imagenes/images/img_1.jpg" /><br/></a>
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_2.jpg">
-                                   <img alt="" src="recursos/Imagenes/images/img_2.jpg" /></a><br/>
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_3.jpg">
-                                   <img alt="" src="recursos/Imagenes/images/img_3.jpg" /></a><br/>
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_4.jpg">
-                                   <img alt="" src="recursos/Imagenes/images/img_4.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_5.jpg">
-                                   <img alt="" src="recursos/Imagenes/images/img_5.jpg"/></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_6.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_6.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_7.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_7.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_8.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_8.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_9.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_9.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_10.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_10.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_11.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_11.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_12.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_12.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_13.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_13.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_14.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_14.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_15.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_15.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
-                            <div>
-                                <a href="recursos/Imagenes/images/img_16.jpg">
-                                    <img alt="" src="recursos/Imagenes/images/img_16.jpg" /></a><br />
-                                <span class="thumbnail-text">Image Text</span></div>
+                    <div id="demo-right">
+                        <div id="hWrapperAuto">
+                            <div id="carouselhAuto">
+                                <div>
+                                    <a id="foto" href="recursos/Imagenes/images/img_1.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_1.jpg" /><br/></a>
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_2.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_2.jpg" /></a><br/>
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_3.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_3.jpg" /></a><br/>
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_4.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_4.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_5.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_5.jpg"/></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_6.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_6.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_7.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_7.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_8.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_8.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_9.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_9.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_10.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_10.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_11.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_11.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_12.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_12.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_13.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_13.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_14.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_14.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_15.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_15.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                                <div>
+                                    <a href="recursos/Imagenes/images/img_16.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/img_16.jpg" /></a><br />
+                                    <span class="thumbnail-text">Image Text</span></div>
+                            </div>
                         </div>
-                    </div>
-                  </div>   
+                    </div>   
                 </footer>           
             </article>
         </div>  
