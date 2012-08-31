@@ -195,11 +195,6 @@
 
     <body style="background: url(recursos/Imagenes/index/transparente.png) repeat-x, repeat-y, #D3F0FA">
         <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x; position: relative">
-            <%
-                String mensa = request.getParameter("error");
-                out.print(mensa);
-                out.print("<script lenguage=>'Javascript'> showNoticeToast('" + mensa + "');</script>");
-            %>
             <header class="wrapper0">
                 <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Procesos de Investigación</h1>            
                 <div id="container2">
