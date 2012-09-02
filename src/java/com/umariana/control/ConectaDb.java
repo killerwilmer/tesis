@@ -29,7 +29,7 @@ public class ConectaDb {
 
     public ConectaDb() {
         user = "postgres";
-        pass = "postgres007";
+        pass = "12345";
         driver = "org.postgresql.Driver";
         urlConectar = "jdbc:postgresql://localhost:5432/proyecto";
         try {

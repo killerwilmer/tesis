@@ -189,11 +189,30 @@
 
         <!--Para mensajes de aleartas-->
 
-
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".normas").click(function(event) {
+                    $("#main").load('normas.jsp');
+                    $.getScript('js/b.js');
+                });
+                $(".reglamentos").click(function(event) {
+                    $("#main").load('reglamentos.jsp');
+                    $.getScript('js/b.js');
+                });
+                $(".videos").click(function(event) {
+                    $("#main").load('videos.jsp');
+                    $.getScript('js/b.js');
+                });
+                $(".ayudas").click(function(event) {
+                    $("#main").load('normas.jsp');
+                    $.getScript('js/b.js');
+                });
+            });
+        </script>
 
     </head>
 
-    <body style="background: url(recursos/Imagenes/index/transparente.png) repeat-x, repeat-y, #D3F0FA">
+    <body style="background: #D3F0FA">
         <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x; position: relative">
             <header class="wrapper0">
                 <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Procesos de Investigación</h1>            
@@ -223,10 +242,11 @@
 
                 <nav id="menu">
                     <ul>
-                        <li><a href="#">Normas</a></li>
-                        <li><a href="#">Reglamentos</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">Ayudas</a></li>
+                        <li><a href="index.jsp" class="inicio">Inicio</a></li>
+                        <li><a href="#" class="normas">Normas</a></li>
+                        <li><a href="#" class="reglamentos">Reglamentos</a></li>
+                        <li><a href="#" class="videos">Videos</a></li>
+                        <li><a href="#" class="ayudas">Ayudas</a></li>
                         <%--li><a href="registro.jsp" title="Registro de usuarios" rel="gb_page_center[1000, 600]" id="registro">Registro</a></li--%>
                         <li><a href="registroWebService.jsp"  rel="gb_page_fs[]"  id="registro">Registro</a></li>
                     </ul>
@@ -236,7 +256,7 @@
 
         </div>        
 
-        <div id="main" class="wrapper" style="background: url(recursos/Imagenes/index/blanco.png)">
+        <div id="main" class="wrapper" style="background: #eeeeee" >
 
             <aside style="background: url(recursos/Imagenes/index/even.png) repeat-x;">
                 <h3 id="tituloEvento">Eventos</h3>
