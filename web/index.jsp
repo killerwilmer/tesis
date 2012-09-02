@@ -309,7 +309,7 @@
                             </div>
                         </div>                        
                         <ul id="flip-navigation" >
-                            <li class="selected"><a href="#" id="tab-0"  >Noticias</a></li>
+                            <li class="selected"><a href="#" id="tab-0">Noticias</a></li>
                             <li><a href="#" id="tab-1" >Destacado</a></li>
                             <li><a href="#" id="tab-2" >recomendado</a></li>
                         </ul>  
