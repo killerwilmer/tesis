@@ -14,7 +14,7 @@
         <title>JSP Page</title>
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         <script src="../recursos/datepicker/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="funciones.js"></script>
+        <script type="text/javascript" src="funciones.js"></script><div></div>
         
         <link rel="stylesheet" href="../recursos/datepicker/jquery.ui.all.css">
         <link rel="stylesheet" type="text/css" href="../recursos/datepicker/demos.css" />
