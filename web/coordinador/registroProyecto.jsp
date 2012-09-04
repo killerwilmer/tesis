@@ -11,11 +11,11 @@
 <%@page import="com.umariana.control.ConectaDb"%>
 
 <%
- request.setCharacterEncoding("UTF-8");
- response.setContentType("text/html; charset=utf-8");
+    request.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html; charset=utf-8");
 %>
 
-<% ConectaDb control = new ConectaDb(); %>
+<% ConectaDb control = new ConectaDb();%>
 
 <!DOCTYPE html>
 <html>
@@ -25,9 +25,9 @@
         <link type="text/css" rel="stylesheet" href="../recursos/Css/Coordinador/addregistroproyecto.css">
         <script type="text/javascript" src="../recursos/Js/jquery-1.7.1.js"></script>
         <script src="../recursos/Js/jquery.autocomplete.js"></script>
-        
-    
-        
+
+
+
         <script type="text/javascript">
             function lookup(inputString) {
                 if(inputString.length == 0) {
@@ -57,38 +57,38 @@
                 setTimeout("$('#suggestions').hide();", 200);
             }
         </script>
-        
+
         <script>
             jQuery(function(){
                 $("#country").autocomplete("states2.jsp");
             });
         </script>
-        
+
     </head>
     <body>
         <div id="busqueda">
-              <table align="center">
+            <table align="center">
                 <tr>
                     <td>
-                        <center><input type="submit" value="Ver Factura" name="factura" /></center>
-                    </td>
+                <center><input type="submit" value="Ver Factura" name="factura" /></center>
+                </td>
                 </tr>                
-                    <tr>                        
-                        <td>
-                            <center>Buscar Productos</center><br>
-                            <div>
-                                <center><input type="text" name="txtBuscar" size="30" value="" id="inputString" autocomplete="off" onkeyup="lookup(this.value);" />
-                                    <br/><form id="fomrmulari" name="formulari">
-                                        <input type="radio" name="estado" id="estado" value="2" onclick="recuperaResidencia();">Docente    
-                                        <input type="radio" name="estado"  id="estado1" value="1" onclick="recuperaResidencia();">Estudiante</form></center>
-                            </div>
-                            <br>
-                            <div class="suggestionsBox" id="suggestions" style="display: none;">
-                            <div class="suggestionList" id="autoSuggestionsList">
-                            </div>
-                            </div>                            
-                        </td>
-                    </tr>
+                <tr>                        
+                    <td>
+                <center>Buscar Productos</center><br>
+                <div>
+                    <center><input type="text" name="txtBuscar" size="30" value="" id="inputString" autocomplete="off" onkeyup="lookup(this.value);" />
+                        <br/><form id="fomrmulari" name="formulari">
+                            <input type="radio" name="estado" id="estado" value="2" onclick="recuperaResidencia();">Docente    
+                            <input checked="checked" type="radio" name="estado"  id="estado1" value="1" onclick="recuperaResidencia();">Estudiante</form></center>
+                </div>
+                <br>
+                <div class="suggestionsBox" id="suggestions" style="display: none;">
+                    <div class="suggestionList" id="autoSuggestionsList">
+                    </div>
+                </div>                            
+                </td>
+                </tr>
             </table>
         </div>
         <div id="formulario">
