@@ -63,7 +63,7 @@
                     <span>Reglamento completo de los procesos de investigación de la Universidad Mariana</span>                 
                     <a href="recursos/documentos/reglamentos.docx" target="_blank"><h5>Descargar</h5></a>
                 </div>
-                <div></div><div></div><div></div><div></div><div></div>
+              
             </article>
         </section>
     </body>
