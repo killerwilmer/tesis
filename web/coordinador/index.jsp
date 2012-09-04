@@ -10,11 +10,11 @@
  <% ConectaDb control = new ConectaDb(); %>
  <% 
       HttpSession sesionOk = request.getSession();
-      String estudiante = (String) sesionOk.getAttribute("coordinador") ;
+      String idLlega = (String) sesionOk.getAttribute("coordinador") ;
       
       String inicio = "select ";
       String campo = "nombreprograma";
-      String fin = " from programa where idprograma='"+estudiante+"';";
+      String fin = " from programa where idprograma='"+idLlega+"';";
       String tipos = control.retornoCodigo(inicio, campo, fin);
   %>
 <html>

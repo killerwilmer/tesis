@@ -14,8 +14,8 @@
         <script type="text/javascript" src="../estudiantes/jquerymin.js"></script>
         <script type="text/javascript" src="../estudiantes/javascript/jquery.toastmessage.js"></script>
         <title>JSP Page</title>
-        
-                <script type="text/javascript">
+
+        <script type="text/javascript">
 
             function showSuccessToast(mensaje) {
                 $().toastmessage('showSuccessToast', mensaje);
@@ -78,66 +78,68 @@
             }
 
         </script>
-        
+
     </head>
     <body>
         <%
-                String titulo = request.getParameter("titulo");
-                String tituloabreviado = request.getParameter("titucorto");  
-                String descripcion = request.getParameter("descripcion");
-                String institucion = request.getParameter("institu");  
-                String estado = request.getParameter("estado");                                   
-                String fecha = request.getParameter("fecha");
-                String tipo = request.getParameter("tipo");
-                String activo = request.getParameter("activo");
-                        
-                
-                if ( (titulo.length() == 0 ) || (tituloabreviado.length()==0) || (descripcion.length()==0))
-                {                    
-                    out.print("<script languaje = javascript>showWarningToast('Faltan datos');</script>");
+            String titulo = request.getParameter("titulo");
+            String tituloabreviado = request.getParameter("titucorto");
+            String descripcion = request.getParameter("descripcion");
+            String institucion = request.getParameter("institu");
+            String estado = request.getParameter("estado");
+            String fecha = request.getParameter("fecha");
+            String tipo = request.getParameter("tipo");
+            String activo = request.getParameter("activo");
+
+
+            if ((titulo.length() == 0) || (tituloabreviado.length() == 0) || (descripcion.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Faltan datos');</script>");
+            } else if (fecha.length() == 0) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione una Fecha');</script>");
+            } else if (estado.equals("*")) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione un Estado');</script>");
+            } else if (tipo.equals("*")) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione un Tipo');</script>");
+            } else {
+                if (institucion.equals("")) {
+                    institucion = "NO TIENE";
                 }
-                else if(fecha.length()==0){
-                    out.print("<script languaje = javascript>showWarningToast('Seleccione una Fecha');</script>");
-                } 
-                else if(estado.equals("*")){
-                    out.print("<script languaje = javascript>showWarningToast('Seleccione un Estado');</script>");
-                }  
-                else if(tipo.equals("*")){
-                    out.print("<script languaje = javascript>showWarningToast('Seleccione un Tipo');</script>");
-                }       
-                else
-                {
-                    String SqlIdenumero = "Select * from proyecto where tituloproyecto = '"+titulo.toUpperCase()+"'";
-                    String SqlIden = "Select * from institucion where nombreinstitucion = '"+institucion.toUpperCase()+"'";
-                    if ( control.iden(SqlIdenumero))
-                    {
-                        out.print("<script languaje = javascript>showNoticeToast('Proyecto Ya Existe');</script>");
+                String CosultaTitulo = "Select * from proyecto where tituloproyecto = '" + titulo.toUpperCase() + "'";
+                String ConsultaInstitucion = "Select * from institucion where nombreinstitucion = '" + institucion.toUpperCase() + "'";
+                if (control.iden(CosultaTitulo)) {
+                    out.print("<script languaje = javascript>showNoticeToast('Proyecto Ya Existe');</script>");
+                } else {
+                    if (!control.iden(ConsultaInstitucion)) {
+                        String SqlInsertusu = "insert into institucion (nombreinstitucion) values('" + institucion.toUpperCase() + "');";
+                        control.ejecutarOperacion(SqlInsertusu);
+
+                        int idInstitucion = control.darTipoUsuario("select ", "idinstitucion", " from institucion where nombreinstitucion='" + institucion.toUpperCase() + "';");
+                        int etapaproyecto = Integer.parseInt(estado);
+                        int estadoproyecto = Integer.parseInt(activo);
+                        String SqlInsert = "insert into proyecto (idinstitucion, tituloproyecto,titulopequeproyecto, descripcionproyecto, etapaproyecto,fechainicioproyecto, tipoproyecto, esstadoproyecto) values('" + idInstitucion + "','" + titulo.toUpperCase() + "','" + tituloabreviado + "','" + descripcion + "','" + etapaproyecto + "','" + fecha + "','" + estadoproyecto + "','" + activo + "');";
+
+                        if (control.ejecutarOperacion(SqlInsert)) {
+                            out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
+                        } else {
+                            out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
+                        }
+
+                    } else {
+                        int idInstitucion = control.darTipoUsuario("select ", "idinstitucion", " from institucion where nombreinstitucion='" + institucion.toUpperCase() + "';");
+                        int etapaproyecto = Integer.parseInt(estado);
+                        int estadoproyecto = Integer.parseInt(activo);
+                        String SqlInsert = "insert into proyecto (idinstitucion, tituloproyecto,titulopequeproyecto, descripcionproyecto, etapaproyecto,fechainicioproyecto, tipoproyecto, esstadoproyecto) values('" + idInstitucion + "','" + titulo.toUpperCase() + "','" + tituloabreviado + "','" + descripcion + "','" + etapaproyecto + "','" + fecha + "','" + estadoproyecto + "','" + activo + "');";
+
+                        if (control.ejecutarOperacion(SqlInsert)) {
+                            out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
+                        } else {
+                            out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
+                        }
                     }
-                    
-                    if ( !control.iden(SqlIden))
-                    {
-                      String SqlInsertusu = "insert into institucion (nombreinstitucion) values('" + institucion.toUpperCase() + "');";
-                      control.ejecutarOperacion(SqlInsertusu);
-                    }
-                    
-                    else
-                    {       
-                        int idInstitucion= control.darTipoUsuario("select ", "idinstitucion", " from institucion where nombreinstitucion='" + institucion.toUpperCase() + "';");                  
-                        int etapaproyecto= Integer.parseInt(estado);
-                        int estadoproyecto=Integer.parseInt(activo);
-                        String SqlInsert = "insert into proyecto (idinstitucion, tituloproyecto,titulopequeproyecto, descripcionproyecto, etapaproyecto,fechainicioproyecto, tipoproyecto, esstadoproyecto) values('" + idInstitucion + "','" + titulo + "','" + tituloabreviado + "','" + descripcion + "','" + etapaproyecto + "','" + fecha + "','" + estadoproyecto +  "','" + activo + "');";
-                      
-                        if ( control.ejecutarOperacion(SqlInsert))
-                            {
-                                out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
-                            }
-                            else
-                            {
-                                out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
-                            }  
-                    }                    
-                }                            
-%>     
+                }
+
+            }
+        %>     
     </body>
 </html>
 

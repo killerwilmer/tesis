@@ -51,7 +51,7 @@ function inicializarEventosetapa()
 function presionSubmitetapa()
 {
     var aa=$("#etapa").attr("value");
-    var bb=$("#comboprograma").attr("value");
+    var bb=$("#idPrograma").attr("value");
 
     $.get("addetapa.jsp",{
         nombre:aa,
