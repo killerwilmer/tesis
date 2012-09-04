@@ -14,7 +14,7 @@
     //System.out.println("1"+request.getParameterNames().nextElement());
     response.setHeader("Content-Type", "text/html");
     try {
-        String sql = "select nombres, apellidos, idusuario from usuario where lower(nombres) LIKE '%" + str.toLowerCase() + "%' LIMIT 10";
+        String sql = "select nombres, apellidos, idusuario, idtipousuario from usuario where (lower(nombres) LIKE '%" + str.toLowerCase() + "%' or lower(apellidos) LIKE '%" + str.toLowerCase() + "%') and idtipousuario=2 LIMIT 10";
         //System.out.print(sql);
         ResultSet rs = control.consultas(sql);
         while (rs.next()) {

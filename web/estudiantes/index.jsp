@@ -3,21 +3,21 @@
     Created on : 26-oct-2011, 11:33:59
     Author     : zzz
 --%>
- <%@ page session="true" %>
+<%@ page session="true" %>
 
- <%@page import="com.umariana.control.ConectaDb" %>
- <%@ taglib uri="http://ckeditor.com" prefix="ckeditor" %>
- <% ConectaDb control = new ConectaDb(); %>
- 
- <% 
-      HttpSession sesionOk = request.getSession();
-      String estudiante = (String) sesionOk.getAttribute("estudiante") ;
-      
-      String inicio = "select ";
-      String campo = "nombreprograma";
-      String fin = " from usuario where codigousuario='"+estudiante+"';";
-      String tipos = control.retornoCodigo(inicio, campo, fin);
-  %>
+<%@page import="com.umariana.control.ConectaDb" %>
+<%@ taglib uri="http://ckeditor.com" prefix="ckeditor" %>
+<% ConectaDb control = new ConectaDb();%>
+
+<%
+    HttpSession sesionOk = request.getSession();
+    String estudiante = (String) sesionOk.getAttribute("estudiante");
+
+    String inicio = "select ";
+    String campo = "nombreprograma";
+    String fin = " from usuario where codigousuario='" + estudiante + "';";
+    String tipos = control.retornoCodigo(inicio, campo, fin);
+%>
 
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/index.css" />
         <title>Plataforma Estudiantes</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".boton").click(function(event) {
@@ -35,7 +35,7 @@
                 });
             });
         </script>
-        
+
     </head>
     <body> 
         <div id="contenedor">
@@ -63,11 +63,11 @@
                 </div>
             </div>
             <div id="wraper">
-                            <form method="post" name="form" action="">
-                <textarea cols="30" rows="2" name="content" id="content">
-                </textarea><br />
-            </form>
-            <ckeditor:replace replace="content" basePath="/ckeditor/" />
+                <form method="post" name="form" action="">
+                    <textarea cols="0" rows="2" name="content" id="content">
+                    </textarea><br />
+                </form>
+                <ckeditor:replace replace="content" basePath="/ckeditor/" />
             </div>
             <!--object type="text/html" data="Coordinador/formEtapa.jsp" style="width: 400px; height: 400px"> </object--> 
             <div id="footer">
