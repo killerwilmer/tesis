@@ -27,22 +27,22 @@
         
         <script type="text/javascript">
             $(document).ready(function() {
-                $(".boton").click(function(event) {
+                $(".registroetapa").click(function(event) {
                     $("#wraper").load('formEtapa.jsp');
                     $.getScript('js/b.js');
                 });
                 
-                $(".boton2").click(function(event) {
+                $(".registrogrupo").click(function(event) {
                     $("#wraper").load('grupoInvestigacion.jsp');
                     $.getScript('js/b.js');
                 });
                 
-                $(".boton3").click(function(event) {
+                $(".registroaspectos").click(function(event) {
                     $("#wraper").load('registroAspectos.jsp');
                     $.getScript('js/b.js');
                 });
                 
-                $(".boton4").click(function(event) {
+                $(".registroproyecto").click(function(event) {
                     $("#wraper").load('proyecto.jsp');
                     $.getScript('js/b.js');
                 });
@@ -57,21 +57,48 @@
                 <h1 id="tit"><%out.print(tipos);%></h1>   
                 <div id="menu">
                     <ul class="menu">
-                        <li><a href="#" class="parent"><span>Registro</span></a>
+                        <li><a href="#" class="parent"><span>Etapas</span></a>
                             <div>
                                 <ul id="menseg">
-                                    <li><a href="#" class="boton"><span>Etapas</span></a></li>
-                                    <li><a href="#" class="boton2"><span>G. Investigación</span></a></li>
-                                    <li><a href="#" class="boton3"><span>Aspectos</span></a></li>
-                                    <li><a href="#" class="boton4"><span>Proyecto</span></a></li>
+                                    <li><a href="#" class="registroetapa"><span>Registrar</span></a></li>
+                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
+                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#" id="123"><span id="123">JavaScript</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Graphic Design</span></a></li>
-                        <li><a href="#"><span>HTML</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>User Interface</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>CSS</span></a></li>
+                        <li><a href="#" class="parent"><span>Grupo Investigación</span></a>
+                            <div>
+                                <ul id="menseg">
+                                    <li><a href="#" class="registrogrupo"><span>Registrar</span></a></li>
+                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
+                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#"><span>Aspectos</span></a>
+                            <div>
+                                <ul id="menseg">
+                                    <li><a href="#" class="registroaspectos"><span>Registrar</span></a></li>
+                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
+                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#"><span>PROYECTO</span></a>
+                            <div>
+                                <ul id="menseg">
+                                    <li><a href="#" class="registroproyecto"><span>Registrar</span></a></li>
+                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
+                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#"><span>Reportes</span></a>
+                        
+                        </li>
+                        <li><a href="#"><span>Informes</span></a>
+                        
+                        </li>
                     </ul>
                 </div>
             </div>

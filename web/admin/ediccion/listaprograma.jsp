@@ -31,14 +31,9 @@
 
                 while (resultado.next()) {
                     out.print("<span>");  
-                    out.print("<select id='combofacultades' name='combofacultades'>");
-                    out.print("<option selected='' value='*'>Seleccione Facultad");
-                    out.print("</option>");
-                    out.print(control.combo("facultad"));
-                    out.print("</select>");  
                     out.print("</span>");                                      
                     out.print(" <input type='hidden' name='idp' id='idp' value='" + numero + "'/>");
-                    out.print(" Codigio<input type='text' name='codigo' id='codigo' value='" + resultado.getString("codigoprograma") + "'/>");
+                    out.print(" Codigio<input type='text' disabled='true' name='codigo' id='codigo' value='" + resultado.getString("codigoprograma") + "'/>");
                     out.print(" Nombre<input type='text' name='facultad1' id='facultad1' value='" + resultado.getString("nombreprograma") + "'/>");
                     out.print("<br/>");
                     out.print("<br/>");
