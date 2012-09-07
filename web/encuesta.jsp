@@ -14,7 +14,7 @@
     <body>
         <section>
             <article class="reglamentos">
-                <div>
+                <div style="height: 700px;">
                     <iframe name="e-encuesta" src="http://www.e-encuesta.com/answer.do?testid=myPknQyJJrw=" frameborder="0" width="95%" height="100%"></iframe>
                 </div>
              </article>
