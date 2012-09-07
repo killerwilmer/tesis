@@ -157,6 +157,7 @@ h3{
 header nav{
     float:right;
     margin-top:-20px;
+   
 }
 
 header nav ul li{
@@ -280,7 +281,7 @@ a {
     float:left;
     /*margin-left:-219px;*/
     margin-left:-325px;
-    margin-top:-27px;
+    margin-top:-67px;
     font-size:13px;
     font-weight:bold;
 }
@@ -297,7 +298,7 @@ a {
     z-index:30;
     color:white;
     cursor:pointer;
-    margin: 140px 0px -10px -380px;
+    margin: 140px 0px -50px -380px;
     -webkit-box-shadow: inset 5px 5px 10px #ffffff; 
     -moz-box-shadow: inset 5px 5px 10px #ffffff; 
     -o-box-shadow: inset 5px 5px 10px #ffffff;  
@@ -365,7 +366,7 @@ a {
     -moz-border-radius:10px;
     -o-border-radius:10px;
     border-radius:10px;
-    margin-top:-1px;
+    margin-top:40px;
     background:#339cdf;
     padding:6px; 
     -webkit-box-shadow:0 0px 40px -10px #AAA;
