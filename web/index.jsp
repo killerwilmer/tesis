@@ -203,6 +203,10 @@
                     $("#main").load('videos.jsp');
                     $.getScript('js/b.js');
                 });
+                $(".encuesta").click(function(event) {
+                    $("#main").load('encuesta.jsp');
+                    $.getScript('js/b.js');
+                });
                 $(".ayudas").click(function(event) {
                     $("#main").load('normas.jsp');
                     $.getScript('js/b.js');
@@ -247,6 +251,7 @@
                         <li><a href="#" class="reglamentos">Reglamentos</a></li>
                         <li><a href="#" class="videos">Videos</a></li>
                         <li><a href="#" class="ayudas">Ayudas</a></li>
+                        <li><a href="#" class="encuesta">Encuesta</a></li>
                         <%--li><a href="registro.jsp" title="Registro de usuarios" rel="gb_page_center[1000, 600]" id="registro">Registro</a></li--%>
                         <li><a href="registroWebService.jsp"  rel="gb_page_fs[]"  id="registro">Registro</a></li>
                     </ul>
