@@ -222,7 +222,7 @@
                 <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Procesos de Investigación</h1>            
                 <div id="container2">
                     <div id="loginContainer">
-                        <a href="#" id="loginButton"  onClick="foco('email');"><span>Login</span></a>           
+                        <ul style="margin-top: 40px;"><li><a href="#" id="loginButton"  onClick="foco('email');"><span>Login</span></a></li></ul>           
                         <!--div style="clear:both"></div-->
                         <div id="loginBox">                
                             <form id="loginForm" name="logeo" action="login.jsp" method="post">
