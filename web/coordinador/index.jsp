@@ -54,7 +54,7 @@
         <div id="contenedor">
             <div id="header">
                 <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/Coordinador/images/logo.gif" alt="logo" /></a>
-                <h1 id="tit"><%out.print(tipos);%></h1>   
+                <h1 id="tit"><%out.print(tipos);%>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</h1>   
                 <div id="menu">
                     <ul class="menu">
                         <li><a href="#" class="parent"><span>Etapas</span></a>

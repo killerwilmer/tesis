@@ -281,7 +281,7 @@ fieldset#fieladdproyecto #tituloabreviado{
     border:solid 1px #98cb98;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: 11px;
+    margin-left: 18px;
 }
 fieldset#fieladdproyecto #titulop{
     margin-left: 85px;
@@ -292,12 +292,12 @@ fieldset#fieladdproyecto #codigo{
 }
 
 fieldset#fieladdproyecto #comboestado{
-    margin-left: 86px;
+    margin-left: 88px;
     border:solid 1px #98cb98;
 }
 
 fieldset#fieladdproyecto #descripcion{
-    margin-left: 125px;
+    margin-left: 122px;
     margin-top: -30px;
     color:#666;
     border:solid 1px #98cb98;
@@ -348,7 +348,7 @@ fieldset#fieladdproyecto #institucion{
     border:solid 1px #98cb98;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: 52px;
+    margin-left: 58px;
 }
 
 fieldset#fieladdproyecto #insti{
