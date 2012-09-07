@@ -16,19 +16,31 @@
         <script type="text/javascript" src="funciones.js"></script>
 
         <script type="text/javascript">
-            
+            // Limpiar el div de asesor
+            function clearJurado()
+            {
+                $("#jurado").val("");
+                $("#result_jurado").empty();
+            }
+            // Limpiar el div de asesor
+            function clearAsesor()
+            {
+                $("#asesor").val("");
+                $("#result_asesor").empty();
+            }
+            // Limpiar el div de esdudiante
             function clearEstudiante()
             {
                 $("#estudiante").val("");
                 $("#result_estudiante").empty();
             }
-            
+            // Limpiar el div de proyecto
             function clearProyecto()
             {
                 $("#proyecto").val("");
                 $("#result").empty();
             }
-            
+            // Para buscar el proyecto
             $(document).ready(function(){
                 
                 $("#proyecto").autocomplete("proyecto_buscar.jsp");
@@ -44,7 +56,7 @@
                     }
                 });
             });
-            
+            //Para buscar el estudiante
             $(document).ready(function(){
 
                 $("#estudiante").autocomplete("estudiente_buscar.jsp");
@@ -57,6 +69,40 @@
                         var id = data[1];
                         // Mostramos los resultados
                         $("#result_estudiante").html( "<p>Nombre: " + name + "<br/>" + "</p>Id: <input type=\"text\" name=\"idEst\" id=\"idEst\" readonly=\"true\" value=\""+id+"\"/>");
+                    }
+                });
+            });
+            
+            //Para buscar el docente
+            $(document).ready(function(){
+
+                $("#asesor").autocomplete("docente_buscar.jsp");
+
+                $('#asesor').result(function(event, data, formatted) {
+                    if (data) {
+
+                        // Extraemos los valores
+                        var name = data[0];
+                        var id = data[1];
+                        // Mostramos los resultados
+                        $("#result_asesor").html( "<p>Nombre: " + name + "<br/>" + "</p>Id: <input type=\"text\" name=\"idAse\" id=\"idAse\" readonly=\"true\" value=\""+id+"\"/>");
+                    }
+                });
+            });
+            
+            //Para buscar el asesor
+            $(document).ready(function(){
+
+                $("#jurado").autocomplete("docente_buscar.jsp");
+
+                $('#jurado').result(function(event, data, formatted) {
+                    if (data) {
+
+                        // Extraemos los valores
+                        var name = data[0];
+                        var id = data[1];
+                        // Mostramos los resultados
+                        $("#result_jurado").html( "<p>Nombre: " + name + "<br/>" + "</p>Id: <input type=\"text\" name=\"idJur\" id=\"idJur\" readonly=\"true\" value=\""+id+"\"/>");
                     }
                 });
             });
@@ -149,38 +195,36 @@
                         <span class="font_normal_07em_black">Paso 2 : Escoja los estudiantes</span><br />
                         <label for="surname">Escoja el estudiante</label><br />
                         <input type="text" id="estudiante" name="estudiante" class="input_field_12em"/> <input value="Reset" type="button" onclick="clearEstudiante()"/>
-                        <span ><input id="boton_estu" type="button" value="VincularEstudiante" name="enviar"/></span>
+                        <span ><input id="boton_estu" type="button" value="Vincular Estudiante" name="enviar"/></span>
                         <div id="result_estudiante"></div>
-                        
-                        <div id="resultados" ></div>
+                        <div id="resultados_estu" ></div>
                     </span>
                     <span id="finland2" class="step">
                         <span class="font_normal_07em_black">Paso 3 : Escoja los asesor(@s)</span><br />
                         <label for="surname">Escoja el asesor(@)</label><br />
-                        <input class="input_field_12em" name="asesor" id="asesor" /><br />
+                        <input type="text" id="asesor" name="asesor" class="input_field_12em"/><br /> <input value="Reset" type="button" onclick="clearAsesor()"/>
+                        <span ><input id="boton_ases" type="button" value="Vincular Asesor" name="enviar"/></span>
+                        <div id="result_asesor"></div>
+                        <div id="resultados_ases" ></div>
                     </span>
                     <span id="finland3" class="step">
                         <span class="font_normal_07em_black">Paso 4 : Escoja los jurados</span><br />
                         <label for="surname">Escoja el jurado</label><br />
-                        <input class="input_field_12em" name="jurado" id="jurado" /><br />						
+                        <input type="text" id="jurado" name="jurado" class="input_field_12em"/><br /> <input value="Reset" type="button" onclick="clearJurado()"/>
+                        <span ><input id="boton_jura" type="button" value="Vincular Jurado" name="enviar"/></span>
+                        <div id="result_jurado"></div>
+                        <div id="resultados_jura" ></div>				
                     </span>
                     <span id="confirmation" class="step submit_step">
-                        <span class="font_normal_07em_black">Paso 5 : Username</span><br />
-                        <label for="username">User name</label><br />
-                        <input class="input_field_12em" name="username" id="username" /><br />
-                        <label for="password">Password</label><br />
-                        <input class="input_field_12em" name="password" id="password" type="password" /><br />
-                        <label for="retypePassword">Retype password</label><br />
-                        <input class="input_field_12em" name="retypePassword" id="retypePassword" type="password" /><br />
+                        <span class="font_normal_07em_black">Información Final</span><br />
                     </span>
                     <span class="step" id="details">
                         <span class="font_normal_07em_black">Hidden step</span><br />
                         <span>This step is not possible to see without using the show method</span>
                     </span>
                 </div>
-                <div id="demoNavigation"> 							
-
-                    <input class="navigation_button" id="next" value="Submit" type="submit"/>
+                <div id="demoNavigation">
+                    <input class="navigation_button" id="next" value="Ver Datos" type="submit"/>
                 </div>
             </form>
             <hr />
@@ -205,7 +249,7 @@
                         success: function(data){$("#status").fadeTo(500,1,function(){ $(this).html("Proyecto vinculado Satisfactoriamente!").fadeTo(5000, 0); })},
                         beforeSubmit: function(data){$("#data").html("Datos enviados al servidor: " + $.param(data));},
                         dataType: 'json',
-                        resetForm: true
+                        resetForm: false
                     }
                 }
             );

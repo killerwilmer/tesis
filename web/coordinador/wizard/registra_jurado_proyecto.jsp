@@ -19,22 +19,22 @@
     <body>
         <%
             String idProye = null;
-            String idEstu = null;           
+            String idJura = null;           
             idProye = request.getParameter("codProy");
-            idEstu = request.getParameter("codEstu");
+            idJura = request.getParameter("codJura");
 
             if ((idProye.length() == 0)) {
                 out.print("<script languaje = javascript>showWarningToast('No ha escojido Proyecto');</script>");
-            } else if (( idEstu == null )) {
-                out.print("<script languaje = javascript>showWarningToast('Seleccione el Estudiante');</script>");
+            } else if (( idJura == null )) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione el Asesor');</script>");
             } else {
                 int idProyecto = Integer.parseInt(idProye);
-                int idEstudiante = Integer.parseInt(idEstu);
-                String SqlIdenumero = "select idusuario from usuarioproyecto where idusuario=" + idEstudiante + "";
+                int idJurado = Integer.parseInt(idJura);
+                String SqlIdenumero = "select idusuario from usuarioevaluador where idusuario=" + idJurado + "and idproyecto=" + idProyecto + "";
                 if (control.iden(SqlIdenumero)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Estudiante ya vinculado a un Proyecto');</script>");
+                    out.print("<script languaje = javascript>showNoticeToast('Jurado ya vinculado a este proyecto');</script>");
                 } else {
-                    String SqlInsert = "insert into usuarioproyecto (idproyecto,idusuario) values(" + idProyecto + "," + idEstudiante + ");";
+                    String SqlInsert = "insert into usuarioevaluador (idproyecto,idusuario) values(" + idProyecto + "," + idJurado + ");";
 
                     if (control.ejecutarOperacion(SqlInsert)) {
                         out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");

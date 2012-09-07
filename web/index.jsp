@@ -441,7 +441,16 @@
         </div>  
         <div id="footer-container" style=" background:url(recursos/Imagenes/index/footer.png) repeat-x">
             <footer class="wrapper2">
-                <h3>Pie de la pagina</h3>
+                <h4>
+                    <span class="Estilo4">Esta pagina se mira mejor con <a href="https://www.google.com/intl/es/chrome/browser/?hl=es" onclick="javascript:window.open('https://www.google.com/intl/es/chrome/browser/?hl=es');return false;">Navegador Chrome - Google</a>  ó <a href="http://www.mozilla.org/es-ES/firefox/fx/" onclick="javascript:window.open('http://www.mozilla.org/es-ES/firefox/fx/');return false;">mozilla firefox</a> a una resolución de 1024x768 o superior <br /></span>
+                    <span class="Estilo5">WEBMASTER</span><span class="Estilo4">
+                        <br />Wilmer Arteaga - Alex Enriquez<br />
+                        Email<br />
+                        killerwilmer@gmail.com - alex.84.12@hotmail.com<br />
+                        <br />Universidad Mariana<br />
+                        San Juan de Pasto - Nariño - Colombia<br />
+                        Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</span>
+                </h4>
             </footer>
         </div>          
     </body>

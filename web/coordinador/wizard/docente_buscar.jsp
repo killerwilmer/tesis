@@ -15,7 +15,7 @@
     try {
         //String sql = "select idusuario, tituloproyecto from proyecto where (lower(tituloproyecto) LIKE '%" + str.toLowerCase() + "%') and esstadoproyecto=1 LIMIT 10";
         //String sql = "select nombres, apellidos, idusuario, codigousuario from usuario where idtipousuario=1 and lower(nombres) LIKE '%" + str.toLowerCase() + "%' LIMIT 10";
-        String sql = "select nombres, apellidos, codigousuario, idusuario, idtipousuario from usuario where (lower(nombres) LIKE '%" + str.toLowerCase() + "%' or lower(apellidos) LIKE '%" + str.toLowerCase() + "%') and idtipousuario=1 LIMIT 10";
+        String sql = "select nombres, apellidos, codigousuario, idusuario, idtipousuario from usuario where (lower(nombres) LIKE '%" + str.toLowerCase() + "%' or lower(apellidos) LIKE '%" + str.toLowerCase() + "%') and idtipousuario=2 LIMIT 10";
         //System.out.print(sql);
         ResultSet rs = control.consultas(sql);
         while (rs.next()) {

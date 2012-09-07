@@ -19,22 +19,22 @@
     <body>
         <%
             String idProye = null;
-            String idEstu = null;           
+            String idAses = null;           
             idProye = request.getParameter("codProy");
-            idEstu = request.getParameter("codEstu");
+            idAses = request.getParameter("codAses");
 
             if ((idProye.length() == 0)) {
                 out.print("<script languaje = javascript>showWarningToast('No ha escojido Proyecto');</script>");
-            } else if (( idEstu == null )) {
-                out.print("<script languaje = javascript>showWarningToast('Seleccione el Estudiante');</script>");
+            } else if (( idAses == null )) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione el Asesor');</script>");
             } else {
                 int idProyecto = Integer.parseInt(idProye);
-                int idEstudiante = Integer.parseInt(idEstu);
-                String SqlIdenumero = "select idusuario from usuarioproyecto where idusuario=" + idEstudiante + "";
+                int idasesor = Integer.parseInt(idAses);
+                String SqlIdenumero = "select idusuario from usuarioasesor where idusuario=" + idasesor + "and idproyecto=" + idProyecto + "";
                 if (control.iden(SqlIdenumero)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Estudiante ya vinculado a un Proyecto');</script>");
+                    out.print("<script languaje = javascript>showNoticeToast('Asesor ya vinculado a este proyecto');</script>");
                 } else {
-                    String SqlInsert = "insert into usuarioproyecto (idproyecto,idusuario) values(" + idProyecto + "," + idEstudiante + ");";
+                    String SqlInsert = "insert into usuarioasesor (idproyecto,idusuario) values(" + idProyecto + "," + idasesor + ");";
 
                     if (control.ejecutarOperacion(SqlInsert)) {
                         out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");

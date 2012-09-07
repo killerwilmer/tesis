@@ -4,8 +4,9 @@
     Author     : usuarui
 --%>
 
-<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="javax.naming.spi.DirStateFactory.Result"%>
 <%@page import="com.umariana.control.ConectaDb"%>
 <% ConectaDb control = new ConectaDb();%>
 <!DOCTYPE html>
@@ -29,9 +30,7 @@
 
                 ResultSet resultado = control.consultas(sqlString);
 
-                while (resultado.next()) {
-                    out.print("<span>");  
-                    out.print("</span>");                                      
+                while (resultado.next()) {                         
                     out.print(" <input type='hidden' name='idp' id='idp' value='" + numero + "'/>");
                     out.print(" Codigio<input type='text' disabled='true' name='codigo' id='codigo' value='" + resultado.getString("codigoprograma") + "'/>");
                     out.print(" Nombre<input type='text' name='facultad1' id='facultad1' value='" + resultado.getString("nombreprograma") + "'/>");
