@@ -320,17 +320,27 @@
                     <div id="flip-tabs">
                         <div id="flip-container" >
                             <div class="orange">
-                                <h2>Noticia Principal 1</h2>
-                                <img src="recursos/Imagenes/index/helicoptero_medico.png" style="float: left"/>
-                                <p>Teniendo en cuenta que los objetivos del Centro de Bienestar Animal de la Alcaldía de Pasto es promover el buen trato y                          la corresponsabilidad ambiental, se ha programado una campaña de adopción canina en la Plaza del Carnaval el próximo 12                          octubre del 2011.<br>
+                                <h2>Nariño Vive Digital entre los 4 mejores!</h2>
+                                <img style="width: 150px; height: 100px; margin-left: 10px;" src="recursos/Imagenes/images/u6.jpg" style="float: left"/>
+                                <p style="height: 150px; margin-left: 170px;margin-top: -110px;width: 450px;">Entre 19 proyectos que en 2011 hicieron parte de la Iniciativa Vive Digital Regional; 
+                                    Nariño Vive Digital fue seleccionado entre los 4 mejores proyectos en Colombia, siendo 
+                                    reconocido por ser una de las 4 "Experiencias exitosas en innovación TIC Regional". 
+                                    <br>
                             </div>
                             <div class="green">
-                                <h2>Noticia Principal 2</h2>
-                                <p>Teniendo en cuenta que los objetivos del Centro de Bienestar Animal de la Alcaldía de Pasto es promover el buen trato y                          la corresponsabilidad ambiental, se ha programado una campaña de adopción canina en la Plaza del Carnaval el próximo 12                          octubre del 2011.<br>					
+                                <h2 style="font-size: 20px;">III ENCUENTRO LATINOAMERICANO DE METODOLOGÍA DE LAS CIENCIAS SOCIALES</h2>
+                                <img style="width: 150px; height: 100px; margin-left: 10px;" src="recursos/Imagenes/images/Oscar.jpg" style="float: left"/>
+                                <p style="height: 150px; margin-left: 170px;margin-top: -110px;width: 450px;">El Ph.D. Oscar Valverde Riascos, Decano de la Facultad de Humanidades y Ciencias Sociales asistió al III 
+                                    Encuentro Latinoamericano de Metodología de las Ciencias Sociales (ELMECS), participó como ponente en la 
+                                    mesa 8 de Investigación .....<br>					
                             </div>
                             <div class="blue">
-                                <h2>Noticia Principal 3</h2>
-                                <p>Teniendo en cuenta que los objetivos del Centro de Bienestar Animal de la Alcaldía de Pasto es promover el buen trato y                          la corresponsabilidad ambiental, se ha programado una campaña de adopción canina en la Plaza del Carnaval el próximo 12                          octubre del 2011.<br>	
+                                <h2 style="font-size: 20px;">NUEVAS TECNOLOGÍAS EN ENSEÑANZA Y APRENDIZAJE</h2>
+                                <img style="width: 150px; height: 100px; margin-left: 10px;" src="recursos/Imagenes/images/tecnologias.jpg" style="float: left"/>
+                                <p style="height: 150px; margin-left: 170px;margin-top: -110px;width: 450px;">urante dos días, la comunidad educativa se reunirá para socializar y conocer las experiencias 
+                                    significativas que fomentan el aprendizaje del inglés en el "II Encuentro con Instituciones de 
+                                    Educación Superior: El Uso de los Medios y Nuevas Tecnologías en la Enseñanza-Aprendizaje de 
+                                    Lenguas Extranjeras", que tendrá lugar en Bogotá<br>	
                             </div>
                         </div>                        
                         <ul id="flip-navigation" >
@@ -343,23 +353,39 @@
 
                 <div  id="nsecundarias">
                     <ul id="ticker01">
-                        <li><img src="recursos/Imagenes/index/helicoptero_medico.png" style="float: left"/><span>10/10/2007</span>
-                            The first thing hasjhasjhxasjxhasjxhs111111
-                            bbbbbbbbshxabjshxbajshxbsashhahsjahda
-                            bbbbbbbbbbbbbbasaskjbaskjcbaksjbcaksj
-                            bbbbbbascabscbaksjcbaksjcbaksjcbaksjc             
+                        <li><img src="recursos/Imagenes/images/noti1.png" style="width: 130px; height: 120px; float: left; margin-right: 7px;"/>
+                            <span style="font-size: 10px;">CONVOCATORIA ABIERTA FACULTAD DE POSGRADOS Y RELACIONES INTERNACIONALES</span>                          
+                            <pre style="font-size: 11px; width: 450px;">Se necesita un docente Investigador medio Tiempo para 
+la Maestría en Administración en Salud.
+Requisitos:
+Formación en el área de la salud con titulo de Maestría o Doctorado
+Experiencia en el desarrollo de proyectos de investigación
+Experiencia en la publicación de artículos
+Experiencia docente en educación superior</pre>
+                           
                         </li>
-                        <li><img src="recursos/Imagenes/index/helicoptero_medico.png" style="float: left"/><span>10/10/2007</span>
-                            The first thing hasjhasjhxasjxhasjxhs111111
-                            bbbbbbbbshxabjshxbajshxbsashhahsjahda
-                            bbbbbbbbbbbbbbasaskjbaskjcbaksjbcaksj
-                            bbbbbbascabscbaksjcbaksjcbaksjcbaksjc             
+                        <li><img src="recursos/Imagenes/images/foro.jpg" style="width: 130px; height: 120px; float: left; margin-right: 7px;"/>
+                            <span style="font-size: 10px;">FORO UN PAÍS UNIDO POR LA EDUCACIÓN</span>                    
+                            <pre style="font-size: 11px; width: 450px;">El próximo 27 de agosto de 2012 se llevará a 
+cabo en la Cámara de Comercio de Bogotá, sede Salitre, 
+el Foro Un país unido por la educación. 
+¿Cuál es el ciudadano que queremos formar?
+
+Esta será la gran pregunta que intentará responder el segundo Foro del Ciclo 
+"Un país unido por la Educación". El cual contará con la participación </pre>              
                         </li>
-                        <li><img src="recursos/Imagenes/index/helicoptero_medico.png" style="float: left"/><span>10/10/2007</span>
-                            The first thing hasjhasjhxasjxhasjxhs111111
-                            bbbbbbbbshxabjshxbajshxbsashhahsjahda
-                            bbbbbbbbbbbbbbasaskjbaskjcbaksjbcaksj
-                            bbbbbbascabscbaksjcbaksjcbaksjcbaksjc             
+                      <li><img src="recursos/Imagenes/images/gabriel.png" style="width: 130px; height: 120px; float: left; margin-right: 7px;"/>
+                            <span style="font-size: 10px;">Beca Gabriel García Márquez de Periodismo Cultural</span>
+                                      
+                            <pre style="font-size: 11px; width: 450px;">"A mi me sueltan vendado y yo sé que estoy en el Caribe", 
+así describe Gabriel García Márquez su conexión visceral 
+con esta parte del mundo, a la cual le debe la cadencia 
+y exuberancia de su obra literaria y periodística.
+
+Inspirados por ese vínculo, la Fundación Nuevo Periodismo
+Iberoamericano -FNPI-, y el Ministerio de Cultura de Colombia...                            
+                            </pre>
+                           
                         </li>
                     </ul>
 
@@ -370,69 +396,34 @@
                         <div id="hWrapperAuto">
                             <div id="carouselhAuto">
                                 <div>
-                                    <a id="foto" href="recursos/Imagenes/images/img_1.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_1.jpg" /><br/></a>
+                                    <a id="foto" href="recursos/Imagenes/images/u1.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/u1.jpg" /><br/></a>
                                     <span class="thumbnail-text">Image Text</span></div>
                                 <div>
-                                    <a href="recursos/Imagenes/images/img_2.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_2.jpg" /></a><br/>
+                                    <a href="recursos/Imagenes/images/u2.png">
+                                        <img alt="" src="recursos/Imagenes/images/u2.png" /></a><br/>
                                     <span class="thumbnail-text">Image Text</span></div>
                                 <div>
-                                    <a href="recursos/Imagenes/images/img_3.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_3.jpg" /></a><br/>
+                                    <a href="recursos/Imagenes/images/u3.png">
+                                        <img alt="" src="recursos/Imagenes/images/u3.png" /></a><br/>
                                     <span class="thumbnail-text">Image Text</span></div>
                                 <div>
-                                    <a href="recursos/Imagenes/images/img_4.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_4.jpg" /></a><br />
+                                    <a href="recursos/Imagenes/images/u4.png">
+                                        <img alt="" src="recursos/Imagenes/images/u4.png" /></a><br />
                                     <span class="thumbnail-text">Image Text</span></div>
                                 <div>
-                                    <a href="recursos/Imagenes/images/img_5.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_5.jpg"/></a><br />
+                                    <a href="recursos/Imagenes/images/u5.png">
+                                        <img alt="" src="recursos/Imagenes/images/u5.png"/></a><br />
                                     <span class="thumbnail-text">Image Text</span></div>
                                 <div>
-                                    <a href="recursos/Imagenes/images/img_6.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_6.jpg" /></a><br />
+                                    <a href="recursos/Imagenes/images/u6.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/u6.jpg" /></a><br />
                                     <span class="thumbnail-text">Image Text</span></div>
                                 <div>
-                                    <a href="recursos/Imagenes/images/img_7.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_7.jpg" /></a><br />
+                                    <a href="recursos/Imagenes/images/u7.jpg">
+                                        <img alt="" src="recursos/Imagenes/images/u7.jpg" /></a><br />
                                     <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_8.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_8.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_9.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_9.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_10.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_10.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_11.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_11.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_12.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_12.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_13.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_13.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_14.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_14.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_15.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_15.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
-                                <div>
-                                    <a href="recursos/Imagenes/images/img_16.jpg">
-                                        <img alt="" src="recursos/Imagenes/images/img_16.jpg" /></a><br />
-                                    <span class="thumbnail-text">Image Text</span></div>
+                                
                             </div>
                         </div>
                     </div>   
