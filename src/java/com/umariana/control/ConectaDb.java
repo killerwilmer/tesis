@@ -1,18 +1,14 @@
+package com.umariana.control;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package com.umariana.control;
-
-import java.beans.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -20,153 +16,142 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class ConectaDb {
 
-    private String user, pass, urlConectar, driver;// definicion de variables para la coneccion
-    public Connection conection; // variable de la clase conect para conectar la base de datos
-    private java.sql.Statement statement; // estatement controla las coneciones y las ejecuciones de las sql
     public String idenTrabajador;
-    private Statement st = null;
+    public String usuario = "postgres";
+    public String clave = "postgres007";
+    public String driver = "org.postgresql.Driver";
+    public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto";
+
+    public String getCadenaConexion() {
+        return cadenaConexion;
+    }
+
+    public void setCadenaConexion(String cadenaConexion) {
+        this.cadenaConexion = cadenaConexion;
+    }
+    Connection conexion = null;
+
+    public Connection getConexion() throws SQLException {
+        conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+        return conexion;
+    }
     //---------------------metodo constructor para la clase conectar
 
     public ConectaDb() {
-        user = "postgres";
-        pass = "12345";
-        driver = "org.postgresql.Driver";
-        urlConectar = "jdbc:postgresql://localhost:5432/proyecto";
         try {
-            Class.forName(driver);
-            conection = DriverManager.getConnection(urlConectar, user, pass);
-            System.out.println("SI SE CONECTA A LA DB");
-
-        } catch (ClassNotFoundException ex) {
-            ex.printStackTrace();
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            System.err.println("No conecto a la db");
+            Class.forName(driver).newInstance();
+        } catch (Exception ex) {
+            System.out.print(ex.getMessage());
         }
     }
-    //---------------------fin del constructor
-    //-------------------metodo para cerrar la coneccion a la db
-    public void cerrar() {
-        try {
-            conection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-    
-    
+
     //metodo para Generar las consultas
-    public ResultSet consultas(String cadConsulta) {
+    public ResultSet consultas(String cadConsulta) throws SQLException {
         ResultSet resultado = null;
         try {
-            statement = conection.createStatement();
-            resultado = statement.executeQuery(cadConsulta);
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                resultado = sentencia.executeQuery(cadConsulta);
+                sentencia.close();
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
+        } finally {
+            conexion.close();
         }
         return resultado;
     }
-    
-    
-    //------------------------------
-    //----------------------metodo modelo de la lista para aplicaciones de escritorio
-    public DefaultComboBoxModel modelo(String parteUno, String campo1, String finCadena) {
-        DefaultComboBoxModel llenaLista = new DefaultComboBoxModel();
-        ResultSet datos = null;
-        String cadLista = parteUno + campo1 + finCadena;
-        try {
 
-            statement = conection.createStatement();
-            datos = statement.executeQuery(cadLista);
-            while (datos != null && datos.next()) {
-                String cadena = datos.getString(campo1);
-                //System.err.println(dato);
-                llenaLista.addElement(cadena);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return llenaLista;
-    }
-    
-    
-    //----------------metodo para cerrar el resultado
-    public void cierraResultado(ResultSet resutado) {
-        try {
-            resutado.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    
     // ---------------------fin del metodo
-    public boolean ejecutarOperacion(String cadenaSql) {
+    public boolean ejecutarOperacion(String cadenaSql) throws SQLException {
         //boolean ejecuta= false;
         try {
-            statement = conection.createStatement();
-            statement.execute(cadenaSql);
-            statement.close();
-            return true;
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                sentencia.execute(cadenaSql);
+                sentencia.close();
+                return true;
+            }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
+        } finally {
+            conexion.close();
         }
         return false;
     }
 
-
     //--------------------------metodo retornar valor---------------------
-    public String retornoCodigo(String inicio, String campo, String fin) {
+    public String retornoCodigo(String inicio, String campo, String fin) throws SQLException {
         String date = "";
         try {
-            ResultSet iden = null;
-            String cadeCodigo = inicio + campo + fin;
-            System.out.println(cadeCodigo);
-            statement = conection.createStatement();
-            iden = statement.executeQuery(cadeCodigo);
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                ResultSet iden = null;
+                String cadeCodigo = inicio + campo + fin;
+                Statement sentencia = conexion.createStatement();
+                iden = sentencia.executeQuery(cadeCodigo);
 
-            while (iden != null && iden.next()) {
-                date = iden.getString(campo);
+                while (iden != null && iden.next()) {
+                    date = iden.getString(campo);
+                }
+                sentencia.close();
             }
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
         }
         return date;
     }
-    
 
-    public int darTipoUsuario(String inicio, String campo, String fin) {
+    public int darTipoUsuario(String inicio, String campo, String fin) throws SQLException {
         int dato = 0;
         try {
-            ResultSet iden = null;
-            String cadeCodigo = inicio + campo + fin;
-            System.out.println(cadeCodigo);
-            statement = conection.createStatement();
-            iden = statement.executeQuery(cadeCodigo);
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                ResultSet iden = null;
+                String cadeCodigo = inicio + campo + fin;
+                System.out.println(cadeCodigo);
+                Statement sentecnia = conexion.createStatement();
+                iden = sentecnia.executeQuery(cadeCodigo);
 
-            while (iden != null && iden.next()) {
-                dato = Integer.parseInt(iden.getString(campo));
+                while (iden != null && iden.next()) {
+                    dato = Integer.parseInt(iden.getString(campo));
+                }
+                sentecnia.close();
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
         }
         return dato;
     }
-    
 
     //----------------------funcion para buscar un codigo
-    public boolean iden(String cadCodigo) {
+    public boolean iden(String cadCodigo) throws SQLException {
         ResultSet iden = null;
         int i = 0;
         try {
-            statement = conection.createStatement();
-            iden = statement.executeQuery(cadCodigo);
-            while (iden != null && iden.next()) {
-                i++;
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                iden = sentencia.executeQuery(cadCodigo);
+                while (iden != null && iden.next()) {
+                    i++;
+                }
+                sentencia.close();
             }
+
         } catch (SQLException ex) {
             ex.printStackTrace();
+        } finally {
+            conexion.close();
         }
         if (i > 0) {
             return true;
@@ -174,53 +159,75 @@ public class ConectaDb {
             return false;
         }
     }
-    
 
     //Metodo para generar un combo
-    public String combo(String tabla) {
+    public String combo(String tabla) throws SQLException {
         String consulta = "SELECT * from " + tabla + "";
         String combo = "";
         try {
-            ResultSet resultado = this.consultas(consulta);
-            while (resultado.next() && resultado != null) {
-                combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(3) + "</option>";
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(3) + "</option>";
+                }
+                sentencia.close();
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
         }
         return combo + "</select>";
     }
-    
+
     //Metodo para generar un combo
-    public String comboprograma(String tabla) {
+    public String comboprograma(String tabla) throws SQLException {
         String consulta = "SELECT * from " + tabla + "";
         String combo = "";
         try {
-            ResultSet resultado = this.consultas(consulta);
-            while (resultado.next() && resultado != null) {
-                combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(4).toLowerCase() + "</option>";
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(4).toLowerCase() + "</option>";
+                }
+                sentencia.close();
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
         }
         return combo + "</select>";
     }
-    
-        //Metodo para generar un combo estado
-    public String comboestado(String tabla) {
+
+    //Metodo para generar un combo estado
+    public String comboestado(String tabla) throws SQLException {
         String consulta = "SELECT * from " + tabla + "";
         String combo = "";
         try {
-            ResultSet resultado = this.consultas(consulta);
-            while (resultado.next() && resultado != null) {
-                combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(3).toLowerCase() + "</option>";
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(3).toLowerCase() + "</option>";
+                }
+                sentencia.close();
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
         }
         return combo + "</select>";
     }
-    
 
     //metodo para retornar el color de la linea
     public String linea(int i) {
@@ -232,24 +239,58 @@ public class ConectaDb {
         }
         return salida;
     }
-    
 
-    public String retornaInt(String inicio, String campo, String fin) {
+    public String retornaInt(String inicio, String campo, String fin) throws SQLException {
         String dato = null;
         try {
-            ResultSet iden = null;
-            String cadeCodigo = inicio + campo + fin;
-            System.out.println(cadeCodigo);
-            statement = conection.createStatement();
-            iden = statement.executeQuery(cadeCodigo);
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                ResultSet iden = null;
+                String cadeCodigo = inicio + campo + fin;
+                Statement sentencia = conexion.createStatement();
+                iden = sentencia.executeQuery(cadeCodigo);
 
-            while (iden != null && iden.next()) {
-                dato = iden.getString(1);
+                while (iden != null && iden.next()) {
+                    dato = iden.getString(1);
+                }
+                sentencia.close();
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
         }
         return dato;
     }
-    
+
+    public ArrayList<Vector> ejecutarConsulta(String orden) throws SQLException {
+        ResultSet resultado = null;
+        ArrayList<Vector> arrayFilas = null;
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                resultado = sentencia.executeQuery(orden);
+
+                arrayFilas = new ArrayList<Vector>();
+
+                while (resultado.next()) {
+                    Vector fila = new Vector();
+
+                    for (int i = 1; i <= resultado.getMetaData().getColumnCount(); i++) {
+                        fila.add(resultado.getObject(i));
+                    }
+                    arrayFilas.add(fila);
+                }
+                sentencia.close();
+            }
+        } catch (Exception ex) {
+            System.out.print(ex.getMessage());
+        } finally {
+            resultado.close();
+            conexion.close();
+        }
+        return arrayFilas;
+    }
 }
