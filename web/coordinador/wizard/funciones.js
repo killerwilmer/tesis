@@ -48,7 +48,7 @@ function presionSubmitAses()
     var idAse=$("#idAse").attr("value");
     //alert("CodigoPro: " + codPro + " CodigoEst: " + codEst);
     
-    $.get("registra_asesor_proyecto.jsp",{
+    $.get("wizard/registra_asesor_proyecto.jsp",{
         codProy:codPro,
         codAses:idAse
     },llegadaDatosAses); 
@@ -79,7 +79,7 @@ function presionSubmitJura()
     var idJur=$("#idJur").attr("value");
     //alert("CodigoPro: " + codPro + " CodigoEst: " + codEst);
     
-    $.get("registra_jurado_proyecto.jsp",{
+    $.get("wizard/registra_jurado_proyecto.jsp",{
         codProy:codPro,
         codJura:idJur
     },llegadaDatosJura); 
