@@ -6,17 +6,17 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
- <%@page import="com.umariana.control.ConectaDb" %>
- <% ConectaDb control = new ConectaDb(); %>
- <% 
-      HttpSession sesionOk = request.getSession();
-      String idLlega = (String) sesionOk.getAttribute("coordinador") ;
-      
-      String inicio = "select ";
-      String campo = "nombreprograma";
-      String fin = " from programa where idprograma='"+idLlega+"';";
-      String tipos = control.retornoCodigo(inicio, campo, fin);
-  %>
+<%@page import="com.umariana.control.ConectaDb" %>
+<% ConectaDb control = new ConectaDb();%>
+<%
+    HttpSession sesionOk = request.getSession();
+    String idLlega = (String) sesionOk.getAttribute("coordinador");
+
+    String inicio = "select ";
+    String campo = "nombreprograma";
+    String fin = " from programa where idprograma='" + idLlega + "';";
+    String tipos = control.retornoCodigo(inicio, campo, fin);
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,7 +24,7 @@
 
         <title>Plataforma Coordinador</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".registroetapa").click(function(event) {
@@ -44,17 +44,19 @@
                 
                 $(".registroproyecto").click(function(event) {
                     $("#wraper").load('proyecto.jsp');
-                    $.getScript('js/b.js');
+                });
+                $(".vincular").click(function(event) {
+                    $("#wraper").load('wizard/index.jsp');
                 });
             });
         </script>
-            
+
     </head>
     <body>
         <div id="contenedor">
             <div id="header">
                 <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/Coordinador/images/logo.gif" alt="logo" /></a>
-                <h1 id="tit"><%out.print(tipos);%>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</h1>   
+                <h1 id="tit"><%out.print(tipos);%></h1>   
                 <div id="menu">
                     <ul class="menu">
                         <li><a href="#" class="parent"><span>Etapas</span></a>
@@ -89,15 +91,16 @@
                                 <ul id="menseg">
                                     <li><a href="#" class="registroproyecto"><span>Registrar</span></a></li>
                                     <li><a href="#" class="boton2"><span>Modificar</span></a></li>
+                                    <li><a href="#" class="vincular"><span>Vincular Actores</span></a></li>
                                     <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
                                 </ul>
                             </div>
                         </li>
                         <li><a href="#"><span>Reportes</span></a>
-                        
+
                         </li>
                         <li><a href="#"><span>Informes</span></a>
-                        
+
                         </li>
                     </ul>
                 </div>

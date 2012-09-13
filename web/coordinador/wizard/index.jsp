@@ -10,10 +10,15 @@
     <head>
         <title>JQuery Form Wizard</title>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
-        <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" />
-        <script src="../../recursos/Js/jquery-1.7.1.js"></script>
-        <script src="../../recursos/Js/jquery.autocomplete.js"></script>
-        <script type="text/javascript" src="funciones.js"></script>
+        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
+        
+        <script src="../recursos/Js/jquery-1.7.1.js"></script>
+        <script src="../recursos/Js/jquery.autocomplete.js"></script>
+        <script type="text/javascript" src="wizard/funciones.js"></script>
+        
+        <script type="text/javascript" src="wizard/js/jquery.form.js"></script>     
+        <script type="text/javascript" src="wizard/js/jquery-ui-1.8.5.custom.min.js"></script>
+        <script type="text/javascript" src="wizard/js/jquery.form.wizard.js"></script>
 
         <script type="text/javascript">
             // Limpiar el div de asesor
@@ -43,7 +48,7 @@
             // Para buscar el proyecto
             $(document).ready(function(){
                 
-                $("#proyecto").autocomplete("proyecto_buscar.jsp");
+                $("#proyecto").autocomplete("wizard/proyecto_buscar.jsp");
 
                 $('#proyecto').result(function(event, data, formatted) {
                     if (data) {
@@ -59,7 +64,7 @@
             //Para buscar el estudiante
             $(document).ready(function(){
 
-                $("#estudiante").autocomplete("estudiente_buscar.jsp");
+                $("#estudiante").autocomplete("wizard/estudiente_buscar.jsp");
 
                 $('#estudiante').result(function(event, data, formatted) {
                     if (data) {
@@ -76,7 +81,7 @@
             //Para buscar el docente
             $(document).ready(function(){
 
-                $("#asesor").autocomplete("docente_buscar.jsp");
+                $("#asesor").autocomplete("wizard/docente_buscar.jsp");
 
                 $('#asesor').result(function(event, data, formatted) {
                     if (data) {
@@ -93,7 +98,7 @@
             //Para buscar el asesor
             $(document).ready(function(){
 
-                $("#jurado").autocomplete("docente_buscar.jsp");
+                $("#jurado").autocomplete("wizard/docente_buscar.jsp");
 
                 $('#jurado').result(function(event, data, formatted) {
                     if (data) {
@@ -108,75 +113,9 @@
             });
         </script>
 
-        <style type="text/css">
-            #demoWrapper {
-                padding : 1em;
-                width : 500px;
-                border-style: solid;
-            }
-
-            #fieldWrapper {
-            }
-
-            #demoNavigation {
-                margin-top : 0.5em;
-                margin-right : 1em;
-                text-align: right;
-            }
-
-            #data {
-                font-size : 0.7em;
-            }
-
-            input {
-                margin-right: 0.1em;
-                margin-bottom: 0.5em;
-            }
-
-            .input_field_25em {
-                width: 2.5em;
-            }
-
-            .input_field_3em {
-                width: 3em;
-            }
-
-            .input_field_35em {
-                width: 3.5em;
-            }
-
-            .input_field_12em {
-                width: 12em;
-            }
-
-            label {
-                margin-bottom: 0.2em;
-                font-weight: bold;
-                font-size: 0.8em;
-            }
-
-            label.error {
-                color: red;
-                font-size: 0.8em;
-                margin-left : 0.5em;
-            }
-
-            .step span {
-                float: right;
-                font-weight: bold;
-                padding-right: 0.8em;
-            }
-
-            .navigation_button {
-                width : 70px;
-            }
-
-            #data {
-                overflow : auto;
-            }
-        </style>
     </head>
     <body>
+        <fieldset id="fieladdproyecto">
         <div id="demoWrapper">
             <h3>Vinculacion del Proyecto</h3>
             <hr />
@@ -231,13 +170,7 @@
 
             <p id="data"></p>
         </div>
-
-
-        <script type="text/javascript" src="js/jquery.form.js"></script>
-        <script type="text/javascript" src="js/jquery.validate.js"></script>
-        <script type="text/javascript" src="js/bbq.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
-        <script type="text/javascript" src="js/jquery.form.wizard.js"></script>
+            </fieldset>
 
         <script type="text/javascript">
             $(function(){		
@@ -258,7 +191,7 @@
 
                 $("#demoForm .step").each(function(){ // for each step in the wizard, add an option to the remoteAjax object...
                     remoteAjax[$(this).attr("id")] = {
-                        url : "store_in_database.html", // the url which stores the stuff in db for each step
+                        url : "wizard/store_in_database.html", // the url which stores the stuff in db for each step
                         dataType : 'json',
                         beforeSubmit: function(data){$("#data").html("Datos enviados Correctamente: " + $.param(data))},
                         success : function(data){

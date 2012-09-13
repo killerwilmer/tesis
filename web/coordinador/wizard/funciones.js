@@ -17,7 +17,7 @@ function presionSubmitEstu()
     var codEst=$("#idEst").attr("value");
     //alert("CodigoPro: " + codPro + " CodigoEst: " + codEst);
     
-    $.get("registra_estudiante_proyecto.jsp",{
+    $.get("wizard/registra_estudiante_proyecto.jsp",{
         codProy:codPro,
         codEstu:codEst
     },llegadaDatosEstu); 

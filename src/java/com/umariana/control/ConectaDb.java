@@ -53,7 +53,6 @@ public class ConectaDb {
             if (!conexion.isClosed()) {
                 Statement sentencia = conexion.createStatement();
                 resultado = sentencia.executeQuery(cadConsulta);
-                sentencia.close();
             }
 
         } catch (SQLException ex) {

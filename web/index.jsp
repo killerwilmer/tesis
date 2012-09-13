@@ -270,47 +270,27 @@
                         <li>
                             <a href="#">primer evento</a>
                             <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
+                            Sustentacion trabajo de grado Cocomo2.
                         </li>
                         <li>
                             <a href="#">segundo evento</a>
                             <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
+                            Expocicion Oscar de la portilla.
                         </li>
                         <li>
                             <a href="#">tercer evento</a>
                             <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
+                            Fechas de expocicion tesis.
                         </li>
                         <li>
                             <a href="#">cuarto evento</a>
                             <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
+                            Sustentacion trabajdo de grado, Administrador Tesis.
                         </li>
                         <li>
                             <a href="#">quinto evento</a>
                             <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
-                        </li>
-                        <li>
-                            <a href="#">sexto evento</a>
-                            <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
-                        </li>
-                        <li>
-                            <a href="#">septimo evento</a>
-                            <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
-                        </li>
-                        <li>
-                            <a href="#">octavo evento</a>
-                            <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
-                        </li>
-                        <li>
-                            <a href="#">noveno evento</a>
-                            <br>
-                            Lorem ipsum est quo sit amentus apis larumser.
+                            Sustentacion trabajo de grado. Internacionalizacion.
                         </li>
                     </ul>
                 </div>
@@ -432,7 +412,7 @@ Iberoamericano -FNPI-, y el Ministerio de Cultura de Colombia...
         </div>  
         <div id="footer-container" style=" background:url(recursos/Imagenes/index/footer.png) repeat-x">
             <footer class="wrapper2">
-                <h4>
+                <h4 style="color: #000">
                     <span class="Estilo4">Esta pagina se mira mejor con <a href="https://www.google.com/intl/es/chrome/browser/?hl=es" onclick="javascript:window.open('https://www.google.com/intl/es/chrome/browser/?hl=es');return false;">Navegador Chrome - Google</a>  ó <a href="http://www.mozilla.org/es-ES/firefox/fx/" onclick="javascript:window.open('http://www.mozilla.org/es-ES/firefox/fx/');return false;">mozilla firefox</a> a una resolución de 1024x768 o superior <br /></span>
                     <span class="Estilo5">WEBMASTER</span><span class="Estilo4">
                         <br />Wilmer Arteaga - Alex Enriquez<br />
