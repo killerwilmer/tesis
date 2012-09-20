@@ -4,68 +4,64 @@
     Author     : usuarui
 --%>
 
+<%@page import="com.umariana.control.ConectaDb"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    ConectaDb cont = new ConectaDb();
+%>
+<%
+    HttpSession sesionOk = request.getSession();
+    String idLlega = (String) sesionOk.getAttribute("coordinador");
+%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
-        <script TYPE="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script TYPE="text/javascript" src="../recursos/Js/Coordinador/combobox.js"></script>
-        <link rel="stylesheet" href="../recursos/Css/Coordinador/formLight.css" type="text/css" media="all" />
-        
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script>
-        <script type="text/javascript" src="../recursos/Js/Coordinador/win7.js"></script> 
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
+        <script src="../recursos/Js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="funciones.js"></script>
         
         <script type="text/javascript">
-            $(function() {
-                $('#ui_element').scrollablecombo();
-            });
-            
-            campoNuevo = 3;
-             //Funcion de agregar campos
-             function AgregarCampos() {
-                 campoNuevo = campoNuevo + 1;
-                 campo = '<div><label>Sub Linea ' + campoNuevo + ' </label><textarea name="sub' + campoNuevo + '"  /></div>';
-                 $("#cont").append(campo);
-             }
+            // Limpiar todos los campos
+            function clearAll()
+            {
+                $("#comboetapas").val("*");
+                $("#aspecto").val("");
+                $("#indicador").val("");
+            }
+            // Limpiar esolo el campo indicador
+            function clearIndicador()
+            {
+                $("#indicador").val("");
+            }
         </script>
-        <link rel="stylesheet" href="../recursos/Css/Coordinador/combobox.css" TYPE="text/css" media="screen"/>
     </head>
     <body>
-        <form method="post" id="formu">
-            <h1>Aspectos e Indicadores</h1>
-            <div id="fielx">
-                <fieldset id="fiel1">
-                    <div class="content">
-                        <div class="box">
-                            <select ID="ui_element">
-                                <option value="A" selected>Escoger una Etapa</option>
-                                <option value="B">Option Item B</option>
-                                <option value="C">Option Item C</option>
-                                <option value="D">Option Item D</option>
-                                <option value="E">Option Item E</option>
-                                <option value="F">Option Item F</option>
-                            </select>
-                        </div>
-                    </div>  
-                </fieldset>
+        <form id="formu">
+            <h1>Registro Aspectos e Indicadores</h1>        
+            <fieldset id="fielaspectos">
                 
-                <fieldset id="fiel2">
-                    Aspecto
-                    <textarea id="text1"></textarea><br/>                
-                </fieldset>
+                <label for="surname">Nombre Etapa</label><br/>
+                <select id="comboetapas" name="comboetapas">
+                    <option selected="" value="*">Seleccione Etapa del Proyecto</option>
+                    <%
+                        out.print(cont.comboestado("etapa"));
+                    %>
+                </select><br/>
                 
-                 <fieldset id="fiel3">
-                    Indicador 1 <textarea name="sub1"></textarea><br/>
-                    Indicador 2 <textarea name="sub2"></textarea><br/>
-                    Indicador 3 <textarea name="sub3"></textarea>
-                    <div id="cont"></div><br/>
-                    <span id="span2" class="win7 win7yellow" onclick="AgregarCampos(this);"><a href="#">Agregar Campo</a></span>                       
-                </fieldset>
-                <br/><span id="btn1"  class="win7 win7blue" name="enviar"><a  href="#" >Guardar</a></span>
-            </div>
-        </form>
+                <label for="surname">Nombre Apecto</label><textarea name="aspecto" id="aspecto"></textarea><br/>
+                <label for="surname">Nombre Indicador</label><textarea name="indicador" id="indicador"></textarea><br/>
+                <input type="hidden" name="idPrograma" id="idPrograma" value="<%out.print(idLlega);%>">
+                <br/>
+                <span><input id="resetall" type="button" onclick="clearAll()" value="Reset All" name="resetall"/></span>
+                <span><input id="reset" type="button" onclick="clearIndicador()" value="Reset Indicador" name="reset"/></span>
+                <span><input id="enviar" type="button" value="Guardar" name="enviar"/></span>
+                <br/>
+                <div id="resultados" >
+                </div>
+            </fieldset>
+        </form> 
     </body>
 </html>

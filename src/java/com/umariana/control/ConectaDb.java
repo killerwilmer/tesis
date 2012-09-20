@@ -18,7 +18,7 @@ public class ConectaDb {
 
     public String idenTrabajador;
     public String usuario = "postgres";
-    public String clave = "postgres007";
+    public String clave = "12345";
     public String driver = "org.postgresql.Driver";
     public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto";
 
@@ -182,7 +182,10 @@ public class ConectaDb {
         return combo + "</select>";
     }
 
-    //Metodo para generar un combo
+//*****************************************************
+//Metodo para generar un combo
+//*****************************************************
+    
     public String comboprograma(String tabla) throws SQLException {
         String consulta = "SELECT * from " + tabla + "";
         String combo = "";
@@ -205,7 +208,10 @@ public class ConectaDb {
         return combo + "</select>";
     }
 
-    //Metodo para generar un combo estado
+//*****************************************************
+//Metodo para generar un combo estado
+//*****************************************************
+    
     public String comboestado(String tabla) throws SQLException {
         String consulta = "SELECT * from " + tabla + "";
         String combo = "";
@@ -216,6 +222,32 @@ public class ConectaDb {
                 ResultSet resultado = sentencia.executeQuery(consulta);
                 while (resultado.next() && resultado != null) {
                     combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(3).toLowerCase() + "</option>";
+                }
+                sentencia.close();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
+        }
+        return combo + "</select>";
+    }
+    
+//*****************************************************
+//Metodo para generar un combo de los campos
+//*****************************************************
+    
+    public String combocampo(String tabla) throws SQLException {
+        String consulta = "SELECT * from " + tabla + "";
+        String combo = "";
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(2).toLowerCase() + "</option>";
                 }
                 sentencia.close();
             }
@@ -254,7 +286,6 @@ public class ConectaDb {
                 }
                 sentencia.close();
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

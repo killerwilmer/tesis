@@ -29,16 +29,15 @@
         <script type="text/javascript" src="funciones.js"></script>
 
     </head>
-    <body onload="formu.etapa1.focus()">
+    <body>
         <form id="formu">
-            <br/>
             <h1>Etapas del Proceso de Investigación</h1>        
             <fieldset id="fiel">
-                Nombre <input type="text" name="etapa" id="etapa"/><br/>
+                Nombre<input type="text" name="etapa" id="etapa"/><br/>
                 <span>
                     Programa <input type="text" name="programa" id="programa" disabled="true" value="<%out.print(nombrePrograma);%>"/><br/>
                     <input type="hidden" name="idPrograma" id="idPrograma" value="<%out.print(idLlega);%>">
-                </span><br/><br/>
+                </span><br/>
                 <span><input id="enviar" type="submit" value="Guardar" name="enviar"/></span>
                 <br/>
                 <div id="resultados" >

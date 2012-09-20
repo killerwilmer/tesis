@@ -29,7 +29,7 @@ function llegadaDatosEstu(datos)
 	$("#resultados_estu").html(datos);
 }
 
-/* Vincular el esesor al proyecto */
+/* Vincular el asesor al proyecto */
 
 var x1;
 x1=$(document);
@@ -90,3 +90,35 @@ function llegadaDatosJura(datos)
 {
 	$("#resultados_jura").html(datos);
 }
+
+
+/* Validación campo proyecto 
+
+var val;
+val=$(document);
+val.ready(validacionCampoP);
+
+function validacionCampoP()
+{
+    var val;
+    val=$("#next");
+    val.click(presionSubmit);
+}
+
+function presionSubmit()
+{
+    var aa=$("#proyecto").attr("value");
+   
+alert(aa);
+    $.get("wizard/validacionCampoProyecto.jsp",{
+        nombre:aa
+        
+    },llegada); 
+    return false;
+}
+
+
+function llegada(datos)
+{
+	$("#result").html(datos);
+}*/

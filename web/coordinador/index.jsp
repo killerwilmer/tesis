@@ -61,7 +61,7 @@
                     <ul class="menu">
                         <li><a href="#" class="parent"><span>Etapas</span></a>
                             <div>
-                                <ul id="menseg">
+                                <ul id="menseg1">
                                     <li><a href="#" class="registroetapa"><span>Registrar</span></a></li>
                                     <li><a href="#" class="boton2"><span>Modificar</span></a></li>
                                     <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
@@ -70,7 +70,7 @@
                         </li>
                         <li><a href="#" class="parent"><span>Grupo Investigación</span></a>
                             <div>
-                                <ul id="menseg">
+                                <ul id="menseg2">
                                     <li><a href="#" class="registrogrupo"><span>Registrar</span></a></li>
                                     <li><a href="#" class="boton2"><span>Modificar</span></a></li>
                                     <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
@@ -79,7 +79,7 @@
                         </li>
                         <li><a href="#"><span>Aspectos</span></a>
                             <div>
-                                <ul id="menseg">
+                                <ul id="menseg3">
                                     <li><a href="#" class="registroaspectos"><span>Registrar</span></a></li>
                                     <li><a href="#" class="boton2"><span>Modificar</span></a></li>
                                     <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
@@ -88,7 +88,7 @@
                         </li>
                         <li><a href="#"><span>PROYECTO</span></a>
                             <div>
-                                <ul id="menseg">
+                                <ul id="menseg4">
                                     <li><a href="#" class="registroproyecto"><span>Registrar</span></a></li>
                                     <li><a href="#" class="boton2"><span>Modificar</span></a></li>
                                     <li><a href="#" class="vincular"><span>Vincular Actores</span></a></li>

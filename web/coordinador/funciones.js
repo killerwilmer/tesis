@@ -1,4 +1,6 @@
-/*registro proyecto */
+/*******************************************************
+ *registro proyecto
+ *******************************************************/
 
 var x;
 x=$(document);
@@ -35,7 +37,9 @@ function presionSubmit()
     return false;
 }
 
-/*registro etapa */
+/*******************************************************
+ *registro etapas del proyecto
+ *******************************************************/
 
 var z;
 z=$(document);
@@ -61,8 +65,146 @@ function presionSubmitetapa()
 }
 
 
+/*******************************************************
+ *registro grupo de investigacón
+ *******************************************************/
+
+var g;
+g=$(document);
+g.ready(inicializarEventosGrupoInvestigacion);
+
+function inicializarEventosGrupoInvestigacion()
+{
+    var gg;
+    gg=$("#boton_registro");
+    gg.click(presionSubmitGrupoInvestigacion);
+}
+
+function presionSubmitGrupoInvestigacion()
+{
+    var ng=$("#grupoinvestigacion").attr("value");
+    var ip=$("#idPrograma").attr("value");
+
+    $.get("registroGrupoInvestigacion.jsp",{
+        nombreGrupo:ng,
+        idprograma:ip
+    },llegadaDatos); 
+    return false;
+}
+
+/*******************************************************
+ *registro campo de investigación
+ *******************************************************/
+
+var ca;
+ca=$(document);
+ca.ready(inicializarEventosCampoInvestigacion);
+
+function inicializarEventosCampoInvestigacion()
+{
+    var ca;
+    ca=$("#boton_registro2");
+    ca.click(presionSubmitCampoInvestigacion);
+}
+
+function presionSubmitCampoInvestigacion()
+{
+    var nc=$("#campoinvestigacion").attr("value");
+    var dc=$("#descampo").attr("value");
+
+    $.get("registroCampoInvestigacion.jsp",{
+        nombreCampo:nc,
+        descampo:dc
+    },llegadaDatos); 
+    return false;
+}
+
+/*******************************************************
+ *registro linea de investigación
+ *******************************************************/
+
+var li;
+li=$(document);
+li.ready(inicializarEventosLineaInvestigacion);
+
+function inicializarEventosLineaInvestigacion()
+{
+    var li;
+    li=$("#boton_registro3");
+    li.click(presionSubmitLineaInvestigacion);
+}
+
+function presionSubmitLineaInvestigacion()
+{
+    var cgi=$("#combogrupoinvestigacion").attr("value");
+    var cci=$("#campoinv").attr("value");
+    var nli=$("#lineainvestigacion").attr("value");
+
+    $.get("registroLineaInvestigacion.jsp",{
+        coboggrupoi:cgi,
+        combocampoi:cci,
+        nombrelinea:nli
+    },llegadaDatos); 
+    return false;
+}
+
+/*******************************************************
+ *registro sublinea de investigación
+ *******************************************************/
+
+var sbl;
+sbl=$(document);
+sbl.ready(inicializarEventosSubLineaInvestigacion);
+
+function inicializarEventosSubLineaInvestigacion()
+{
+    var sl;
+    sl=$("#boton_registro4");
+    sl.click(presionSubmitSubLineaInvestigacion);
+}
+
+function presionSubmitSubLineaInvestigacion()
+{
+    var cl=$("#combolineainvestigacion").attr("value");
+    var nsl=$("#sublineainvestigacion").attr("value");
+
+    $.get("registroSublineaInvestigacion.jsp",{
+        idLineaInvestigacion:cl,
+        nombreSublinea:nsl
+    },llegadaDatos); 
+    return false;
+}
+
+/*******************************************************
+ *registro aspectos e indicadores
+ *******************************************************/
+
+var ai;
+ai=$(document);
+ai.ready(inicializarEventosAspectosIndicadores);
+
+function inicializarEventosAspectosIndicadores()
+{
+    var ai;
+    ai=$("#enviar");
+    ai.click(presionSubmitAspectosIndicadores);
+}
+
+function presionSubmitAspectosIndicadores()
+{
+    var aie=$("#comboetapas").attr("value");
+    var asi=$("#aspecto").attr("value");
+    var iai=$("#indicador").attr("value");
+
+    $.get("registroAspectosIndicadores.jsp",{
+        idetapas:aie,
+        nomaspecto:asi,
+        nomindicador:iai
+    },llegadaDatos); 
+    return false;
+}
 
 function llegadaDatos(datos)
 {
-	$("#resultados").html(datos);
+    $("#resultados").html(datos);
 }

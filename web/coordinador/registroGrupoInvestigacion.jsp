@@ -1,6 +1,6 @@
 <%-- 
-    Document   : addetapa
-    Created on : 03-may-2012, 11:45:55
+    Document   : registroGrupoInvestigacion
+    Created on : 19-sep-2012, 14:17:22
     Author     : usuarui
 --%>
 
@@ -22,31 +22,29 @@
     </head>
     <body>
         <%
-            String nometapa = request.getParameter("nombre");
+            String nombreGrupo = request.getParameter("nombreGrupo");
             String idprogram = request.getParameter("idprograma");
                 
-            if ((nometapa.length() == 0)) {            
-                out.print("<script languaje = javascript>showWarningToast('Digite Nombre');</script>");              
-            } else if ((idprogram.equals("*"))) {
-                out.print("<script languaje = javascript>showWarningToast('Seleccione un Programa');</script>");
+            if ((nombreGrupo.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Nombre del Grupo');</script>");
             } else {
                 int numero = Integer.parseInt(idprogram);
-                String SQLIden = "Select nombreetapa from etapa where nombreetapa ='" + nometapa.toUpperCase() + "'";
-                    
+                String SQLIden = "Select nombregrupoinvestigacion from grupoinvestigacion where nombregrupoinvestigacion ='" + nombreGrupo.toUpperCase() + "'";
+                
                 if (control.iden(SQLIden)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Etapa ya existe');</script>");
-                } else {
-                    String SqlInsert = "insert into etapa  (idprograma,nombreetapa)  values('" + numero + "','" + nometapa.toUpperCase() + "');";
+                    out.print("<script languaje = javascript>showNoticeToast('Grupo ya Esta Registrado');</script>");              
+                }
+                else {
+                    String SqlInsert = "insert into grupoinvestigacion  (idprograma,nombregrupoinvestigacion)  values('" + numero + "','" + nombreGrupo.toUpperCase() + "');";
                         
                     if (control.ejecutarOperacion(SqlInsert)) {
                          out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
                     } else {
                         out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
-                    }                       
+                    }
+                        
                 }
             }
         %>
     </body>
 </html>
-
-

@@ -1,12 +1,16 @@
 <%-- 
-    Document   : addetapa
-    Created on : 03-may-2012, 11:45:55
+    Document   : registroCampoInvestigacion
+    Created on : 19-sep-2012
     Author     : usuarui
 --%>
 
 <%@page import="org.w3c.dom.Document"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=utf-8");
+%>
 
 <%@page import="com.umariana.control.ConectaDb"%>
 <% ConectaDb control = new ConectaDb();%>
@@ -22,31 +26,21 @@
     </head>
     <body>
         <%
-            String nometapa = request.getParameter("nombre");
-            String idprogram = request.getParameter("idprograma");
+            String nombreCampo = request.getParameter("nombreCampo");
+            String desCampo = request.getParameter("descampo");
                 
-            if ((nometapa.length() == 0)) {            
-                out.print("<script languaje = javascript>showWarningToast('Digite Nombre');</script>");              
-            } else if ((idprogram.equals("*"))) {
-                out.print("<script languaje = javascript>showWarningToast('Seleccione un Programa');</script>");
-            } else {
-                int numero = Integer.parseInt(idprogram);
-                String SQLIden = "Select nombreetapa from etapa where nombreetapa ='" + nometapa.toUpperCase() + "'";
-                    
-                if (control.iden(SQLIden)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Etapa ya existe');</script>");
-                } else {
-                    String SqlInsert = "insert into etapa  (idprograma,nombreetapa)  values('" + numero + "','" + nometapa.toUpperCase() + "');";
+            if ((nombreCampo.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Nombre del Campo');</script>");
+            }       
+            else {           
+                    String SqlInsert = "insert into campo  (nombrecampo,descripcioncampo)  values('" + nombreCampo + "','" + desCampo + "');";
                         
                     if (control.ejecutarOperacion(SqlInsert)) {
                          out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
                     } else {
                         out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
-                    }                       
-                }
+                    }                             
             }
         %>
     </body>
 </html>
-
-

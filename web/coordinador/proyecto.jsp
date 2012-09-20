@@ -44,31 +44,35 @@
         <form id="formularioproy">
             <fieldset id="fieladdproyecto">
                
-                Titulo<input type="text" name="titulop" id="titulop"/><br/>
-                Titulo Abreviado<input type="text" name="tituloabreviado" id="tituloabreviado"/><br/>
-                Institución<input type="text" name="institucion"  id="institucion"/>
-                <span>
-                    Etapa<select id="comboestado" name="comboestado">
+                <label for="surname">Titulo</label><input type="text" name="titulop" id="titulop"/><br/>
+                <label for="surname">Titulo Abreviado</label><input type="text" name="tituloabreviado" id="tituloabreviado"/><br/>
+                <label for="surname">Institución</label><input type="text" name="institucion"  id="institucion"/>
+                
+                    <label for="surname">Etapa</label><select id="comboestado" name="comboestado">
                         <option selected="" value="*">Seleccione Etapa</option>
                         <%
                             out.print(control.comboestado("etapa"));
                         %>
                     </select>
-                </span><br/><br/>
-                <label id="des" for="textarea">Descripción</label><textarea id="descripcion" name="descripcion"></textarea><br/> 
+                <br/><br/>
+                <label for="surname" id="descrip">Descripción</label><textarea id="descripcion" name="descripcion"></textarea><br/> 
+                
                 <div class="demo">
-                    <label>Fecha Inicio</label>
+                    <label for="surname">Fecha Inicio</label>
                     <input type="text" name="datepicker" id="datepicker" />
                 </div>
-                Tipo
+                
+                <label for="surname">Tipo</label>
                 <select id="tipo" name="tipo"  class="required">
                     <option selected="" value="*">Seleccione Tipo</option>
                     <option value="trbajogrado">Trabajo de Grado</option>
-                </select><br/><br/><span id="radios">
-                Activo<input type="radio" name="estado" id="activo" value="1">
-                Inactivo<input type="radio" name="estado" id="inactivo" value="0"></span> 
+                </select><br/><br/>
+                <span id="radios">
+                    
+                <label for="surname">Activo</label><input type="radio" name="estado" id="activo" value="1">
+                <label for="surname">Inactivo</label><input type="radio" name="estado" id="inactivo" value="0"></span> 
                 <br/><br/>                           
-                <span><input id="enviarproyecto" type="submit" value="Guardar" name="enviarproyecto"/></span>
+                <input id="enviarproyecto" type="submit" value="Guardar" name="enviarproyecto"/>
                 <br/>
                 <div id="resultados" >
                 </div>
