@@ -461,7 +461,7 @@ response.setContentType("text/html; charset=utf-8");
             else{
                 String idusuario = "2";
                 String SQLIden = "Select codigousuario from usuario where codigousuario ='" + identificacionF + "'";
-                String SQLIdenusuario = "Select nombretipousuario from tipousuario where nombretipousuariio ='" + tipousuario + "'";
+                String SQLIdenusuario = "Select nombretipousuario from tipousuario where nombretipousuario ='" + tipousuario + "'";
                 
                 
                 if (!control.iden(SQLIdenusuario) ) {
