@@ -20,53 +20,38 @@
         <script type="text/javascript" src="../recursos/datepicker/jquery.ui.core.js"></script>
         <script type="text/javascript" src="../recursos/datepicker/jquery.ui.widget.js"></script>
         <script type="text/javascript" src="../recursos/datepicker/jquery.ui.datepicker.js"></script>
-        <script type="text/javascript" src="vaidaciones.js"></script>
         <script type="text/javascript" src="funciones.js"></script>
-        <script type="text/javascript" src="jquery.metadata.js"></script>
         
-        
-        
-        <script>
+        <script type="text/javascript">     
 	$(function() {
 		$( "#datepicker" ).datepicker({
 			changeMonth: true,
 			changeYear: true
-		});
-                
-                // Validamos el formulario
-                $('#form').validate({
-                    errorPlacement: function(error, element) {
-                        error.appendTo(element.prev("input").append());
-                    }
-                });
-	});
-       
-       
-              
+		});              
+	});        
 	</script>
     </head>
-    <body id="d">
-        <br/><br/>
+    <body id="d"><br/><br/>
+        <h1 id="titusuario">Registro Usuario</h1>
         <div id="stylized" class="myform">
             <form id="form">
-            <h1>Registro Usuario</h1>
-            
+          
             <label for="nombre">Nombres</label>
-            <input type="text" name="nombre" id="nombre" class="{required:true}" />
+            <input type="text" name="nombre" id="nombre" />
             
             <label>Apellidos</label>
-            <input type="text" name="apellidos" id="apellidos" class="{required:true}" />
+            <input type="text" name="apellidos" id="apellidos" />
             
             <label>Identificación</label>
-            <input type="text" name="identificacion" id="identificacion" class="{required:true}"/>
+            <input type="text" name="identificacion" id="identificacion"/>
             
             
             <label>Password</label>
-            <input type="text" name="clave" id="clave" class="{required:true}"/>
+            <input type="text" name="clave" id="clave" />
             
             <label>Tipo Usuario</label>
             <span>
-                <select id="combotusuario" name="combotusuario" class="{required:true}">
+                <select id="combotusuario" name="combotusuario" >
                     <option selected="" value="*" style="border-radius: 4px">Seleccione T. Usuario</option>
                     <%
                         out.print(control.combo("tipousuario"));
@@ -75,23 +60,23 @@
            </span>  
 
             <label>Genero</label>
-            <select id="genero" name="genero"  class="required">
+            <select id="genero" name="genero">
                 <option selected="" value="*">Seleccione su Genero</option>
                 <option value="masculino">MASCULINO</option>
                 <option value="femenino">FEMENINO</option>
             </select>  
             
             <label>Codigo Facultad</label>
-            <input type="text" name="codfacultad" id="codfacultad" class="{required:true}"/>
+            <input type="text" name="codfacultad" id="codfacultad"/>
             
             <label>Nombre Facultad</label>
-            <input type="text" name="nomfacultad" id="nomfacultad" class="{required:true}"/>
+            <input type="text" name="nomfacultad" id="nomfacultad"/>
             
             <label>Codigo Programa</label>
-            <input type="text" name="codprograma" id="codprograma" class="{required:true}"/>
+            <input type="text" name="codprograma" id="codprograma"/>
             
             <label>Nombre Programa</label>
-            <input type="text" name="nomprograma" id="nomprograma" class="{required:true}"/>
+            <input type="text" name="nomprograma" id="nomprograma"/>
             
             <label>Codigo Ciudad</label>
             <input type="text" name="codciudad" id="codciudad" />
@@ -116,7 +101,7 @@
             <input type="text" name="direccion" id="direccion" />
             
             <label>E-Mail</label>
-            <input type="email" name="email" id="email" class="{required:true}"/>
+            <input type="email" name="email" id="email"/>
             
             <label>Número Celular</label>
             <input type="text" name="celular" id="celular" />
@@ -128,7 +113,7 @@
             <input type="text" name="eps" id="eps" />
             
             <label>RH</label>
-            <select id="rh" name="rh" class="{required:true}">
+            <select id="rh" name="rh">
                 <option selected="" value="*">Seleccione su Tipo</option>
                 <option value="O-">O-</option>
                 <option value="O+">O+</option>

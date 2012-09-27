@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>   
             
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/addcoordinador.css" />
+        <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/estiloFormularios.css" />
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script src="../recursos/Js/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="funciones.js"></script>
@@ -27,8 +27,7 @@
     <body>
         <br/><br/>
         <h1 id="coor">Asignar Coordinador</h1>
-
-        <fieldset id="fiel"><br/>
+        <fieldset id="fielcoor"><br/>
             <label id="nom">Digite Nombre</label><input type="text" id="country" name="country" class="input_text"/> <br/> 
             <span>
                 <select id="comboprograma" name="comboprograma">

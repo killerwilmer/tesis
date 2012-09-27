@@ -3,19 +3,47 @@
     Created on : 26-oct-2011, 15:11:13
     Author     : zzz
 --%>
+<%@ page language="java" import="java.sql.*" %>
+<%@page language="java" import="java.util.Enumeration" pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@page import="com.umariana.control.ConectaDb" %>
 <% ConectaDb control = new ConectaDb();%>
+
 <%
+    request.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html; charset=utf-8");
+%>
+
+<!DOCTYPE html>
+
+<%
+    response.setHeader("Content-Type", "text/html");
+
     HttpSession sesionOk = request.getSession();
     String idLlega = (String) sesionOk.getAttribute("coordinador");
-
+    
     String inicio = "select ";
     String campo = "nombreprograma";
     String fin = " from programa where idprograma='" + idLlega + "';";
     String tipos = control.retornoCodigo(inicio, campo, fin);
+    
+    String ini = "select ";
+    String cam = "idusuario";
+    String end = " from coordinador where idprograma='" + idLlega + "';";
+    String tip = control.retornoCodigo(ini, cam, end);
+  
+    String nombre="";
+    
+    try {
+        String sql = "select nombres, apellidos from usuario where idusuario='" + tip + "';";
+        //System.out.print(sql);
+        ResultSet rs = control.consultas(sql);
+        while (rs.next()) {
+           nombre = rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim();
+                              }
+    } catch (Exception e) {
+        out.println("Exception is ;" + e);
+    }
 %>
 <html>
     <head>
@@ -55,7 +83,7 @@
     <body>
         <div id="contenedor">
             <div id="header">
-                <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/Coordinador/images/logo.gif" alt="logo" /></a>
+                <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/index/logo1.gif" alt="logo" /></a>
                 <h1 id="tit"><%out.print(tipos);%></h1>   
                 <div id="menu">
                     <ul class="menu">
@@ -96,10 +124,13 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#"><span>Reportes</span></a>
+                        <li><a id="reporte" href="#"><span>Reportes</span></a>
 
                         </li>
-                        <li><a href="#"><span>Informes</span></a>
+                        <li><a id="informe" href="#"><span>Informes</span></a>
+
+                        </li>
+                        <li><a id="cerrar" href="#"><span id="salir">Salir</span></a>
 
                         </li>
                     </ul>
@@ -109,7 +140,15 @@
             </div>
             <!--object type="text/html" data="Coordinador/formEtapa.jsp" style="width: 400px; height: 400px"> </object--> 
             <div id="footer">
-
+                <label>Plataforma Coordinador</label><br/>
+                <label id="nombreusuario"><%out.print(nombre.toUpperCase());%></label><br/><br/>
+                <label id="estilo1">WEBMASTER</label>
+                <br/><label id="estilo2">WILMER ARTEAGA - ALEX ENRIQUEZ</label><br/>
+                        <label id="estilo1">Email</label><br />
+                        <label id="estilo2">killerwilmer@gmail.com - alex.84.12@hotmail.com</label><br/><br/>
+                        <label id="estilo3">Universidad Mariana</label><br />
+                        <label id="estilo2">San Juan de Pasto - Nariño - Colombia</label><br />
+                        <label id="estilo2">Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</label>
             </div>
         </div>
     </body>

@@ -3,6 +3,7 @@
     Created on : 26-oct-2011, 11:33:59
     Author     : zzz
 --%>
+<%@ page language="java" import="java.sql.*" %>
 <%@ page session="true" %>
 
 <%@page import="com.umariana.control.ConectaDb" %>
@@ -17,6 +18,19 @@
     String campo = "nombreprograma";
     String fin = " from usuario where codigousuario='" + estudiante + "';";
     String tipos = control.retornoCodigo(inicio, campo, fin);
+    
+    String nombre = "";
+         
+     try {
+         String sql = "select nombres, apellidos from usuario where codigousuario='" + estudiante + "';";
+         //System.out.print(sql);
+         ResultSet rs = control.consultas(sql);
+         while (rs.next()) {
+             nombre = rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim();
+         }
+     } catch (Exception e) {
+         out.println("Exception is ;" + e);
+     }
 %>
 
 <!DOCTYPE html>
@@ -59,6 +73,7 @@
                         <li><a href="#"><span>HTML</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>User Interface</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>CSS</span></a></li>
+                        <li><a id="cerrar" href="#"><span id="salir">Salir</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -69,9 +84,16 @@
                 </form>
                 <ckeditor:replace replace="content" basePath="/ckeditor/" />
             </div>
-            <!--object type="text/html" data="Coordinador/formEtapa.jsp" style="width: 400px; height: 400px"> </object--> 
             <div id="footer">
-
+                <label>Plataforma Estudiante</label><br/>
+                <label id="nombreusuario"><%out.print(nombre.toUpperCase());%></label><br/><br/>
+                <label id="estilo1">WEBMASTER</label>
+                <br/><label id="estilo2">WILMER ARTEAGA - ALEX ENRIQUEZ</label><br/>
+                        <label id="estilo1">Email</label><br />
+                        <label id="estilo2">killerwilmer@gmail.com - alex.84.12@hotmail.com</label><br/><br/>
+                        <label id="estilo3">Universidad Mariana</label><br />
+                        <label id="estilo2">San Juan de Pasto - Nariño - Colombia</label><br />
+                        <label id="estilo2">Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</label>
             </div>
         </div>
     </body>

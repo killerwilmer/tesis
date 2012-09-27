@@ -19,8 +19,16 @@ h1{
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
                0 4px 0 #b9b9b9,
-               0 5px 0 #aaa;
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
     text-align: center;
+    margin-top: 55px;
 }
 
 /************************************************************************** 
@@ -204,6 +212,7 @@ fieldset#fielaspectos{
     -webkit-box-shadow:inset 0 0 14px #4db849;
     box-shadow:inset 0 0 14px #4db849;
     border: none;
+    margin-bottom: 20px;
 }
 
 fieldset#fielaspectos #comboetapas{
@@ -309,6 +318,7 @@ fieldset#fieladdproyecto{
     box-shadow:inset 0 0 14px #4db849;
     border: none;
     font-size: 15px;
+    margin-bottom: 20px;
 }
 
 fieldset#fieladdproyecto label{
@@ -390,6 +400,7 @@ fieldset#fieladvinculacionactores{
     box-shadow:inset 0 0 14px #4db849;
     border: none;
     font-size: 15px;
+    margin-bottom: 20px;
 }
 
 fieldset#fieladvinculacionactores input[type="text"]{
@@ -452,6 +463,7 @@ fieldset#fielgrupoinvestigacion{
     box-shadow:inset 0 0 14px #4db849;
     border: none;
     font-size: 15px;
+    margin-bottom: 20px;
 }
 
 fieldset#fielgrupoinvestigacion input[type="text"]{
@@ -512,7 +524,7 @@ fieldset#fielgrupoinvestigacion #next{
    margin-bottom: 20px;
 }
 
-fieldset#fielgrupoinvestigacion #combogrupoinvestigacion, #campoinv, #combolineainvestigacion{
+fieldset#fielgrupoinvestigacion #combogrupoinvestigacion, #campoinv, #combolineainvestigacion, #combolineainvestiga{
     font-size: 13px;
     border:solid 1px #98cb98;
     width: 340px;

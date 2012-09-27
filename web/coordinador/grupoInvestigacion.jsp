@@ -32,6 +32,14 @@
         <script type="text/javascript" src="wizard/js/jquery.form.js"></script>     
         <script type="text/javascript" src="wizard/js/jquery-ui-1.8.5.custom.min.js"></script>
         <script type="text/javascript" src="wizard/js/jquery.form.wizard.js"></script>
+        
+        <script type="text/javascript">
+            function fun(combolineainvestiga)
+            {
+                var cuadrosDeTexto= document.getElementById('lineainvestigacion');
+                cuadrosDeTexto.value = combolineainvestiga;
+            }     
+        </script>
     </head>
     
     <body>
@@ -71,18 +79,19 @@
                               <select id="combogrupoinvestigacion" name="combogrupoinvestigacion">
                                 <option selected="" value="*">Seleccione Grupo de Investigación</option>
                                 <%
-                                    out.print(cont.comboestado("grupoinvestigacion"));
+                                    out.print(cont.combofiltro("grupoinvestigacion", idLlega));
                                 %>
                               </select>
                               <br/><label for="surname">Campo de Investigación</label><br/>
                               <select id="campoinv" name="campoinv">
                                 <option selected="" value="*">Seleccione Campo de Investigación</option>
                                 <%
-                                    out.print(cont.combocampo("campo"));
+                                    out.print(cont.combocampo("linea, grupoinvestigacion, campo", idLlega));
                                 %>
                               </select>
-                            <label for="surname">Nombre Linea de Investigacón</label><br />
-                            <input type="text" id="lineainvestigacion" name="lineainvestigacion" class="input_field_12em"/>                       
+                              
+                            <label for="surname">Digite Linea de Investigacón</label><br />
+                            <input type="text" id="lineainvestigacion" name="lineainvestigacion" class="input_field_12em"/><br/>                            
                             <br/><input id="boton_registro3" type="button" value="Registrar" name="enviar"/>
                             <div id="resultados"></div>
                         </span>
@@ -93,7 +102,7 @@
                               <select id="combolineainvestigacion" name="combolineainvestigacion">
                                 <option selected="" value="*">Seleccione Linea de Investigación</option>
                                 <%
-                                    out.print(cont.comboprograma("linea"));
+                                    out.print(cont.combolineainvestigacion("linea, grupoinvestigacion", idLlega));
                                 %>
                               </select>
                             <label for="surname">Nombre Sub-Linea de Investigacón</label><br/>
@@ -146,19 +155,16 @@
                 url : "wizard/store_in_database.html", // the url which stores the stuff in db for each step
                 dataType : 'json',
                 beforeSubmit: function(data){$("#data").html("Datos enviados Correctamente: " + $.param(data))},
-                success : function(data){
-                    
+                success : function(data){                    
                     if(data){ //data is either true or false (returned from store_in_database.html) simulating successful / failing store
                         $("#data").append("    .... Datos Guardados Correctamente");
                     }else{
                         alert("Error al guardar los datos.");
-                    }
-                    
+                    }                  
                     return data; //return true to make the wizard move to the next step, false will cause the wizard to stay on the CV step (change this in store_in_database.html)
                 }
             };
-        });
-        
+        });       
         $("#demoForm").formwizard("option", "remoteAjax", remoteAjax); // set the remoteAjax option for the wizard
     });
 </script>

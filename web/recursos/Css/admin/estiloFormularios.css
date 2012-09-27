@@ -10,29 +10,113 @@
    TODO customize this sample style
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
-body{
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #d1ccbf ),to( #eee ));
-    background-image: -webkit-linear-gradient( #d1ccbf,#eee );
-    background-image: -moz-linear-gradient( #d1ccbf,#eee );
-    background-image: -ms-linear-gradient( #d1ccbf,#eee );
-    background-image: -o-linear-gradient( #e8ed60,#eee );
-    background-image: linear-gradient( #e8ed60,#eee );
-    border-color: #e8ed60;
+
+/*****************************************
+* Estilo general de los input tipo text
+*****************************************/
+
+input[type="text"]{
+    border-radius:5px;
+    width: 250px;
+    padding: 5px;
+    outline: none;
+    font-size:12px;
+    border:solid 1px #aacfe4;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
+input:focus{
+    border-radius:5px;
+    outline:none;
+    box-shadow: 0 0 10px #749ee6;
+    -webkit-box-shadow: 0 0 10px #749ee6;
+    -moz-box-shadow: 0 0 10px #749ee6;
+     transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+
+/*****************************************
+* Estilo general de los input tipo Submit
+*****************************************/
+
+#enviar, #enviarp, #botoncor{
+    font-size:15px;
+    padding:5px;
+    border:solid 1px #aacfe4;
+    width:170px;
+    margin-left:50px;
+    margin-top: 5px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 8px 6px -6px #2671f0;
+    text-align: center;
+    font-weight: bold;
+    font-weight: 600; 
+    font-family: "Homer Simpson", cursive; 
+    background: #DADADA;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #DADADA ),to( #eee ));
+    background-image: -webkit-linear-gradient( #DADADA,#eee );
+    background-image: -moz-linear-gradient( #DADADA,#eee );
+    background-image: -ms-linear-gradient( #DADADA,#eee );
+    background-image: -o-linear-gradient( #DADADA,#eee );
+    background-image: linear-gradient( #DADADA,#eee );
+    border-color: #DADADA;
+    text-shadow: 1px 1px 1px #ffffff;
+    filter: dropshadow(color=#ffffff, offx=1, offy=1); 
+}
+
+#enviar:hover, #enviarp:hover, #botoncor:hover{
+    cursor: pointer;
+    box-shadow: inset 2 2 10px #ffffff;
+    outline: none;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #a6d9f2 ),to( #0071bc ));
+    background-image: -webkit-linear-gradient( #a6d9f2,#0071bc );
+    background-image: -moz-linear-gradient( #a6d9f2,#0071bc);
+    background-image: -ms-linear-gradient( #a6d9f2,#0071bc);
+    background-image: -o-linear-gradient( #a6d9f2,#0071bc );
+    background-image: linear-gradient( #a6d9f2,#0071bc );
+    border-color: #0071bc;
+}
+
+#enviar:active, #enviarp:active, #botoncor:active{
+    position: relative;
+    top: 2px;
+    outline: none;
+}
+
+/*****************************************
+* Estilo general de los input tipo Select
+*****************************************/
+
+select{
+    width: 260px;
+    padding: 4px;
+    -moz-width:240px;
+    border-radius: 4px;
+    outline: none;
+    border:solid 1px #aacfe4;
+}
+
+/****************************************************
+* Estilo para el formulario de Facultades y Programas
+*****************************************************/
+
 fieldset#fiel{
     border-radius:10px;
     width: 270px;
     margin: auto;
-    background: #add8e6  url(../../Imagenes/Coordinador/images/blanco.png);
+    /*background: #add8e6  url(../../Imagenes/Coordinador/images/blanco.png);*/
     background-position: inherit inherit;
     background-repeat:no-repeat;
     padding-left: 15px;
     padding-right: 5px;
     padding-top: 15px;
-    -moz-box-shadow:inset  0 0 10px #339cdf;
-    -o-box-shadow:inset  0 0 10px #339cdf;
-    -webkit-box-shadow:inset 0 0 14px #339cdf;
-    box-shadow:inset 0 0 14px #339cdf;
+    -moz-box-shadow:inset  0 0 14px #749ee6;
+    -o-box-shadow:inset  0 0 14px #749ee6;
+    -webkit-box-shadow:inset 0 0 14px #749ee6;
+    box-shadow:inset 0 0 14px #749ee6;
     border: none;
 }
 
@@ -52,69 +136,13 @@ h1#titulos{
     text-align: center;
 }
 
-input[type="text"]{
-    border-radius:5px;
-    width: 250px;
-    padding: 5px;
+select#combofacultades{
+    width: 260px;
+    padding: 4px;
+    -moz-width:240px;
+    border-radius: 4px;
     outline: none;
-    font-size:12px;
     border:solid 1px #aacfe4;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-
-input:focus{
-    border-radius:5px;
-    outline:none;
-    box-shadow: 0 0 7px rgba(0, 0, 255, 1);
-    -webkit-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
-    -moz-box-shadow: 0 0 7px rgba(0, 0, 255, 1);
-     transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-}
-
-#enviar, #enviarp{
-    font-size:15px;
-    padding:6px;
-    border:solid 1px #aacfe4;
-    width:170px;
-    margin-left:50px;
-    margin-top: 5px;
-    border-radius: 8px;
-    outline: none;
-    box-shadow: 0 8px 6px -6px #2671f0;
-    text-align: center;
-    font-weight: bold;
-    font-weight: 600; 
-    font-family: "Homer Simpson", cursive; 
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #DADADA ),to( #eee ));
-    background-image: -webkit-linear-gradient( #DADADA,#eee );
-    background-image: -moz-linear-gradient( #DADADA,#eee );
-    background-image: -ms-linear-gradient( #DADADA,#eee );
-    background-image: -o-linear-gradient( #DADADA,#eee );
-    background-image: linear-gradient( #DADADA,#eee );
-    border-color: #DADADA;
-}
-
-#enviar:hover, #enviarp:hover{
-    background: #9ec0f8;
-    cursor: pointer;
-    box-shadow: inset 2 2 10px #ffffff;
-    
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #a6d9f2 ),to( #0071bc ));
-    background-image: -webkit-linear-gradient( #a6d9f2,#0071bc );
-    background-image: -moz-linear-gradient( #a6d9f2,#0071bc);
-    background-image: -ms-linear-gradient( #a6d9f2,#0071bc);
-    background-image: -o-linear-gradient( #a6d9f2,#0071bc );
-    background-image: linear-gradient( #a6d9f2,#0071bc );
-    border-color: #0071bc;
-}
-
-#enviar:active, #enviarp:active{
-    position: relative;
-    top: 2px;
 }
 
 #resultados{
@@ -122,13 +150,18 @@ input:focus{
     color: red;
 }
 
+/****************************************************
+* Estilo para el formulario de Registro Usuarios
+*****************************************************/
 
-.spacer{clear:both; height:1px;}
-/* ———– My Form ———– */
+/********Estilo del contenedor del formlulario*****/
+
 .myform{
     margin:0 auto;
     width:800px;
     padding:12px;
+    padding-top: 20px;
+    padding-left: 50px;
     border-radius: 10px;
     margin-top: 5px;
     box-shadow: 0 0 10px #2671f0;
@@ -136,21 +169,15 @@ input:focus{
     -o-box-shadow: 0 0 10px #2671f0;
     -webkit-box-shadow: 0 0 10px #2671f0;
 }
-/* ———– stylized ———– */
-#stylized{
-    border:solid 2px #b7ddf2;
-    background: #add8e6  url(../../Imagenes/Coordinador/images/blanco.png);
-    margin-top: 30px;
-    margin-bottom: 20px;
+
+.spacer{
+    clear:both; 
+    height:1px;
 }
-#stylized h1 {
-    font-size:16px;
-    font-weight:bold;
-    margin-bottom:10px;
-    border-bottom:solid 1px #b7ddf2;
-    box-shadow: 0 8px 6px -6px #2671f0;
-    padding-bottom:10px;
-    text-align: center;
+
+/********Estilo del titulo del formulario usuarios*****/
+
+h1#titusuario{
     text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
@@ -163,11 +190,19 @@ input:focus{
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+/********Estilo del Div contenedor del formulario registro usuario*****/
+
+#stylized{
+    /*background: #add8e6  url(../../Imagenes/Coordinador/images/blanco.png);*/
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #stylized label{
     display:block;
-    font-weight:bold;
     text-align:right;
     width:160px;
     float:left;
@@ -175,19 +210,10 @@ input:focus{
     padding-top: 4px;
 }
 
-
-#form .error{
-    color:#000;
-    outline:none;
-    box-shadow: 0 0 6px rgba(255, 0, 0, 1.0);
-    -webkit-box-shadow: 0 0 6px rgba(255, 0, 0, 1.0);
-    -moz-box-shadow: 0 0 6px rgba(255, 0, 0, 1.0);
-}
-
+/********Estilo del input del formulario registro usuario*****/
 
 #stylized input{
     float:left;
-    font-size:12px;
     padding:5px;
     border:solid 1px #aacfe4;
     width:150px;
@@ -195,6 +221,8 @@ input:focus{
     border-radius: 8px;
     outline: none;
 }
+
+/********Estilo del Select del formulario registro usuario*****/
 
 #stylized select{
     float: left;
@@ -206,6 +234,8 @@ input:focus{
     border-radius: 6px;
     outline: none;
 }
+
+/********Estilo del Boton del formulario registro usuario*****/
 
 #stylized #boton2{
     font-size:15px;
@@ -229,23 +259,10 @@ input:focus{
     border-color: #DADADA;
 }
 
-
-input[type="file"]{
-    float:left;
-    font-size:12px;
-    padding:2px 2px;
-    border:solid 1px #aacfe4;
-    width:150px;
-    margin:2px 0 8px 10px;
-    border-radius: 8px;
-    outline: none;
-}
-
 #stylized #boton2:hover{
     background: #9ec0f8;
     cursor: pointer;
-    box-shadow: inset 2 2 10px #ffffff;
-    
+    box-shadow: inset 2 2 10px #ffffff;   
     background-image: -webkit-gradient(linear,left top,left bottom,from( #a6d9f2 ),to( #0071bc ));
     background-image: -webkit-linear-gradient( #a6d9f2,#0071bc );
     background-image: -moz-linear-gradient( #a6d9f2,#0071bc);
@@ -260,25 +277,155 @@ input[type="file"]{
     top: 2px;
 }
 
-select#combofacultades{
-    width: 260px;
-    padding: 4px;
-    -moz-width:240px;
-    border-radius: 4px;
-    outline: none;
-    border:solid 1px #aacfe4;
-}
-
 #stylized #resultados{
     text-align: center;
     color: red;
     font-size: 20px;
 }
 
+/****************************************************
+* Estilo para el formulario de Vincular Coordinador
+*****************************************************/
+
+#fielcoor{
+    border-radius: 10px;
+    width:500px;
+    margin:0 auto;
+    padding-left: 15px;
+    border: 0px;
+    -moz-box-shadow:inset  0 0 14px #749ee6;
+    -o-box-shadow:inset  0 0 14px #749ee6;
+    -webkit-box-shadow:inset 0 0 14px #749ee6;
+    box-shadow:inset 0 0 14px #749ee6;
+    border:none;
+}
+
+/********Estilo Para el Titulo*****/
+
+h1#coor{
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+/********Estilo Para Input Tipo Text*****/
+
+#fielcoor input[type="text"]{
+    margin-left: 20px;
+    text-transform: capitalize;
+}
+
+#fielcoor #nom{
+    margin-left: 33px;
+}
+
+/********Estilo Para Select *****/
+
+#fielcoor select{
+    margin: 0 auto;
+    width: 263px;
+    outline: none;
+    margin-left: 137px;
+    margin-top: 6px;
+    text-transform: capitalize;
+}
+
+/********Estilo Para Botón *****/
+
+#fielcoor #botoncor{
+    width:300px;
+    margin-left:100px;
+    margin-top: 20px;
+}
+
+/********Estilo Para la Lista Desplegable *****/
+
+.ac_over {
+	background-color: #e2e0da;
+	color: #ffffff;
+        border-radius: 5px;
+}
+
+.ac_results li {
+	margin-top: 5px;
+        margin-bottom: 5px;
+	padding: 2px 5px;
+	cursor: pointer;
+	display: block;
+	color: black;
+	font-family:Arial, Helvetica, sans-serif;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font-size: 10px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+        text-transform: capitalize;
+}
+
+.ac_results {
+	padding: 0px;
+	background-color: white;
+	overflow: hidden;
+        border-radius: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-transform: capitalize;
+}
+
+/********Estilo Para Radios Butons *****/
+
+#fielcoor #sizeSmall{
+    width: 15px; 
+    float: left; 
+    margin-left: 16%;
+}
+
+#fielcoor #label{
+    width: 40px; 
+    float:left;
+    margin-left: 5px;
+}
+
+#fielcoor #sizeMed{
+    width: 15px; 
+    float: left; 
+    margin-left: 43%;
+}
+
+#fielcoor #resultados{
+    text-align: center;
+    color: red;
+}
+
 #imagen{
     opacity: 0.4;
     margin-left: 111px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #imagen:hover{

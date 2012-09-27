@@ -11,14 +11,13 @@
 
 <%
     String str = request.getParameter("q");
-    //System.out.println("1"+request.getParameterNames().nextElement());
     response.setHeader("Content-Type", "text/html");
     try {
         String sql = "select nombres, apellidos, idusuario, idtipousuario from usuario where (lower(nombres) LIKE '%" + str.toLowerCase() + "%' or lower(apellidos) LIKE '%" + str.toLowerCase() + "%') and idtipousuario=2 LIMIT 10";
         //System.out.print(sql);
         ResultSet rs = control.consultas(sql);
         while (rs.next()) {
-            out.print(rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim() + "\n"+ "</td><input type='hidden' name='idUsu' value=" + rs.getString("idusuario") + "/>");
+            out.print(rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim() +"|"+ rs.getString("idusuario").trim() + "\n");
         }
     } catch (Exception e) {
         out.println("Exception is ;" + e);

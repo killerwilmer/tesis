@@ -54,7 +54,7 @@
         <div id="contenedor">
             <div id="header">
                 <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/index/logo1.gif" alt="logo"/></a>
-                <h1 id="titulo">Administrador</h1>  
+                <h1 id="titulo">ADMINISTRADOR</h1>  
                 <div id="menu">
                     <ul class="menu">
                         <li><a href="#" class="parent"><span>Registro</span></a>
@@ -71,6 +71,9 @@
                         <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Reportes</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>Noticias</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>Eventos</span></a></li>
+                        <li><a id="cerrar" href="#"><span id="salir">Salir</span></a>
+
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +81,15 @@
             </div>
             <!--object type="text/html" data="Coordinador/formEtapa.jsp" style="width: 400px; height: 400px"> </object--> 
             <div id="footer">
-
+                <label>Plataforma Administrador</label><br/>
+                <label id="nombreusuario">Administrador</label><br/><br/>
+                <label id="estilo1">WEBMASTER</label>
+                <br/><label id="estilo2">WILMER ARTEAGA - ALEX ENRIQUEZ</label><br/>
+                        <label id="estilo1">Email</label><br />
+                        <label id="estilo2">killerwilmer@gmail.com - alex.84.12@hotmail.com</label><br/><br/>
+                        <label id="estilo3">Universidad Mariana</label><br />
+                        <label id="estilo2">San Juan de Pasto - Nariño - Colombia</label><br />
+                        <label id="estilo2">Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</label>
             </div>
         </div>
     </body>

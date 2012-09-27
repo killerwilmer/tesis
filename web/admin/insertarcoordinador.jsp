@@ -30,7 +30,6 @@
                  } 
                 else{
                     int idusu = control.darTipoUsuario("select ", "idusuario", " from usuario where (nombres || ' ' || apellidos)='" + idcoordinador + "';");
-                    out.print(idusu);
                     String SqlIdenumero = "Select * from coordinador where idusuario = '"+idusu+"'";
                     if ( control.iden(SqlIdenumero))
                     {

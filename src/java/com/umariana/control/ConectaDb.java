@@ -35,8 +35,11 @@ public class ConectaDb {
         conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
         return conexion;
     }
-    //---------------------metodo constructor para la clase conectar
 
+//*********************************************************************
+//Metodo Constructor para la clase conectar
+//*********************************************************************
+    
     public ConectaDb() {
         try {
             Class.forName(driver).newInstance();
@@ -45,7 +48,11 @@ public class ConectaDb {
         }
     }
 
-    //metodo para Generar las consultas
+   
+//*********************************************************************
+//Metodo para Generar las consultas
+//*********************************************************************
+    
     public ResultSet consultas(String cadConsulta) throws SQLException {
         ResultSet resultado = null;
         try {
@@ -132,7 +139,10 @@ public class ConectaDb {
         return dato;
     }
 
-    //----------------------funcion para buscar un codigo
+//*********************************************************************
+//Metodo para buscar un codigo
+//*********************************************************************
+    
     public boolean iden(String cadCodigo) throws SQLException {
         ResultSet iden = null;
         int i = 0;
@@ -146,7 +156,6 @@ public class ConectaDb {
                 }
                 sentencia.close();
             }
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -158,8 +167,87 @@ public class ConectaDb {
             return false;
         }
     }
+    
+//*********************************************************************
+//Metodo para generar el combo filtrado de los grupos de investigacion
+//*********************************************************************
+    
+    public String combofiltro(String tabla, String fil) throws SQLException {
+        String consulta = "SELECT * from " + tabla + " where idprograma='" + fil + "'";
+        String combo = "";
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(3).toLowerCase() + "</option>";
+                }
+                sentencia.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
+        }
+        return combo + "</select>";
+    }
+    
+//******************************************************************
+//Metodo para generar filtro al combo de los campos de investigacion
+//******************************************************************
+    
+    public String combocampo(String tabla, String filtro) throws SQLException {
+        String consulta = "SELECT distinct campo.idcampo, campo.nombrecampo from " + tabla + " where grupoinvestigacion.idprograma='" + filtro + "' and grupoinvestigacion.idgrupoinvestigacion=linea.idgrupoinvestigacion and linea.idcampo=campo.idcampo";
+        String combo = "";
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(2).toLowerCase() + "</option>";
+                }
+                sentencia.close();
+            }
 
-    //Metodo para generar un combo
+        } catch (SQLException ex) {
+            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
+        }
+        return combo + "</select>";
+    }
+    
+//*******************************************************************
+//Metodo para generar un combo filtrado de la linea de investigacion
+//*******************************************************************
+    
+    public String combolineainvestigacion(String tabla, String filtro) throws SQLException {
+        String consulta = "SELECT distinct linea.idgrupoinvestigacion, linea.nombrelinea from " + tabla + " where grupoinvestigacion.idprograma='" + filtro + "' and grupoinvestigacion.idgrupoinvestigacion=linea.idgrupoinvestigacion";
+        String combo = "";
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(2).toLowerCase() + "</option>";
+                }
+                sentencia.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
+        }
+        return combo + "</select>";
+    }
+
+//******************************
+//Metodo para generar un combo
+//******************************
+    
     public String combo(String tabla) throws SQLException {
         String consulta = "SELECT * from " + tabla + "";
         String combo = "";
@@ -173,7 +261,6 @@ public class ConectaDb {
                 }
                 sentencia.close();
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -181,7 +268,7 @@ public class ConectaDb {
         }
         return combo + "</select>";
     }
-
+    
 //*****************************************************
 //Metodo para generar un combo
 //*****************************************************
@@ -207,10 +294,6 @@ public class ConectaDb {
         }
         return combo + "</select>";
     }
-
-//*****************************************************
-//Metodo para generar un combo estado
-//*****************************************************
     
     public String comboestado(String tabla) throws SQLException {
         String consulta = "SELECT * from " + tabla + "";
@@ -234,31 +317,6 @@ public class ConectaDb {
         return combo + "</select>";
     }
     
-//*****************************************************
-//Metodo para generar un combo de los campos
-//*****************************************************
-    
-    public String combocampo(String tabla) throws SQLException {
-        String consulta = "SELECT * from " + tabla + "";
-        String combo = "";
-        try {
-            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
-            if (!conexion.isClosed()) {
-                Statement sentencia = conexion.createStatement();
-                ResultSet resultado = sentencia.executeQuery(consulta);
-                while (resultado.next() && resultado != null) {
-                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(2).toLowerCase() + "</option>";
-                }
-                sentencia.close();
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            conexion.close();
-        }
-        return combo + "</select>";
-    }
 
     //metodo para retornar el color de la linea
     public String linea(int i) {

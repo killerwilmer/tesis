@@ -1200,3 +1200,12 @@ estilo para el poput de las fotos
             margin-right: 20px;
             margin-top: 30px;
         }
+        
+        .piedepagina{
+            color: #000; 
+            margin-top: 30px;
+            text-shadow: 0 1px 0 #ffffff;
+            font-weight: bold;
+            font-family:"Times New Roman", serif;
+            font-size: 17px;
+        }

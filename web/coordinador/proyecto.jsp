@@ -7,6 +7,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.umariana.control.ConectaDb"%>
 <% ConectaDb control = new ConectaDb();%>
+<%
+    HttpSession sesionOk = request.getSession();
+    String idLlega = (String) sesionOk.getAttribute("coordinador");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -51,7 +55,7 @@
                     <label for="surname">Etapa</label><select id="comboestado" name="comboestado">
                         <option selected="" value="*">Seleccione Etapa</option>
                         <%
-                            out.print(control.comboestado("etapa"));
+                            out.print(control.combofiltro("etapa", idLlega));
                         %>
                     </select>
                 <br/><br/>

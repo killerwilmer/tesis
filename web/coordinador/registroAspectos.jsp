@@ -47,7 +47,7 @@
                 <select id="comboetapas" name="comboetapas">
                     <option selected="" value="*">Seleccione Etapa del Proyecto</option>
                     <%
-                        out.print(cont.comboestado("etapa"));
+                        out.print(cont.combofiltro("etapa", idLlega));
                     %>
                 </select><br/>
                 

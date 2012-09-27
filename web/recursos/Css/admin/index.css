@@ -10,6 +10,11 @@
    TODO customize this sample style
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
+
+/*****************************************************************************
+* Estilo de los Contenedores Principales del Index Principal del Administrador
+******************************************************************************/
+
 html{
     background-image: -webkit-gradient(linear,left top,left bottom,from( #d1ccbf ),to( #eee ));
     background-image: -webkit-linear-gradient( #d1ccbf,#eee );
@@ -23,11 +28,10 @@ html{
 body { 
     margin: 0; 
     font-size: 90%;
-    min-width:930px;
+    min-width:1050px;
     width: 100%;
     margin:0;
-    padding:0; 
-  
+    padding:0;  
 }
 
 div#contenedor
@@ -37,8 +41,7 @@ div#contenedor
      padding: 0 1% 0 1%;
      font-size: 100%;
      /*opacity:0.9;*/
-     box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.6);
-    
+     box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.6);    
 }
 
 div#header{
@@ -58,37 +61,45 @@ div#header{
 }
 
 div#wraper{
-    height: 500px;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #feb2b2 ),to( #ffffff ));
-    background-image: -webkit-linear-gradient(#feb2b2,#ffffff );
-    background-image: -moz-linear-gradient( #feb2b2,#ffffff );
-    background-image: -ms-linear-gradient( #feb2b2,#ffffff );
-    background-image: -o-linear-gradient( #feb2b2,#ffffff );
-    background-image: linear-gradient( #feb2b2,#ffffff);
+    height: 550px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #d1ccbf ),to( #eee ));
+    background-image: -webkit-linear-gradient( #d1ccbf,#eee );
+    background-image: -moz-linear-gradient( #d1ccbf,#eee );
+    background-image: -ms-linear-gradient( #d1ccbf,#eee );
+    background-image: -o-linear-gradient( #e8ed60,#eee );
+    background-image: linear-gradient( #e8ed60,#eee );
     border-color: #feb2b2;
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius:10px;
     width: 100%;
     overflow: auto;
     overflow-x:hidden;
     padding-top: 0px;
-    position: static;
+    padding-bottom: 0px;
 }
 
 div#footer{
-    height: 150px;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #ffebcd ),to( #add8e6 ));
-    background-image: -webkit-linear-gradient(  #ffffff,#add8e6 );
-    background-image: -moz-linear-gradient(  #ffffff,#add8e6 );
-    background-image: -ms-linear-gradient(  #ffffff,#add8e6 );
-    background-image: -o-linear-gradient(  #ffffff,#add8e6);
-    background-image: linear-gradient(  #ffffff,#add8e6);
-    border-color:  #ffffff;
+    height: 235px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #ddeff5 ),to( #aed8e6 ));
+    background-image: -webkit-linear-gradient(  #ddeff5,#aed8e6 );
+    background-image: -moz-linear-gradient(  #ddeff5,#aed8e6 );
+    background-image: -ms-linear-gradient(  #ddeff5,#aed8e6 );
+    background-image: -o-linear-gradient(  #ddeff5,#aed8e6);
+    background-image: linear-gradient(  #ddeff5,#aed8e6);
+    border-color: #b2feb2;
     border-radius:10px 10px 0px 0px;
+    text-align: center;
+    padding-top: 10px;
 }
 
-/*-----------------------------------------------------*/
+/*************************************************************
+* Estilo de los Elementos del Contenedor HEADER
+*************************************************************/
+
+/**********************Logo de la Empresa********************/
 
 div#header img{
     display: inline;
@@ -98,19 +109,22 @@ div#header img{
     margin-top: -30px;
 }
 
+/****************Titulo Principal del Header*****************/
+
 div#header h1#titulo{
-  
-    margin-top: 3px;
-    font-size: 50px;
+    margin-top: 10px;
+    font-size: 40px;
     margin-left: 350px;
     font-family: 'Aclonica', serif;
     color: #fff;
     text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
 }
 
+/****************Estilo para el Contenedor del Menu Principal*****************/
+
 div#menu {
     margin:30px 0 0 95px;
-    height: 52px;
+    /*height: 52px;*/
     padding-left: 6px;
     width:85%;
     clear: right;
@@ -118,7 +132,7 @@ div#menu {
 }
 
 div#menu ul {
-    margin-top:-60px;
+    margin-top:-59px;
     padding: 0;
     list-style: none;
     float: right;
@@ -136,6 +150,17 @@ div#menu ul.menu {
     display: inline-block;
 }
 
+div#menu ul #menseg {
+    z-index: 12;
+    padding: 0px 4px 10px 4px;
+    background: #222;
+    margin: 11px -20px 0 0; 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 5px;
+}
+
 div#menu li {
     position: relative;
     margin: 0;
@@ -145,9 +170,6 @@ div#menu li {
     width: auto;
     display: inline;
     list-style: none;
-    
-    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";    
-    font-size: 15px;
 }
 
 div#menu ul ul li {
@@ -167,34 +189,7 @@ div#menu li div {
     padding: 0; 
 }
 
-div#menu ul ul {
-    z-index: 12;
-    padding: 0px 4px 10px 4px;
-    background: #222;
-    margin: 11px 0 0 0; 
-}
-
-div#menu li:hover>div {
-    visibility: visible;
-}
-
-div#menu a {
-    position: relative;
-    z-index: 10;
-    display: inline-block;
-    float: left;
-    line-height: 50px;
-    text-decoration: none;
-    margin-top: 1px;
-    white-space: nowrap;
-    width: auto;
-    padding-right:5px;
-    text-align:center;
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff;
-    -webkit-box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff; 
-    -o-box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff;
-}
+/****************Estilo para los elementos del Menu Principal*****************/
 
 div#menu span {
     margin-top: 2px;
@@ -208,14 +203,42 @@ div#menu span {
     text-align: center;
 }
 
-/*menu level 1*/
+/****************Estilo para el Contenedor de los Submenus desplegables*****************/
+
+div#menu ul ul {
+    z-index: 12;
+    padding: 0px 4px 10px 4px;
+    background: #222;
+    margin: 11px 0 0 0; 
+}
+
+/****************Estilo para visualizar los Submenus desplegables al pasar el puntero sobre sobre los botones del menu principal*****************/
+
+div#menu li:hover>div {
+    visibility: visible;
+}
+
+/****************Estilo para los elementos del menu y submenu tipo a*****************/
+
 div#menu a {
-    padding: 0 10px 0 0;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    float: left;
     line-height: 50px;
-    height: 35px;
+    text-decoration: none;
     margin:3px 3px 3px 3px;
+    white-space: nowrap;
+    width: auto;
+    height: 35px;  
+    padding: 0 10px 0 0;
     border-radius:10px;
     text-transform: uppercase;
+    text-align:center;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff;
+    -webkit-box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff; 
+    -o-box-shadow: inset 5px 0px 10px #ffffff, inset -5px 0px 10px #ffffff;
 }
 
 div#menu a:hover {
@@ -245,11 +268,13 @@ div#menu ul.menu>li:hover>a span {
     color: #24c9ff;
 }
 
-/*menu level 2*/
+/***********************estilo para el Submenu level 2**********************************/
+
 div#menu ul ul li {   
     padding-top: 5px;
     padding-left: 5px;
 }
+
 div#menu ul ul a {
     padding: 0px;
     height: auto;
@@ -286,6 +311,12 @@ div#menu ul ul a:hover {
  background-color: #004054;
 }
 
+div#menu ul ul a:active{
+  position: relative;
+  top: 1px;
+  outline: none;  
+}
+
 div#menu ul ul a:hover span {
 	background:none;
 	color: #24c9ff;
@@ -296,35 +327,13 @@ div#menu ul ul span {
     text-align: left;
 }
 
-div#menu ul ul li.last { background: none; }
+div#menu ul ul li.last {
+    background: none; 
+}
+
 div#menu ul ul li {
     width: 100%;
 }
-
-
-/* lava lamp */
-/*div#menu li.back {
-    background: url(../Imagenes/images/selected-left-sub.png) no-repeat 0 0;
-    width: 5px;
-    height: 52px;
-    z-index: 8;
-    position: absolute;
-    padding: 0;
-    margin: 0px 0 0 0;
-}
-
-div#menu li.back .left {
-    padding:0;
-    width:auto;
-    background: url(../Imagenes/images/selected-right-sub.png) no-repeat right 0;
-    height: 52px;
-    margin: 0 0 0 5px;
-    float: none;
-    position: relative;
-    top: 0;
-    left: 0;
-    visibility: visible;
-}*/
 
 #menseg li a{
     background: none;
@@ -332,6 +341,79 @@ div#menu li.back .left {
 
 div#menseg li a span{
     width: 10px;
+}
+
+/************Estilo Boton Cerrar SESION**************/
+
+div#menu a#cerrar{
+    background-color: lightyellow;
+    box-shadow: 0 0 10px black inset;
+}
+
+div#menu a#cerrar:hover{
+    background-color: black;
+    box-shadow: 0 10px 10px white inset;
+    opacity: 0.9;
+    color: white;
+}
+
+div#menu a#cerrar:active{
+    position: relative;
+    top: 1px;
+    outline: none;
+}
+
+div#menu a#informe:active, a#reporte:active{
+    position: relative;
+    top: 1px;
+    outline: none;
+}
+
+div#menu span#salir:hover{
+    color: white;
+    font-weight: bold;
+    font-family:"Times New Roman", serif;
+    margin: 0px;
+}
+
+div#menu span#salir{
+    color: black;
+    font-weight: bold;
+    font-family:"Times New Roman", serif;
+    margin: 0px;
+}
+
+/*************************************************************
+* Estilo de los Elementos del Contenedor FOOTER
+*************************************************************/
+
+div#footer label{
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    font-family:"Times New Roman", serif;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777, 0 4px 0 #666666, 0 5px 0 #555555, 0 6px 0 #444444, 0 7px 0 #333333, 0 8px 7px #001135;
+}
+
+div#footer label#nombreusuario{
+    font-size: 17px;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777;
+    margin-bottom: 10px;
+}
+
+div#footer label#estilo1{
+    font-size: 15px;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777, 0 4px 0 #666666;
+}
+
+div#footer label#estilo2{
+    font-size: 15px;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777;
+}
+
+div#footer label#estilo3{
+    font-size: 17px;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777, 0 4px 0 #666666;
 }
 
 
