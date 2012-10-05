@@ -7,7 +7,6 @@
 <%@ page session="true" %>
 
 <%@page import="com.umariana.control.ConectaDb" %>
-<%@ taglib uri="http://ckeditor.com" prefix="ckeditor" %>
 <% ConectaDb control = new ConectaDb();%>
 
 <%
@@ -40,14 +39,19 @@
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/index.css" />
         <title>Plataforma Estudiantes</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
-
+        
         <script type="text/javascript">
             $(document).ready(function() {
-                $(".boton").click(function(event) {
+                $(".botonproyecto").click(function(event) {
                     $("#wraper").load('documento.jsp');
                     $.getScript('js/b.js');
                 });
-            });
+                
+                $(".botoncorreciones").click(function(event) {
+                    $("#wraper").load('correcciones.jsp');
+                    $.getScript('js/b.js');
+                });
+            });          
         </script>
 
     </head>
@@ -58,6 +62,7 @@
                 <h1 id="tit"><%out.print(tipos);%></h1>  
                 <div id="menu">
                     <ul class="menu">
+                        <li><a href="index.jsp"><span>Inicio</span></a></li>
                         <li><a href="#" class="parent"><span>Registro</span></a>
                             <div>
                                 <ul id="menseg">
@@ -68,9 +73,8 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#" class="boton"><span>Proyecto</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Graphic Design</span></a></li>
-                        <li><a href="#"><span>HTML</span></a></li>
+                        <li><a href="#" class="botonproyecto"><span>Proyecto</span></a></li>
+                        <li><a href="#" class="botoncorreciones"><span>Correcciones</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>User Interface</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>CSS</span></a></li>
                         <li><a id="cerrar" href="#"><span id="salir">Salir</span></a></li>
@@ -78,11 +82,7 @@
                 </div>
             </div>
             <div id="wraper">
-                <form method="post" name="form" action="">
-                    <textarea cols="0" rows="2" name="content" id="content">
-                    </textarea><br />
-                </form>
-                <ckeditor:replace replace="content" basePath="/ckeditor/" />
+ 
             </div>
             <div id="footer">
                 <label>Plataforma Estudiante</label><br/>

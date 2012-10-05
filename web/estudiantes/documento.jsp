@@ -10,51 +10,53 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="jquerymin.js"></script>
-        <script type="text/javascript" >
-            $(function() {
-                $(".comment_button").click(function() {
-                    
-                    var test = $('#cke_contents_content iframe').contents().find( 'body' ).html();
-                    var dataString = 'content='+ test;
-                    
-                    if(test=='')
-                    {
-                        alert("Please Ingrese Algun Texto");
-                    }
-                    else
-                    {
-                        $("#flash").show();
-                        $("#flash").fadeIn(400).html('<img src="ajax-loader.gif" align="absmiddle"> <span class="loading">Insertando ...</span>');
-                        
-                        $.ajax({
-                            type: "POST",
-                            url: "insert2.jsp",
-                            data: dataString,
-                            cache: false,
-                            success: function(html){
-                                $("#display").after(html);
-                                //document.getElementById('content').value='';
-                                document.getElementById('content').focus();                                
-                                $("#flash").hide();
-                            }
-                        });
-                    } return false;
-                });
-            });
+        <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/estiloFormularios.css" />
+        <script type="text/javascript" src="ckeditor.js"></script>
+        <script type="text/javascript" src="sample.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[      
+            var editor, html = '';      
+            function createEditor()
+            {
+                if ( editor )
+                    return;                   
+                // Create a new editor inside the <div id="editor">, setting its value to html
+                var config = {};
+                editor = CKEDITOR.appendTo( 'editor', config, html );
+
+            }
+            function removeEditor()
+            {
+                if ( !editor )
+                    return;
+                
+                // Retrieve the editor contents. In an Ajax application, this data would be
+                // sent to the server or used in any other way.
+                document.getElementById( 'contents' ).style.display = '';
+                
+                // Destroy the editor.
+                editor.destroy();
+                editor = null;
+            }
+//]]>
         </script>
-        <title>My Tesis</title>
+        
+        
     </head>
     <body>
-        <div>
-            <form method="post" name="form" action="">
-                <textarea cols="30" rows="2" name="content" id="content">
-                </textarea><br />
-                <input type="submit" value="Registrar" name="submit" class="comment_button"/>
-            </form>
-            <ckeditor:replace replace="content" basePath="/ckeditor/" />
+        <!-- This div will hold the editor. -->
+        <div id="editor">
         </div>
-        <div id="flash"></div>
-        <div id="display"></div>
+        <p id="botonera">
+            <input onclick="createEditor();" type="button" value="Ver" />
+            <input onclick="createEditor();" type="button" value="Guardar" />
+            <input onclick="removeEditor();" type="button" value="Recuperar" />
+        </p>
+        <div id="contents" style="display: none">
+            <p>
+                Edited Contents:
+            </p>
+        </div>         
     </body>
 </html>

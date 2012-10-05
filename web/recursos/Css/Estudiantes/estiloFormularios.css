@@ -1,0 +1,55 @@
+/* 
+    Document   : estiloFormularios
+    Created on : 04-oct-2012, 16:35:48
+    Author     : usuarui
+    Description:
+        Purpose of the stylesheet follows.
+*/
+input[type="button"]{
+    font-size:13px;
+    padding:5px;
+    border:solid 0px #58849c;
+    width:150px;
+    margin-left: 20px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0px 0px 0px 0px;
+    text-align: center;
+    font-weight: bold;
+    font-weight: 600; 
+    font-family: "Homer Simpson", cursive; 
+    background: #e6e6e6;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #e6e6e6 ),to( #58849c ));
+    background-image: -webkit-linear-gradient( #e6e6e6,#58849c );
+    background-image: -moz-linear-gradient( #e6e6e6,#58849c );
+    background-image: -ms-linear-gradient( #e6e6e6,#58849c );
+    background-image: -o-linear-gradient( #e6e6e6,#58849c );
+    background-image: linear-gradient( #e6e6e6,#58849c );
+    text-shadow: 1px 1px 1px #ffffff;
+    filter: dropshadow(color=#ffffff, offx=1, offy=1);   
+}
+
+input[type="button"]:hover{
+    cursor: pointer;
+    box-shadow: inset 2 2 10px #ffffff;
+    outline: none;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #7fa2ad ),to( #1d5683 ));
+    background-image: -webkit-linear-gradient( #7fa2ad,#1d5683 );
+    background-image: -moz-linear-gradient( #7fa2ad,#1d5683);
+    background-image: -ms-linear-gradient( #7fa2ad,#1d5683);
+    background-image: -o-linear-gradient( #7fa2ad,#1d5683 );
+    background-image: linear-gradient( #7fa2ad,#1d5683 );
+    border-color: #45a74f;
+}
+
+input[type="button"]:active{
+    position: relative;
+    top: 2px;
+    outline: none;
+}
+
+#botonera{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
