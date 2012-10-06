@@ -38,42 +38,26 @@
                 editor.setReadOnly( isReadOnly );
             }   
             
-            var editor2, html = '';      
-            function createEditor()
+            instance = CKEDITOR.instances['editor1'];
+            if(instance)
             {
-                if ( editor2 )
-                    return;                   
-                // Create a new editor inside the <div id="editor">, setting its value to html
-                var config = {};
-                editor2 = CKEDITOR.appendTo( 'editor1', config, html );
-
+                CKEDITOR.remove(instance);
             }
-            function removeEditor()
-            {
-                if ( !editor )
-                    return;
-                
-                // Retrieve the editor contents. In an Ajax application, this data would be
-                // sent to the server or used in any other way.
-                document.getElementById( 'contents' ).style.display = '';
-                
-                // Destroy the editor.
-                editor.destroy();
-                editor = null;
-            }
+            CKEDITOR.replace( 'editor1');
+         
             //]]>
         </script>
 
     </head>
     <body>
+        <form>
         <p>
-            <div class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"></div>
+            <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"></textarea>
         </p>
         <p>
-            <input onclick="createEditor();" type="button" value="Ver" />
-            <input onclick="removeEditor();" type="button" value="Recuperar" />
             <input id="readOnlyOn" onclick="toggleReadOnly();" type="button" value="Make it read-only" style="display:none" />
             <input id="readOnlyOff" onclick="toggleReadOnly( false );" type="button" value="Make it editable again" style="display:none" />
-        </p>                   
+        </p> 
+        </form>
     </body>
 </html>
