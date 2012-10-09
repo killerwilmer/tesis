@@ -146,6 +146,8 @@ div#menu ul.menu {
     padding-bottom: 2px;
     background: #222;
     display: inline-block;
+    z-index: 9;
+    position: relative;
 }
 
 div#menu li {

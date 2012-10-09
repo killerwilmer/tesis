@@ -78,7 +78,7 @@
                     $("#wraper").load('wizard/index.jsp');
                 });
                 $(".informetesis").click(function(event) {
-                    $("#wraper").load('informes/index.jsp');
+                    $("#wraper").load('tables/repor1.jsp');
                 });
             });
         </script>

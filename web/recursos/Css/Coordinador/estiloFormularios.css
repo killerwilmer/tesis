@@ -116,7 +116,7 @@ select{
 ***************************************************************************/
 
 fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jura, #boton_registro, #boton_registro2,
-#boton_registro3, #boton_registro4, #enviarproyecto {
+#boton_registro3, #boton_registro4, #enviarproyecto, #pdf {
     font-size:13px;
     padding:5px;
     border:solid 0px #aacfe4;
@@ -141,7 +141,7 @@ fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jur
 }
 
 fieldset #enviar:hover, #resetall:hover, #reset:hover, #next:hover, #boton_estu:hover, #boton_ases:hover, #boton_jura:hover, #boton_registro:hover, #boton_registro2:hover, 
-#boton_registro3:hover, #boton_registro4:hover, #enviarproyecto:hover{
+#boton_registro3:hover, #boton_registro4:hover, #enviarproyecto:hover, #pdf:hover{
     
     cursor: pointer;
     box-shadow: inset 2 2 10px #ffffff;
@@ -156,7 +156,7 @@ fieldset #enviar:hover, #resetall:hover, #reset:hover, #next:hover, #boton_estu:
 }
 
 fieldset #enviar:active, #resetall:active, #reset:active, #next:active, #boton_estu:active, #boton_ases:active, #boton_jura:active, #boton_registro:active,
- #boton_registro2:active, #boton_registro3:active, #boton_registro4:active, #enviarproyecto:active{
+ #boton_registro2:active, #boton_registro3:active, #boton_registro4:active, #enviarproyecto:active, #pdf:active{
     position: relative;
     top: 2px;
     outline: none;
@@ -534,3 +534,8 @@ fieldset#fielgrupoinvestigacion #combogrupoinvestigacion, #campoinv, #combolinea
     outline: none;
     text-transform: capitalize;
 }
+
+/************************************************************** 
+* Estilo para los Reportes 
+***************************************************************/
+
