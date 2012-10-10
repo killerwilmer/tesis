@@ -56,15 +56,10 @@
     </head>
     <body>
         <!-- This div will hold the editor. -->
-        <form>
+        <form action="recive.jsp" method="post">
             <p>
                 <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
             </p>
-            <p id="botonera">
-                <input onclick="createEditor();" type="button" value="Cargar" />
-                <input onclick="createEditor();" type="button" value="Guardar" />
-                <input onclick="removeEditor();" type="button" value="Correcciones" />
-            </p> 
         </form>         
     </body>
 </html>
