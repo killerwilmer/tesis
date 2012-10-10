@@ -18,7 +18,7 @@ public class ConectaDb {
 
     public String idenTrabajador;
     public String usuario = "postgres";
-    public String clave = "12345";
+    public String clave = "postgres007";
     public String driver = "org.postgresql.Driver";
     public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto";
 
