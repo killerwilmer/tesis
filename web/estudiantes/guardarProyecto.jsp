@@ -4,40 +4,45 @@
     Author     : Admin
 --%>
 
-<%@page import="com.umariana.control.ConectaDb"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% ConectaDb control = new ConectaDb(); %>
+<%@page session="true" %>
+<%@page import="com.umariana.control.ConectaDb" %>
+<% ConectaDb control = new ConectaDb();%>
+
+<%
+    HttpSession sesionOk = request.getSession();
+    String codigoEst = (String) sesionOk.getAttribute("estudiante");
+    int idEstudiante = (Integer) sesionOk.getAttribute("idEstudiante");
+    String idPro = (String) sesionOk.getAttribute("idProyecto");
+    int idProyecto = Integer.parseInt(idPro.trim());
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Actualizando el Documento</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Guardando el proyecto</h1>
     </body>
 </html>
 <%
-String editor = request.getParameter("editor1");
-out.println(editor); 
-String titulo = "hola";
-String peque = "h";
+    String editor = request.getParameter("editor1");
 
-try {
+    if (!editor.equals("")) {
+        try {
 
-    String SqlInsert = "insert into proyecto (tituloproyecto,titulopequeproyecto,descripcionproyecto) values('"+titulo+"','"+peque+"','"+editor+"');";
-    if ( control.ejecutarOperacion(SqlInsert))
-    {
-        out.print("Exito");
+            String SqlInsert = "UPDATE proyecto SET descripcionproyecto = '"+editor+"' WHERE idproyecto=" + idProyecto + ";";
+            if (control.ejecutarOperacion(SqlInsert)) {
+                out.print("Exito");
+            } else {
+                out.print("Error");
+            }
+
+        } catch (Exception e) {
+            out.println(e.toString());
+        }
     }
-    else
-    {
-        out.print("Error");
-    }
- 
-} 
-catch (Exception e) 
-{
-out.println(e.toString()); 
-}
+//UPDATE proyecto SET descripcionproyecto = 'nuevo comentario' WHERE idproyecto=1;
 %>
