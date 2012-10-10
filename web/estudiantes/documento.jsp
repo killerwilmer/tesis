@@ -25,7 +25,7 @@
     String campo1 = "idproyecto";
     String fin1 = " from usuarioproyecto where idusuario=" + idEstudiante + ";";
     String idPro = control.retornoCodigo(inicio1, campo1, fin1);
-    
+
     String desProyecto = "Aun no le han asignado un proyecto";
 
     if (!idPro.equals("")) {
@@ -36,8 +36,6 @@
         String campo2 = "descripcionproyecto";
         String fin2 = " from proyecto where idproyecto=" + idProyecto + ";";
         desProyecto = control.retornoCodigo(inicio2, campo2, fin2);
-    }
-
 %>
 
 <!DOCTYPE html>
@@ -56,13 +54,20 @@
     </head>
     <body>
         <!-- This div will hold the editor. -->
-        <form action="recive.jsp" method="post">
+        <form action="guardarProyecto.jsp" method="post">
             <p>
                 <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
             </p>
         </form>         
     </body>
 </html>
+
+<%
+    }
+       else{
+            out.print("<h1>" + desProyecto + "</h1>");
+       }
+%>
 
 <script>
     instance = CKEDITOR.instances['editor1'];
