@@ -12,19 +12,8 @@
 <%
     HttpSession sesionOk = request.getSession();
     String codigoEst = (String) sesionOk.getAttribute("estudiante");
-
-    String inicio = "select ";
-    String campo = "idusuario";
-    String fin = " from usuario where codigousuario='" + codigoEst + "';";
-    String idEstu = control.retornoCodigo(inicio, campo, fin);
-
-    int idEstudiante = Integer.parseInt(idEstu.trim());
-
-
-    String inicio1 = "select ";
-    String campo1 = "idproyecto";
-    String fin1 = " from usuarioproyecto where idusuario=" + idEstudiante + ";";
-    String idPro = control.retornoCodigo(inicio1, campo1, fin1);
+    int idEstudiante = (Integer) sesionOk.getAttribute("idEstudiante");
+    String idPro = (String) sesionOk.getAttribute("idProyecto");
 
     String desProyecto = "Aun no le han asignado un proyecto";
 

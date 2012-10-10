@@ -11,25 +11,41 @@
 
 <%
     HttpSession sesionOk = request.getSession();
-    String estudiante = (String) sesionOk.getAttribute("estudiante");
+    String codigoEst = (String) sesionOk.getAttribute("estudiante");
 
     String inicio = "select ";
     String campo = "nombreprograma";
-    String fin = " from usuario where codigousuario='" + estudiante + "';";
+    String fin = " from usuario where codigousuario='" + codigoEst + "';";
     String tipos = control.retornoCodigo(inicio, campo, fin);
-    
+
+    String inicio1 = "select ";
+    String campo1 = "idusuario";
+    String fin1 = " from usuario where codigousuario='" + codigoEst + "';";
+    String idEstu = control.retornoCodigo(inicio1, campo1, fin1);
+
+    int idEstudiante = Integer.parseInt(idEstu.trim());
+
+    sesionOk.setAttribute("idEstudiante", idEstudiante);
+
+    String inicio2 = "select ";
+    String campo2 = "idproyecto";
+    String fin2 = " from usuarioproyecto where idusuario=" + idEstudiante + ";";
+    String idPro = control.retornoCodigo(inicio2, campo2, fin2);
+
+    sesionOk.setAttribute("idProyecto", idPro);
+
     String nombre = "";
-         
-     try {
-         String sql = "select nombres, apellidos from usuario where codigousuario='" + estudiante + "';";
-         //System.out.print(sql);
-         ResultSet rs = control.consultas(sql);
-         while (rs.next()) {
-             nombre = rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim();
-         }
-     } catch (Exception e) {
-         out.println("Exception is ;" + e);
-     }
+
+    try {
+        String sql = "select nombres, apellidos from usuario where codigousuario='" + codigoEst + "';";
+        //System.out.print(sql);
+        ResultSet rs = control.consultas(sql);
+        while (rs.next()) {
+            nombre = rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim();
+        }
+    } catch (Exception e) {
+        out.println("Exception is ;" + e);
+    }
 %>
 
 <!DOCTYPE html>
@@ -39,7 +55,7 @@
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/index.css" />
         <title>Plataforma Estudiantes</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".botonproyecto").click(function(event) {
@@ -82,18 +98,18 @@
                 </div>
             </div>
             <div id="wraper">
- 
+
             </div>
             <div id="footer">
                 <label>Plataforma Estudiante</label><br/>
                 <label id="nombreusuario"><%out.print(nombre.toUpperCase());%></label><br/><br/>
                 <label id="estilo1">WEBMASTER</label>
                 <br/><label id="estilo2">WILMER ARTEAGA - ALEX ENRIQUEZ</label><br/>
-                        <label id="estilo1">Email</label><br />
-                        <label id="estilo2">killerwilmer@gmail.com - alex.84.12@hotmail.com</label><br/><br/>
-                        <label id="estilo3">Universidad Mariana</label><br />
-                        <label id="estilo2">San Juan de Pasto - Nariño - Colombia</label><br />
-                        <label id="estilo2">Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</label>
+                <label id="estilo1">Email</label><br />
+                <label id="estilo2">killerwilmer@gmail.com - alex.84.12@hotmail.com</label><br/><br/>
+                <label id="estilo3">Universidad Mariana</label><br />
+                <label id="estilo2">San Juan de Pasto - Nariño - Colombia</label><br />
+                <label id="estilo2">Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</label>
             </div>
         </div>
     </body>
