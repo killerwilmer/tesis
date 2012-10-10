@@ -122,8 +122,8 @@ div#header img{
 
 div#menu {
     margin:30px 0 0 95px;
-    height: 52px;
-    padding-left: 6px;
+    /*height: 52px;
+    padding-left: 6px;*/
     width:85%;
     clear: right;
     display: inline-block;
