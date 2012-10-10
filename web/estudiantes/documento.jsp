@@ -5,6 +5,40 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page session="true" %>
+<%@page import="com.umariana.control.ConectaDb" %>
+<% ConectaDb control = new ConectaDb();%>
+
+<%
+    HttpSession sesionOk = request.getSession();
+    String codigoEst = (String) sesionOk.getAttribute("estudiante");
+
+    String inicio = "select ";
+    String campo = "idusuario";
+    String fin = " from usuario where codigousuario='" + codigoEst + "';";
+    String idEstu = control.retornoCodigo(inicio, campo, fin);
+
+    int idEstudiante = Integer.parseInt(idEstu.trim());
+
+
+    String inicio1 = "select ";
+    String campo1 = "idproyecto";
+    String fin1 = " from usuarioproyecto where idusuario=" + idEstudiante + ";";
+    String idPro = control.retornoCodigo(inicio1, campo1, fin1);
+    
+    String desProyecto = "Aun no le han asignado un proyecto";
+
+    if (!idPro.equals("")) {
+        int idProyecto = Integer.parseInt(idPro.trim());
+
+
+        String inicio2 = "select ";
+        String campo2 = "descripcionproyecto";
+        String fin2 = " from proyecto where idproyecto=" + idProyecto + ";";
+        desProyecto = control.retornoCodigo(inicio2, campo2, fin2);
+    }
+
+%>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +49,7 @@
         <script type="text/javascript" src="ckeditor.js"></script>
         <script type="text/javascript" src="sample.js"></script>
         <link href="sample.css" rel="stylesheet" type="text/css" />    
-        
+
         <script type="text/javascript">
             CKEDITOR.config.height = 330
         </script>
@@ -24,7 +58,7 @@
         <!-- This div will hold the editor. -->
         <form>
             <p>
-                <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"></textarea>
+                <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
             </p>
             <p id="botonera">
                 <input onclick="createEditor();" type="button" value="Cargar" />
