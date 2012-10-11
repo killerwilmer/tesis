@@ -1,10 +1,3 @@
-<%-- 
-    Document   : imprimir
-    Created on : 07-oct-2012, 7:49:35
-    Author     : usuarui
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="javax.swing.GroupLayout.Alignment"%>
 <%@page import="java.io.DataOutputStream"%>
 <%@page import="com.itextpdf.text.Document"%>
@@ -22,7 +15,7 @@
 <%@page import="java.util.Vector"%>
 <%@page import="java.sql.ResultSet" %>
 <%@page import="com.umariana.control.ConectaDb" %>
-<!DOCTYPE html>
+<%@page session="true" %>
 
 <%
     HttpSession sesionOk = request.getSession();
@@ -33,102 +26,95 @@
     Vector codigo = (Vector) sesionOk.getAttribute("codigo");
 %>
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <%
+<%
 
-            response.setContentType("application/pdf");
+    response.setContentType("application/pdf");
+    response.setHeader("Content-Disposition"," attachment; filename=\"Informe.pdf\"");
 
-            Document document = new Document();
+    Document document = new Document();
 
-            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+    ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 
-            PdfWriter writer = PdfWriter.getInstance(document, response.getOutputStream());
+    PdfWriter.getInstance(document, response.getOutputStream());
 
-            document.open(); // de aqui para abajo se forma el documento
+    document.open(); // de aqui para abajo se forma el documento
 
-            char sep = File.separatorChar;
-            String miRuta = config.getServletContext().getRealPath("/") + "img" + sep + "umariana.jpg";
+    char sep = File.separatorChar;
+    String miRuta = config.getServletContext().getRealPath("/") + "img" + sep + "umariana.jpg";
 
-            Image imagen = Image.getInstance(miRuta);//este es para la imagen del logo
-            imagen.scaleToFit(70, 70);
-            imagen.setAlignment(Image.LEFT);
+    Image imagen = Image.getInstance(miRuta);//este es para la imagen del logo
+    imagen.scaleToFit(70, 70);
+    imagen.setAlignment(Image.LEFT);
 
-            Paragraph titulo = new Paragraph("Reporte de Prueba");//titulo
-            Paragraph espacio = new Paragraph("                     ");//espacio
-            titulo.setAlignment(Element.ALIGN_CENTER);//para centrar el titulo
+    Paragraph titulo = new Paragraph("Reporte de Prueba");//titulo
+    Paragraph espacio = new Paragraph("                     ");//espacio
+    titulo.setAlignment(Element.ALIGN_CENTER);//para centrar el titulo
 
-            PdfPTable table = new PdfPTable(5);
-            table.setWidthPercentage(100);
-            table.setHorizontalAlignment(Element.ALIGN_CENTER);
+    PdfPTable table = new PdfPTable(5);
+    table.setWidthPercentage(100);
+    table.setHorizontalAlignment(Element.ALIGN_CENTER);
 
-            PdfPCell cell = new PdfPCell(new Paragraph("Programas"));
-            cell.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cell.setColspan(5);
-            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cell.setPadding(10.0f);
-            table.addCell(cell);
+    PdfPCell cell = new PdfPCell(new Paragraph("Programas"));
+    cell.setBackgroundColor(BaseColor.LIGHT_GRAY);
+    cell.setColspan(5);
+    cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+    cell.setPadding(10.0f);
+    table.addCell(cell);
 
-            PdfPCell cel1 = new PdfPCell(new Paragraph("Codigo"));
-            PdfPCell cel2 = new PdfPCell(new Paragraph("Nombre Programa"));
-            PdfPCell cel3 = new PdfPCell(new Paragraph("idPrograma"));
-            PdfPCell cel4 = new PdfPCell(new Paragraph("IdFacultad"));
-            PdfPCell cel5 = new PdfPCell(new Paragraph("Codigo Programa"));
+    PdfPCell cel1 = new PdfPCell(new Paragraph("Codigo"));
+    PdfPCell cel2 = new PdfPCell(new Paragraph("Nombre Programa"));
+    PdfPCell cel3 = new PdfPCell(new Paragraph("idPrograma"));
+    PdfPCell cel4 = new PdfPCell(new Paragraph("IdFacultad"));
+    PdfPCell cel5 = new PdfPCell(new Paragraph("Codigo Programa"));
 
-            cel1.setBackgroundColor(BaseColor.PINK);
-            cel2.setBackgroundColor(BaseColor.PINK);
-            cel3.setBackgroundColor(BaseColor.PINK);
-            cel4.setBackgroundColor(BaseColor.PINK);
-            cel5.setBackgroundColor(BaseColor.PINK);
+    cel1.setBackgroundColor(BaseColor.PINK);
+    cel2.setBackgroundColor(BaseColor.PINK);
+    cel3.setBackgroundColor(BaseColor.PINK);
+    cel4.setBackgroundColor(BaseColor.PINK);
+    cel5.setBackgroundColor(BaseColor.PINK);
 
-            cel1.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cel2.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cel3.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cel4.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cel5.setHorizontalAlignment(Element.ALIGN_CENTER);
+    cel1.setHorizontalAlignment(Element.ALIGN_CENTER);
+    cel2.setHorizontalAlignment(Element.ALIGN_CENTER);
+    cel3.setHorizontalAlignment(Element.ALIGN_CENTER);
+    cel4.setHorizontalAlignment(Element.ALIGN_CENTER);
+    cel5.setHorizontalAlignment(Element.ALIGN_CENTER);
 
-            table.addCell(cel1);
-            table.addCell(cel2);
-            table.addCell(cel3);
-            table.addCell(cel4);
-            table.addCell(cel5);
+    table.addCell(cel1);
+    table.addCell(cel2);
+    table.addCell(cel3);
+    table.addCell(cel4);
+    table.addCell(cel5);
 
-            for (int i = 0; i < codigo.size(); i++) {
-                Object miCodigo = codigo.elementAt(i);
-                Object miidprograma = idprograma.elementAt(i);
-                Object miidfacultad = idfacultad.elementAt(i);
-                Object miCodprograma = nombreprograma.elementAt(i);
+    for (int i = 0; i < codigo.size(); i++) {
+        Object miCodigo = codigo.elementAt(i);
+        Object miidprograma = idprograma.elementAt(i);
+        Object miidfacultad = idfacultad.elementAt(i);
+        Object miCodprograma = nombreprograma.elementAt(i);
 
-                table.addCell("" + (i + 1));
-                table.addCell("" + miCodigo);
-                table.addCell("" + miidprograma);
-                table.addCell("" + miidfacultad);
-                table.addCell("" + miCodprograma);
-            }
+        table.addCell("" + (i + 1));
+        table.addCell("" + miCodigo);
+        table.addCell("" + miidprograma);
+        table.addCell("" + miidfacultad);
+        table.addCell("" + miCodprograma);
+    }
 
-            //de aqui para abajo agregamos lo que queremos
-            document.add(imagen);
-            document.add(titulo);
-            document.add(espacio);
-            document.add(table);
+    //de aqui para abajo agregamos lo que queremos
+    document.add(imagen);
+    document.add(titulo);
+    document.add(espacio);
+    document.add(table);
 
 
-            document.close();
+    document.close();
 
-            DataOutput output = new DataOutputStream(response.getOutputStream());
+    DataOutput output = new DataOutputStream(response.getOutputStream());
 
-            byte[] bytes = buffer.toByteArray();
+    byte[] bytes = buffer.toByteArray();
 
-            response.setContentLength(bytes.length);
+    response.setContentLength(bytes.length);
 
-            for (int i = 0; i < bytes.length; i++) {
-                output.writeByte(bytes[i]);
-            }
+    for (int i = 0; i < bytes.length; i++) {
+        output.writeByte(bytes[i]);
+    }
 
-        %>
-    </body>
-</html>
+%>
