@@ -38,7 +38,7 @@
         <link href="sample.css" rel="stylesheet" type="text/css" />    
 
         <script type="text/javascript">
-            CKEDITOR.config.height = 330
+            CKEDITOR.config.height = 400
         </script>
     </head>
     <body>
