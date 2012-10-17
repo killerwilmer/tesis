@@ -216,7 +216,7 @@
 
     </head>
 
-    <body style="background: #D3F0FA">
+    <body>
         <div class="header-container" style="background: url(recursos/Imagenes/index/header.png) repeat-x; position: relative">
             <header class="wrapper0">
                 <img id="logotipo" src="recursos/Imagenes/index/logo1.gif" alt="logo" /><h1 id="title">Procesos de Investigación</h1>            

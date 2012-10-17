@@ -41,7 +41,7 @@ input[type="text"]{
     padding: 5px;
     outline: none;
     font-size:12px;
-    border:solid 1px #98cb98;
+    border:solid 1px #aacfe4;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 10px;
@@ -51,9 +51,10 @@ input:focus{
     border-radius:5px;
     color:#000;
     outline:none;
-    box-shadow: 0 0 7px rgba(0,128,0, 0.7);
-    -webkit-box-shadow: 0 0 7px rgba(0,128,0, 0.7);
-    -moz-box-shadow: 0 0 7px rgba(0,128,0, 0.7);
+    border:solid 1px #749ee6;
+    box-shadow:0 0 10px #ffffff;
+    -webkit-box-shadow:0 0 10px #ffffff;
+    -moz-box-shadow:0 0 10px #ffffff;
     transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -73,25 +74,22 @@ textarea{
     padding:10px;
     height:20px;
     width:240px;
-    border:solid 1px #98cb98;
+    border:solid 1px #aacfe4;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    box-shadow: 0 0 5px rgba(81, 203, 238, 0);
-    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
-    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
     outline: none;
 }
 
 textarea:focus{
     color:#000;
     outline:none;
-    border:#98cb98 1px solid;
+    border:#749ee6 1px solid;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    box-shadow: 0 0 7px rgba(0,128,0, 0.7);
-    -webkit-box-shadow: 0 0 7px rgba(0,128,0, 0.7);
-    -moz-box-shadow: 0 0 7px rgba(0,128,0, 0.7);
+    box-shadow:0 0 13px #ffffff;
+    -webkit-box-shadow:0 0 13px #ffffff;
+    -moz-box-shadow:0 0 13px #ffffff;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
     border-radius:8px;
 }
 
@@ -102,7 +100,7 @@ textarea:focus{
 select{
     font-size: 12px;
     padding: 5px;
-    border:solid 1px #98cb98;
+    border:solid 1px #aacfe4;
     width: 260px;
     border-radius: 6px;
     outline: none;
@@ -116,10 +114,10 @@ select{
 ***************************************************************************/
 
 fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jura, #boton_registro, #boton_registro2,
-#boton_registro3, #boton_registro4, #enviarproyecto, #pdf {
+#boton_registro3, #boton_registro4, #enviarproyecto, #pdf{
     font-size:13px;
     padding:5px;
-    border:solid 0px #aacfe4;
+    border:solid 0px #63839c;
     width:80px;
     margin-left: 20px;
     border-radius: 8px;
@@ -130,12 +128,12 @@ fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jur
     font-weight: 600; 
     font-family: "Homer Simpson", cursive; 
     background: #e6e6e6;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #e6e6e6 ),to( #48622d ));
-    background-image: -webkit-linear-gradient( #e6e6e6,#48622d );
-    background-image: -moz-linear-gradient( #e6e6e6,#48622d );
-    background-image: -ms-linear-gradient( #e6e6e6,#48622d );
-    background-image: -o-linear-gradient( #e6e6e6,#48622d );
-    background-image: linear-gradient( #e6e6e6,#48622d );
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #e6e6e6 ),to( #63839c ));
+    background-image: -webkit-linear-gradient( #e6e6e6,#63839c );
+    background-image: -moz-linear-gradient( #e6e6e6,#63839c );
+    background-image: -ms-linear-gradient( #e6e6e6,#63839c );
+    background-image: -o-linear-gradient( #e6e6e6,#63839c );
+    background-image: linear-gradient( #e6e6e6,#63839c );
     text-shadow: 1px 1px 1px #ffffff;
     filter: dropshadow(color=#ffffff, offx=1, offy=1);   
 }
@@ -144,15 +142,15 @@ fieldset #enviar:hover, #resetall:hover, #reset:hover, #next:hover, #boton_estu:
 #boton_registro3:hover, #boton_registro4:hover, #enviarproyecto:hover, #pdf:hover{
     
     cursor: pointer;
-    box-shadow: inset 2 2 10px #ffffff;
+    box-shadow: inset 1px 1px 10px  #63839c;
     outline: none;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #60e96e ),to( #29642f ));
-    background-image: -webkit-linear-gradient( #60e96e,#29642f );
-    background-image: -moz-linear-gradient( #60e96e,#29642f);
-    background-image: -ms-linear-gradient( #60e96e,#29642f);
-    background-image: -o-linear-gradient( #60e96e,#29642f );
-    background-image: linear-gradient( #60e96e,#29642f );
-    border-color: #45a74f;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient( #63839c,#b6d6eb );
+    background-image: -moz-linear-gradient( #63839c,#b6d6eb);
+    background-image: -ms-linear-gradient( #63839c,#b6d6eb);
+    background-image: -o-linear-gradient( #63839c,#b6d6eb );
+    background-image: linear-gradient( #63839c,#b6d6eb );
+    border-color: #63839c;
 }
 
 fieldset #enviar:active, #resetall:active, #reset:active, #next:active, #boton_estu:active, #boton_ases:active, #boton_jura:active, #boton_registro:active,
@@ -170,16 +168,21 @@ fieldset#fiel{
     border-radius:10px;
     width: 350px;
     margin: 0 auto;
-    background:#cafc99;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c 25% ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -moz-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -ms-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -o-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: linear-gradient(  #63839c 25%,#b6d6eb);
     background-position: inherit inherit;
     background-repeat:no-repeat;
     padding-left: 15px;
     padding-right: 5px;
     padding-top: 20px;
-    -moz-box-shadow:inset  0 0 10px #4db849;
-    -o-box-shadow:inset  0 0 10px #4db849;
-    -webkit-box-shadow:inset 0 0 14px #4db849;
-    box-shadow:inset 0 0 14px #4db849;
+    -moz-box-shadow:inset  0 0 10px #63839c;
+    -o-box-shadow:inset  0 0 10px #63839c;
+    -webkit-box-shadow:inset 0 0 14px #63839c;
+    box-shadow:inset 0 0 14px #63839c;
     border: none;
 }
 
@@ -201,16 +204,21 @@ fieldset#fielaspectos{
     border-radius:10px;
     width: 350px;
     margin: 0 auto;
-    background:#cafc99;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c 25% ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -moz-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -ms-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -o-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: linear-gradient(  #63839c 25%,#b6d6eb);
     background-position: inherit inherit;
     background-repeat:no-repeat;
     padding-left: 15px;
     padding-right: 5px;
     padding-top: 20px;
-    -moz-box-shadow:inset  0 0 10px #4db849;
-    -o-box-shadow:inset  0 0 10px #4db849;
-    -webkit-box-shadow:inset 0 0 14px #4db849;
-    box-shadow:inset 0 0 14px #4db849;
+    -moz-box-shadow:inset  0 0 10px #63839c;
+    -o-box-shadow:inset  0 0 10px #63839c;
+    -webkit-box-shadow:inset 0 0 14px #63839c;
+    box-shadow:inset 0 0 14px #63839c;
     border: none;
     margin-bottom: 20px;
 }
@@ -306,16 +314,21 @@ fieldset#fieladdproyecto{
     border-radius:10px;
     width: 400px;
     margin: 0 auto;
-    background: #cafc99;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c 25% ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -moz-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -ms-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -o-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: linear-gradient(  #63839c 25%,#b6d6eb);
     background-position: inherit inherit;
     background-repeat:no-repeat;
     padding-left: 15px;
     padding-right: 5px;
     padding-top: 15px;
-    -moz-box-shadow:inset  0 0 10px #4db849;
-    -o-box-shadow:inset  0 0 10px #4db849;
-    -webkit-box-shadow:inset 0 0 14px #4db849;
-    box-shadow:inset 0 0 14px #4db849;
+    -moz-box-shadow:inset  0 0 10px #63839c;
+    -o-box-shadow:inset  0 0 10px #63839c;
+    -webkit-box-shadow:inset 0 0 14px #63839c;
+    box-shadow:inset 0 0 14px #63839c;
     border: none;
     font-size: 15px;
     margin-bottom: 20px;
@@ -388,16 +401,21 @@ fieldset#fieladvinculacionactores{
     border-radius:10px;
     width: 360px;
     margin: 0 auto;
-    background: #cafc99;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c 25% ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -moz-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -ms-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -o-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: linear-gradient(  #63839c 25%,#b6d6eb);
     background-position: inherit inherit;
     background-repeat:no-repeat;
     padding-left: 15px;
     padding-right: 5px;
     padding-top: 15px;
-    -moz-box-shadow:inset  0 0 10px #4db849;
-    -o-box-shadow:inset  0 0 10px #4db849;
-    -webkit-box-shadow:inset 0 0 14px #4db849;
-    box-shadow:inset 0 0 14px #4db849;
+    -moz-box-shadow:inset  0 0 10px #63839c;
+    -o-box-shadow:inset  0 0 10px #63839c;
+    -webkit-box-shadow:inset 0 0 14px #63839c;
+    box-shadow:inset 0 0 14px #63839c;
     border: none;
     font-size: 15px;
     margin-bottom: 20px;
@@ -451,16 +469,21 @@ fieldset#fielgrupoinvestigacion{
     border-radius:10px;
     width: 360px;
     margin: 0 auto;
-    background: #cafc99;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c 25% ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -moz-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -ms-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -o-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: linear-gradient(  #63839c 25%,#b6d6eb);
     background-position: inherit inherit;
     background-repeat:no-repeat;
     padding-left: 15px;
     padding-right: 5px;
     padding-top: 15px;
-    -moz-box-shadow:inset  0 0 10px #4db849;
-    -o-box-shadow:inset  0 0 10px #4db849;
-    -webkit-box-shadow:inset 0 0 14px #4db849;
-    box-shadow:inset 0 0 14px #4db849;
+    -moz-box-shadow:inset  0 0 10px #63839c;
+    -o-box-shadow:inset  0 0 10px #63839c;
+    -webkit-box-shadow:inset 0 0 14px #63839c;
+    box-shadow:inset 0 0 14px #63839c;
     border: none;
     font-size: 15px;
     margin-bottom: 20px;
@@ -472,7 +495,7 @@ fieldset#fielgrupoinvestigacion input[type="text"]{
     padding: 5px;
     outline: none;
     font-size:12px;
-    border:solid 1px #98cb98;
+    border:solid 1px #aacfe4;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 0px;
@@ -488,28 +511,22 @@ fieldset#fielgrupoinvestigacion textarea{
     padding:10px;
     height:70px;
     width:320px;
-    border:solid 1px #98cb98;
+    border:solid 1px #aacfe4;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    box-shadow: 0 0 5px rgba(81, 203, 238, 0);
-    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
-    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
 }
 
 fieldset#fielgrupoinvestigacion textarea:focus{
     color:#000;
     outline:none;
-    border:solid 1px #98cb98;
+    border:solid 1px #749ee6;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    box-shadow: 0 0 7px rgba(0,128,0, 0.7);
-    -webkit-box-shadow: 0 0 7px rgba(0,128,0, 0.7);
-    -moz-box-shadow: 0 0 7px rgba(0,128,0, 0.7);
+    box-shadow:0 0 13px #ffffff;
+    -webkit-box-shadow:0 0 13px #ffffff;
+    -moz-box-shadow:0 0 13px #ffffff;
     transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
-    border-radius:5px;
+    border-radius:8px;
 }
 
 fieldset#fielgrupoinvestigacion #boton_registro, #boton_registro2, #boton_registro3, #boton_registro4{
@@ -526,7 +543,7 @@ fieldset#fielgrupoinvestigacion #next{
 
 fieldset#fielgrupoinvestigacion #combogrupoinvestigacion, #campoinv, #combolineainvestigacion, #combolineainvestiga{
     font-size: 13px;
-    border:solid 1px #98cb98;
+    border:solid 1px #aacfe4;
     width: 340px;
     border-radius: 5px;
     margin-left: 0px;
@@ -539,3 +556,59 @@ fieldset#fielgrupoinvestigacion #combogrupoinvestigacion, #campoinv, #combolinea
 * Estilo para los Reportes 
 ***************************************************************/
 
+.report{
+    text-align: center;
+    margin-top: 45px;
+    margin-left: -60px;
+}
+
+#example_length select{
+    margin-left: 0px;
+}
+
+.tituloreporte{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#pdf{
+    width: 180px;
+    margin-top: 20px;
+}
+
+table#example#columna1{
+    width: 50px;
+}
+
+.ui-widget-header{
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c ),to( #c4ccd3 ));
+    background-image: -webkit-linear-gradient(  #63839c,#c4ccd3 );
+    background-image: -moz-linear-gradient(  #63839c,#c4ccd3 );
+    background-image: -ms-linear-gradient(  #63839c,#c4ccd3 );
+    background-image: -o-linear-gradient(  #63839c,#c4ccd3 );
+    background-image: linear-gradient(  #63839c,#c4ccd3);
+}
+
+.columna1, .columna2{
+    width: 42px;
+}
+
+.columna3{
+    width: 170px;
+}
+
+.columna4{
+    width: 105px;
+}
+
+.columna5{
+    width: 95px;
+}
+
+.columna6{
+    width: 60px;
+}
+
+.columna7, .columna8, .columna9{
+    width: 143px;
+}

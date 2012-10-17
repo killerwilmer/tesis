@@ -23,6 +23,12 @@ html {
     -webkit-text-size-adjust: 100%; 
     -ms-text-size-adjust: 100%; 
     text-size-adjust: 100%;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #d1ccbf ),to( #eee ));
+    background-image: -webkit-linear-gradient( #d1ccbf,#eee );
+    background-image: -moz-linear-gradient( #d1ccbf,#eee );
+    background-image: -ms-linear-gradient( #d1ccbf,#eee );
+    background-image: -o-linear-gradient( #d1ccbf,#eee );
+    background-image: linear-gradient( #d1ccbf,#eee );
 }
 
 body { 
@@ -635,7 +641,7 @@ fieldset#body {
 }
 
 #flip-container div.orange{ 
-    background:#f9d999;
+    background:#c9d9f9;
     border-radius:10px; 
     -moz-border-radius:10px;
     -o-border-radius:10px;

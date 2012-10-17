@@ -29,9 +29,10 @@ input[type="text"]{
 input:focus{
     border-radius:5px;
     outline:none;
-    box-shadow: 0 0 10px #749ee6;
-    -webkit-box-shadow: 0 0 10px #749ee6;
-    -moz-box-shadow: 0 0 10px #749ee6;
+    border:solid 1px #749ee6;
+    box-shadow:0 0 10px #ffffff;
+    -webkit-box-shadow:0 0 10px #ffffff;
+    -moz-box-shadow:0 0 10px #ffffff;
      transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -44,13 +45,13 @@ input:focus{
 #enviar, #enviarp, #botoncor{
     font-size:15px;
     padding:5px;
-    border:solid 1px #aacfe4;
+    border:solid 0px #aacfe4;
     width:170px;
     margin-left:50px;
     margin-top: 5px;
     border-radius: 8px;
     outline: none;
-    box-shadow: 0 8px 6px -6px #2671f0;
+    box-shadow: 0 8px 6px -6px #5985a0;
     text-align: center;
     font-weight: bold;
     font-weight: 600; 
@@ -71,13 +72,13 @@ input:focus{
     cursor: pointer;
     box-shadow: inset 2 2 10px #ffffff;
     outline: none;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #a6d9f2 ),to( #0071bc ));
-    background-image: -webkit-linear-gradient( #a6d9f2,#0071bc );
-    background-image: -moz-linear-gradient( #a6d9f2,#0071bc);
-    background-image: -ms-linear-gradient( #a6d9f2,#0071bc);
-    background-image: -o-linear-gradient( #a6d9f2,#0071bc );
-    background-image: linear-gradient( #a6d9f2,#0071bc );
-    border-color: #0071bc;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #aac4bf ),to( #5985a0));
+    background-image: -webkit-linear-gradient( #aac4bf,#5985a0 );
+    background-image: -moz-linear-gradient( #aac4bf,#5985a0);
+    background-image: -ms-linear-gradient( #aac4bf,#5985a0);
+    background-image: -o-linear-gradient( #aac4bf,#5985a0 );
+    background-image: linear-gradient( #aac4bf,#5985a0 );
+    box-shadow: none;
 }
 
 #enviar:active, #enviarp:active, #botoncor:active{
@@ -107,16 +108,21 @@ fieldset#fiel{
     border-radius:10px;
     width: 270px;
     margin: auto;
-    /*background: #add8e6  url(../../Imagenes/Coordinador/images/blanco.png);*/
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #5985a0 ),to( #aac4bf));
+    background-image: -webkit-linear-gradient( #5985a0,#aac4bf );
+    background-image: -moz-linear-gradient( #5985a0,#aac4bf);
+    background-image: -ms-linear-gradient( #5985a0,#aac4bf);
+    background-image: -o-linear-gradient( #5985a0,#aac4bf );
+    background-image: linear-gradient( #5985a0,#aac4bf );
     background-position: inherit inherit;
     background-repeat:no-repeat;
     padding-left: 15px;
     padding-right: 5px;
     padding-top: 15px;
-    -moz-box-shadow:inset  0 0 14px #749ee6;
-    -o-box-shadow:inset  0 0 14px #749ee6;
-    -webkit-box-shadow:inset 0 0 14px #749ee6;
-    box-shadow:inset 0 0 14px #749ee6;
+    -moz-box-shadow:inset  0 0 14px #5985a0;
+    -o-box-shadow:inset  0 0 14px #5985a0;
+    -webkit-box-shadow:inset 0 0 14px #5985a0;
+    box-shadow:inset 0 0 14px #5985a0;
     border: none;
 }
 
@@ -164,10 +170,16 @@ select#combofacultades{
     padding-left: 50px;
     border-radius: 10px;
     margin-top: 5px;
-    box-shadow: 0 0 10px #2671f0;
-    -moz-box-shadow: 0 0 10px #2671f0;
-    -o-box-shadow: 0 0 10px #2671f0;
-    -webkit-box-shadow: 0 0 10px #2671f0;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #5985a0 ),to( #aac4bf));
+    background-image: -webkit-linear-gradient( #5985a0,#aac4bf );
+    background-image: -moz-linear-gradient( #5985a0,#aac4bf);
+    background-image: -ms-linear-gradient( #5985a0,#aac4bf);
+    background-image: -o-linear-gradient( #5985a0,#aac4bf );
+    background-image: linear-gradient( #5985a0,#aac4bf );
+    box-shadow: 0 0 10px #5985a0;
+    -moz-box-shadow: 0 0 10px #5985a0;
+    -o-box-shadow: 0 0 10px #5985a0;
+    -webkit-box-shadow: 0 0 10px #5985a0;
 }
 
 .spacer{
@@ -222,6 +234,10 @@ h1#titusuario{
     outline: none;
 }
 
+#stylized input[type="text"]:focus{
+    border:solid 1px #749ee6;   
+}
+
 /********Estilo del Select del formulario registro usuario*****/
 
 #stylized select{
@@ -240,13 +256,13 @@ h1#titusuario{
 #stylized #boton2{
     font-size:15px;
     padding:7px;
-    border:solid 1px #aacfe4;
+    border:solid 0px #aacfe4;
     width:400px;
     margin-left:200px;
     margin-top: 15px;
     border-radius: 8px;
     outline: none;
-    box-shadow: 0 8px 6px -6px #2671f0;
+    box-shadow: 0 8px 6px -6px #5985a0;
     text-align: center;
     font-weight: bold;
     
@@ -263,13 +279,13 @@ h1#titusuario{
     background: #9ec0f8;
     cursor: pointer;
     box-shadow: inset 2 2 10px #ffffff;   
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #a6d9f2 ),to( #0071bc ));
-    background-image: -webkit-linear-gradient( #a6d9f2,#0071bc );
-    background-image: -moz-linear-gradient( #a6d9f2,#0071bc);
-    background-image: -ms-linear-gradient( #a6d9f2,#0071bc);
-    background-image: -o-linear-gradient( #a6d9f2,#0071bc );
-    background-image: linear-gradient( #a6d9f2,#0071bc );
-    border-color: #0071bc;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #aac4bf ),to( #5985a0));
+    background-image: -webkit-linear-gradient( #aac4bf,#5985a0 );
+    background-image: -moz-linear-gradient( #aac4bf,#5985a0);
+    background-image: -ms-linear-gradient( #aac4bf,#5985a0);
+    background-image: -o-linear-gradient( #aac4bf,#5985a0 );
+    background-image: linear-gradient( #aac4bf,#5985a0 );
+    box-shadow: none;
 }
 
 #stylized #boton2:active{
@@ -293,10 +309,16 @@ h1#titusuario{
     margin:0 auto;
     padding-left: 15px;
     border: 0px;
-    -moz-box-shadow:inset  0 0 14px #749ee6;
-    -o-box-shadow:inset  0 0 14px #749ee6;
-    -webkit-box-shadow:inset 0 0 14px #749ee6;
-    box-shadow:inset 0 0 14px #749ee6;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #5985a0 ),to( #aac4bf));
+    background-image: -webkit-linear-gradient( #5985a0,#aac4bf );
+    background-image: -moz-linear-gradient( #5985a0,#aac4bf);
+    background-image: -ms-linear-gradient( #5985a0,#aac4bf);
+    background-image: -o-linear-gradient( #5985a0,#aac4bf );
+    background-image: linear-gradient( #5985a0,#aac4bf );
+    -moz-box-shadow:inset  0 0 14px #5985a0;
+    -o-box-shadow:inset  0 0 14px #5985a0;
+    -webkit-box-shadow:inset 0 0 14px #5985a0;
+    box-shadow:inset 0 0 14px #5985a0;
     border:none;
 }
 

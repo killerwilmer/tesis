@@ -27,6 +27,8 @@
     String campo = "nombreprograma";
     String fin = " from programa where idprograma='" + idLlega + "';";
     String tipos = control.retornoCodigo(inicio, campo, fin);
+    
+    sesionOk.setAttribute("nombre", tipos);
 
     String ini = "select ";
     String cam = "idusuario";
@@ -77,8 +79,8 @@
                 $(".vincular").click(function(event) {
                     $("#wraper").load('wizard/index.jsp');
                 });
-                $(".informetesis").click(function(event) {
-                    $("#wraper").load('tables/repor1.jsp');
+                $(".reporte").click(function(event) {
+                    $("#wraper").load('tables/indexreportes.jsp');
                 });
             });
         </script>
@@ -128,12 +130,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a id="reporte" href="#"><span>Reportes</span></a>
-                            <div>
-                                <ul id="menseg5">
-                                    <li><a href="#" class="informetesis"><span>Tesis</span></a></li>                                    
-                                </ul>
-                            </div>
+                        <li><a id="reporte" class="reporte" href="#"><span>Reportes</span></a>
                         </li>
                         <li><a id="informe" href="#"><span>Informes</span></a>
 

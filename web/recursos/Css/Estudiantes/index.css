@@ -20,8 +20,8 @@ html{
     background-image: -webkit-linear-gradient( #d1ccbf,#eee );
     background-image: -moz-linear-gradient( #d1ccbf,#eee );
     background-image: -ms-linear-gradient( #d1ccbf,#eee );
-    background-image: -o-linear-gradient( #e8ed60,#eee );
-    background-image: linear-gradient( #e8ed60,#eee );
+    background-image: -o-linear-gradient( #d1ccbf,#eee );
+    background-image: linear-gradient( #d1ccbf,#eee );
     border-color: #e8ed60;
 }
 
@@ -45,13 +45,13 @@ div#contenedor
 }
 
 div#header{
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #003f77 ),to( #aac4bf ));
-    background-image: -webkit-linear-gradient( #003f77,#aac4bf );
-    background-image: -moz-linear-gradient( #003f77,#aac4bf );
-    background-image: -ms-linear-gradient( #003f77,#aac4bf );
-    background-image: -o-linear-gradient( #003f77,#aac4bf );
-    background-image: linear-gradient( #003f77,#aac4bf);
-    border-color: #003f77;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #003d5c),to( #81a1b6 ));
+    background-image: -webkit-linear-gradient( #003d5c,#81a1b6);
+    background-image: -moz-linear-gradient(#003d5c,#81a1b6 );
+    background-image: -ms-linear-gradient( #003d5c,#81a1b6 );
+    background-image: -o-linear-gradient( #003d5c,#81a1b6 );
+    background-image: linear-gradient( #003d5c,#81a1b6);
+    border-color: #003d5c;
     padding-top: 1%;
     height: 100px;
     border-radius:0px 0px 10px 10px;
@@ -66,8 +66,8 @@ div#wraper{
     background-image: -webkit-linear-gradient( #d1ccbf,#eee );
     background-image: -moz-linear-gradient( #d1ccbf,#eee );
     background-image: -ms-linear-gradient( #d1ccbf,#eee );
-    background-image: -o-linear-gradient( #e8ed60,#eee );
-    background-image: linear-gradient( #e8ed60,#eee );
+    background-image: -o-linear-gradient( #d1ccbf,#eee );
+    background-image: linear-gradient( #d1ccbf,#eee );
     border-color: #feb2b2;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -81,13 +81,13 @@ div#wraper{
 
 div#footer{
     height: 235px;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #aac4bf),to( #003f77 ));
-    background-image: -webkit-linear-gradient( #aac4bf,#003f77 );
-    background-image: -moz-linear-gradient( #aac4bf,#003f77 );
-    background-image: -ms-linear-gradient(#aac4bf,#003f77 );
-    background-image: -o-linear-gradient( #aac4bf,#003f77 );
-    background-image: linear-gradient( #aac4bf,#003f77 );
-    border-color: #aac4bf;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #81a1b6),to( #003d5c));
+    background-image: -webkit-linear-gradient( #81a1b6,#003d5c);
+    background-image: -moz-linear-gradient(#81a1b6,#003d5c );
+    background-image: -ms-linear-gradient( #81a1b6,#003d5c );
+    background-image: -o-linear-gradient( #81a1b6,#003d5c );
+    background-image: linear-gradient( #81a1b6,#003d5c );
+    border-color: #003d5c;
     border-radius:10px 10px 0px 0px;
     text-align: center;
     padding-top: 10px;
