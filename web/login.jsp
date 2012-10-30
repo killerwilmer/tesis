@@ -5,6 +5,7 @@
 <%
 String usuario = "";
 String clave = "";
+//recibimos el parametro codigo
 if ( request.getParameter("usuario").trim() != null && request.getParameter("usuario").trim() != "" )
     {
         usuario = request.getParameter("usuario");
@@ -18,7 +19,7 @@ else
         <%
     }
 
-
+//recibimos el parametro clave
 if ( request.getParameter("password").trim() != null && request.getParameter("password").trim() != "" )
     {
         clave = request.getParameter("password");
@@ -32,15 +33,14 @@ else
         <%
     }
 
-
-
+//comprovar usuario y contraseña
 String sql = "select codigousuario, contrasena from usuario where codigousuario='"+ usuario +"' and contrasena='"+ clave +"';";
 
 
         String ini = "select ";
         String camp = "idusuario";
         String fi = " from usuario where codigousuario='" + usuario+ "';";
-        String tip = control.retornoCodigo(ini, camp, fi);
+        String tip = control.retornoCodigo(ini, camp, fi);//obtenemos el tipo de usurio para lo del coodinador
         
         String i = "select ";
         String c = "idusuario";
@@ -49,8 +49,12 @@ String sql = "select codigousuario, contrasena from usuario where codigousuario=
 
 String SQLcoor = "select idusuario from coordinador where idusuario='" + tip + "'";
 
-if (control.iden(SQLcoor)) {
-        HttpSession sesionOk = request.getSession();
+if (control.iden(sql))
+{
+    HttpSession sesionOk = request.getSession();
+    
+    // Begin solo para el coordinador
+    if (control.iden(SQLcoor)) {
 
         String inicio = "select ";
         String campo = "idprograma";
@@ -65,10 +69,7 @@ if (control.iden(SQLcoor)) {
         }
       
     }
-
-else if (control.iden(sql))
-{
-    HttpSession sesionOk = request.getSession();
+    // End
 
     String inicio = "select ";
     String campo = "codigotipousuario";
