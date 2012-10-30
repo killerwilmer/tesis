@@ -3,7 +3,7 @@
     Created on : 14-abr-2012, 3:48:52
     Author     : usuarui
 --%>
-
+<%@page session="true" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="javax.naming.spi.DirStateFactory.Result"%>
@@ -38,24 +38,77 @@
 
     </head>
     <body>
+        <form id="from1" name="form1" action="#" method="post">
+            <fieldset id="fiel">               
+                <%
+                    String sqlString = "SELECT * FROM facultad;";
 
-        <fieldset id="fiel">               
-            <%
-                String sqlString = "SELECT * FROM facultad;";
+                    ResultSet resultado = control.consultas(sqlString);
 
-                ResultSet resultado = control.consultas(sqlString);
-
-                while (resultado.next()) {
-                    out.print("<select name='combodepartamento' id='combodepartamento'>");
-                    out.print("<option value='0'>Elija uno</option>");
-                    out.print("<option value='" + resultado.getString("idfacultad") + "'>" + resultado.getString("nombrefacultad") + "</option>");
-                    out.print("</select>");
-                    out.print("</select>");
-                    out.print("<br/>");
-                    out.print("<select name='combomunicipios' id='combomunicipios'>");
-                    out.print("</select>");
-                }
-            %>
-        </fieldset>
+                    while (resultado.next()) {
+                        out.print("<select name='combodepartamento' id='combodepartamento'>");
+                        out.print("<option value='0'>Elija uno</option>");
+                        out.print("<option value='" + resultado.getString("idfacultad") + "'>" + resultado.getString("nombrefacultad") + "</option>");
+                        out.print("</select>");
+                        out.print("</select>");
+                        out.print("<br/>");
+                        out.print("<select name='combomunicipios' id='combomunicipios'>");
+                        out.print("</select>");
+                    }
+                %>
+            </fieldset>
+            <input type="submit" name="enviar" id="enviar" value="Enviar">
+        </form>
     </body>
 </html>
+
+<%
+    if (request.getParameter("combomunicipios") != null) {
+        int idfac = Integer.parseInt(request.getParameter("combodepartamento"));
+        int idPro = Integer.parseInt(request.getParameter("combomunicipios"));
+
+        String codFac = "";
+        String nomFac = "";
+        String codPro = "";
+        String nomPro = "";
+                
+
+        try {
+            String sql = "select codigofacultad, nombrefacultad from facultad where idfacultad=" + idfac + ";";
+            //System.out.print(sql);
+            ResultSet rs = control.consultas(sql);
+            while (rs.next()) {
+                codFac = rs.getString("codigofacultad").trim();
+                nomFac = rs.getString("nombrefacultad").trim();
+            }
+        } catch (Exception e) {
+            out.println("Exception is ;" + e);
+        }
+
+        try {
+            String sql = "select codigoprograma, nombreprograma from programa where idprograma=" + idPro + ";";
+            //System.out.print(sql);
+            ResultSet rs = control.consultas(sql);
+            while (rs.next()) {
+                codPro = rs.getString("codigoprograma").trim();
+                nomPro = rs.getString("nombreprograma").trim();
+            }
+        } catch (Exception e) {
+            out.println("Exception is ;" + e);
+        }
+        
+        if (!codFac.trim().equals("") & codFac != null){
+            String sql = "UPDATE usuario SET codigofacultad='"+codFac+"' WHERE codigousuario='" + docentes + "';";
+            String sql1 = "UPDATE usuario SET nombrefacultad='"+nomFac+"' WHERE codigousuario='" + docentes + "';";
+            String sql2 = "UPDATE usuario SET nombreprograma='"+nomPro+"' WHERE codigousuario='" + docentes + "';";
+            String sql3 = "UPDATE usuario SET codigoprograma='"+codPro+"' WHERE codigousuario='" + docentes + "';";
+            control.ejecutarOperacion(sql);
+            control.ejecutarOperacion(sql1);
+            control.ejecutarOperacion(sql2);
+            control.ejecutarOperacion(sql3);
+            out.print("<script>window.location='index.jsp'</script>");
+        }
+
+        //out.print(codFac + "  " + nomFac + "  " + codPro + "  " + nomPro);
+    }
+%>

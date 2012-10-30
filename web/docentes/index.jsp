@@ -3,7 +3,8 @@
     Created on : 29-abr-2012, 12:37:20
     Author     : usuarui
 --%>
-<%@ page language="java" import="java.sql.*" %>
+<%@page session="true" %>
+<%@page language="java" import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="com.umariana.control.ConectaDb" %>
