@@ -35,9 +35,6 @@
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/estiloFormularios.css" />
         <script type="text/javascript" src="ckeditor.js"></script>
         <script type="text/javascript" src="sample.js"></script>
-        <link href="sample.css" rel="stylesheet" type="text/css" />    
-
-
     </head>
     <body>
         <!-- This div will hold the editor. -->
