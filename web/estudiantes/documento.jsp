@@ -37,15 +37,16 @@
         <script type="text/javascript" src="sample.js"></script>
         <link href="sample.css" rel="stylesheet" type="text/css" />    
 
-        <script type="text/javascript">
-            CKEDITOR.config.height = 400
-        </script>
+
     </head>
     <body>
         <!-- This div will hold the editor. -->
         <form action="guardarProyecto.jsp" method="post">
             <p>
                 <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
+            </p><br>Correcciones
+            <p>
+                <textarea class="ckeditor" id="editor2" name="editor2" cols="100" rows="10">hola</textarea>
             </p>
         </form>         
     </body>
@@ -65,4 +66,11 @@
         CKEDITOR.remove(instance);
     }
     CKEDITOR.replace( 'editor1');
+    
+    inst = CKEDITOR.instances['editor2'];
+    if(inst)
+    {
+        CKEDITOR.remove(inst);      
+    }
+    CKEDITOR.replace( 'editor2', {toolbar : [['Maximize'],['FontSize']]});
 </script>
