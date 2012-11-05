@@ -121,7 +121,7 @@ div#header img{
 /****************Estilo para el Contenedor del Menu Principal*****************/
 
 div#menu {
-    margin:30px 0 0 95px;
+    margin:30px;
     /*height: 52px;
     padding-left: 6px;*/
     width:85%;
