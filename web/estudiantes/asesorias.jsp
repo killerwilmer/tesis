@@ -42,7 +42,7 @@
     <body>
         <!-- This div will hold the editor. -->
         <form action="guardarProyecto.jsp" method="post">
-                <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
+                <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10">Asesorias</textarea>
         </form>         
     </body>
 </html>
@@ -60,7 +60,7 @@
     {
         CKEDITOR.remove(instance);
     }
-    CKEDITOR.replace( 'editor1');
+    CKEDITOR.replace( 'editor1', {toolbar : [['Maximize'],['FontSize']]});
     
     inst = CKEDITOR.instances['editor2'];
     if(inst)

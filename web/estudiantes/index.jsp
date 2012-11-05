@@ -67,6 +67,10 @@
                     $("#wraper").load('correcciones.jsp');
                     $.getScript('js/b.js');
                 });
+                
+                $(".botonasesorias").click(function(event) {
+                    $("#wraper").load('asesorias.jsp');
+                });
             });          
         </script>
 
@@ -91,6 +95,7 @@
                         </li>
                         <li><a href="#" class="botonproyecto"><span>Proyecto</span></a></li>
                         <li><a href="#" class="botoncorreciones"><span>Correcciones</span></a></li>
+                        <li><a href="#" class="botonasesorias"><span>Asesorias</span></a></li>
                         <li><a href="#" class="bot"><span>Doc</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>CSS</span></a></li>
                         <li><a id="cerrar" href="#"><span id="salir">Salir</span></a></li>
