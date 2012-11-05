@@ -17,6 +17,15 @@
     String campo = "nombreprograma";
     String fin = " from usuario where codigousuario='" + docentes + "';";
     String nombrePrograma = control.retornoCodigo(inicio, campo, fin);
+    
+    String inicio1 = "select ";
+    String campo1 = "idusuario";
+    String fin1 = " from usuario where codigousuario='" + docentes + "';";
+    String idDoc = control.retornoCodigo(inicio1, campo1, fin1);
+
+    int idDocente = Integer.parseInt(idDoc.trim());
+
+    sesionOk.setAttribute("idDocente", idDocente);
 
     if (nombrePrograma.equals("null")) {
         out.print("<script>window.location='actualizarDatosDocente.jsp'</script>");
@@ -40,6 +49,19 @@
         <title>Plataforma Docente</title>
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Docente/index.css" />
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
+        
+        <script type="text/javascript" src="../recursos/CkEditor/ckeditor.js"></script>
+        <script type="text/javascript" src="../recursos/CkEditor/sample.js"></script> 
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".boton").click(function(event) {
+                    $("#wraper").load('proyectosJurado.jsp');
+                    $.getScript('js/b.js');
+                });
+            });
+        </script>
+        
     </head>
     <body>
         <div id="contenedor">
@@ -48,13 +70,11 @@
                 <h1 id="tit"><%out.print(nombrePrograma);%></h1>   
                 <div id="menu">
                     <ul class="menu">
-                        <li><a href="#" class="parent"><span>Registro</span></a>
+                        <li><a href="#" class="parent"><span>Proyecto</span></a>
                             <div>
                                 <ul id="menseg">
-                                    <li><a href="#" class="boton"><span>Etapas</span></a></li>
-                                    <li><a href="#" class="boton2"><span>G. Investigación</span></a></li>
-                                    <li><a href="#" class="boton3"><span>Aspectos</span></a></li>
-                                    <li><a href="#"><span>Otros</span></a></li>
+                                    <li><a href="#" class="boton"><span>Jurado</span></a></li>
+                                    <li><a href="#" class="boton2"><span>Asesor</span></a></li>
                                 </ul>
                             </div>
                         </li>
