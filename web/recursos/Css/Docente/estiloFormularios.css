@@ -1,0 +1,189 @@
+/* 
+    Document   : estiloFormularios
+    Created on : 5/11/2012, 11:46:35 PM
+    Author     : Alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/************************************************************** 
+* Estilo General para titulos h1 de la plantilla coordinador
+***************************************************************/
+
+h1{
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+    text-align: center;
+    margin-top: 55px;
+}
+
+/************************************************************************** 
+* Estilo General para cajas de texto tipo text de la plantilla coordinador
+***************************************************************************/
+
+input[type="text"]{
+    border-radius:5px;
+    width: 250px;
+    padding: 5px;
+    outline: none;
+    font-size:12px;
+    border:solid 1px #aacfe4;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+input:focus{
+    border-radius:5px;
+    color:#000;
+    outline:none;
+    border:solid 1px #749ee6;
+    box-shadow:0 0 10px #ffffff;
+    -webkit-box-shadow:0 0 10px #ffffff;
+    -moz-box-shadow:0 0 10px #ffffff;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+
+/************************************************************************** 
+* Estilo General para campos tipos SELECT de la plantilla coordinador
+***************************************************************************/
+
+select{
+    font-size: 12px;
+    padding: 5px;
+    border:solid 1px #aacfe4;
+    width: 260px;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 60px;
+    margin-top: 6px;
+    text-transform: capitalize;
+}
+
+/************************************************************************** 
+* Estilo General para botones de la plantilla coordinador
+***************************************************************************/
+
+fieldset #enviar{
+    font-size:13px;
+    padding:5px;
+    border:solid 0px #63839c;
+    width:80px;
+    margin-left: 20px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0px 0px 0px 0px;
+    text-align: center;
+    font-weight: bold;
+    font-weight: 600; 
+    font-family: "Homer Simpson", cursive; 
+    background: #e6e6e6;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #e6e6e6 ),to( #63839c ));
+    background-image: -webkit-linear-gradient( #e6e6e6,#63839c );
+    background-image: -moz-linear-gradient( #e6e6e6,#63839c );
+    background-image: -ms-linear-gradient( #e6e6e6,#63839c );
+    background-image: -o-linear-gradient( #e6e6e6,#63839c );
+    background-image: linear-gradient( #e6e6e6,#63839c );
+    text-shadow: 1px 1px 1px #ffffff;
+    filter: dropshadow(color=#ffffff, offx=1, offy=1);   
+}
+
+fieldset #enviar:hover{   
+    cursor: pointer;
+    box-shadow: inset 1px 1px 10px  #63839c;
+    outline: none;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #3d505f ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient( #3d505f,#b6d6eb );
+    background-image: -moz-linear-gradient( #3d505f,#b6d6eb);
+    background-image: -ms-linear-gradient( #3d505f,#b6d6eb);
+    background-image: -o-linear-gradient( #3d505f,#b6d6eb );
+    background-image: linear-gradient( #3d505f,#b6d6eb );
+    border-color: #63839c;
+}
+
+fieldset #enviar:active{
+    position: relative;
+    top: 2px;
+    outline: none;
+}
+
+/************************************************************** 
+* Estilo Formulario Actualizar Datos
+***************************************************************/
+
+fieldset#fiel{
+    border-radius:10px;
+    width: 350px;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #3d505f 25% ),to( #6694b6 ));
+    background-image: -webkit-linear-gradient(  #3d505f 25%,#6694b6 );
+    background-image: -moz-linear-gradient(  #3d505f 25%,#6694b6 );
+    background-image: -ms-linear-gradient(  #3d505f 25%,#6694b6 );
+    background-image: -o-linear-gradient(  #3d505f 25%,#6694b6 );
+    background-image: linear-gradient(  #3d505f 25%,#6694b6);
+    background-position: inherit inherit;
+    background-repeat:no-repeat;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    -moz-box-shadow:inset  0 0 10px #3d505f;
+    -o-box-shadow:inset  0 0 10px #3d505f;
+    -webkit-box-shadow:inset 0 0 14px #3d505f;
+    box-shadow:inset 0 0 14px #3d505f;
+    border: none;
+}
+
+.actualizar{
+    margin-bottom: 30px;
+}
+
+fieldset#fiel #enviar{
+    width:150px;
+    margin-left:100px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+fieldset#fiel select{
+    margin-left: 0px;
+    width: 350px;
+}
+
+/************************************************************** 
+* Estilo para los Reportes 
+***************************************************************/
+
+#example_length select{
+    margin-left: 0px;
+}
+
+.tituloreporte{
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.ui-widget-header{
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #3d505f ),to( #6694b6));
+    background-image: -webkit-linear-gradient( #3d505f,#6694b6);
+    background-image: -moz-linear-gradient( #3d505f,#6694b6 );
+    background-image: -ms-linear-gradient( #3d505f,#6694b6 );
+    background-image: -o-linear-gradient( #3d505f,#6694b6 );
+    background-image: linear-gradient( #3d505f,#6694b6 );
+}
+
+.columna1, .columna2{
+    width: 42px;
+}
+

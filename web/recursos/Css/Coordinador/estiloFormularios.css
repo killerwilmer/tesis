@@ -581,12 +581,12 @@ table#example#columna1{
 }
 
 .ui-widget-header{
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c ),to( #c4ccd3 ));
-    background-image: -webkit-linear-gradient(  #63839c,#c4ccd3 );
-    background-image: -moz-linear-gradient(  #63839c,#c4ccd3 );
-    background-image: -ms-linear-gradient(  #63839c,#c4ccd3 );
-    background-image: -o-linear-gradient(  #63839c,#c4ccd3 );
-    background-image: linear-gradient(  #63839c,#c4ccd3);
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c ),to( #6798bc ));
+    background-image: -webkit-linear-gradient(  #63839c,#6798bc );
+    background-image: -moz-linear-gradient(  #63839c,#6798bc );
+    background-image: -ms-linear-gradient(  #63839c,#6798bc );
+    background-image: -o-linear-gradient(  #63839c,#6798bc );
+    background-image: linear-gradient(  #63839c,#6798bc);
 }
 
 .columna1, .columna2{

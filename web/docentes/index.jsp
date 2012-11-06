@@ -59,6 +59,10 @@
                     $("#wraper").load('proyectosJurado.jsp');
                     $.getScript('js/b.js');
                 });
+                $(".boton2").click(function(event) {
+                    $("#wraper").load('proyectosAsesor.jsp');
+                    $.getScript('js/b.js');
+                });
             });
         </script>
         
@@ -72,7 +76,7 @@
                     <ul class="menu">
                         <li><a href="#" class="parent"><span>Proyecto</span></a>
                             <div>
-                                <ul id="menseg">
+                                <ul id="menseg1">
                                     <li><a href="#" class="boton"><span>Jurado</span></a></li>
                                     <li><a href="#" class="boton2"><span>Asesor</span></a></li>
                                 </ul>

@@ -81,7 +81,7 @@ div#wraper{
 
 div#footer{
     height: 235px;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( ##6694b6 ),to( #3d505f));
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #6694b6 ),to( #3d505f));
     background-image: -webkit-linear-gradient( #6694b6,#3d505f);
     background-image: -moz-linear-gradient( #6694b6,#3d505f );
     background-image: -ms-linear-gradient( #6694b6,#3d505f );
@@ -122,7 +122,7 @@ div#header img{
 
 div#menu {
     margin:30px 0 0 95px;
-    height: 52px;
+    /*height: 52px;*/
     padding-left: 6px;
     width:85%;
     clear: right;
@@ -146,6 +146,8 @@ div#menu ul.menu {
     padding-bottom: 2px;
     background: #222;
     display: inline-block;
+    z-index: 9;
+    position: relative;
 }
 
 div#menu li {
@@ -176,7 +178,6 @@ div#menu li div {
     padding: 0; 
 }
 
-
 /****************Estilo para los elementos del Menu Principal*****************/
 
 div#menu span {
@@ -198,6 +199,17 @@ div#menu ul ul {
     padding: 0px 4px 10px 4px;
     background: #222;
     margin: 11px 0 0 0; 
+}
+
+div#menu ul #menseg1 {
+    z-index: 12;
+    padding: 0px 4px 10px 4px;
+    background: #222;
+    margin: 11px -20px 0 0; 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 5px;
 }
 
 /****************Estilo para visualizar los Submenus desplegables al pasar el puntero sobre sobre los botones del menu principal*****************/
