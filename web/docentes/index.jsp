@@ -17,7 +17,7 @@
     String campo = "nombreprograma";
     String fin = " from usuario where codigousuario='" + docentes + "';";
     String nombrePrograma = control.retornoCodigo(inicio, campo, fin);
-    
+
     String inicio1 = "select ";
     String campo1 = "idusuario";
     String fin1 = " from usuario where codigousuario='" + docentes + "';";
@@ -49,10 +49,10 @@
         <title>Plataforma Docente</title>
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Docente/index.css" />
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        
+
         <script type="text/javascript" src="../recursos/CkEditor/ckeditor.js"></script>
         <script type="text/javascript" src="../recursos/CkEditor/sample.js"></script> 
-        
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".boton").click(function(event) {
@@ -63,7 +63,7 @@
                 });
             });
         </script>
-        
+
     </head>
     <body>
         <div id="contenedor">
@@ -84,7 +84,13 @@
                         <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Graphic Design</span></a></li>
                         <li><a href="#"><span>HTML</span></a></li>
                         <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>User Interface</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>CSS</span></a></li>
+                        <li><a href="#" class="parent"><span>Personal</span></a>
+                            <div>
+                                <ul id="menseg1">
+                                    <li><a class="contra"><span>Contraseña</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li><a id="cerrar" href="#"><span id="salir">Salir</span></a></li>
                     </ul>
                 </div>
