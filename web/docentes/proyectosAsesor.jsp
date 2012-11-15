@@ -43,10 +43,20 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".documento").click(function(event) {
+                    alert("old " + document.getElementsByName("titulop").id);
                     $("#wraper").load('documento.jsp');
-                    $.getScript('js/b.js');
                 });
             });
+            
+            $(document).ready(function() {
+                $('#example tbody tr a.delete img').live( 'click', function (e) {
+                    var rowID = $(this).parent().attr('id');
+                    
+                    //sesionOk.setAttribute("pro", rowID);
+                    $("#wraper").load('documento.jsp?rowID=' + rowID);
+                    //alert(rowID);
+                });
+            } );
         </script>
     </head>
     <body id="dt_example">
@@ -84,7 +94,7 @@
                                     
                                 out.print(control.linea(i) + "<td name='cod'>" + (i + 1) + "</td>"
                                         + "<td name='idproyec'>" + datos.getString("idproyecto") + "</td>"
-                                        + "<td name='titulop'><a href='#' class='documento'>" + datos.getString("tituloproyecto") + "</a></td>"
+                                        + "<td name='titulop' id='" + i + "'><a id='"+datos.getString("idproyecto")+"' class='delete'><img src='hola' alt='' /></a></td>"
                                         + "<td name='etapa'>" + datos.getString("nombreetapa") + "</td>"
                                         + "<td name='nombres'>" + cadenaIntegrantes + "</td>"
                                         + "<td name='jurados'>" + cadenaJurados + "</td>");
