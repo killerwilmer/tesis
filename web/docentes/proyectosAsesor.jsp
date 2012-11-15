@@ -94,7 +94,7 @@
                                     
                                 out.print(control.linea(i) + "<td name='cod'>" + (i + 1) + "</td>"
                                         + "<td name='idproyec'>" + datos.getString("idproyecto") + "</td>"
-                                        + "<td name='titulop' id='" + i + "'><a id='"+datos.getString("idproyecto")+"' class='delete'><img src='hola' alt='' /></a></td>"
+                                        + "<td name='titulop' id='" + i + "'>"+datos.getString("tituloproyecto")+" <a id='"+datos.getString("idproyecto")+"' class='delete'><img src='../img/lupa.gif' alt='' /></a></td>"
                                         + "<td name='etapa'>" + datos.getString("nombreetapa") + "</td>"
                                         + "<td name='nombres'>" + cadenaIntegrantes + "</td>"
                                         + "<td name='jurados'>" + cadenaJurados + "</td>");
