@@ -57,11 +57,9 @@
             $(document).ready(function() {
                 $(".boton").click(function(event) {
                     $("#wraper").load('proyectosJurado.jsp');
-                    $.getScript('js/b.js');
                 });
                 $(".boton2").click(function(event) {
                     $("#wraper").load('proyectosAsesor.jsp');
-                    $.getScript('js/b.js');
                 });
             });
         </script>
@@ -77,8 +75,8 @@
                         <li><a href="#" class="parent"><span>Proyecto</span></a>
                             <div>
                                 <ul id="menseg1">
-                                    <li><a href="#" class="boton"><span>Jurado</span></a></li>
-                                    <li><a href="#" class="boton2"><span>Asesor</span></a></li>
+                                    <li><a class="boton"><span>Jurado</span></a></li>
+                                    <li><a class="boton2"><span>Asesor</span></a></li>
                                 </ul>
                             </div>
                         </li>

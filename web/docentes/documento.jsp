@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% String idProducto = request.getParameter("valor"); 
+HttpSession sesionOk = request.getSession();
+//int idProyecto = (Integer) sesionOk.getAttribute("pro");
+int idProyecto = Integer.parseInt(request.getParameter("rowID")); 
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +28,7 @@
         <a href="#" class="volver">&laquo; Volver atrás</a>
         <form action="guardarProyecto.jsp" method="post">
             <p>
-                <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10">hhjhjhjh</textarea>
+                <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=idProyecto%></textarea>
             </p>
         </form>  
     </body>
