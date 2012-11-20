@@ -116,7 +116,7 @@
                         int idInstitucion = control.darTipoUsuario("select ", "idinstitucion", " from institucion where nombreinstitucion='" + institucion.toUpperCase() + "';");
                         int etapaproyecto = Integer.parseInt(estado);
                         int estadoproyecto = Integer.parseInt(activo);
-                        String SqlInsert = "insert into proyecto (idinstitucion, tituloproyecto,titulopequeproyecto, descripcionproyecto, etapaproyecto,fechainicioproyecto, tipoproyecto, esstadoproyecto) values('" + idInstitucion + "','" + titulo.toUpperCase() + "','" + tituloabreviado + "','" + descripcion + "','" + etapaproyecto + "','" + fecha + "','" + estadoproyecto + "','" + activo + "');";
+                        String SqlInsert = "insert into proyecto (idinstitucion, tituloproyecto,titulopequeproyecto, descripcionproyecto, etapaproyecto,fechainicioproyecto, tipoproyecto, esstadoproyecto) values('" + idInstitucion + "','" + titulo.toUpperCase() + "','" + tituloabreviado + "','" + descripcion + "','" + etapaproyecto + "','" + fecha + "','" + tipo + "','" + estadoproyecto + "');";
 
                         if (control.ejecutarOperacion(SqlInsert)) {
                             out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
@@ -128,7 +128,7 @@
                         int idInstitucion = control.darTipoUsuario("select ", "idinstitucion", " from institucion where nombreinstitucion='" + institucion.toUpperCase() + "';");
                         int etapaproyecto = Integer.parseInt(estado);
                         int estadoproyecto = Integer.parseInt(activo);
-                        String SqlInsert = "insert into proyecto (idinstitucion, tituloproyecto,titulopequeproyecto, descripcionproyecto, etapaproyecto,fechainicioproyecto, tipoproyecto, esstadoproyecto) values('" + idInstitucion + "','" + titulo.toUpperCase() + "','" + tituloabreviado + "','" + descripcion + "','" + etapaproyecto + "','" + fecha + "','" + estadoproyecto + "','" + activo + "');";
+                        String SqlInsert = "insert into proyecto (idinstitucion, tituloproyecto,titulopequeproyecto, descripcionproyecto, etapaproyecto,fechainicioproyecto, tipoproyecto, esstadoproyecto) values('" + idInstitucion + "','" + titulo.toUpperCase() + "','" + tituloabreviado + "','" + descripcion + "','" + etapaproyecto + "','" + fecha + "','" + tipo + "','" + estadoproyecto + "');";
 
                         if (control.ejecutarOperacion(SqlInsert)) {
                             out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");

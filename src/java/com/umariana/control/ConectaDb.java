@@ -18,9 +18,9 @@ public class ConectaDb {
 
     public String idenTrabajador;
     public String usuario = "postgres";
-    public String clave = "postgres007";
+    public String clave = "alex03";
     public String driver = "org.postgresql.Driver";
-    public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto";
+    public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto1";
 
     public String getCadenaConexion() {
         return cadenaConexion;
@@ -197,8 +197,8 @@ public class ConectaDb {
 //Metodo para generar filtro al combo de los campos de investigacion
 //******************************************************************
     
-    public String combocampo(String tabla, String filtro) throws SQLException {
-        String consulta = "SELECT distinct campo.idcampo, campo.nombrecampo from " + tabla + " where grupoinvestigacion.idprograma='" + filtro + "' and grupoinvestigacion.idgrupoinvestigacion=linea.idgrupoinvestigacion and linea.idcampo=campo.idcampo";
+    public String combocampo(String tabla) throws SQLException {
+        String consulta = "SELECT distinct campo.idcampo, campo.nombrecampo from " + tabla + "";
         String combo = "";
         try {
             conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);

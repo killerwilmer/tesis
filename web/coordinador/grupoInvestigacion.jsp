@@ -86,7 +86,7 @@
                               <select id="campoinv" name="campoinv">
                                 <option selected="" value="*">Seleccione Campo de Investigación</option>
                                 <%
-                                    out.print(cont.combocampo("linea, grupoinvestigacion, campo", idLlega));
+                                    out.print(cont.combocampo(" campo"));
                                 %>
                               </select>
                               

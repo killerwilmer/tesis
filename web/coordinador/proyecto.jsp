@@ -30,7 +30,8 @@
             $(function() {
                 $( "#datepicker" ).datepicker({
                     changeMonth: true,
-                    changeYear: true
+                    changeYear: true,
+                    dateFormat:'yy-mm-dd'
                 });
                        
                 // Validamos el formulario
@@ -69,7 +70,7 @@
                 <label for="surname">Tipo</label>
                 <select id="tipo" name="tipo"  class="required">
                     <option selected="" value="*">Seleccione Tipo</option>
-                    <option value="trbajogrado">Trabajo de Grado</option>
+                    <option value="Trabajo de Grado">Trabajo de Grado</option>
                 </select><br/><br/>
                 <span id="radios">
                     

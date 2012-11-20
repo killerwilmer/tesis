@@ -1,7 +1,6 @@
 /*******************************************************
  *registro proyecto
  *******************************************************/
-
 var x;
 x=$(document);
 x.ready(inicializarEventos);
@@ -202,6 +201,38 @@ function presionSubmitAspectosIndicadores()
         nomindicador:iai
     },llegadaDatos); 
     return false;
+}
+
+/*******************************************************
+ *vinculación integrantes a grupos de investigación
+ *******************************************************/
+
+var xi;
+xi=$(document);
+xi.ready(inicializarEventosInt);
+
+function inicializarEventosInt()
+{
+    var xz;
+    xz=$("#boton_estu");
+    xz.click(presionSubmitInt);
+}
+
+function presionSubmitInt()
+{
+    var codGru=$("#idGru").attr("value");
+    var codInt=$("#idInt").attr("value");
+    
+    $.get("registra_integrante_grupo.jsp",{
+        codGru:codGru,
+        codInt:codInt
+    },llegadaDatosInte); 
+    return false;
+}
+
+function llegadaDatosInte(datos)
+{
+	$("#resultados_inte").html(datos);
 }
 
 function llegadaDatos(datos)

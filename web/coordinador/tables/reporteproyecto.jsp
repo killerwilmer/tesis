@@ -61,7 +61,7 @@
                     <thead >
                         <tr><td class="columna1">No.</td><td class="columna2">Id</td><td class="columna3">Titulo</td><td class="columna4">Etapa Actual</td><td class="columna5">Fecha Inicio</td><td class="columna6">Estado</td><td class="columna7">Integrantes</td><td class="columna8">Jurado(s)</td><td class="columna9">Asesor(@)</td></tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tbod">
                         <%
                             String codigo1 = request.getParameter("codigo1");
                             String sql = "select DISTINCT proyecto.idproyecto, proyecto.tituloproyecto, etapa.nombreetapa, proyecto.fechainicioproyecto, proyecto.esstadoproyecto from etapa, usuario, programa, usuarioproyecto, " + codigo1 + " where usuario.idusuario=usuarioproyecto.idusuario and proyecto.idproyecto=usuarioproyecto.idproyecto and etapa.idetapa=proyecto.etapaproyecto and programa.codigoprograma=usuario.codigoprograma and programa.idprograma='" + idLlega + "';";

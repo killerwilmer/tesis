@@ -114,7 +114,7 @@ select{
 ***************************************************************************/
 
 fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jura, #boton_registro, #boton_registro2,
-#boton_registro3, #boton_registro4, #enviarproyecto, #pdf{
+#boton_registro3, #boton_registro4, #enviarproyecto, #pdf, #enviar1{
     font-size:13px;
     padding:5px;
     border:solid 0px #63839c;
@@ -139,7 +139,7 @@ fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jur
 }
 
 fieldset #enviar:hover, #resetall:hover, #reset:hover, #next:hover, #boton_estu:hover, #boton_ases:hover, #boton_jura:hover, #boton_registro:hover, #boton_registro2:hover, 
-#boton_registro3:hover, #boton_registro4:hover, #enviarproyecto:hover, #pdf:hover{
+#boton_registro3:hover, #boton_registro4:hover, #enviarproyecto:hover, #pdf:hover, #enviar1:hover{
     
     cursor: pointer;
     box-shadow: inset 1px 1px 10px  #63839c;
@@ -154,7 +154,7 @@ fieldset #enviar:hover, #resetall:hover, #reset:hover, #next:hover, #boton_estu:
 }
 
 fieldset #enviar:active, #resetall:active, #reset:active, #next:active, #boton_estu:active, #boton_ases:active, #boton_jura:active, #boton_registro:active,
- #boton_registro2:active, #boton_registro3:active, #boton_registro4:active, #enviarproyecto:active, #pdf:active{
+ #boton_registro2:active, #boton_registro3:active, #boton_registro4:active, #enviarproyecto:active, #pdf:active, #enviar1:active{
     position: relative;
     top: 2px;
     outline: none;
@@ -186,7 +186,7 @@ fieldset#fiel{
     border: none;
 }
 
-fieldset#fiel #enviar{
+fieldset#fiel #enviar, #enviar1{
     width:150px;
     margin-left:100px;
     margin-bottom: 15px;   
@@ -602,7 +602,7 @@ table#example#columna1{
 }
 
 .columna5{
-    width: 95px;
+    width: 105px;
 }
 
 .columna6{
@@ -612,3 +612,140 @@ table#example#columna1{
 .columna7, .columna8, .columna9{
     width: 143px;
 }
+
+.tbod{
+    font-size: 13px;
+}
+
+/************************************************************** 
+* Estilo para tabla listar etapas
+***************************************************************/
+
+div#contenedor #act{
+   margin-left: 45%;
+}
+
+div#contenedor #act:hover{
+    cursor: pointer;
+}
+
+.columaactualizar{
+    width: 110px;
+}
+
+#columnaact{
+    text-align: center;
+}
+
+.volver{
+    margin-left: 30px;
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#ticactualizar{
+    margin-top: 5px;
+}
+
+#titulosactpro{
+    margin-top: 5px;
+}
+
+.columnaidproyecto{
+    width: 85px;
+}
+
+.columnanumeros{
+    width: 35px;
+}
+
+/************************************************************** 
+* Estilo para formulario actores
+***************************************************************/
+
+div#actoresproyecto{
+    text-align: center; 
+    font-size: 20px;
+    margin-top: -30px;
+}
+
+div#actoresproyecto ul {
+    padding: 0;
+    list-style: none;
+    border-radius:20px;
+    opacity:0.92;
+    display: inline-block;
+}
+
+div#actoresproyecto ul li {
+    margin: 0;
+    padding: 0 0px 0 0;
+    z-index: 9;
+    width: auto;
+    display: inline;
+    list-style: none;
+}
+
+div#actoresproyecto span {
+    margin-top: 2px;
+    padding: 0px 1px 4px 15px;
+    color: #000;
+    font: normal 10 Helvetica,Arial,FreeSans,sans-serif;
+    background: none;
+    line-height: 36px;	
+    cursor: pointer;
+}
+
+div#actoresproyecto span:hover{
+    color: #fff;
+}
+
+div#actoresproyecto a {
+    line-height: 50px;
+    text-decoration: none;
+    white-space: nowrap;
+    width: auto; 
+    padding: 0 10px 0 0;
+    text-transform: uppercase;
+}
+
+#titulolistaintegrantes{
+    margin-top: 0px;
+}
+
+#demo1{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#inte{
+    background: #666;
+    color: #fff;
+    text-align: center;
+}
+
+#uno{
+    text-align: center;
+}
+
+.eliminarintegrante{
+    width: 110px;
+}
+
+#example1{
+    font-size: 16px;
+}
+
+#titulonuevointegrante{
+    margin-top: 25px;
+}
+
+/************************************************************** 
+* Estilo para formulario actualizar Grupo investigacion 
+***************************************************************/
+
+#formutitulogrupinv{
+    margin-top: -90px;
+}
+

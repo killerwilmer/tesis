@@ -22,11 +22,13 @@
 
     HttpSession sesionOk = request.getSession();
     String idLlega = (String) sesionOk.getAttribute("coordinador");
-
+    sesionOk.setAttribute("idp", idLlega);
+    
     String inicio = "select ";
     String campo = "nombreprograma";
     String fin = " from programa where idprograma='" + idLlega + "';";
     String tipos = control.retornoCodigo(inicio, campo, fin);
+    //out.print(idLlega);
     
     sesionOk.setAttribute("nombre", tipos);
 
@@ -68,6 +70,16 @@
                     $.getScript('js/b.js');
                 });
                 
+                $(".botongrupoinv").click(function(event) {
+                    $("#wraper").load('actualizar/formulariogrupoinvesstigacion.jsp');
+                    $.getScript('js/b.js');
+                });
+                
+                $(".botonvinculargrupo").click(function(event) {
+                    $("#wraper").load('vinculargrupoinvestigacion.jsp');
+                    $.getScript('js/b.js');
+                });
+                
                 $(".registroaspectos").click(function(event) {
                     $("#wraper").load('registroAspectos.jsp');
                     $.getScript('js/b.js');
@@ -82,6 +94,13 @@
                 $(".reporte").click(function(event) {
                     $("#wraper").load('tables/indexreportes.jsp');
                 });
+                $(".modificaretapa").click(function(event) {
+                    $("#wraper").load('actualizar/listarEtapas.jsp');
+                });
+                $(".modificarproyecto").click(function(event) {
+                    $("#wraper").load('actualizar/listarProyectos.jsp');
+                });
+
             });
         </script>
 
@@ -97,8 +116,7 @@
                             <div>
                                 <ul id="menseg1">
                                     <li><a href="#" class="registroetapa"><span>Registrar</span></a></li>
-                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
-                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
+                                    <li><a href="#" class="modificaretapa"><span>Modificar</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -106,8 +124,8 @@
                             <div>
                                 <ul id="menseg2">
                                     <li><a href="#" class="registrogrupo"><span>Registrar</span></a></li>
-                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
-                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
+                                    <li><a href="#" class="botonvinculargrupo"><span>Vincular</span></a></li>
+                                    <li><a href="#" class="botongrupoinv"><span>Modificar</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -124,15 +142,13 @@
                             <div>
                                 <ul id="menseg4">
                                     <li><a href="#" class="registroproyecto"><span>Registrar</span></a></li>
-                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
                                     <li><a href="#" class="vincular"><span>Vincular Actores</span></a></li>
-                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
+                                    <li><a href="#" class="modificarproyecto"><span>Modificar</span></a></li>
                                 </ul>
                             </div>
                         </li>
                         <li><a id="reporte" class="reporte" href="#"><span>Reportes</span></a>
                         </li>
-                        <li><a id="informe" href="#"><span>Informes</span></a>
 
                         </li>
                         <li><a id="cerrar" href="#"><span id="salir">Salir</span></a>
