@@ -61,6 +61,9 @@
                 $(".boton2").click(function(event) {
                     $("#wraper").load('proyectosAsesor.jsp');
                 });
+                $(".contra").click(function(event) {
+                    $("#wraper").load('contrasena.jsp');
+                });
             });
         </script>
 
@@ -80,13 +83,9 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#" id="123"><span id="123">JavaScript</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','recursos/JS/ajax_loadContent.js');"><span>Graphic Design</span></a></li>
-                        <li><a href="#"><span>HTML</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','http://www.google.com.co/');"><span>User Interface</span></a></li>
                         <li><a href="#" class="parent"><span>Personal</span></a>
                             <div>
-                                <ul id="menseg1">
+                                <ul id="menseg2">
                                     <li><a class="contra"><span>Contraseña</span></a></li>
                                 </ul>
                             </div>

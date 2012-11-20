@@ -14,6 +14,7 @@
 <%
     HttpSession sesionOk = request.getSession();
     int idDocente = (Integer) sesionOk.getAttribute("idDocente");
+    sesionOk.setAttribute("tipodoc", 2 );
     int i = 0;
     String miRutaImg = config.getServletContext().getRealPath("/") + "img/lupa.png";
 %>
@@ -67,7 +68,7 @@
             <div id="demo">
                 <table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%" style="text-align: center">
                     <thead >
-                        <tr><td class="columna1">No.</td><td class="columna2">Id</td><td class="columna3">Nombre Proyecto</td><td class="columna4">Etapa</td><td class="columna5">Integrantes</td><td class="columna6">Asesor</td></tr>
+                        <tr><td class="columna1">No.</td><td class="columna2">Id</td><td class="columna3">Nombre Proyecto</td><td class="columna4">Etapa</td><td class="columna5">Integrantes</td><td class="columna6">Jurados</td></tr>
                     </thead>
                     <tbody>
                         <%

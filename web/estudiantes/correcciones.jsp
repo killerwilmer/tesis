@@ -31,12 +31,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Correciones</title>
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/estiloFormularios.css" />
         <script type="text/javascript" src="ckeditor.js"></script>
         <script type="text/javascript" src="sample.js"></script>
     </head>
     <body>
+        <h1>Correciones</h1>
         <!-- This div will hold the editor. -->
         <form action="guardarProyecto.jsp" method="post">
                 <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10">Coorecciones.</textarea>

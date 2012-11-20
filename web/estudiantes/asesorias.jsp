@@ -31,16 +31,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Asesorias</title>
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Estudiantes/estiloFormularios.css" />
         <script type="text/javascript" src="ckeditor.js"></script>
 
     </head>
     <body>
+        <h1>Asesorias</h1>
         <!-- This div will hold the editor. -->
         <form action="guardarProyecto.jsp" method="post">
-                <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10">Asesorias</textarea>
-        </form>         
+            <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10">Asesorias</textarea>
+        </form>
     </body>
 </html>
 

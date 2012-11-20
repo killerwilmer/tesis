@@ -83,21 +83,9 @@
                 <div id="menu">
                     <ul class="menu">
                         <li><a href="index.jsp"><span>Inicio</span></a></li>
-                        <li><a href="#" class="parent"><span>Registro</span></a>
-                            <div>
-                                <ul id="menseg">
-                                    <li><a href="#" class="boton"><span>Facultades</span></a></li>
-                                    <li><a href="#" class="boton1"><span>Programas</span></a></li>
-                                    <li><a href="#" class="boton2"><span>Usuarios</span></a></li>
-                                    <li><a href="#" class="boton3"><span>Coordinador</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
                         <li><a href="#" class="botonproyecto"><span>Proyecto</span></a></li>
                         <li><a href="#" class="botoncorreciones"><span>Correcciones</span></a></li>
                         <li><a href="#" class="botonasesorias"><span>Asesorias</span></a></li>
-                        <li><a href="#" class="bot"><span>Doc</span></a></li>
-                        <li><a href="#" onclick="ajax_loadContent('wraper','Coordinador/formEtapas.jsp');"><span>CSS</span></a></li>
                         <li><a id="cerrar" href="#"><span id="salir">Salir</span></a></li>
                     </ul>
                 </div>

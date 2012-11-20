@@ -229,16 +229,16 @@
                                 <fieldset id="body">
                                     <fieldset>
                                         <label for="usuario">Usuario</label>
-                                        <input type="text" title="Must be at least 8 characters." name="usuario" class="email" id="email"/>
+                                        <input type="text" title="Codigo Sircoa" name="usuario" class="email" id="email"/>
                                     </fieldset>
                                     <fieldset>
                                         <label for="password">Contraseña</label>
-                                        <input type="password" name="password" title="Try to make it hard to guess." class="pas" id="password"/>
+                                        <input type="password" name="password" title="Contraseña de registro" class="pas" id="password"/>
                                     </fieldset>
-                                    <label for="checkbox"><input type="checkbox" id="checkbox" />Recordarme</label>
+                                    <!-- <label for="checkbox"><input type="checkbox" id="checkbox" />Recordarme</label> -->
                                     <input type="submit" id="logueo"  value="Iniciar" />
                                 </fieldset>
-                                <span><a href="#">¿Olvidaste tu contraseña?</a></span>
+                                <!-- <span><a href="#">¿Olvidaste tu contraseña?</a></span> -->
                             </form>                                                                   
                         </div>            
                     </div>
