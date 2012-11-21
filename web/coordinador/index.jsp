@@ -54,6 +54,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/index.css" />
+        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
+        <link type="text/css" href="../recursos/Css/estilotablas.css" rel="stylesheet"/>
 
         <title>Plataforma Coordinador</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
@@ -82,6 +84,16 @@
                 
                 $(".registroaspectos").click(function(event) {
                     $("#wraper").load('registroAspectos.jsp');
+                    $.getScript('js/b.js');
+                });
+                
+                $(".botonmodificaraspecto").click(function(event) {
+                    $("#wraper").load('actualizar/listaAspectos.jsp');
+                    $.getScript('js/b.js');
+                });
+                
+                $(".botonmodificarindicador").click(function(event) {
+                    $("#wraper").load('actualizar/listaindicadores.jsp');
                     $.getScript('js/b.js');
                 });
                 
@@ -133,8 +145,8 @@
                             <div>
                                 <ul id="menseg3">
                                     <li><a href="#" class="registroaspectos"><span>Registrar</span></a></li>
-                                    <li><a href="#" class="boton2"><span>Modificar</span></a></li>
-                                    <li><a href="#" class="boton3"><span>Eliminar</span></a></li>
+                                    <li><a href="#" class="botonmodificaraspecto"><span>Modificar Aspecto</span></a></li>
+                                    <li><a href="#" class="botonmodificarindicador"><span>Modificar Indicador</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -166,7 +178,7 @@
                 <label id="estilo1">WEBMASTER</label>
                 <br/><label id="estilo2">WILMER ARTEAGA - ALEX ENRIQUEZ</label><br/>
                 <label id="estilo1">Email</label><br />
-                <label id="estilo2">killerwilmer@gmail.com - alex.84.12@hotmail.com</label><br/><br/>
+                <label id="estilo2">killerwilmer@gmail.com - alexnrqz@gmail.com</label><br/><br/>
                 <label id="estilo3">Universidad Mariana</label><br />
                 <label id="estilo2">San Juan de Pasto - Nariño - Colombia</label><br />
                 <label id="estilo2">Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</label>

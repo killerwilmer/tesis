@@ -20,7 +20,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script src="../recursos/Js/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="funciones.js"></script>
@@ -46,10 +45,18 @@
                     }
                 });
             });
+            
+            $(document).ready(function() {
+                $(".volverint").click(function(event) {
+                    $("#cont1").load('actualizar/tablagrupoinv.jsp');
+                    $.getScript('js/b.js');
+                });
+            });
         </script>
     </head>
     <body>
-        <h1 id="titulolistaintegrantes" style="text-align: center">LISTA INTEGRANTES</h1>
+        <img class="volverint" src='../recursos/Imagenes/Coordinador/volver.png' alt=''/>
+        <h1 id="titulointegrantes" style="text-align: center">LISTA INTEGRANTES</h1>
         <div id="demo1">
             <table cellpadding="1" cellspacing="1" border="0" class="display1" id="example22" width="100%">
                 <thead id="inte">
@@ -69,7 +76,7 @@
                             i++;
                         }
                     %>
-                <div id="result_id"></div>
+                <div id="result_id2"></div>
                 </tbody>
             </table>
         </div>
@@ -84,6 +91,7 @@
                             <span ><input id="boton_estu" type="button" value="Vincular Integrante" name="enviar"/></span>
                             <div id="result_integrante"></div>
                             <div id="resultados_inte" ></div>
+                            <div id="resultados_i" ></div>
                         </span>
                 </form>
         </fieldset>

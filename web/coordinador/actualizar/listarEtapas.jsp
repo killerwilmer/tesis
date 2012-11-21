@@ -18,27 +18,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <script type="text/javascript" src="../recursos/Tablas/js/jquery-ui-1.8.23.custom.min.js"></script>
-        <script type="text/javascript" src="../recursos/Tablas/js/jquery-1.8.0.min.js"></script>
-        <script type="text/javascript" src="../recursos/Tablas/js/jquery.dataTables.min.js"></script>
-
-        <link type="text/css" href="../recursos/Tablas/css/trontastic/jquery-ui-1.8.23.custom.css" rel="stylesheet"/>
-        <link type="text/css" href="../recursos/Tablas/css/trontastic/jquery.ui.base.css" rel="stylesheet"/>
-        <link type="text/css" href="../recursos/Tablas/css/trontastic/jquery.ui.all.css" rel="stylesheet"/>
-        <link type="text/css" href="../recursos/Tablas/css/demo_page.css" rel="stylesheet"/>
-        <link type="text/css" href="../recursos/Tablas/css/jquery.dataTables_themeroller.css" rel="stylesheet"/>
-        
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
-        
-        <script>
-            $(document).ready(function() {
-                $('#example').dataTable({
-                    "bJQueryUI" : "true",
-                    "sPaginationType": "full_numbers"
-                });
-            })
-            
+        <title>JSP Page</title>       
+        <script>           
            $(document).ready(function() {
                 $('#example tbody tr a.delete img').live( 'click', function (e) {
                     var rowID = $(this).parent().attr('id');                 
@@ -54,7 +35,7 @@
             <h1 style="text-align: center">LISTA ETAPAS</h1>
             <div id="demo">
                 <table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%">
-                    <thead>
+                    <thead id="inte">
                         <tr><td>#</td><td>IdEtapa</td><td>Nombre Etapa</td><td id="columaactualizar">Actualizar</td></tr>
                     </thead>
                     <tbody>

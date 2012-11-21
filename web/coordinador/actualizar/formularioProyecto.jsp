@@ -23,7 +23,6 @@
         <title>JSP Page</title>
         <script src="../recursos/datepicker/jquery-1.7.1.js"></script>
         <script type="text/javascript" src="actualizar/funciones.js"></script>
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         
         <link rel="stylesheet" href="../recursos/datepicker/jquery.ui.all.css">
         <link rel="stylesheet" type="text/css" href="../recursos/datepicker/demos.css" />
@@ -41,7 +40,7 @@
             }); 
             
             $(document).ready(function() {
-                $(".volver").click(function(event) {
+                $(".volverproyecto").click(function(event) {
                     $("#wraper").load('actualizar/listarProyectos.jsp');
                     $.getScript('js/b.js');
                 });
@@ -61,7 +60,7 @@
         </script>
     </head>
     <body>
-        <img class="volver" src='../recursos/Imagenes/Coordinador/volver.png' alt=''/>
+        <img class="volverproyecto" src='../recursos/Imagenes/Coordinador/volver.png' alt=''/>
         <h1 id="titulosactpro">Actualizar Proyecto</h1>
         <form id="formularioproy">
             <fieldset id="fieladdproyecto">
@@ -75,7 +74,7 @@
                         out.print("<label for='surname'>Titulo Abreviado</label><input type='text' name='tituloabreviado' id='tituloabreviado' value='" + datos.getString("titulopequeproyecto") + "'/><br/>");
                         out.print("<label for='surname'>Institución</label><input type='text' name='institucion' id='institucion' value='" + datos.getString("nombreinstitucion") + "'/><input type='hidden' name='idinstitucion' id='idinstitucion' value='" + datos.getString("idinstitucion") + "'/><br/>");
                         out.print("<label for='surname'>Etapa</label><select id='comboestado' name='comboestado'><option selected='' value='" + datos.getString("etapaproyecto") + "'>" + datos.getString("nombreetapa") + "</option>" + control.combofiltro("etapa", idLlega) + "</select><br/><br/>");
-                        out.print("<label for='surname'>Descripción</label><textarea name='descripcion' id='descripcion'>" + datos.getString("descripcionproyecto") + "</textarea><br/>");
+                        //out.print("<label for='surname'>Descripción</label><textarea name='descripcion' id='descripcion'>" + datos.getString("descripcionproyecto") + "</textarea><br/>");
                         out.print("<div class='demo'><label for='surname'>Fecha Inicio</label><input type='text' name='datepicker' id='datepicker' value='" + datos.getString("fechainicioproyecto") + "'/></div>");
                         out.print("<label for='surname'>Tipo</label><select id='tipo' name='tipo'><option selected='' value='Trabajo de Grado'>" + datos.getString("tipoproyecto") + "</option></select><br/><br/>");
                         estado = Integer.parseInt(datos.getString("esstadoproyecto"));

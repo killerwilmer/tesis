@@ -227,11 +227,15 @@ div#menu ul #menseg3 {
     z-index: 12;
     padding: 0px 4px 10px 4px;
     background: #222;
-    margin: 11px -20px 0 0; 
+    margin: 11px -50px 0 0; 
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+div#menu ul #menseg3 a{
+    width: 190px;
 }
 
 div#menu ul #menseg4 {

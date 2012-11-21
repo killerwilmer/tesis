@@ -114,7 +114,8 @@ select{
 ***************************************************************************/
 
 fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jura, #boton_registro, #boton_registro2,
-#boton_registro3, #boton_registro4, #enviarproyecto, #pdf, #enviar1{
+#boton_registro3, #boton_registro4, #enviarproyecto, #pdf, #enviar1, #boton_actualizarcampo, #boton_actualizarlinea, 
+#boton_actualizarsublinea, #boton_actualizaraspecto, #boton_asignarnuevoindicador, #resetindi, #boton_actualizarindicador{
     font-size:13px;
     padding:5px;
     border:solid 0px #63839c;
@@ -139,7 +140,9 @@ fieldset #enviar, #resetall, #reset, #next, #boton_estu, #boton_ases, #boton_jur
 }
 
 fieldset #enviar:hover, #resetall:hover, #reset:hover, #next:hover, #boton_estu:hover, #boton_ases:hover, #boton_jura:hover, #boton_registro:hover, #boton_registro2:hover, 
-#boton_registro3:hover, #boton_registro4:hover, #enviarproyecto:hover, #pdf:hover, #enviar1:hover{
+#boton_registro3:hover, #boton_registro4:hover, #enviarproyecto:hover, #pdf:hover, #enviar1:hover, #boton_actualizarcampo:hover, 
+#boton_actualizarlinea:hover, #boton_actualizarsublinea:hover, #boton_actualizaraspecto:hover, 
+#boton_asignarnuevoindicador:hover, #resetindi:hover, #boton_actualizarindicador:hover{
     
     cursor: pointer;
     box-shadow: inset 1px 1px 10px  #63839c;
@@ -154,7 +157,9 @@ fieldset #enviar:hover, #resetall:hover, #reset:hover, #next:hover, #boton_estu:
 }
 
 fieldset #enviar:active, #resetall:active, #reset:active, #next:active, #boton_estu:active, #boton_ases:active, #boton_jura:active, #boton_registro:active,
- #boton_registro2:active, #boton_registro3:active, #boton_registro4:active, #enviarproyecto:active, #pdf:active, #enviar1:active{
+ #boton_registro2:active, #boton_registro3:active, #boton_registro4:active, #enviarproyecto:active, #pdf:active, #enviar1:active, 
+ #boton_actualizarcampo:active, #boton_actualizarlinea:active, #boton_actualizarsublinea:active, #boton_actualizaraspecto:active, 
+ #boton_asignarnuevoindicador:active, #resetindi:active, #boton_actualizarindicador:active{
     position: relative;
     top: 2px;
     outline: none;
@@ -638,18 +643,18 @@ div#contenedor #act:hover{
 }
 
 .volver{
-    margin-left: 30px;
-    margin-top: 10px;
-    display: inline-block;
     cursor: pointer;
+    display: inline-block;
+    margin-left: 160px;
+    margin-top: 40px;
 }
 
 #ticactualizar{
-    margin-top: 5px;
+    margin-top: -40px;
 }
 
 #titulosactpro{
-    margin-top: 5px;
+    margin-top: -40px;
 }
 
 .columnaidproyecto{
@@ -667,7 +672,7 @@ div#contenedor #act:hover{
 div#actoresproyecto{
     text-align: center; 
     font-size: 20px;
-    margin-top: -30px;
+    margin-top: -65px;
 }
 
 div#actoresproyecto ul {
@@ -720,9 +725,10 @@ div#actoresproyecto a {
 }
 
 #inte{
-    background: #666;
-    color: #fff;
+    color: #000;
     text-align: center;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #uno{
@@ -749,3 +755,277 @@ div#actoresproyecto a {
     margin-top: -90px;
 }
 
+/************************************************************** 
+* Estilo para formulario actualizar campo investigacion 
+***************************************************************/
+
+#nombrecampo{
+    margin-left: 0px;
+    width: 330px;
+}
+
+#descricioncampo{
+    margin-left: 0px;
+    height: 140px;
+    width: 320px;
+}
+
+#boton_actualizarcampo{
+    margin-left: 45px;
+    width: 250px;
+    margin-top: 10px;
+}
+
+#ticactualizarcampo{
+    margin-top: -35px;
+}
+
+.volveracampos{
+    cursor: pointer;
+    margin-left: 115px;
+}
+
+#titulointegrantes{
+    margin-top: -37px;
+}
+
+.volverint{
+    margin-left: 110px;
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/************************************************************** 
+* Estilo para formulario actualizar linea
+***************************************************************/
+
+#titulolinea{
+    margin-top: 0px;
+}
+
+#boton_actualizarlinea{
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.volveralineas{
+    margin-left: 110px;
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#nombrelinea{
+    height: 150px;
+    width: 320px;
+}
+
+/************************************************************** 
+* Estilo para formulario actualizar sublinea
+***************************************************************/
+
+#boton_actualizarsublinea{
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 125px;
+}
+
+fieldset#fielsublinea{
+    border-radius:10px;
+    width: 500px;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c 25% ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -moz-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -ms-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -o-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: linear-gradient(  #63839c 25%,#b6d6eb);
+    background-position: inherit inherit;
+    background-repeat:no-repeat;
+    padding-left: 15px;
+    padding-right: 5px;
+    padding-top: 20px;
+    -moz-box-shadow:inset  0 0 10px #63839c;
+    -o-box-shadow:inset  0 0 10px #63839c;
+    -webkit-box-shadow:inset 0 0 14px #63839c;
+    box-shadow:inset 0 0 14px #63839c;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#nombresublinea{
+    height: 130px;
+    width: 470px;
+}
+
+.volverasublineas{
+    margin-left: 110px;
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#combolineaactualizar{
+    margin-left: 0px;
+    margin-bottom: 10px;
+    width: 490px;
+}
+
+#nombreactuallinea{
+    margin-left: 0px;
+    width: 475px;
+}
+
+/************************************************************** 
+* Estilo para formulario actualizar aspectos
+***************************************************************/
+
+#ticactualizaraspecto{
+    margin-top: -30px;
+}
+
+.volveraspecto{
+    margin-left: 150px;
+    margin-top: 60px;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: -10px;
+}
+
+fieldset#fielactualizaraspecto{
+    border-radius:10px;
+    width: 800px;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #63839c 25% ),to( #b6d6eb ));
+    background-image: -webkit-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -moz-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -ms-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: -o-linear-gradient(  #63839c 25%,#b6d6eb );
+    background-image: linear-gradient(  #63839c 25%,#b6d6eb);
+    background-position: inherit inherit;
+    background-repeat:no-repeat;
+    padding-left: 15px;
+    padding-right: 5px;
+    padding-top: 20px;
+    -moz-box-shadow:inset  0 0 10px #63839c;
+    -o-box-shadow:inset  0 0 10px #63839c;
+    -webkit-box-shadow:inset 0 0 14px #63839c;
+    box-shadow:inset 0 0 14px #63839c;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#nombreactualetapa{
+    margin-left: 0px;
+    width: 350px;
+}
+
+#nombreaspectos, #nuevoindicador, #nombreindicador{
+    height: 100px;
+    width: 770px;
+}
+
+#boton_actualizaraspecto, #boton_actualizarindicador{
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 200px;
+}
+
+#resetindi, #boton_asignarnuevoindicador{
+    margin-top: 10px;
+    width: 250px;
+    margin-left: 100px;
+}
+
+#comboetapaactualizar{
+    margin-left: 75px;
+    width: 350px;
+}
+
+.columaver{
+    width: 130px;
+}
+
+.ne{
+    width: 130px;
+}
+
+.columaactualizara{
+    width: 100px;
+}
+
+.columnanumeral{
+    width: 35px;
+}
+
+/************************************************************** 
+* Estilo para formulario ver indicadores
+***************************************************************/
+
+.volverindicador{
+    margin-left: 150px;
+    margin-top: 60px;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: -10px;
+}
+
+#titindicadores{
+    margin-top: -30px;
+}
+
+#nomaspecto{
+    margin-left: 0px;
+    padding: 8px;
+    width: 1030px;  
+}
+
+/************************************************************** 
+* Estilo para imagen volver
+***************************************************************/
+
+.volveretapa{
+    margin-left: 150px;
+    margin-top: 60px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.volvergp{
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 115px;
+    margin-top: 0;
+}
+
+.volverproyecto {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 160px;
+    margin-top: 60px;
+}
+
+.volverindicador {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 160px;
+    margin-top: 60px;
+}
+
+/************************************************************** 
+* Estilo para formulario indicadores actualizar
+***************************************************************/
+
+#nombreasp{
+    margin-left: 0px;
+    width: 780px;
+    padding: 6px;
+}
+
+#comboaspecto{
+    margin-left: 0px;
+    margin-bottom: 10px;
+    width: 793px;
+}

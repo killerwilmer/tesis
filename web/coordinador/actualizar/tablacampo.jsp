@@ -19,23 +19,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+        <script>           
+           $(document).ready(function() {
+                $('#examplegrupo tbody tr a.deletescampo img').live( 'click', function (e) {
+                    var rowIDC = $(this).parent().attr('id');                 
+                    //sesionOk.setAttribute("pro", rowID);
+                    $("#cont1").load('actualizar/formulariocampo.jsp?rowIDC=' + rowIDC);
+                    //alert(rowID);
+                });
+            } );
+        </script>
     </head>
     <body>
         <h1 id="titulolistaintegrantes" style="text-align: center">LISTA CAMPOS DE INVESTIGACÓN</h1>
         <div id="demo1">
             <table cellpadding="1" cellspacing="1" border="0" class="display1" id="examplegrupo" width="100%">
                 <thead id="inte">
-                    <tr><td>#</td><td>Nombres</td><td class="eliminarintegrante">Actualizar</td></tr>
+                <tr><td>#</td><td>Nombre</td><td>Descripción</td><td class="eliminarintegrante">Actualizar</td></tr>
                 </thead>
                 <tbody>
                     <%
-                        String sql = "select idcampo, nombrecampo, descrpcioncampo from campo where idprograma='" + idProgram + "';";
+                        String sql = "select DISTINCT campo.idcampo, nombrecampo, descripcioncampo from campo, grupoinvestigacion, linea where campo.idcampo=linea.idcampo and linea.idgrupoinvestigacion=grupoinvestigacion.idgrupoinvestigacion and grupoinvestigacion.idprograma='" + idProgram + "';";
                         ResultSet datos = control.consultas(sql);
                         while (datos.next()) {
                             out.print(control.linea(i) + "<td id='uno' name='cod'>" + (i + 1) + "</td>"
-                                    + "<td name='nombregrup'>" + datos.getString("nombregrupoinvestigacion") + "</td>"
-                                    //+"<input type='hidden' name='ids' id='ids' value='" + datos.getString("idusuario") + "'/>"
-                                    + "<td name='actualizar' id='" + i + "'><a id='" + datos.getString("idgrupoinvestigacion") + "' class='deletes5'><img id='act' src='../recursos/Imagenes/Coordinador/actualizar.png' alt='' /></a></td>");
+                                    + "<td name='nombrecamp'>" + datos.getString("nombrecampo") + "</td>"
+                                    + "<td name='descamp'>" + datos.getString("descripcioncampo") + "</td>"
+                                    + "<td name='actualizarcampo' id='" + i + "'><a id='" + datos.getString("idcampo") + "' class='deletescampo'><img id='act' src='../recursos/Imagenes/Coordinador/actualizar.png' alt='' /></a></td>");
                             i++;
                         }
                     %>

@@ -197,8 +197,8 @@ public class ConectaDb {
 //Metodo para generar filtro al combo de los campos de investigacion
 //******************************************************************
     
-    public String combocampo(String tabla) throws SQLException {
-        String consulta = "SELECT distinct campo.idcampo, campo.nombrecampo from " + tabla + "";
+    public String combocampo(String tabla, String filtro) throws SQLException {
+        String consulta = "select DISTINCT campo.idcampo, nombrecampo from " + tabla + " where campo.idcampo=linea.idcampo and linea.idgrupoinvestigacion=grupoinvestigacion.idgrupoinvestigacion and grupoinvestigacion.idprograma='"+filtro+"'";
         String combo = "";
         try {
             conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
@@ -224,7 +224,32 @@ public class ConectaDb {
 //*******************************************************************
     
     public String combolineainvestigacion(String tabla, String filtro) throws SQLException {
-        String consulta = "SELECT distinct linea.idgrupoinvestigacion, linea.nombrelinea from " + tabla + " where grupoinvestigacion.idprograma='" + filtro + "' and grupoinvestigacion.idgrupoinvestigacion=linea.idgrupoinvestigacion";
+        String consulta = "SELECT distinct linea.idlinea, linea.nombrelinea from " + tabla + " where grupoinvestigacion.idprograma='" + filtro + "' and grupoinvestigacion.idgrupoinvestigacion=linea.idgrupoinvestigacion";
+        String combo = "";
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                Statement sentencia = conexion.createStatement();
+                ResultSet resultado = sentencia.executeQuery(consulta);
+                while (resultado.next() && resultado != null) {
+                    combo += "<option value=" + resultado.getString(1) + ">" + resultado.getString(2).toLowerCase() + "</option>";
+                }
+                sentencia.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
+        }
+        return combo + "</select>";
+    }
+    
+//*******************************************************************
+//Metodo para generar un combo filtrado de la linea de investigacion
+//*******************************************************************
+    
+    public String comboaspecto(String tabla, String filtro) throws SQLException {
+        String consulta = "SELECT distinct aspecto.idaspecto, aspecto.nombreaspecto from " + tabla + " where etapa.idprograma='" + filtro + "' and aspecto.idetapa=etapa.idetapa";
         String combo = "";
         try {
             conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);

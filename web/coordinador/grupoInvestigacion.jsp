@@ -86,12 +86,18 @@
                               <select id="campoinv" name="campoinv">
                                 <option selected="" value="*">Seleccione Campo de Investigación</option>
                                 <%
-                                    out.print(cont.combocampo(" campo"));
+                                    out.print(cont.combocampo(" campo, grupoinvestigacion, linea", idLlega));
                                 %>
                               </select>
                               
-                            <label for="surname">Digite Linea de Investigacón</label><br />
-                            <input type="text" id="lineainvestigacion" name="lineainvestigacion" class="input_field_12em"/><br/>                            
+                            <label for="surname">Digite o Seleccione Una Linea de Investigacón</label><br />
+                            <input type="text" id="lineainvestigacion" name="lineainvestigacion" class="input_field_12em"/><br/>
+                            <select id="combolineainvestiga" name="combolineainvestiga">
+                                <option selected="" value="*">Seleccione Linea de Investigación</option>
+                                <%
+                                    out.print(cont.combolineainvestigacion("linea, grupoinvestigacion", idLlega));
+                                %>
+                            </select>
                             <br/><input id="boton_registro3" type="button" value="Registrar" name="enviar"/>
                             <div id="resultados"></div>
                         </span>

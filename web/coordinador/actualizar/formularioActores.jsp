@@ -16,7 +16,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         
         <script type="text/javascript">
             $(document).ready(function() {

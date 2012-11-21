@@ -1,7 +1,7 @@
 <%-- 
-    Document   : addetapa
-    Created on : 03-may-2012, 11:45:55
-    Author     : usuarui
+    Document   : registronuevoindicador
+    Created on : 21/11/2012, 09:36:08 AM
+    Author     : Alex
 --%>
 
 <%@page import="org.w3c.dom.Document"%>
@@ -22,21 +22,19 @@
     </head>
     <body>
         <%
-            String nometapa = request.getParameter("nombre");
-            String idprogram = request.getParameter("idprograma");
-                
-            if ((nometapa.length() == 0)) {            
-                out.print("<script languaje = javascript>showWarningToast('Digite Nombre');</script>");              
-            } else if ((idprogram.equals("*"))) {
-                out.print("<script languaje = javascript>showWarningToast('Seleccione un Programa');</script>");
-            } else {
-                int numero = Integer.parseInt(idprogram);
-                String SQLIden = "Select nombreetapa from etapa where nombreetapa ='" + nometapa.toUpperCase() + "'";
+            String nomind = request.getParameter("idasn");
+            String idaspecto = request.getParameter("desaspn");
+   
+            if ((idaspecto.length() == 0)) {            
+                out.print("<script languaje = javascript>showWarningToast('Digite Nombre Indicador');</script>");              
+            }else {
+                int numero = Integer.parseInt(nomind);
+                String SQLIden = "Select nombreindicador from indicador where nombreindicador ='" + idaspecto.toUpperCase() + "'";
                     
                 if (control.iden(SQLIden)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Etapa ya existe');</script>");
+                    out.print("<script languaje = javascript>showNoticeToast('Indicador ya existe');</script>");
                 } else {
-                    String SqlInsert = "insert into etapa  (idprograma,nombreetapa)  values('" + numero + "','" + nometapa.toUpperCase() + "');";
+                    String SqlInsert = "insert into indicador  (idaspecto, nombreindicador)  values('" + numero + "','" + idaspecto.toUpperCase() + "');";
                         
                     if (control.ejecutarOperacion(SqlInsert)) {
                          out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
@@ -48,5 +46,3 @@
         %>
     </body>
 </html>
-
-

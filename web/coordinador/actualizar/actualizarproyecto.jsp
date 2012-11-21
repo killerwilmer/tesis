@@ -22,7 +22,7 @@
             int numero = Integer.parseInt(request.getParameter("idpro"));
             String titulo = request.getParameter("titulo");
             String tituloabreviado = request.getParameter("titucorto");
-            String descripcion = request.getParameter("descripcion");
+            //String descripcion = request.getParameter("descripcion");
             String institucion = request.getParameter("institu");
             String estado = request.getParameter("estado");
             String fecha = request.getParameter("fecha");
@@ -30,8 +30,10 @@
             int act=Integer.parseInt(request.getParameter("activo"));
             String idinst = request.getParameter("idinstitu");
             //out.print(fecha);
-            if ((titulo.length() == 0) || (tituloabreviado.length() == 0) || (descripcion.length() == 0)) {
-                out.print("<script languaje = javascript>showWarningToast('Faltan datos');</script>");
+            if ((titulo.length() == 0) ) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Titulo Proyecto');</script>");
+            } else if ((tituloabreviado.length() == 0)) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Titulo Abreviado Proyecto');</script>");
             } else if (fecha.length() == 0) {
                 out.print("<script languaje = javascript>showWarningToast('Seleccione una Fecha');</script>");
             } else {                 
@@ -45,7 +47,7 @@
                     
                     int etapaproyecto = Integer.parseInt(estado);
                     
-                    String SQL = "Update proyecto SET tituloproyecto='"+titulo.toUpperCase()+"', titulopequeproyecto='"+tituloabreviado.toUpperCase()+"', descripcionproyecto='"+descripcion+"', etapaproyecto='"+etapaproyecto+"', fechainicioproyecto='"+fecha+"', tipoproyecto='"+tipo+"', esstadoproyecto='"+act+"' where idproyecto='" + numero + "'";
+                    String SQL = "Update proyecto SET tituloproyecto='"+titulo.toUpperCase()+"', titulopequeproyecto='"+tituloabreviado.toUpperCase()+"', etapaproyecto='"+etapaproyecto+"', fechainicioproyecto='"+fecha+"', tipoproyecto='"+tipo+"', esstadoproyecto='"+act+"' where idproyecto='" + numero + "'";
                     //out.print(SQL);
                     if (control.ejecutarOperacion(SQL)) {
                         out.print("<script languaje = javascript>showSuccessToast('Datos Actualizados Correctamente');</script>");

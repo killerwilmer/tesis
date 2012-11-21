@@ -18,7 +18,7 @@ function presionSubmit()
     var c=$("#tituloabreviado").attr("value");
     var d=$("#institucion").attr("value");
     var e=$("#comboestado").attr("value");
-    var f=$("#descripcion").attr("value");
+    //var f=$("#descripcion").attr("value");
     var g=$("#datepicker").attr("value");
     var h=$("#tipo").attr("value");
     var i=$("#activo").attr("value");
@@ -28,7 +28,7 @@ function presionSubmit()
         titucorto:c,
         institu:d,
         estado:e,
-        descripcion:f,
+        //descripcion:f,
         fecha:g,
         tipo:h,
         activo:i
@@ -138,11 +138,13 @@ function presionSubmitLineaInvestigacion()
     var cgi=$("#combogrupoinvestigacion").attr("value");
     var cci=$("#campoinv").attr("value");
     var nli=$("#lineainvestigacion").attr("value");
-
+    var nlic=$("#combolineainvestiga").attr("value");
+    //alert(nlic);
     $.get("registroLineaInvestigacion.jsp",{
         coboggrupoi:cgi,
         combocampoi:cci,
-        nombrelinea:nli
+        nombrelinea:nli,
+        nombrelineacombo:nlic
     },llegadaDatos); 
     return false;
 }
@@ -166,7 +168,6 @@ function presionSubmitSubLineaInvestigacion()
 {
     var cl=$("#combolineainvestigacion").attr("value");
     var nsl=$("#sublineainvestigacion").attr("value");
-
     $.get("registroSublineaInvestigacion.jsp",{
         idLineaInvestigacion:cl,
         nombreSublinea:nsl

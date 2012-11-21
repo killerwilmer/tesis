@@ -60,7 +60,7 @@
                         %>
                     </select>
                 <br/><br/>
-                <label for="surname" id="descrip">Descripción</label><textarea id="descripcion" name="descripcion"></textarea><br/> 
+                <!--<label for="surname" id="descrip">Descripción</label><textarea id="descripcion" name="descripcion"></textarea><br/--> 
                 
                 <div class="demo">
                     <label for="surname">Fecha Inicio</label>

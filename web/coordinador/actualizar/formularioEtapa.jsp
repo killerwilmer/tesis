@@ -21,11 +21,10 @@
         <title>JSP Page</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script type="text/javascript" src="actualizar/funciones.js"></script>
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         
         <script type="text/javascript">
             $(document).ready(function() {
-                $(".volver").click(function(event) {
+                $(".volveretapa").click(function(event) {
                     $("#wraper").load('actualizar/listarEtapas.jsp');
                     $.getScript('js/b.js');
                 });
@@ -33,7 +32,7 @@
         </script>
     </head>
     <body>
-        <img class="volver" src='../recursos/Imagenes/Coordinador/volver.png' alt=''/>
+        <img class="volveretapa" src='../recursos/Imagenes/Coordinador/volver.png' alt=''/>
         <form id="formu">
             <h1 id="ticactualizar">ACTUALIZAR ETAPA</h1>        
             <fieldset id="fiel">

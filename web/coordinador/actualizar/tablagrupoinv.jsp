@@ -53,7 +53,7 @@
                                     + "<td name='nombregrup'>" + datos.getString("nombregrupoinvestigacion") + "</td>"
                                     //+"<input type='hidden' name='ids' id='ids' value='" + datos.getString("idusuario") + "'/>"
                                     + "<td name='actualizar' id='" + i + "'><a id='" + datos.getString("idgrupoinvestigacion") + "' class='deletes5'><img id='act' src='../recursos/Imagenes/Coordinador/actualizar.png' alt='' /></a></td>"
-                                    + "<td name='actualizaractores' id='" + i + "'><a id='"+datos.getString("idgrupoinvestigacion")+"' class='deletes55'><img id='act' src='../recursos/Imagenes/Coordinador/actualizar.png' alt='' /></a></td>");
+                                    + "<td name='actualizarintegrantes' id='" + i + "'><a id='"+datos.getString("idgrupoinvestigacion")+"' class='deletes55'><img id='act' src='../recursos/Imagenes/Coordinador/actualizar.png' alt='' /></a></td>");
                             i++;
                         }
                     %>

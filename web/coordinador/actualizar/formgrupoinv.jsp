@@ -19,12 +19,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script type="text/javascript" src="actualizar/funciones.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-                $(".volver").click(function(event) {
+                $(".volvergp").click(function(event) {
                     $("#cont1").load('actualizar/tablagrupoinv.jsp');
                     $.getScript('js/b.js');
                 });
@@ -32,7 +31,7 @@
         </script>
     </head>
     <body>
-        <img class="volver" src='../recursos/Imagenes/Coordinador/volver.png' alt=''/>
+        <img class="volvergp" src='../recursos/Imagenes/Coordinador/volver.png' alt=''/>
         <form id="formutitulogrupinv">
             <h1>Grupo Investigación</h1>        
             <fieldset id="fiel">
