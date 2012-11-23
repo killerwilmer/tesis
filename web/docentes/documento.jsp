@@ -3,7 +3,7 @@
     Created on : 5/11/2012, 11:35:11 AM
     Author     : Alex
 --%>
-
+<%@page session="true" %>
 <%@page import="com.umariana.control.ConectaDb"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% ConectaDb control = new ConectaDb();%>
@@ -12,6 +12,7 @@
 //int idProyecto = (Integer) sesionOk.getAttribute("pro");
     int idProyecto = Integer.parseInt(request.getParameter("rowID"));
     int tipodoc = (Integer) sesionOk.getAttribute("tipodoc");
+    sesionOk.setAttribute("idProyecto", idProyecto);
 
     String desProyecto = "";
     String titulo = "";
@@ -42,20 +43,29 @@
         </script>
     </head>
     <body>
-        <a href="#" class="volver">&laquo; Volver atrás</a>
-        <form action="guardarProyecto.jsp" method="post">
+        <%
+            if (tipodoc == 1) {%>
+        <form name="form1" id="form1" action="guardarAsesoria.jsp" method="post">
             <p>
                 <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
-                <%
-                if (tipodoc == 1) {%>
+
             <h3>Registrar asesorias para : <%=titulo%></h3>
-            <%} else {%>
-            <h3>Registrar correciones para : <%=titulo%></h3><%
-                }
-            %>
-            <textarea class="ckeditor" id="editor2" name="editor2" cols="100" rows="10">Asesorias</textarea>
+            <a href="#" class="volver">Ver historial Asesorias</a>
+            <textarea class="ckeditor" id="editor2" name="editor2" cols="100" rows="10">Digite su asesoria.</textarea>
         </p>
-    </form>  
+    </form>
+    <%} else {%>
+    <form name="form2" id="form2" action="guardarCorrecion.jsp" method="post">
+        <p>
+            <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
+        <h3>Registrar correciones para : <%=titulo%></h3>
+        <a href="#" class="volver">Ver historial Correcciones</a>
+        <textarea class="ckeditor" id="editor2" name="editor2" cols="100" rows="10">Digite las correciones.</textarea>
+    </p>
+</form> 
+<%
+    }
+%> 
 </body>
 </html>
 
