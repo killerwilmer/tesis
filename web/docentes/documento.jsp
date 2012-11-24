@@ -35,9 +35,26 @@
         <title>JSP Page</title> 
         <script type="text/javascript">
             $(document).ready(function() {
-                $(".volver").click(function(event) {
+                $(".volver1").click(function(event) {
+                    $("#wraper").load('proyectosAsesor.jsp');
+                });
+            });
+            
+            $(document).ready(function() {
+                $(".volver2").click(function(event) {
                     $("#wraper").load('proyectosJurado.jsp');
-                    $.getScript('js/b.js');
+                });
+            });
+            
+            $(document).ready(function() {
+                $(".ver1").click(function(event) {
+                    $("#wraper").load('histoAsesorias.jsp');
+                });
+            });
+            
+            $(document).ready(function() {
+                $(".ver2").click(function(event) {
+                    $("#wraper").load('histoCorrecciones.jsp');
                 });
             });
         </script>
@@ -50,7 +67,8 @@
                 <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
 
             <h3>Registrar asesorias para : <%=titulo%></h3>
-            <a href="#" class="volver">Ver historial Asesorias</a>
+            <a href="#" class="volver1">Volver</a>
+            <a href="#" class="ver1">Ver historial Asesorias</a>
             <textarea class="ckeditor" id="editor2" name="editor2" cols="100" rows="10">Digite su asesoria.</textarea>
         </p>
     </form>
@@ -59,7 +77,8 @@
         <p>
             <textarea class="ckeditor" id="editor1" name="editor1" cols="100" rows="10"><%=desProyecto%></textarea>
         <h3>Registrar correciones para : <%=titulo%></h3>
-        <a href="#" class="volver">Ver historial Correcciones</a>
+        <a href="#" class="volver2">Volver</a>
+        <a href="#" class="ver2">Ver historial Correcciones</a>
         <textarea class="ckeditor" id="editor2" name="editor2" cols="100" rows="10">Digite las correciones.</textarea>
     </p>
 </form> 
