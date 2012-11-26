@@ -30,7 +30,7 @@
     <center>
         <br>
         <br>
-        <table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="90%" style="text-align: center">
+        <table cellpadding="1" cellspacing="1" border="1" class="display" id="example" width="90%" style="text-align: center">
             <thead >
                 <tr><td class="columna1">No.</td><td class="columna2">Fecha</td><td class="columna3">Asesoria</td></tr>
             </thead>
