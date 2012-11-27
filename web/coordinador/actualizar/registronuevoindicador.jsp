@@ -29,10 +29,12 @@
                 out.print("<script languaje = javascript>showWarningToast('Digite Nombre Indicador');</script>");              
             }else {
                 int numero = Integer.parseInt(nomind);
-                String SQLIden = "Select nombreindicador from indicador where nombreindicador ='" + idaspecto.toUpperCase() + "'";
-                    
-                if (control.iden(SQLIden)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Indicador ya existe');</script>");
+                //String SQLIden = "Select nombreindicador from indicador where nombreindicador ='" + idaspecto.toUpperCase() + "'";
+                
+                String SQLIndicador = "Select nombreindicador from indicador, aspecto where indicador.idaspecto=aspecto.idaspecto and aspecto.idaspecto='" + numero + "' and indicador.nombreindicador ='" + idaspecto.toUpperCase() + "';";
+                  
+                if (control.iden(SQLIndicador)) {
+                    out.print("<script languaje = javascript>showNoticeToast('Indicador Ya Existe en Aspecto Actual');</script>");
                 } else {
                     String SqlInsert = "insert into indicador  (idaspecto, nombreindicador)  values('" + numero + "','" + idaspecto.toUpperCase() + "');";
                         

@@ -31,7 +31,7 @@
             else {
                 String SqlNombre = "Select nombrecampo from campo where nombrecampo = '" + miCam.toUpperCase() + "'";
                 if (control.iden(SqlNombre)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Nombre del Campo Ya Existe');</script>");
+                    //out.print("<script languaje = javascript>showNoticeToast('Nombre del Campo Ya Existe');</script>");
                     String SQL = "Update campo SET descripcioncampo='" + miCamdescripcion + "' where idcampo='" + numero + "'";
                     if (control.ejecutarOperacion(SQL)) {
                         out.print("<script languaje = javascript>showSuccessToast('Descrpción del Campo Actualizado Correctamente');</script>");

@@ -20,7 +20,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script type="text/javascript" src="actualizar/funsionesindi.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
@@ -36,10 +35,10 @@
         <h1 id="ticactualizaraspecto">ACTUALIZAR ASPECTO</h1>
         <fieldset id="fielactualizaraspecto">
             <%
-                String sql = "select nombreaspecto, nombreindicador from aspecto, indicador where indicador.idaspecto=aspecto.idaspecto and indicador.idindicador='" + idindicador + "'";
+                String sql = "select aspecto.idaspecto, aspecto.nombreaspecto, nombreindicador from aspecto, indicador where indicador.idaspecto=aspecto.idaspecto and indicador.idindicador='" + idindicador + "'";
                 ResultSet datos = cont.consultas(sql);
                 while (datos.next()) {
-                    out.print("<label for='surname'>Nombre Aspecto Actual</label><br/><input type='text' disabled='true' name='nombreasp' id='nombreasp' value='" + datos.getString("nombreaspecto") + "'/><br/>");
+                    out.print("<label for='surname'>Nombre Aspecto Actual</label><br/><input type='text' disabled='true' name='nombreasp' id='nombreasp' value='" + datos.getString("nombreaspecto") + "'/><input type='hidden'name='idaspact' id='idaspact' value='" + datos.getString("idaspecto") + "'/><br/>");
                     out.print("<select id='comboaspecto' name='comboaspecto'>"
                             + "<option selected='' value='*'>Seleccione Aspecto</option>" + cont.comboaspecto("etapa, aspecto", idProgram) + "</select><br/>");
                     out.print("<input type='hidden' name='idindi' id='idindi' value='" + idindicador + "'/>");

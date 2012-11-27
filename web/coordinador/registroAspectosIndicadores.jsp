@@ -24,37 +24,53 @@
             String idetapa = request.getParameter("idetapas");
             String nomaspecto = request.getParameter("nomaspecto");
             String nomindicador = request.getParameter("nomindicador");
-            
-            if((idetapa.equals("*"))){
-                out.print("<script languaje = javascript>showWarningToast('Seleccione una Etapa');</script>");
-            }else if(nomaspecto.length()==0){
-                out.print("<script languaje = javascript>showWarningToast('Digite Aspecto');</script>");
-            }else if(nomindicador.length()==0){
-                out.print("<script languaje = javascript>showWarningToast('Digite Indicador');</script>");
-            } else{
-                int numero = Integer.parseInt(idetapa);
-                String SQLIaspecto = "Select nombreaspecto from aspecto where nombreaspecto ='" + nomaspecto.toUpperCase() + "'";
-                String SQLIndicador = "Select nombreindicador from indicador where nombreindicador ='" + nomindicador.toUpperCase() + "'";
-                if (!control.iden(SQLIaspecto)){
-                    String SqlInsertusu = "insert into aspecto(idetapa, nombreaspecto) values('"+numero+"','" +nomaspecto.toUpperCase()+"');";
-                    if (control.ejecutarOperacion(SqlInsertusu)) {
-                         out.print("<script languaje = javascript>showSuccessToast('Apecto Insertados Correctamente');</script>");
-                    } else {
-                        out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
-                    }     
-                } 
                 
-                if (!control.iden(SQLIndicador)){
-                    int idaspecto = control.darTipoUsuario("select ", "idaspecto", " from aspecto where nombreaspecto='" + nomaspecto.toUpperCase()+ "';");
-                    String SqlInsertusu = "insert into indicador(idaspecto, nombreindicador) values('"+idaspecto+"','" +nomindicador.toUpperCase()+"');";
+            if ((idetapa.equals("*"))) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione una Etapa');</script>");
+            } else if (nomaspecto.length() == 0) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Aspecto');</script>");
+            } else if (nomindicador.length() == 0) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Indicador');</script>");
+            } else {
+                int numero = Integer.parseInt(idetapa);
+                int idaspecto = control.darTipoUsuario("select ", "idaspecto", " from aspecto, etapa where aspecto.idetapa=etapa.idetapa and etapa.idetapa ='" + numero + "' and nombreaspecto='" + nomaspecto.toUpperCase() + "';");
+                String SQLIdenli = "Select nombreaspecto from aspecto, etapa where aspecto.idetapa=etapa.idetapa and etapa.idetapa ='" + numero + "' and aspecto.nombreaspecto ='" + nomaspecto.toUpperCase() + "';";
+                String SQLIndicador = "Select nombreindicador from indicador, aspecto where indicador.idaspecto=aspecto.idaspecto and aspecto.idaspecto='" + idaspecto + "' and indicador.nombreindicador ='" + nomindicador.toUpperCase() + "';";
+                if (control.iden(SQLIdenli)) {
+                    out.print("<script languaje = javascript>showNoticeToast('Aspecto ya Existe en la Etapa');</script>");
+                } //String SQLIaspecto = "Select nombreaspecto from aspecto where nombreaspecto ='" + nomaspecto.toUpperCase() + "'";
+                else {
+                    String SqlInsertusu = "insert into aspecto(idetapa, nombreaspecto) values('" + numero + "','" + nomaspecto.toUpperCase() + "');";
                     if (control.ejecutarOperacion(SqlInsertusu)) {
-                         out.print("<script languaje = javascript>showSuccessToast('Indicador Insertados Correctamente');</script>");
+                        out.print("<script languaje = javascript>showSuccessToast('Apecto Insertados Correctamente');</script>");
                     } else {
                         out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
-                    }     
-                } 
+                    }
+                }
+                    
+                if (idaspecto != 0) {
+                    if (control.iden(SQLIndicador)) {
+                        out.print("<script languaje = javascript>showNoticeToast('Indicador ya Existe en el Aspecto');</script>");
+                    } else {
+                        String SqlInsertusu = "insert into indicador(idaspecto, nombreindicador) values('" + idaspecto + "','" + nomindicador.toUpperCase() + "');";
+                            
+                        if (control.ejecutarOperacion(SqlInsertusu)) {
+                            out.print("<script languaje = javascript>showSuccessToast('Indicador Insertados Correctamente');</script>");
+                        } else {
+                            out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
+                        }
+                    }
+                } else {
+                    int idasp = control.darTipoUsuario("select ", "idaspecto", " from aspecto where nombreaspecto='" + nomaspecto.toUpperCase() + "';");
+                    String SqlInsertusu = "insert into indicador(idaspecto, nombreindicador) values('" + idasp + "','" + nomindicador.toUpperCase() + "');";
+                    if (control.ejecutarOperacion(SqlInsertusu)) {
+                        out.print("<script languaje = javascript>showSuccessToast('Indicador Insertados Correctamente');</script>");
+                    } else {
+                        out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
+                    }
+                }
             }
-            
+                
         %>
     </body>
 </html>

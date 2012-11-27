@@ -82,10 +82,14 @@ function inicializarEventosGrupoInvestigacion()
 function presionSubmitGrupoInvestigacion()
 {
     var ng=$("#grupoinvestigacion").attr("value");
+    var nli=$("#lineainvestigacion").attr("value");
+    var combnli=$("#combolineainvestigacion").attr("value");
     var ip=$("#idPrograma").attr("value");
 
     $.get("registroGrupoInvestigacion.jsp",{
         nombreGrupo:ng,
+        nombrelinea:nli,
+        combolinea:combnli,
         idprograma:ip
     },llegadaDatos); 
     return false;
@@ -110,9 +114,10 @@ function presionSubmitCampoInvestigacion()
 {
     var nc=$("#campoinvestigacion").attr("value");
     var dc=$("#descampo").attr("value");
-
+    var combnl=$("#combolineainvestigacion2").attr("value");
     $.get("registroCampoInvestigacion.jsp",{
         nombreCampo:nc,
+        combolin:combnl,
         descampo:dc
     },llegadaDatos); 
     return false;
@@ -120,7 +125,7 @@ function presionSubmitCampoInvestigacion()
 
 /*******************************************************
  *registro linea de investigación
- *******************************************************/
+ *******************************************************
 
 var li;
 li=$(document);
@@ -135,19 +140,13 @@ function inicializarEventosLineaInvestigacion()
 
 function presionSubmitLineaInvestigacion()
 {
-    var cgi=$("#combogrupoinvestigacion").attr("value");
-    var cci=$("#campoinv").attr("value");
     var nli=$("#lineainvestigacion").attr("value");
-    var nlic=$("#combolineainvestiga").attr("value");
     //alert(nlic);
     $.get("registroLineaInvestigacion.jsp",{
-        coboggrupoi:cgi,
-        combocampoi:cci,
-        nombrelinea:nli,
-        nombrelineacombo:nlic
+        nombrelinea:nli
     },llegadaDatos); 
     return false;
-}
+}*/
 
 /*******************************************************
  *registro sublinea de investigación
@@ -166,7 +165,7 @@ function inicializarEventosSubLineaInvestigacion()
 
 function presionSubmitSubLineaInvestigacion()
 {
-    var cl=$("#combolineainvestigacion").attr("value");
+    var cl=$("#combolineainvestigacion3").attr("value");
     var nsl=$("#sublineainvestigacion").attr("value");
     $.get("registroSublineaInvestigacion.jsp",{
         idLineaInvestigacion:cl,

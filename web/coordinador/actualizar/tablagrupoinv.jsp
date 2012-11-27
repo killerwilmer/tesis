@@ -19,7 +19,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script>           
            $(document).ready(function() {
                 $('#examplegrupo tbody tr a.deletes5 img').live( 'click', function (e) {
@@ -39,17 +38,18 @@
     </head>
     <body>
         <h1 id="titulolistaintegrantes" style="text-align: center">LISTA GRUPOS DE INVESTIGACÓN</h1>
-        <div id="demo1">
+        <div id="demo1" style="margin-left: 25px; margin-right: 25px">
             <table cellpadding="1" cellspacing="1" border="0" class="display1" id="examplegrupo" width="100%">
                 <thead id="inte">
-                    <tr><td>#</td><td>Nombres</td><td class="eliminarintegrante">Actualizar</td><td class="eliminarintegrante">Integrantes</td></tr>
+                    <tr><td>#</td><td>Nombre Linea</td><td>Nombres</td><td class="eliminarintegrante">Actualizar</td><td class="eliminarintegrante">Integrantes</td></tr>
                 </thead>
                 <tbody>
                     <%
-                        String sql = "select idgrupoinvestigacion, nombregrupoinvestigacion from grupoinvestigacion where idprograma='" + idProgram + "';";
+                        String sql = "select idgrupoinvestigacion, nombregrupoinvestigacion, linea.nombrelinea from linea, grupoinvestigacion where linea.idlinea=grupoinvestigacion.idlinea and idprograma='" + idProgram + "';";
                         ResultSet datos = control.consultas(sql);
                         while (datos.next()) {
                             out.print(control.linea(i) + "<td id='uno' name='cod'>" + (i + 1) + "</td>"
+                                    + "<td name='nombrel'>" + datos.getString("nombrelinea") + "</td>"
                                     + "<td name='nombregrup'>" + datos.getString("nombregrupoinvestigacion") + "</td>"
                                     //+"<input type='hidden' name='ids' id='ids' value='" + datos.getString("idusuario") + "'/>"
                                     + "<td name='actualizar' id='" + i + "'><a id='" + datos.getString("idgrupoinvestigacion") + "' class='deletes5'><img id='act' src='../recursos/Imagenes/Coordinador/actualizar.png' alt='' /></a></td>"

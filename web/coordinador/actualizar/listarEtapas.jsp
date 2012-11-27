@@ -18,7 +18,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>       
+        <title>JSP Page</title>  
         <script>           
            $(document).ready(function() {
                 $('#example tbody tr a.delete img').live( 'click', function (e) {

@@ -21,14 +21,18 @@
         <%
             String miindicador = request.getParameter("desa");
             String numero = request.getParameter("ida");
+            String numeroasp = request.getParameter("idaspec");
             String miaspectoactualizar = request.getParameter("idaspactualiz");
             //out.print("<script languaje = javascript>alert('Nombre del Campo Ya Existe');</script>");
             if ((miindicador.length() == 0)) {
                 out.print("<script languaje = javascript>showWarningToast('Digite Nombre de Indicador');</script>");
             } else if (miaspectoactualizar.equals("*")) {
-                String SqlNombre = "Select nombreindicador from indicador where nombreindicador = '" + miindicador.toUpperCase() + "'";
-                if (control.iden(SqlNombre)) {
-                    out.print("<script languaje = javascript>showNoticeToast('Nombre del Indicador Ya Existe');</script>");
+                //String SqlNombre = "Select nombreindicador from indicador where nombreindicador = '" + miindicador.toUpperCase() + "'";
+                    
+                String SQLIndic = "Select nombreindicador from indicador, aspecto where indicador.idaspecto=aspecto.idaspecto and aspecto.idaspecto='" + numeroasp + "' and indicador.nombreindicador ='" + miindicador.toUpperCase() + "';";
+                    
+                if (control.iden(SQLIndic)) {
+                    out.print("<script languaje = javascript>showNoticeToast('Indicador Ya Existe en Aspecto Actual');</script>");
                 } else {
                     String SQL = "Update indicador SET nombreindicador='" + miindicador.toUpperCase() + "' where idindicador='" + numero + "'";
                     if (control.ejecutarOperacion(SQL)) {
@@ -39,11 +43,17 @@
                 }
             } else if (!miaspectoactualizar.equals("*")) {
                 int idlin = Integer.parseInt(miaspectoactualizar);
-                String SQL = "Update indicador SET idaspecto='" + idlin + "', nombreindicador='" + miindicador.toUpperCase() + "' where idindicador='" + numero + "'";
-                if (control.ejecutarOperacion(SQL)) {
-                    out.print("<script languaje = javascript>showSuccessToast('Datos Actualizados Correctamente');</script>");
+                    
+                String SQLIndic = "Select nombreindicador from indicador, aspecto where indicador.idaspecto=aspecto.idaspecto and aspecto.idaspecto='" + idlin + "' and indicador.nombreindicador ='" + miindicador.toUpperCase() + "';";
+                if (control.iden(SQLIndic)) {
+                    out.print("<script languaje = javascript>showNoticeToast('Indicador Ya Existe en Aspecto Actual');</script>");
                 } else {
-                    out.print("<script languaje = javascript>showErrorToast('Error al Actualizar los Datos');</script>");
+                    String SQL = "Update indicador SET idaspecto='" + idlin + "', nombreindicador='" + miindicador.toUpperCase() + "' where idindicador='" + numero + "'";
+                    if (control.ejecutarOperacion(SQL)) {
+                        out.print("<script languaje = javascript>showSuccessToast('Datos Actualizados Correctamente');</script>");
+                    } else {
+                        out.print("<script languaje = javascript>showErrorToast('Error al Actualizar los Datos');</script>");
+                    }
                 }
             }
                 

@@ -496,13 +496,18 @@ fieldset#fielgrupoinvestigacion{
 
 fieldset#fielgrupoinvestigacion input[type="text"]{
     border-radius:5px;
-    width: 330px;
+    width: 338px;
     padding: 5px;
     outline: none;
     font-size:12px;
     border:solid 1px #aacfe4;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: 0px;
+}
+
+fieldset#fielgrupoinvestigacion select{
+    width: 349px;
     margin-left: 0px;
 }
 
@@ -515,7 +520,7 @@ fieldset#fielgrupoinvestigacion textarea{
     margin:5px 0px 10px 0px;
     padding:10px;
     height:70px;
-    width:320px;
+    width:329px;
     border:solid 1px #aacfe4;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
@@ -1014,6 +1019,20 @@ fieldset#fielactualizaraspecto{
     margin-top: 60px;
 }
 
+.volverproyectodos {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 160px;
+    margin-top: 40px;
+}
+
+.vole {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 160px;
+    margin-top: 0px;
+}
+
 /************************************************************** 
 * Estilo para formulario indicadores actualizar
 ***************************************************************/
@@ -1028,4 +1047,8 @@ fieldset#fielactualizaraspecto{
     margin-left: 0px;
     margin-bottom: 10px;
     width: 793px;
+}
+
+.ui-datepicker-header .ui-widget-header .ui-helper-clearfix .ui-corner-all{
+    background: #CCCCCC;
 }

@@ -50,7 +50,7 @@
 
     </head>
     <body>
-       <div id="container" style="margin-left: 30px; margin-right: 30px">
+       <div id="container" style="margin-left: 30px; margin-right: 30px; margin-bottom: 20px;">
             <h1 style="text-align: center">LISTA INDICADORES</h1>
             <div id="demo">
                 <table cellpadding="0" cellspacing="0" border="0" class="display" id="exampleind" width="100%">

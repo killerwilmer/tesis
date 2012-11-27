@@ -43,7 +43,7 @@
                     </thead>
                     <tbody>
                        <%                            
-                       String sql ="select sublinea.idsublinea, linea.nombrelinea, sublinea.nombresublinea from linea, sublinea, grupoinvestigacion where sublinea.idlinea=linea.idlinea and linea.idgrupoinvestigacion=grupoinvestigacion.idgrupoinvestigacion and grupoinvestigacion.idprograma='" + idProgram + "';";                      
+                       String sql ="select distinct sublinea.idsublinea, linea.nombrelinea, sublinea.nombresublinea from linea, sublinea, grupoinvestigacion where sublinea.idlinea=linea.idlinea and linea.idlinea=grupoinvestigacion.idlinea and grupoinvestigacion.idprograma='" + idProgram + "';";                      
                         //out.print(sql);
                        ResultSet datos = control.consultas(sql);                                                
                             while (datos.next()) {         

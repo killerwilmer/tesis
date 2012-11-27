@@ -50,14 +50,30 @@
                 <form id="demoForm" method="post" action="json.html" class="bbq">
                     <div id="state"></div>
                     <div id="fieldWrapper">
-
+                        
+                        <!--span class="step" id="finland2">
+                            <span style="font-size: 20px; font: bold" class="font_normal_07em_black">Paso 1: Registro Linea de Investigación</span> <hr />
+                                
+                            <label for="surname">Digite Linea de Investigacón</label><br />
+                            <input type="text" id="lineainvestigacion" name="lineainvestigacion" class="input_field_12em"/><br/>
+                            <br/><input id="boton_registro3" type="button" value="Registrar" name="enviar"/>
+                            <div id="resultados"></div>
+                        </span-->
                         <span class="step" id="first">
                             <!-- Escojemos el prooyecto y nos llevamos el id del poryecto -->
                             <span style="font-size: 20px; font: bold" class="font_normal_07em_black">Paso 1: Registro Grupo Investigación</span> <hr />
                             <br/><label for="surname">Nombre Grupo Investigacón</label><br />
                             <input type="text" id="grupoinvestigacion" name="grupoinvestigacion" class="input_field_12em"/>
+                            <br/><label for="surname">Digite si es Nueva ó Seleccione Linea de Investigación</label><br/>
+                            <input type="text" id="lineainvestigacion" name="lineainvestigacion" class="input_field_12em"/><br/>
+                            <select id="combolineainvestigacion" name="combolineainvestigacion">
+                                <option selected="" value="*">Seleccione Linea de Investigación</option>
+                                <%
+                                    out.print(cont.combolineainvestigacion("linea, grupoinvestigacion", idLlega));
+                                %>
+                            </select>
                             <br/><label for="surname">Nombre Programa</label><br />
-                            <input type="text" id="nomprograma" name="nomprograma"  class="input_field_12em"  value="<%out.print(nombrePrograma);%>"/>
+                            <input type="text" id="nomprograma" name="nomprograma" value="<%out.print(nombrePrograma);%>"/>
                             <input type="hidden" name="idPrograma" id="idPrograma" value="<%out.print(idLlega);%>">
                             <input id="boton_registro" type="button" value="Registrar" name="enviar"/>
                             <div id="resultados"></div>
@@ -67,56 +83,34 @@
                             <span style="font-size: 20px; font: bold" class="font_normal_07em_black">Paso 2: Registro Campo Investigación</span> <hr />
                             <br/><label for="surname">Nombre Campo</label><br />
                             <input type="text" id="campoinvestigacion" name="campoinvestigacion" class="input_field_12em"/>
-                            <br/><label for="surname">Descripción Campo</label><br/>
-                            <textarea id="descampo" name="descampo" class="input_field_12em"></textarea>
-                            <br/><input id="boton_registro2" type="button" value="Registrar" name="enviar"/>
-                            <div id="resultados"></div>
-                        </span>
-                        
-                        <span class="step" id="finland2">
-                            <span style="font-size: 20px; font: bold" class="font_normal_07em_black">Paso 3: Registro Linea de Investigación</span> <hr />
-                            <br/><label for="surname">Grupo Investigación</label><br/>
-                              <select id="combogrupoinvestigacion" name="combogrupoinvestigacion">
-                                <option selected="" value="*">Seleccione Grupo de Investigación</option>
-                                <%
-                                    out.print(cont.combofiltro("grupoinvestigacion", idLlega));
-                                %>
-                              </select>
-                              <br/><label for="surname">Campo de Investigación</label><br/>
-                              <select id="campoinv" name="campoinv">
-                                <option selected="" value="*">Seleccione Campo de Investigación</option>
-                                <%
-                                    out.print(cont.combocampo(" campo, grupoinvestigacion, linea", idLlega));
-                                %>
-                              </select>
-                              
-                            <label for="surname">Digite o Seleccione Una Linea de Investigacón</label><br />
-                            <input type="text" id="lineainvestigacion" name="lineainvestigacion" class="input_field_12em"/><br/>
-                            <select id="combolineainvestiga" name="combolineainvestiga">
+                            <br/><label for="surname">Linea de Investigación</label><br/>
+                            <select id="combolineainvestigacion2" name="combolineainvestigacion2">
                                 <option selected="" value="*">Seleccione Linea de Investigación</option>
                                 <%
                                     out.print(cont.combolineainvestigacion("linea, grupoinvestigacion", idLlega));
                                 %>
                             </select>
-                            <br/><input id="boton_registro3" type="button" value="Registrar" name="enviar"/>
+                            <br/><label for="surname">Descripción Campo</label><br/>
+                            <textarea id="descampo" name="descampo" class="input_field_12em"></textarea>
+                            <br/><input id="boton_registro2" type="button" value="Registrar" name="enviar"/>
                             <div id="resultados"></div>
                         </span>
-                      
+                            
                         <span class="step" id="finland3">
-                            <span style="font-size: 20px; font: bold" class="font_normal_07em_black">Paso 4: Registro Sub-Linea de Investigación</span><hr/>
+                            <span style="font-size: 20px; font: bold" class="font_normal_07em_black">Paso 3: Registro Sub-Línea de Investigación</span><hr/>
                             <br/><label for="surname">Linea de Investigación</label><br/>
-                              <select id="combolineainvestigacion" name="combolineainvestigacion">
+                            <select id="combolineainvestigacion3" name="combolineainvestigacion3">
                                 <option selected="" value="*">Seleccione Linea de Investigación</option>
                                 <%
                                     out.print(cont.combolineainvestigacion("linea, grupoinvestigacion", idLlega));
                                 %>
-                              </select>
+                            </select>
                             <label for="surname">Nombre Sub-Linea de Investigacón</label><br/>
                             <input type="text" id="sublineainvestigacion" name="sublineainvestigacion" class="input_field_12em"/>                       
                             <br/><input id="boton_registro4" type="button" value="Registrar" name="enviar"/>
                             <div id="resultados"></div>
                         </span>
-                              
+                            
                         <span id="confirmation" class="step submit_step">
                             <span class="font_normal_07em_black">Información Final</span><br />
                         </span>
@@ -130,7 +124,7 @@
                     </div>
                 </form>
                 <hr/>
-       
+                    
                 <p id="data"></p>
             </div>
         </fieldset>

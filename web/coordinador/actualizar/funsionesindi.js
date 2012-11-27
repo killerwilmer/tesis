@@ -19,11 +19,13 @@ function inicializarEventosaspec()
 function presionSubm()
 {
     var idco=$("#comboaspecto").attr("value");
+    var idaspectoactual=$("#idaspact").attr("value");
     var idas=$("#idindi").attr("value");
     var has=$("#nombreindicador").attr("value");
     
     $.get("actualizar/actualizaraindicador.jsp",{
         idaspactualiz:idco,
+        idaspec:idaspectoactual,
         ida:idas,
         desa:has      
     },llegadaD); 

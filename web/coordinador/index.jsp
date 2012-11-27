@@ -108,11 +108,15 @@
                 });
                 $(".modificaretapa").click(function(event) {
                     $("#wraper").load('actualizar/listarEtapas.jsp');
+                    $.getScript('js/b.js');
                 });
                 $(".modificarproyecto").click(function(event) {
                     $("#wraper").load('actualizar/listarProyectos.jsp');
                 });
-
+                $(".evaluaciones").click(function(event) {
+                    $("#wraper").load('liproyectos.jsp');
+                    $.getScript('js/b.js');
+                });
             });
         </script>
 
@@ -161,9 +165,10 @@
                         </li>
                         <li><a id="reporte" class="reporte" href="#"><span>Reportes</span></a>
                         </li>
-
+                        <li><a id="evaluaciones" class="evaluaciones" href="#"><span>Evaluacion</span></a>
                         </li>
-                        <li><a id="cerrar" href="#"><span id="salir">Salir</span></a>
+                        
+                        <li><a id="cerrar" href="cerrarSesion.jsp"><span id="salir">Salir</span></a>
 
                         </li>
                     </ul>

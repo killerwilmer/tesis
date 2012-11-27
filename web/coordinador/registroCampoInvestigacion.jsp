@@ -27,18 +27,28 @@ response.setContentType("text/html; charset=utf-8");
     <body>
         <%
             String nombreCampo = request.getParameter("nombreCampo");
+            String combolinea = request.getParameter("combolin");
             String desCampo = request.getParameter("descampo");
                 
             if ((nombreCampo.length() == 0)) {
                 out.print("<script languaje = javascript>showWarningToast('Digite Nombre del Campo');</script>");
-            }       
-            else {           
-                    String SqlInsert = "insert into campo  (nombrecampo,descripcioncampo)  values('" + nombreCampo.toUpperCase() + "','" + desCampo + "');";                      
-                    if (control.ejecutarOperacion(SqlInsert)) {
-                         out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
-                    } else {
-                        out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
-                    }                             
+            } else if (combolinea.equals("*")) {
+                out.print("<script languaje = javascript>showWarningToast('Seleccione una Línea de Investigación');</script>");
+            } else {
+                int numero = Integer.parseInt(combolinea);
+                String SQLIdenli = "Select nombrecampo from campo where nombrecampo ='" + nombreCampo.toUpperCase() + "'";
+                if (control.iden(SQLIdenli)) {
+                    out.print("<script languaje = javascript>showNoticeToast('Campo Ya Esta Registrado');</script>");
+                }else{
+                    if (desCampo.length() == 0) {
+                    desCampo = "Null";
+                }
+                String SqlInsert = "insert into campo  (idlinea,nombrecampo,descripcioncampo)  values('" + numero + "','" + nombreCampo.toUpperCase() + "','" + desCampo + "');";
+                if (control.ejecutarOperacion(SqlInsert)) {
+                    out.print("<script languaje = javascript>showSuccessToast('Datos Insertados Correctamente');</script>");
+                } else {
+                    out.print("<script languaje = javascript>showErrorToast('Error al Insertar los Datos');</script>");
+                }}
             }
         %>
     </body>

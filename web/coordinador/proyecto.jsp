@@ -34,12 +34,12 @@
                     dateFormat:'yy-mm-dd'
                 });
                        
-                // Validamos el formulario
+                /* Validamos el formulario
                 $('#formularioproyecto').validate({
                     errorPlacement: function(error, element) {
                         error.appendTo(element.prev("input").append());
                     }
-                });
+                });*/
             });                
         </script>
         
@@ -53,7 +53,8 @@
                 <label for="surname">Titulo Abreviado</label><input type="text" name="tituloabreviado" id="tituloabreviado"/><br/>
                 <label for="surname">Institución</label><input type="text" name="institucion"  id="institucion"/>
                 
-                    <label for="surname">Etapa</label><select id="comboestado" name="comboestado">
+                    <label for="surname">Etapa</label>
+                    <select id="comboestado" name="comboestado">
                         <option selected="" value="*">Seleccione Etapa</option>
                         <%
                             out.print(control.combofiltro("etapa", idLlega));

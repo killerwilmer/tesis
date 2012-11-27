@@ -13,7 +13,7 @@
 <%
     HttpSession sesionOk = request.getSession();
     String idLlega = (String) sesionOk.getAttribute("coordinador");
-    int idproyecto = Integer.parseInt(request.getParameter("rowID"));
+    int idproyecto = Integer.parseInt(request.getParameter("rowIDPRO"));
     
     int i = 0; 
 %>
@@ -21,15 +21,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <script src="../recursos/datepicker/jquery-1.7.1.js"></script>
+        <!--script src="../recursos/datepicker/jquery-1.7.1.js"></script-->
         <script type="text/javascript" src="actualizar/funciones.js"></script>
         
-        <link rel="stylesheet" href="../recursos/datepicker/jquery.ui.all.css">
-        <link rel="stylesheet" type="text/css" href="../recursos/datepicker/demos.css" />
         <script type="text/javascript" src="../recursos/datepicker/jquery.ui.core.js"></script>
         <script type="text/javascript" src="../recursos/datepicker/jquery.ui.widget.js"></script>
         <script type="text/javascript" src="../recursos/datepicker/jquery.ui.datepicker.js"></script>
-        
+        <!--link rel="stylesheet" href="../recursos/datepicker/jquery.ui.all.css">
+        <link rel="stylesheet" type="text/css" href="../recursos/datepicker/demos.css" /-->
+        <link type="text/css" href="../recursos/Tablas/css/trontastic/jquery.ui.all.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         <script>
             $(function() {
                 $( "#datepicker" ).datepicker({
@@ -65,7 +66,7 @@
         <form id="formularioproy">
             <fieldset id="fieladdproyecto">
                 <%
-                    String sql = "select idproyecto, tituloproyecto, titulopequeproyecto, institucion.idinstitucion, institucion.nombreinstitucion, etapaproyecto, etapa.nombreetapa, descripcionproyecto, fechainicioproyecto, tipoproyecto, esstadoproyecto from proyecto, institucion, etapa where institucion.idinstitucion=proyecto.idinstitucion and etapa.idetapa=proyecto.etapaproyecto and idproyecto='" + idproyecto + "';";
+                    String sql = "select idproyecto, tituloproyecto, titulopequeproyecto, institucion.idinstitucion, institucion.nombreinstitucion, etapaproyecto, etapa.nombreetapa, fechainicioproyecto, tipoproyecto, esstadoproyecto from proyecto, institucion, etapa where institucion.idinstitucion=proyecto.idinstitucion and etapa.idetapa=proyecto.etapaproyecto and idproyecto='" + idproyecto + "';";
                     ResultSet datos = control.consultas(sql);
                     int estado = 0;
                     while (datos.next()) {

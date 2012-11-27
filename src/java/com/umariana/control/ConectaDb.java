@@ -20,7 +20,7 @@ public class ConectaDb {
     public String usuario = "postgres";
     public String clave = "alex03";
     public String driver = "org.postgresql.Driver";
-    public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto1";
+    public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto2";
 
     public String getCadenaConexion() {
         return cadenaConexion;
@@ -224,7 +224,7 @@ public class ConectaDb {
 //*******************************************************************
     
     public String combolineainvestigacion(String tabla, String filtro) throws SQLException {
-        String consulta = "SELECT distinct linea.idlinea, linea.nombrelinea from " + tabla + " where grupoinvestigacion.idprograma='" + filtro + "' and grupoinvestigacion.idgrupoinvestigacion=linea.idgrupoinvestigacion";
+        String consulta = "SELECT distinct linea.idlinea, linea.nombrelinea from " + tabla + " where grupoinvestigacion.idprograma='" + filtro + "' and grupoinvestigacion.idlinea=linea.idlinea";
         String combo = "";
         try {
             conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
