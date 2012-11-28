@@ -15,15 +15,28 @@
 <%@page import="java.util.Vector"%>
 <%@page import="java.sql.ResultSet" %>
 <%@page import="com.umariana.control.ConectaDb" %>
-<%@page session="true" %>
-
+<%@ page session="true" %>
+<!DOCTYPE html>
 <%
+    String idSe = "";
+    Vector idprograma=new Vector();
+    Vector idfacultad=new Vector();
+    Vector nombreprograma=new Vector();
+    Vector codigo=new Vector();
     HttpSession sesionOk = request.getSession();
-
-    Vector idprograma = (Vector) sesionOk.getAttribute("idpro");
-    Vector idfacultad = (Vector) sesionOk.getAttribute("idfacul");
-    Vector nombreprograma = (Vector) sesionOk.getAttribute("nombreprograma");
-    Vector codigo = (Vector) sesionOk.getAttribute("codigo");
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idSe = (String) sesionOk.getAttribute("coordinador");
+        idprograma = (Vector) sesionOk.getAttribute("idpro");
+        idfacultad = (Vector) sesionOk.getAttribute("idfacul");
+        nombreprograma = (Vector) sesionOk.getAttribute("nombreprograma");
+        codigo = (Vector) sesionOk.getAttribute("codigo");
+    }
 %>
 
 <%

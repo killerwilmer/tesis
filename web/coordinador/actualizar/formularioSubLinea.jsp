@@ -9,12 +9,24 @@
 <%@page import="com.umariana.control.ConectaDb"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% 
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
     ConectaDb cont = new ConectaDb();
-    HttpSession sesionOk = request.getSession();
-    String idProgram = (String) sesionOk.getAttribute("idp");
-    int idsublinea = Integer.parseInt(request.getParameter("rowIDS"));
+    String idProgram = "";
+    int idsublinea=0;
     int i=0;
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idProgram = (String) sesionOk.getAttribute("coordinador");
+        idsublinea = Integer.parseInt(request.getParameter("rowIDS"));
+    }
 %>
 <html>
     <head>

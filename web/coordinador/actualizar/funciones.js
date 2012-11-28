@@ -365,11 +365,13 @@ function inicializarEventosaspec()
 function presionSubmitaspec()
 {
     var idcomasp=$("#comboetapaactualizar").attr("value");
+    var porc=$("#porcen").attr("value");
     var idasp=$("#idaspect").attr("value");
     var hasp=$("#nombreaspectos").attr("value");
     
     $.get("actualizar/actualizaraspecto.jsp",{
         idaspactualizar:idcomasp,
+        porcenta:porc,
         idas:idasp,
         desasp:hasp      
     },llegadaDatos); 

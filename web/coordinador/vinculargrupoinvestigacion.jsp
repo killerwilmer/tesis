@@ -3,9 +3,22 @@
     Created on : 19/11/2012, 03:19:46 PM
     Author     : Alex
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 <!DOCTYPE html>
+<%
+    String idLlega = "";
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
+<%            } else {
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

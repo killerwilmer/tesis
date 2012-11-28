@@ -1,7 +1,7 @@
 <%-- 
-    Document   : imprimir
-    Created on : 07-oct-2012, 7:49:35
-    Author     : usuarui
+    Document   : imprimirreportedocente
+    Created on : 28/11/2012, 12:12:05 AM
+    Author     : Alex
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -45,14 +45,14 @@
 <%            } else {
         idSe = (String) sesionOk.getAttribute("coordinador");
         pro = (String) sesionOk.getAttribute("nombre");
-        columna1 = (Vector) sesionOk.getAttribute("idpro");
-        columna2 = (Vector) sesionOk.getAttribute("titulo");
-        columna3 = (Vector) sesionOk.getAttribute("etapa");
-        columna4 = (Vector) sesionOk.getAttribute("fechainicio");
-        columna5 = (Vector) sesionOk.getAttribute("estados");
-        columna6 = (Vector) sesionOk.getAttribute("integrantes");
-        columna7 = (Vector) sesionOk.getAttribute("jurados");
-        columna8 = (Vector) sesionOk.getAttribute("asesores");
+        columna1 = (Vector) sesionOk.getAttribute("codusu");
+        columna2 = (Vector) sesionOk.getAttribute("nomusu");
+        columna3 = (Vector) sesionOk.getAttribute("apeusu");
+        columna4 = (Vector) sesionOk.getAttribute("emailusu");
+        columna5 = (Vector) sesionOk.getAttribute("telusu");
+        columna6 = (Vector) sesionOk.getAttribute("usuj");
+        columna7 = (Vector) sesionOk.getAttribute("usase");
+        columna8 = (Vector) sesionOk.getAttribute("totp");
     }
 %>
 <html>
@@ -80,11 +80,9 @@
     
             Image imagen = Image.getInstance(miRuta);//este es para la imagen del logo
             imagen.scaleToFit(70, 70);
-            imagen.setAlignment(Image.LEFT);
+            imagen.setAlignment(Image.HEADER);
             
-
-            
-            Paragraph titulo = new Paragraph("Proyectos de Investigación");//titulo
+            Paragraph titulo = new Paragraph("Información Docentes");//titulo
             Paragraph espacio = new Paragraph("                     ");//espacio
             titulo.setAlignment(Element.ALIGN_CENTER);//para centrar el titulo
             
@@ -111,7 +109,6 @@
             table1.addCell(cell33);
             table1.addCell(cell33);
             //fin encabezado
-            
             table.setWidthPercentage(100);
             table.setHorizontalAlignment(Element.ALIGN_CENTER);
             
@@ -122,15 +119,15 @@
             cell.setPadding (10.0f);
             table.addCell (cell);
             
-            PdfPCell cel1 = new PdfPCell (new Paragraph ("Codigo"));
-            PdfPCell cel2 = new PdfPCell (new Paragraph ("Id"));
-            PdfPCell cel3 = new PdfPCell (new Paragraph ("Titúlo"));
-            PdfPCell cel4 = new PdfPCell (new Paragraph ("Etapa Actual"));
-            PdfPCell cel5 = new PdfPCell (new Paragraph ("Fecha Inicio"));
-            PdfPCell cel6 = new PdfPCell (new Paragraph ("Estado"));
-            PdfPCell cel7 = new PdfPCell (new Paragraph ("Integrantes"));
-            PdfPCell cel8 = new PdfPCell (new Paragraph ("Jurado(s)"));
-            PdfPCell cel9 = new PdfPCell (new Paragraph ("Asesor(@)"));
+            PdfPCell cel1 = new PdfPCell (new Paragraph ("#"));
+            PdfPCell cel2 = new PdfPCell (new Paragraph ("Codigo"));
+            PdfPCell cel3 = new PdfPCell (new Paragraph ("Nombres"));
+            PdfPCell cel4 = new PdfPCell (new Paragraph ("Apellidos"));
+            PdfPCell cel5 = new PdfPCell (new Paragraph ("E-mail"));
+            PdfPCell cel6 = new PdfPCell (new Paragraph ("N° Telefónico"));
+            PdfPCell cel7 = new PdfPCell (new Paragraph ("Total Jurado"));
+            PdfPCell cel8 = new PdfPCell (new Paragraph ("Total Asesor"));
+            PdfPCell cel9 = new PdfPCell (new Paragraph ("Total Proyectos"));
             
             cel1.setBackgroundColor(BaseColor.LIGHT_GRAY);
             cel2.setBackgroundColor(BaseColor.LIGHT_GRAY);
@@ -165,28 +162,27 @@
                 for (int i = 0; i < columna1.size(); i++)
                 {
                     Object miCodigo = columna1.elementAt(i);
-                    Object mititulo = columna2.elementAt(i);
-                    Object mietapa = columna3.elementAt(i);
-                    Object mifecha = columna4.elementAt(i);
-                    Object miestado = columna5.elementAt(i);
-                    Object misintegrantes = columna6.elementAt(i);
-                    Object misjurados = columna7.elementAt(i);
-                    Object misasesores = columna8.elementAt(i);
+                    Object minom = columna2.elementAt(i);
+                    Object miape = columna3.elementAt(i);
+                    Object miemail = columna4.elementAt(i);
+                    Object mitel = columna5.elementAt(i);
+                    Object mijurtotal = columna6.elementAt(i);
+                    Object miasetotal = columna7.elementAt(i);
+                    Object mistotales = columna8.elementAt(i);
  
                     table.addCell(""+(i+1));
                     table.addCell(""+miCodigo);
-                    table.addCell(""+mititulo);
-                    table.addCell(""+mietapa);
-                    table.addCell(""+mifecha);
-                    table.addCell(""+miestado);
-                    table.addCell(""+misintegrantes);
-                    table.addCell(""+misjurados);
-                    table.addCell(""+misasesores);
+                    table.addCell(""+minom);
+                    table.addCell(""+miape);
+                    table.addCell(""+miemail);
+                    table.addCell(""+mitel);
+                    table.addCell(""+mijurtotal);
+                    table.addCell(""+miasetotal);
+                    table.addCell(""+mistotales);
                 }
             
             //de aqui para abajo agregamos lo que queremos
             document.add(table1);
-            //document.add(p);
             //document.add(imagen);
             document.add(espacio);
             document.add(titulo);

@@ -10,6 +10,21 @@
 
 <%@page import="com.umariana.control.ConectaDb"%>
 <% ConectaDb control = new ConectaDb();%>
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
+    String idSe = "";
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
+<%            } else {
+        idSe = (String) sesionOk.getAttribute("coordinador");
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,14 +35,18 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
+        <%            
             String idetapa = request.getParameter("idetapas");
+            String porcentaje = request.getParameter("porcent");
             String nomaspecto = request.getParameter("nomaspecto");
             String nomindicador = request.getParameter("nomindicador");
-                
+              
             if ((idetapa.equals("*"))) {
                 out.print("<script languaje = javascript>showWarningToast('Seleccione una Etapa');</script>");
-            } else if (nomaspecto.length() == 0) {
+            }else if (porcentaje.length() == 0) {
+                out.print("<script languaje = javascript>showWarningToast('Digite Un Porcentaje');</script>");
+            } 
+            else if (nomaspecto.length() == 0) {
                 out.print("<script languaje = javascript>showWarningToast('Digite Aspecto');</script>");
             } else if (nomindicador.length() == 0) {
                 out.print("<script languaje = javascript>showWarningToast('Digite Indicador');</script>");
@@ -40,7 +59,7 @@
                     out.print("<script languaje = javascript>showNoticeToast('Aspecto ya Existe en la Etapa');</script>");
                 } //String SQLIaspecto = "Select nombreaspecto from aspecto where nombreaspecto ='" + nomaspecto.toUpperCase() + "'";
                 else {
-                    String SqlInsertusu = "insert into aspecto(idetapa, nombreaspecto) values('" + numero + "','" + nomaspecto.toUpperCase() + "');";
+                    String SqlInsertusu = "insert into aspecto(idetapa, nombreaspecto, porcentaje) values('" + numero + "','" + nomaspecto.toUpperCase()+ "','" + porcentaje+ "');";
                     if (control.ejecutarOperacion(SqlInsertusu)) {
                         out.print("<script languaje = javascript>showSuccessToast('Apecto Insertados Correctamente');</script>");
                     } else {

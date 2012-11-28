@@ -6,11 +6,25 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page session="true" %>
+<!DOCTYPE html>
 <%
+    String idSe = "";
+    int idproyecto=0;
     HttpSession sesionOk = request.getSession();
-    int idproyecto = Integer.parseInt(request.getParameter("rowIDPR"));
-    sesionOk.setAttribute("idProyecto", idproyecto);
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idSe = (String) sesionOk.getAttribute("coordinador");
+        idproyecto = Integer.parseInt(request.getParameter("rowIDPR"));
+        sesionOk.setAttribute("idProyecto", idproyecto);
+    }
 %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

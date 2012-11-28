@@ -9,13 +9,24 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="javax.naming.spi.DirStateFactory.Result"%>
 <%@page import="com.umariana.control.ConectaDb"%>
-<% ConectaDb control = new ConectaDb();%>
+<%@ page session="true" %>
+<!DOCTYPE html>
 <%
+    ConectaDb control = new ConectaDb();
+    String idLlega  = "";
+    int idproyecto=0;
+    int i = 0;
     HttpSession sesionOk = request.getSession();
-    String idLlega = (String) sesionOk.getAttribute("coordinador");
-    int idproyecto = Integer.parseInt(request.getParameter("rowIDPRO"));
-    
-    int i = 0; 
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+        idproyecto = Integer.parseInt(request.getParameter("rowIDPRO"));
+    }
 %>
 <html>
     <head>

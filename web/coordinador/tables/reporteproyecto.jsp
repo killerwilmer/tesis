@@ -9,29 +9,35 @@
 <%@page import="java.util.Vector"%>
 <%@ page language="java" import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@ page session="true" %>
+<!DOCTYPE html>
 <%
-        HttpSession sesionOk = request.getSession();
+    String idLlega = "";
+    int i = 0;
+    Vector idproyecto = new Vector();
+    Vector tituloproyecto = new Vector();
+    Vector etapa = new Vector();
+    Vector fechainicio = new Vector();
+    Vector estados = new Vector();
+    Vector integrantes = new Vector();
+    Vector jurados = new Vector();
+    Vector asesores = new Vector();
+    HttpSession sesionOk = request.getSession();
         
-        Vector idproyecto = new Vector();
-        Vector tituloproyecto = new Vector();
-        Vector etapa = new Vector();
-        Vector fechainicio = new Vector();
-        Vector estados = new Vector();
-        Vector integrantes = new Vector();
-        Vector jurados = new Vector();
-        Vector asesores = new Vector();
-        
-        String idLlega = (String) sesionOk.getAttribute("coordinador");
-        
-        int i = 0;
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+       idLlega = (String) sesionOk.getAttribute("coordinador");
+    }
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reportes</title>
-        
         <script type="text/javascript" src="tables/js/jquery-ui-1.8.23.custom.min.js"></script>
         <script type="text/javascript" src="tables/js/jquery-1.8.0.min.js"></script>
         <script type="text/javascript" src="tables/js/jquery.dataTables.min.js"></script>
@@ -46,7 +52,7 @@
 
         <script>
             $(document).ready(function() {
-                $('#example').dataTable({
+                $('#examplep3').dataTable({
                     "bJQueryUI" : "true",
                     "sPaginationType": "full_numbers"
                 });
@@ -57,14 +63,13 @@
         <div id="container" style="margin-left: 5px; margin-right: 5px">
             <h1 class="tituloreporte" style="text-align: center">PROYECTOS DE INVESTIGACIÓN</h1>
             <div id="demo">
-                <table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%" style="text-align: center">
+                <table cellpadding="0" cellspacing="0" border="0" class="display" id="examplep3" width="100%" style="text-align: center">
                     <thead >
                         <tr><td class="columna1">No.</td><td class="columna2">Id</td><td class="columna3">Titulo</td><td class="columna4">Etapa Actual</td><td class="columna5">Fecha Inicio</td><td class="columna6">Estado</td><td class="columna7">Integrantes</td><td class="columna8">Jurado(s)</td><td class="columna9">Asesor(@)</td></tr>
                     </thead>
                     <tbody class="tbod">
                         <%
-                            String codigo1 = request.getParameter("codigo1");
-                            String sql = "select DISTINCT proyecto.idproyecto, proyecto.tituloproyecto, etapa.nombreetapa, proyecto.fechainicioproyecto, proyecto.esstadoproyecto from etapa, usuario, programa, usuarioproyecto, " + codigo1 + " where usuario.idusuario=usuarioproyecto.idusuario and proyecto.idproyecto=usuarioproyecto.idproyecto and etapa.idetapa=proyecto.etapaproyecto and programa.codigoprograma=usuario.codigoprograma and programa.idprograma='" + idLlega + "';";
+                            String sql = "select DISTINCT proyecto.idproyecto, proyecto.tituloproyecto, etapa.nombreetapa, proyecto.fechainicioproyecto, proyecto.esstadoproyecto from etapa, usuario, programa, usuarioproyecto, proyecto where usuario.idusuario=usuarioproyecto.idusuario and proyecto.idproyecto=usuarioproyecto.idproyecto and etapa.idetapa=proyecto.etapaproyecto and programa.codigoprograma=usuario.codigoprograma and programa.idprograma='" + idLlega + "';";
                             ResultSet datos = control.consultas(sql);
                             
                             while (datos.next()) {

@@ -1,7 +1,7 @@
 <%-- 
-    Document   : imprimir
-    Created on : 07-oct-2012, 7:49:35
-    Author     : usuarui
+    Document   : index
+    Created on : 01-oct-2012, 22:20:15
+    Author     : ALEX-PC
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -33,8 +33,6 @@
     Vector columna4 =new Vector();
     Vector columna5 =new Vector();
     Vector columna6 =new Vector();
-    Vector columna7 =new Vector();
-    Vector columna8 =new Vector();
     HttpSession sesionOk = request.getSession();
         
     if (sesionOk.getAttribute("coordinador") == null) {
@@ -45,24 +43,21 @@
 <%            } else {
         idSe = (String) sesionOk.getAttribute("coordinador");
         pro = (String) sesionOk.getAttribute("nombre");
-        columna1 = (Vector) sesionOk.getAttribute("idpro");
-        columna2 = (Vector) sesionOk.getAttribute("titulo");
-        columna3 = (Vector) sesionOk.getAttribute("etapa");
-        columna4 = (Vector) sesionOk.getAttribute("fechainicio");
-        columna5 = (Vector) sesionOk.getAttribute("estados");
-        columna6 = (Vector) sesionOk.getAttribute("integrantes");
-        columna7 = (Vector) sesionOk.getAttribute("jurados");
-        columna8 = (Vector) sesionOk.getAttribute("asesores");
+        columna1 = (Vector) sesionOk.getAttribute("codest");
+        columna2 = (Vector) sesionOk.getAttribute("nombres");
+        columna3 = (Vector) sesionOk.getAttribute("apellidos");
+        columna4 = (Vector) sesionOk.getAttribute("email");
+        columna5 = (Vector) sesionOk.getAttribute("numbercel");
+        columna6 = (Vector) sesionOk.getAttribute("title");
     }
 %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Informes Coordinador</title>
     </head>
     <body>
         <%
-        
             response.setContentType("application/pdf");
             response.setHeader("Content-Disposition"," attachment; filename=\"Informe.pdf\"");
             
@@ -74,22 +69,20 @@
 
             document.open(); // de aqui para abajo se forma el documento
             
-
             char sep = File.separatorChar;
             String miRuta = config.getServletContext().getRealPath("/") + "img" + sep + "umariana.jpg";
     
             Image imagen = Image.getInstance(miRuta);//este es para la imagen del logo
             imagen.scaleToFit(70, 70);
-            imagen.setAlignment(Image.LEFT);
+            imagen.setAlignment(Image.HEADER);
+            imagen.scalePercent(40);
             
-
-            
-            Paragraph titulo = new Paragraph("Proyectos de Investigación");//titulo
+            Paragraph titulo = new Paragraph("Información Estudiantes");//titulo
             Paragraph espacio = new Paragraph("                     ");//espacio
             titulo.setAlignment(Element.ALIGN_CENTER);//para centrar el titulo
             
-            PdfPTable table=new PdfPTable(9);
-             //INICIO PARA EL ENCABEZADO
+            PdfPTable table=new PdfPTable(7);
+                         //INICIO PARA EL ENCABEZADO
             PdfPTable table1 = new PdfPTable(6);
 
             table1.setWidthPercentage(100);
@@ -111,26 +104,23 @@
             table1.addCell(cell33);
             table1.addCell(cell33);
             //fin encabezado
-            
             table.setWidthPercentage(100);
             table.setHorizontalAlignment(Element.ALIGN_CENTER);
             
             PdfPCell cell = new PdfPCell (new Paragraph (pro.toUpperCase()));
             cell.setBackgroundColor(BaseColor.GRAY);
-            cell.setColspan (9);
+            cell.setColspan (7);
             cell.setHorizontalAlignment (Element.ALIGN_CENTER);
             cell.setPadding (10.0f);
             table.addCell (cell);
             
-            PdfPCell cel1 = new PdfPCell (new Paragraph ("Codigo"));
-            PdfPCell cel2 = new PdfPCell (new Paragraph ("Id"));
-            PdfPCell cel3 = new PdfPCell (new Paragraph ("Titúlo"));
-            PdfPCell cel4 = new PdfPCell (new Paragraph ("Etapa Actual"));
-            PdfPCell cel5 = new PdfPCell (new Paragraph ("Fecha Inicio"));
-            PdfPCell cel6 = new PdfPCell (new Paragraph ("Estado"));
-            PdfPCell cel7 = new PdfPCell (new Paragraph ("Integrantes"));
-            PdfPCell cel8 = new PdfPCell (new Paragraph ("Jurado(s)"));
-            PdfPCell cel9 = new PdfPCell (new Paragraph ("Asesor(@)"));
+            PdfPCell cel1 = new PdfPCell (new Paragraph ("#"));
+            PdfPCell cel2 = new PdfPCell (new Paragraph ("Codigo"));
+            PdfPCell cel3 = new PdfPCell (new Paragraph ("Nombres"));
+            PdfPCell cel4 = new PdfPCell (new Paragraph ("Apellidos"));
+            PdfPCell cel5 = new PdfPCell (new Paragraph ("E-mail"));
+            PdfPCell cel6 = new PdfPCell (new Paragraph ("N° Telefónico"));
+            PdfPCell cel7 = new PdfPCell (new Paragraph ("Nombre Proyecto"));
             
             cel1.setBackgroundColor(BaseColor.LIGHT_GRAY);
             cel2.setBackgroundColor(BaseColor.LIGHT_GRAY);
@@ -139,8 +129,6 @@
             cel5.setBackgroundColor(BaseColor.LIGHT_GRAY);
             cel6.setBackgroundColor(BaseColor.LIGHT_GRAY);
             cel7.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cel8.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cel9.setBackgroundColor(BaseColor.LIGHT_GRAY);
             
             cel1.setHorizontalAlignment (Element.ALIGN_CENTER);
             cel2.setHorizontalAlignment (Element.ALIGN_CENTER);
@@ -149,8 +137,6 @@
             cel5.setHorizontalAlignment (Element.ALIGN_CENTER);
             cel6.setHorizontalAlignment (Element.ALIGN_CENTER);
             cel7.setHorizontalAlignment (Element.ALIGN_CENTER);
-            cel8.setHorizontalAlignment (Element.ALIGN_CENTER);
-            cel9.setHorizontalAlignment (Element.ALIGN_CENTER);
             
             table.addCell(cel1);
             table.addCell(cel2);
@@ -159,34 +145,27 @@
             table.addCell(cel5);
             table.addCell(cel6);
             table.addCell(cel7);
-            table.addCell(cel8);
-            table.addCell(cel9);
             
                 for (int i = 0; i < columna1.size(); i++)
                 {
                     Object miCodigo = columna1.elementAt(i);
-                    Object mititulo = columna2.elementAt(i);
-                    Object mietapa = columna3.elementAt(i);
-                    Object mifecha = columna4.elementAt(i);
-                    Object miestado = columna5.elementAt(i);
-                    Object misintegrantes = columna6.elementAt(i);
-                    Object misjurados = columna7.elementAt(i);
-                    Object misasesores = columna8.elementAt(i);
+                    Object minombre = columna2.elementAt(i);
+                    Object miapellido = columna3.elementAt(i);
+                    Object micorreo = columna4.elementAt(i);
+                    Object mitelefono = columna5.elementAt(i);
+                    Object miproyecto = columna6.elementAt(i);
  
                     table.addCell(""+(i+1));
                     table.addCell(""+miCodigo);
-                    table.addCell(""+mititulo);
-                    table.addCell(""+mietapa);
-                    table.addCell(""+mifecha);
-                    table.addCell(""+miestado);
-                    table.addCell(""+misintegrantes);
-                    table.addCell(""+misjurados);
-                    table.addCell(""+misasesores);
+                    table.addCell(""+minombre);
+                    table.addCell(""+miapellido);
+                    table.addCell(""+micorreo);
+                    table.addCell(""+mitelefono);
+                    table.addCell(""+miproyecto);
                 }
             
             //de aqui para abajo agregamos lo que queremos
             document.add(table1);
-            //document.add(p);
             //document.add(imagen);
             document.add(espacio);
             document.add(titulo);
@@ -206,7 +185,6 @@
             {
                 output.writeByte (bytes [i]);
             }
-                  
-%>
+        %>
     </body>
 </html>

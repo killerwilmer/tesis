@@ -17,7 +17,7 @@
     String campo = "nombreprograma";
     String fin = " from usuario where codigousuario='" + docentes + "';";
     String nombrePrograma = control.retornoCodigo(inicio, campo, fin);
-
+     
     String inicio1 = "select ";
     String campo1 = "idusuario";
     String fin1 = " from usuario where codigousuario='" + docentes + "';";
@@ -49,6 +49,11 @@
         <title>Plataforma Docente</title>
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Docente/index.css" />
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
+        
+        <link type="text/css" href="../recursos/Mensajes/resources/css/jquery.toastmessage.css" rel="stylesheet"/>
+        <script type="text/javascript" src="../recursos/Mensajes/jquerymin.js"></script>
+        <script type="text/javascript" src="../recursos/Mensajes/javascript/jquery.toastmessage.js"></script>
+        <script type="text/javascript" src="../recursos/Mensajes/mensajespoput.js"></script>
 
         <script type="text/javascript" src="../recursos/CkEditor/ckeditor.js"></script>
         <script type="text/javascript" src="../recursos/CkEditor/sample.js"></script> 
@@ -69,6 +74,49 @@
 
     </head>
     <body>
+        <%
+            int comp = 0;
+            int dato = -1;
+            String cadena = ("usuario, usuarioevaluador where usuario.idusuario=usuarioevaluador.idusuario and usuarioevaluador.idusuario='" + idDocente + "'");
+            dato = control.darCont(cadena);
+            if (dato == 0) {
+                String SQL = "Update usuario SET contador1='" + dato + "' where idusuario='" + idDocente + "'";
+                control.ejecutarOperacion(SQL);
+            } else {
+                String inicio2 = "select ";
+                String campo2 = "contador1";
+                String fin2 = " from usuario where idusuario='" + idDocente + "';";
+                String idDoc2 = control.retornoCodigo(inicio2, campo2, fin2);
+                comp = Integer.parseInt(idDoc2);
+                if (dato > comp) {
+                    int rest = dato - comp;
+                    out.print("<script languaje = javascript>showNoticeToast('Tienes: " + rest + " Proyecto(s) Nuevo(s) Como Jurado');</script>");
+                    String SQL = "Update usuario SET contador1='" + dato + "' where idusuario='" + idDocente + "'";
+                    control.ejecutarOperacion(SQL);
+                }
+            }
+            
+            int comp1 = 0;
+            int dato1 = -1;
+            String cadena1 = ("usuario, usuarioasesor where usuario.idusuario=usuarioasesor.idusuario and usuarioasesor.idusuario='" + idDocente + "'");
+            dato1 = control.darCont(cadena1);
+            if (dato1 == 0) {
+                String SQL = "Update usuario SET contador2='" + dato1 + "' where idusuario='" + idDocente + "'";
+                control.ejecutarOperacion(SQL);
+            } else {
+                String inicio3 = "select ";
+                String campo3 = "contador2";
+                String fin3 = " from usuario where idusuario='" + idDocente + "';";
+                String idDoc3 = control.retornoCodigo(inicio3, campo3, fin3);
+                comp1 = Integer.parseInt(idDoc3);
+                if (dato1 > comp1) {
+                    int rest = dato1 - comp1;
+                    out.print("<script languaje = javascript>showNoticeToast('Tienes: " + rest + " Proyecto(s) Nuevo(s) Como Asesor');</script>");
+                    String SQL = "Update usuario SET contador2='" + dato1 + "' where idusuario='" + idDocente + "'";
+                    control.ejecutarOperacion(SQL);
+                }
+            }
+        %>
         <div id="contenedor">
             <div id="header">
                 <a id="logo" href="index.jsp" title="logo"><img src="../recursos/Imagenes/index/logo1.gif" alt="logo" /></a>

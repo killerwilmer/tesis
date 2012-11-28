@@ -8,15 +8,29 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="javax.naming.spi.DirStateFactory.Result"%>
 <%@page import="com.umariana.control.ConectaDb"%>
-
-<% 
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
     ConectaDb control = new ConectaDb();
-    int idaspecto = Integer.parseInt(request.getParameter("rowIDAPV"));
     int i=0;
-    String inicio = "select ";
-    String campo = "nombreaspecto";
-    String fin = " from aspecto where idaspecto='" + idaspecto + "';";
-    String nombreAspecto = control.retornoCodigo(inicio, campo, fin);
+    int idaspecto=0;
+    String idSe = "";
+    String nombreAspecto="";
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idSe = (String) sesionOk.getAttribute("coordinador");
+        idaspecto = Integer.parseInt(request.getParameter("rowIDAPV"));
+        String inicio = "select ";
+        String campo = "nombreaspecto";
+        String fin = " from aspecto where idaspecto='" + idaspecto + "';";
+        nombreAspecto = control.retornoCodigo(inicio, campo, fin);
+    }
 %>
 <html>
     <head>

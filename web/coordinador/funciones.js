@@ -192,11 +192,13 @@ function inicializarEventosAspectosIndicadores()
 function presionSubmitAspectosIndicadores()
 {
     var aie=$("#comboetapas").attr("value");
+    var porc=$("#porcentaje").attr("value");
     var asi=$("#aspecto").attr("value");
     var iai=$("#indicador").attr("value");
 
     $.get("registroAspectosIndicadores.jsp",{
         idetapas:aie,
+        porcent:porc,
         nomaspecto:asi,
         nomindicador:iai
     },llegadaDatos); 

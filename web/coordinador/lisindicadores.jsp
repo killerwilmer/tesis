@@ -9,19 +9,34 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="javax.naming.spi.DirStateFactory.Result"%>
 <%@page import="com.umariana.control.ConectaDb"%>
-<% 
-   ConectaDb control = new ConectaDb();
-   int i = 0;   
-   HttpSession sesionOk = request.getSession();   
-   String idLlega = (String) sesionOk.getAttribute("idp");
-   String idLlegaproyecto = (String) sesionOk.getAttribute("idpro");
-   int idaspect = Integer.parseInt(request.getParameter("rowIDINDI"));  
-
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
+    ConectaDb control = new ConectaDb();
+    int i = 0; 
+    //String idSe = "";
+    String idLlega="";
+    String idLlegaproyecto="";
+    int idaspect=0;
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
+<%            } else {
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+        //idLlega = (String) sesionOk.getAttribute("idp");
+        idLlegaproyecto = (String) sesionOk.getAttribute("idpro");
+        idaspect = Integer.parseInt(request.getParameter("rowIDINDI"));  
+    }
    double sumatoria=0;
    int contador=0;
    double sumatoriaindi=0;
-   ResultSet datosdos;        
+   ResultSet datosdos;
 %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

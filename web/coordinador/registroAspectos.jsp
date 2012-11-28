@@ -6,14 +6,23 @@
 
 <%@page import="com.umariana.control.ConectaDb"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@ page session="true" %>
+<!DOCTYPE html>
 <%
-    ConectaDb cont = new ConectaDb();
-%>
-<%
+    String idLlega = "";
     HttpSession sesionOk = request.getSession();
-    String idLlega = (String) sesionOk.getAttribute("coordinador");
+    ConectaDb cont = new ConectaDb();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
+<%            } else {
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+    }
 %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,6 +38,7 @@
             {
                 $("#comboetapas").val("*");
                 $("#aspecto").val("");
+                $("#porcentaje").val("");
                 $("#indicador").val("");
             }
             // Limpiar esolo el campo indicador
@@ -50,7 +60,7 @@
                         out.print(cont.combofiltro("etapa", idLlega));
                     %>
                 </select><br/>
-                
+                <label for="surname">Porcentaje Aspecto(númerico entre 1-100)</label><br/><input style="margin-left: 0px; width: 320px" type="text" name="porcentaje" id="porcentaje"/><br/>
                 <label for="surname">Nombre Apecto</label><textarea name="aspecto" id="aspecto"></textarea><br/>
                 <label for="surname">Nombre Indicador</label><textarea name="indicador" id="indicador"></textarea><br/>
                 <input type="hidden" name="idPrograma" id="idPrograma" value="<%out.print(idLlega);%>">

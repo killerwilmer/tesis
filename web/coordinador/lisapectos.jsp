@@ -9,20 +9,33 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="javax.naming.spi.DirStateFactory.Result"%>
 <%@page import="com.umariana.control.ConectaDb"%>
-<% 
-   ConectaDb control = new ConectaDb();
-   int i = 0;   
-   HttpSession sesionOk = request.getSession();   
-   String idLlega = (String) sesionOk.getAttribute("idp");
-   String idLlegaproyecto = (String) sesionOk.getAttribute("idpro");
-   int idetapa = Integer.parseInt(request.getParameter("rowIDPRRA")); 
-   double sumatoria=0;
-   int contador=0;
-   double sumatoriaindi=0;
-   int contadoruno=0;
-   double notaaspecto=0;
-   double notaetapa=0;
-   ResultSet datosuno, datosdos;
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
+    ConectaDb control = new ConectaDb();
+    int i = 0;
+    String idLlega = "";
+    String idLlegaproyecto = "";
+    int idetapa = 0;
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
+<%            } else {
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+        idLlegaproyecto = (String) sesionOk.getAttribute("idpro");
+        idetapa = Integer.parseInt(request.getParameter("rowIDPRRA"));
+    }
+    double sumatoria = 0;
+    int contador = 0;
+    double sumatoriaindi = 0;
+    int contadoruno = 0;
+    double notaaspecto = 0;
+    double notaetapa = 0;
+    ResultSet datosuno, datosdos;
 %>
 <html>
     <head>

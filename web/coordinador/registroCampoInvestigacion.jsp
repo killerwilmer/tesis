@@ -7,6 +7,21 @@
 <%@page import="org.w3c.dom.Document"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
+    String idSe = "";
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
+<%            } else {
+        idSe = (String) sesionOk.getAttribute("coordinador");
+    }
+%>
 <%
 request.setCharacterEncoding("UTF-8");
 response.setContentType("text/html; charset=utf-8");

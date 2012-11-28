@@ -9,12 +9,24 @@
 <%@page import="com.umariana.control.ConectaDb"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% 
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
     ConectaDb cont = new ConectaDb();
+    String idProgram = "";
+    int idaspecto = 0;
+    int i = 0;
     HttpSession sesionOk = request.getSession();
-    String idProgram = (String) sesionOk.getAttribute("idp");
-    int idaspecto = Integer.parseInt(request.getParameter("rowIDAP"));
-    int i=0;
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idProgram = (String) sesionOk.getAttribute("coordinador");
+        idaspecto = Integer.parseInt(request.getParameter("rowIDAP"));
+    }
 %>
 <html>
     <head>
@@ -41,12 +53,13 @@
         <h1 id="ticactualizaraspecto">ACTUALIZAR ASPECTO</h1>
         <fieldset id="fielactualizaraspecto">
             <%
-                String sql = "select nombreetapa, nombreaspecto from etapa, aspecto where aspecto.idetapa=etapa.idetapa and aspecto.idaspecto='" + idaspecto + "'";
+                String sql = "select nombreetapa, nombreaspecto, porcentaje from etapa, aspecto where aspecto.idetapa=etapa.idetapa and aspecto.idaspecto='" + idaspecto + "'";
                 ResultSet datos = cont.consultas(sql);
                 while (datos.next()) {
                     out.print("<label for='surname'>Nombre Etapa Actual</label><br/><input type='text' disabled='true' name='nombreactualetapa' id='nombreactualetapa' value='" + datos.getString("nombreetapa") + "'/>");
                     out.print("<select id='comboetapaactualizar' name='comboetapaactualizar'>"
                             + "<option selected='' value='*'>Seleccione Etapa</option>" + cont.combofiltro("etapa", idProgram) + "</select><br/>");
+                    out.print("Porcentaje<br/><input type='text' name='porcen' id='porcen' value='" + datos.getString("porcentaje") + "'/><br/>");
                     out.print("<input type='hidden' name='idaspect' id='idaspect' value='" + idaspecto + "'/>");
                     out.print("<label for='surname'>Nombre</label><br/><textarea id='nombreaspectos' name='nombreaspectos' class='input_field_12em'>" + datos.getString("nombreaspecto") + "</textarea>");
                     i++;

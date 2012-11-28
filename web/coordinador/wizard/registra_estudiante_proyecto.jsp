@@ -6,6 +6,21 @@
 
 <%@page import="com.umariana.control.ConectaDb"%>
 <% ConectaDb control = new ConectaDb();%>
+<%@ page session="true" %>
+<!DOCTYPE html>
+<%
+    String idSe = "";
+    HttpSession sesionOk = request.getSession();
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idSe = (String) sesionOk.getAttribute("coordinador");
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

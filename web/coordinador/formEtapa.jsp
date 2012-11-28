@@ -7,18 +7,28 @@
 <%@page import="com.umariana.control.ConectaDb"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<%@ page session="true" %>
+<!DOCTYPE html>
 <%
     ConectaDb cont = new ConectaDb();
-%>
-<%
+    String idLlega = "";
+    String nombrePrograma="";
     HttpSession sesionOk = request.getSession();
-    String idLlega = (String) sesionOk.getAttribute("coordinador");
-    String inicio = "select ";
-    String campo = "nombreprograma";
-    String fin = " from programa where idprograma='" + idLlega + "';";
-    String nombrePrograma = cont.retornoCodigo(inicio, campo, fin);
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+%> 
+    <jsp:forward page="../error.jsp">
+        <jsp:param name="error" value="Es Obligación Identificarse"/>
+    </jsp:forward>
+<%            } else {
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+        String inicio = "select ";
+        String campo = "nombreprograma";
+        String fin = " from programa where idprograma='" + idLlega + "';";
+        nombrePrograma = cont.retornoCodigo(inicio, campo, fin);
+    }
 %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

@@ -417,7 +417,7 @@ Iberoamericano -FNPI-, y el Ministerio de Cultura de Colombia...
                     <span class="Estilo5">WEBMASTER</span><span class="Estilo4">
                         <br/>WILMER ARTEAGA - ALEX ENRIQUEZ<br />
                         Email<br />
-                        killerwilmer@gmail.com - alex.84.12@hotmail.com<br />
+                        killerwilmer@gmail.com - alexnrqz@gmail.com<br />
                         <br />Universidad Mariana<br />
                         San Juan de Pasto - Nariño - Colombia<br />
                         Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</span>

@@ -577,7 +577,7 @@ fieldset#fielgrupoinvestigacion #combogrupoinvestigacion, #campoinv, #combolinea
 }
 
 .tituloreporte{
-    margin-top: 25px;
+    margin-top: 55px;
     margin-bottom: 25px;
 }
 
@@ -1012,6 +1012,13 @@ fieldset#fielactualizaraspecto{
     margin-top: 60px;
 }
 
+.volverproyectodoc, .volverproyectodocc {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 160px;
+    margin-top: 60px;
+}
+
 .volverindicador {
     cursor: pointer;
     display: inline-block;
@@ -1033,6 +1040,13 @@ fieldset#fielactualizaraspecto{
     margin-top: 0px;
 }
 
+.volverproyect{
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 160px;
+    margin-top: 60px;
+}
+
 /************************************************************** 
 * Estilo para formulario indicadores actualizar
 ***************************************************************/
@@ -1051,4 +1065,29 @@ fieldset#fielactualizaraspecto{
 
 .ui-datepicker-header .ui-widget-header .ui-helper-clearfix .ui-corner-all{
     background: #CCCCCC;
+}
+
+#ico:hover{
+    cursor: pointer;
+}
+
+#ico{
+    margin-left: 25px;
+    height: 15px;
+    padding-top: 5px;
+}
+
+.nomape{
+    width: 240px;
+}
+
+.proyectoaver{
+    text-decoration: none;
+    cursor: pointer;
+    color: #0060BF;
+}
+
+#porcen{
+    margin-left: 0px;
+    width: 350px;
 }

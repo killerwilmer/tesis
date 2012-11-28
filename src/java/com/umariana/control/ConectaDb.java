@@ -20,7 +20,7 @@ public class ConectaDb {
     public String usuario = "postgres";
     public String clave = "alex03";
     public String driver = "org.postgresql.Driver";
-    public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto2";
+    public String cadenaConexion = "jdbc:postgresql://localhost:5432/proyecto";
 
     public String getCadenaConexion() {
         return cadenaConexion;
@@ -138,7 +138,29 @@ public class ConectaDb {
         }
         return dato;
     }
-
+    
+    public int darCont(String campo) throws SQLException {
+        int dato = -1;
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, usuario, clave);
+            if (!conexion.isClosed()) {
+                ResultSet iden = null;
+                //String cadeCodigo = inicio + campo + fin;
+                //System.out.println(cadeCodigo);
+                Statement sentecnia = conexion.createStatement();
+                iden = sentecnia.executeQuery("SELECT COUNT(*) FROM " + campo + ";");
+                iden.next();
+                dato = iden.getInt(1);
+                sentecnia.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            conexion.close();
+        }
+        return dato;
+    }
+    
 //*********************************************************************
 //Metodo para buscar un codigo
 //*********************************************************************

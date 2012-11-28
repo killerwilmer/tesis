@@ -11,3 +11,4 @@
     sesion.invalidate();
     out.print("<script> window.location='../index.jsp'</script>");
 %>
+

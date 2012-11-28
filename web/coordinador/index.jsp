@@ -19,35 +19,46 @@
 
 <%
     response.setHeader("Content-Type", "text/html");
-
+        
     HttpSession sesionOk = request.getSession();
-    String idLlega = (String) sesionOk.getAttribute("coordinador");
-    sesionOk.setAttribute("idp", idLlega);
-    
-    String inicio = "select ";
-    String campo = "nombreprograma";
-    String fin = " from programa where idprograma='" + idLlega + "';";
-    String tipos = control.retornoCodigo(inicio, campo, fin);
-    //out.print(idLlega);
-    
-    sesionOk.setAttribute("nombre", tipos);
-
-    String ini = "select ";
-    String cam = "idusuario";
-    String end = " from coordinador where idprograma='" + idLlega + "';";
-    String tip = control.retornoCodigo(ini, cam, end);
-
+    String idLlega = "";
     String nombre = "";
-
-    try {
-        String sql = "select nombres, apellidos from usuario where idusuario='" + tip + "';";
-        //System.out.print(sql);
-        ResultSet rs = control.consultas(sql);
-        while (rs.next()) {
-            nombre = rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim();
+    String tipos="";
+        
+    if (sesionOk.getAttribute("coordinador") == null) {
+        %> 
+        <jsp:forward page="../error.jsp">
+            <jsp:param name="error" value="Es Obligación Identificarse"/>
+        </jsp:forward>
+        <%
+    } else {
+        
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+        sesionOk.setAttribute("idp", idLlega);
+            
+        String inicio = "select ";
+        String campo = "nombreprograma";
+        String fin = " from programa where idprograma='" + idLlega + "';";
+        tipos = control.retornoCodigo(inicio, campo, fin);
+        //out.print(idLlega);
+            
+        sesionOk.setAttribute("nombre", tipos);
+            
+        String ini = "select ";
+        String cam = "idusuario";
+        String end = " from coordinador where idprograma='" + idLlega + "';";
+        String tip = control.retornoCodigo(ini, cam, end);
+            
+        try {
+            String sql = "select nombres, apellidos from usuario where idusuario='" + tip + "';";
+            //System.out.print(sql);
+            ResultSet rs = control.consultas(sql);
+            while (rs.next()) {
+                nombre = rs.getString("nombres").trim() + " " + rs.getString("apellidos").trim();
+            }
+        } catch (Exception e) {
+            out.println("Exception is ;" + e);
         }
-    } catch (Exception e) {
-        out.println("Exception is ;" + e);
     }
 %>
 <html>
@@ -56,6 +67,8 @@
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/index.css" />
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
         <link type="text/css" href="../recursos/Css/estilotablas.css" rel="stylesheet"/>
+        <script type="text/javascript" src="../recursos/CkEditor/ckeditor.js"></script>
+        <script type="text/javascript" src="../recursos/CkEditor/sample.js"></script> 
 
         <title>Plataforma Coordinador</title>
         <script src="../recursos/Js/jquery-1.7.1.js"></script>
@@ -103,9 +116,6 @@
                 $(".vincular").click(function(event) {
                     $("#wraper").load('wizard/index.jsp');
                 });
-                $(".reporte").click(function(event) {
-                    $("#wraper").load('tables/indexreportes.jsp');
-                });
                 $(".modificaretapa").click(function(event) {
                     $("#wraper").load('actualizar/listarEtapas.jsp');
                     $.getScript('js/b.js');
@@ -116,6 +126,18 @@
                 $(".evaluaciones").click(function(event) {
                     $("#wraper").load('liproyectos.jsp');
                     $.getScript('js/b.js');
+                });
+                $(".reporteproyectos").click(function(event) {
+                    $("#wraper").load('tables/reporteproyecto.jsp');
+                });
+                $(".reporteestudiantes").click(function(event) {
+                    $("#wraper").load('tables/reporteestudiantes.jsp');
+                });
+                $(".reportedocente").click(function(event) {
+                    $("#wraper").load('tables/reportedocentes.jsp');
+                });
+                $(".reportedocentedos").click(function(event) {
+                    $("#wraper").load('tables/reportedocenteasignados.jsp');
                 });
             });
         </script>
@@ -163,7 +185,15 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a id="reporte" class="reporte" href="#"><span>Reportes</span></a>
+                        <li><a href="#"><span>Reportes</span></a>                                                       
+                            <div>
+                                <ul id="menseg4">
+                                    <li><a href="#" class="reporteproyectos"><span>Proyectos</span></a></li>
+                                    <li><a href="#" class="reporteestudiantes"><span>Estudiantes</span></a></li>
+                                    <li><a href="#" class="reportedocente"><span>Docentes</span></a></li>
+                                    <li><a href="#" class="reportedocentedos"><span>Asignados</span></a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li><a id="evaluaciones" class="evaluaciones" href="#"><span>Evaluacion</span></a>
                         </li>
