@@ -60,7 +60,7 @@
     </head>
     <body id="dt_example">
         <div id="container" style="margin-left: 5px; margin-right: 5px">
-            <h1 style="text-align: center">PROYECTO POR ETAPAS JURADO</h1>
+            <h1 style="text-align: center">PROYECTO ASIGNADOS POR DOCENTE</h1>
             <div id="demo">
                 <table cellpadding="0" cellspacing="0" border="0" class="display" id="examplepp" width="100%">
                     <thead>
@@ -79,7 +79,9 @@
                         <%
                             //String sql = "select proyecto.idproyecto, proyecto.tituloproyecto from etapa, usuario, programa, usuarioproyecto, proyecto where usuario.idusuario=usuarioproyecto.idusuario and proyecto.idproyecto=usuarioproyecto.idproyecto and etapa.idetapa=proyecto.etapaproyecto and programa.codigoprograma=usuario.codigoprograma and programa.idprograma='" + idLlega + "';";
                             int suma = 0;int total=0;
-                            String sql = "select usuario.idusuario, usuario.nombres, usuario.apellidos from usuarioevaluador, proyecto, usuario, programa where usuario.idusuario=usuarioevaluador.idusuario and proyecto.idproyecto=usuarioevaluador.idproyecto and usuario.codigoprograma=programa.codigoprograma and programa.idprograma='" + idLlega + "';";                                
+                            //String sql = "select usuario.idusuario, usuario.nombres, usuario.apellidos from usuarioevaluador, proyecto, usuario, programa where usuario.idusuario=usuarioevaluador.idusuario and proyecto.idproyecto=usuarioevaluador.idproyecto and usuario.codigoprograma=programa.codigoprograma and programa.idprograma='" + idLlega + "';";                                
+                            String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.nombres, usuario.apellidos from usuario,usuarioevaluador,usuarioasesor,programa where usuario.idusuario=usuarioevaluador.idusuario or usuario.idusuario=usuarioasesor.idusuario and programa.idprograma='" + idLlega + "';";
+                            
                             ResultSet datos = control.consultas(sql);
                                 
                             while (datos.next()) {                               

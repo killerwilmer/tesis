@@ -84,7 +84,8 @@
                         <%
                             //String sql = "select proyecto.idproyecto, proyecto.tituloproyecto from etapa, usuario, programa, usuarioproyecto, proyecto where usuario.idusuario=usuarioproyecto.idusuario and proyecto.idproyecto=usuarioproyecto.idproyecto and etapa.idetapa=proyecto.etapaproyecto and programa.codigoprograma=usuario.codigoprograma and programa.idprograma='" + idLlega + "';";
                             int suma = 0;
-                            String sql = "select usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuarioevaluador, proyecto, usuario, programa where usuario.idusuario=usuarioevaluador.idusuario and proyecto.idproyecto=usuarioevaluador.idproyecto and usuario.codigoprograma=programa.codigoprograma and programa.idprograma='" + idLlega + "';";
+                            //String sql = "select usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuarioevaluador, proyecto, usuario, programa where usuario.idusuario=usuarioevaluador.idusuario and proyecto.idproyecto=usuarioevaluador.idproyecto and usuario.codigoprograma=programa.codigoprograma and programa.idprograma='" + idLlega + "';";
+                            String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono  from usuario,usuarioevaluador,usuarioasesor,programa where usuario.idusuario=usuarioevaluador.idusuario or usuario.idusuario=usuarioasesor.idusuario and programa.idprograma='" + idLlega + "';";
                                 
                             ResultSet datos = control.consultas(sql);
                                 
