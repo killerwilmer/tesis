@@ -137,7 +137,8 @@
                     $("#wraper").load('tables/reportedocentes.jsp');
                 });
                 $(".reportedocentedos").click(function(event) {
-                    $("#wraper").load('tables/reportedocenteasignados.jsp');
+                    //$("#wraper").load('tables/reportedocenteasignados.jsp');
+                    $("#wraper").load('tables/reportedocentes.jsp');
                 });
             });
         </script>
