@@ -11,26 +11,32 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-        HttpSession sesionOk = request.getSession();       
-        String idLlega ="";
-        int i = 0;
-        
-        Vector codusu = new Vector();
-        Vector nomusu = new Vector();
-        Vector apeusu = new Vector();
-        Vector emailusu = new Vector();
-        Vector teleusu = new Vector();
-        Vector usujur = new Vector();
-        Vector usuase = new Vector();
-        Vector totpro = new Vector();
-        
+    HttpSession sesionOk = request.getSession();
+    String idLlega = "";
+    String codPrograma="";
+    int i = 0;
+
+    Vector codusu = new Vector();
+    Vector nomusu = new Vector();
+    Vector apeusu = new Vector();
+    Vector emailusu = new Vector();
+    Vector teleusu = new Vector();
+    Vector usujur = new Vector();
+    Vector usuase = new Vector();
+    Vector totpro = new Vector();
+
     if (sesionOk.getAttribute("coordinador") == null) {
 %> 
-    <jsp:forward page="../error.jsp">
-        <jsp:param name="error" value="Es Obligación Identificarse"/>
-    </jsp:forward>
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
 <%            } else {
-       idLlega = (String) sesionOk.getAttribute("coordinador");
+        idLlega = (String) sesionOk.getAttribute("coordinador");
+        String inicio = "select ";
+        String campo = "codigoprograma";
+        String fin = " from programa where idprograma='" + idLlega + "';";
+        codPrograma = control.retornoCodigo(inicio, campo, fin);
+        //out.print(codPrograma);
     }
 %>
 <!DOCTYPE html>
@@ -47,7 +53,7 @@
         <link type="text/css" href="tables/css/trontastic/jquery.ui.all.css" rel="stylesheet"/>
         <link type="text/css" href="tables/css/demo_page.css" rel="stylesheet"/>
         <link type="text/css" href="tables/css/jquery.dataTables_themeroller.css" rel="stylesheet"/>
-        
+
         <link rel="stylesheet" type="text/css" href="../recursos/Css/Coordinador/estiloFormularios.css" />
 
         <script>
@@ -58,7 +64,7 @@
                 });
             })
             
-           $(document).ready(function() {
+            $(document).ready(function() {
                 $('#examplepp tbody tr a.projurados img').live( 'click', function (e) {
                     var rowI = $(this).parent().attr('id');
                     $("#wraper").load('informes/verproyectosjurado.jsp?rowI=' + rowI);
@@ -85,12 +91,13 @@
                             //String sql = "select proyecto.idproyecto, proyecto.tituloproyecto from etapa, usuario, programa, usuarioproyecto, proyecto where usuario.idusuario=usuarioproyecto.idusuario and proyecto.idproyecto=usuarioproyecto.idproyecto and etapa.idetapa=proyecto.etapaproyecto and programa.codigoprograma=usuario.codigoprograma and programa.idprograma='" + idLlega + "';";
                             int suma = 0;
                             //String sql = "select usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuarioevaluador, proyecto, usuario, programa where usuario.idusuario=usuarioevaluador.idusuario and proyecto.idproyecto=usuarioevaluador.idproyecto and usuario.codigoprograma=programa.codigoprograma and programa.idprograma='" + idLlega + "';";
-                            String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono  from usuario,usuarioevaluador,usuarioasesor,programa where usuario.idusuario=usuarioevaluador.idusuario or usuario.idusuario=usuarioasesor.idusuario and programa.idprograma='" + idLlega + "';";
-                                
+                            //String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono  from usuario,usuarioevaluador,usuarioasesor,programa where usuario.idusuario=usuarioevaluador.idusuario or usuario.idusuario=usuarioasesor.idusuario and programa.idprograma='" + idLlega + "';";
+                                String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuario,usuarioevaluador,usuarioasesor,programa where ((usuario.idusuario=usuarioevaluador.idusuario) or (usuario.idusuario=usuarioasesor.idusuario)) and usuario.codigoprograma='" + codPrograma + "';";
+
                             ResultSet datos = control.consultas(sql);
-                                
+
                             while (datos.next()) {
-                                
+
                                 out.print(control.linea(i) + "<td name='cod'>" + (i + 1) + "</td>"
                                         + "<td name='codigo'>" + datos.getString("codigousuario") + "</td>"
                                         + "<td name='nombres'>" + datos.getString("nombres") + "</td>"
@@ -101,16 +108,16 @@
                                 int datodos = -1;
                                 String cadena = ("usuario, usuarioevaluador where usuario.idusuario=usuarioevaluador.idusuario and usuarioevaluador.idusuario='" + datos.getString("idusuario") + "'");
                                 String cadenados = ("usuario, usuarioasesor where usuario.idusuario=usuarioasesor.idusuario and usuarioasesor.idusuario='" + datos.getString("idusuario") + "'");
-                                    
+
                                 dato = control.darCont(cadena);
                                 datodos = control.darCont(cadenados);
                                 int jur = dato;
                                 int ase = datodos;
                                 suma = jur + ase;
-                                out.print("<td>" + dato + "<a id='"+datos.getString("idusuario")+"' class='projurados'><img id='ico' src='../recursos/Imagenes/Coordinador/lupa.png' alt='' /></a></td>");
-                                out.print("<td>" + datodos + "<a id='"+datos.getString("idusuario")+"' class='proase'><img id='ico' src='../recursos/Imagenes/Coordinador/lupa.png' alt='' /></a></td>");
+                                out.print("<td>" + dato + "<a id='" + datos.getString("idusuario") + "' class='projurados'><img id='ico' src='../recursos/Imagenes/Coordinador/lupa.png' alt='' /></a></td>");
+                                out.print("<td>" + datodos + "<a id='" + datos.getString("idusuario") + "' class='proase'><img id='ico' src='../recursos/Imagenes/Coordinador/lupa.png' alt='' /></a></td>");
                                 out.print("<td>" + suma + "</td>");
-                                
+
                                 codusu.add(datos.getString("codigousuario"));
                                 nomusu.add(datos.getString("nombres"));
                                 apeusu.add(datos.getString("apellidos"));
@@ -118,14 +125,14 @@
                                 teleusu.add(datos.getString("telefono"));
                                 usujur.add(jur);
                                 usuase.add(ase);
-                                totpro.add(suma);                                                             
+                                totpro.add(suma);
 
                                 suma = 0;
                                 jur = 0;
                                 ase = 0;
                                 i++;
                             }
-                                
+
                             sesionOk.setAttribute("codusu", codusu);
                             sesionOk.setAttribute("nomusu", nomusu);
                             sesionOk.setAttribute("apeusu", apeusu);
@@ -134,12 +141,12 @@
                             sesionOk.setAttribute("usuj", usujur);
                             sesionOk.setAttribute("usase", usuase);
                             sesionOk.setAttribute("totp", totpro);
-%>
+                        %>
                     </tbody>
                 </table>
             </div>
-                    <p style="text-align: center"><input id="pdf" type="button" value="VER PDF" onclick="window.open('informes/imprimirreportedocente.jsp')"></p>
-                    
+            <p style="text-align: center"><input id="pdf" type="button" value="VER PDF" onclick="window.open('informes/imprimirreportedocente.jsp')"></p>
+
         </div>
     </body>
 </html>
