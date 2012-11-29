@@ -9,6 +9,6 @@
 <%
     HttpSession sesion = request.getSession();
     sesion.invalidate();
-    out.print("<script> window.location='../index.jsp'</script>");
+    out.print("<script> window.location='index.jsp'</script>");
 %>
 

@@ -198,7 +198,7 @@
                         <li><a id="evaluaciones" class="evaluaciones" href="#"><span>Evaluacion</span></a>
                         </li>
                         
-                        <li><a id="cerrar" href="cerrarSesion.jsp"><span id="salir">Salir</span></a>
+                        <li><a id="cerrar" href="../cerrarSesion.jsp"><span id="salir">Salir</span></a>
 
                         </li>
                     </ul>

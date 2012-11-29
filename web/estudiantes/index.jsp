@@ -95,7 +95,7 @@
                         <li><a href="#" class="botonproyecto"><span>Proyecto</span></a></li>
                         <li><a href="#" class="botoncorreciones"><span>Correcciones</span></a></li>
                         <li><a href="#" class="botonasesorias"><span>Asesorias</span></a></li>
-                        <li><a id="cerrar" href="#"><span id="salir">Salir</span></a></li>
+                        <li><a id="cerrar" href="../cerrarSesion.jsp"><span id="salir">Salir</span></a>
                     </ul>
                 </div>
             </div>
