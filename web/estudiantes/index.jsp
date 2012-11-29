@@ -3,6 +3,7 @@
     Created on : 26-oct-2011, 11:33:59
     Author     : zzz
 --%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*" %>
 <%@ page session="true" %>
 
@@ -10,7 +11,15 @@
 <% ConectaDb control = new ConectaDb();%>
 
 <%
+
     HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("estudiante") == null) {
+        %> 
+        <jsp:forward page="../error.jsp">
+            <jsp:param name="error" value="Es ObligaciÃ³n Identificarse"/>
+        </jsp:forward>
+        <%
+    } else {
     String codigoEst = (String) sesionOk.getAttribute("estudiante");
 
     String inicio = "select ";
@@ -101,9 +110,10 @@
                 <label id="estilo1">Email</label><br />
                 <label id="estilo2">killerwilmer@gmail.com - alex.84.12@hotmail.com</label><br/><br/>
                 <label id="estilo3">Universidad Mariana</label><br />
-                <label id="estilo2">San Juan de Pasto - Nariño - Colombia</label><br />
-                <label id="estilo2">Calle 18 No. 34-104 Teléfono: 7314923 Fax: 7315658</label>
+                <label id="estilo2">San Juan de Pasto - NariÃ±o - Colombia</label><br />
+                <label id="estilo2">Calle 18 No. 34-104 TelÃ©fono: 7314923 Fax: 7315658</label>
             </div>
         </div>
     </body>
 </html>
+<%}%>

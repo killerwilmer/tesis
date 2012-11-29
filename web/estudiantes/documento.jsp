@@ -57,6 +57,7 @@
     {
         CKEDITOR.remove(instance);
     }
+    CKEDITOR.config.height = 400;
     CKEDITOR.replace( 'editor1');
     
     inst = CKEDITOR.instances['editor2'];

@@ -11,6 +11,13 @@
 
 <%
     HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("estudiante") == null) {
+        %> 
+        <jsp:forward page="../error.jsp">
+            <jsp:param name="error" value="Es Obligación Identificarse"/>
+        </jsp:forward>
+        <%
+    } else {
     String codigoEst = (String) sesionOk.getAttribute("estudiante");
     int idEstudiante = (Integer) sesionOk.getAttribute("idEstudiante");
     String idPro = (String) sesionOk.getAttribute("idProyecto");
@@ -67,3 +74,4 @@
     }
     CKEDITOR.replace( 'editor2', {toolbar : [['Maximize'],['FontSize']]});
 </script>
+<%}%>

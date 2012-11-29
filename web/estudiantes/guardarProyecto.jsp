@@ -11,6 +11,12 @@
 
 <%
     HttpSession sesionOk = request.getSession();
+    if (sesionOk.getAttribute("estudiante") == null) {
+%> 
+<jsp:forward page="../error.jsp">
+    <jsp:param name="error" value="Es Obligación Identificarse"/>
+</jsp:forward>
+<%        } else {
     String codigoEst = (String) sesionOk.getAttribute("estudiante");
     int idEstudiante = (Integer) sesionOk.getAttribute("idEstudiante");
     String idPro = (String) sesionOk.getAttribute("idProyecto");
@@ -28,21 +34,21 @@
     </body>
 </html>
 <%
-    String editor = request.getParameter("editor1");
+        String editor = request.getParameter("editor1");
 
-    if (!editor.equals("")) {
-        try {
+        if (!editor.equals("")) {
+            try {
 
-            String SqlInsert = "UPDATE proyecto SET descripcionproyecto = '"+editor+"' WHERE idproyecto=" + idProyecto + ";";
-            if (control.ejecutarOperacion(SqlInsert)) {
-                out.print("Exito");
-            } else {
-                out.print("Error");
+                String SqlInsert = "UPDATE proyecto SET descripcionproyecto = '" + editor + "' WHERE idproyecto=" + idProyecto + ";";
+                if (control.ejecutarOperacion(SqlInsert)) {
+                    out.print("Exito");
+                } else {
+                    out.print("Error");
+                }
+
+            } catch (Exception e) {
+                out.println(e.toString());
             }
-
-        } catch (Exception e) {
-            out.println(e.toString());
         }
-    }
 //UPDATE proyecto SET descripcionproyecto = 'nuevo comentario' WHERE idproyecto=1;
-%>
+    }%>

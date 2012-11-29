@@ -21,6 +21,6 @@
 
         %>
         <h1 style="text-align: center;"><% out.print(error);%></h1>
-        <a id="imag"><img id='imgerror' style="width: 500px; margin-left: 30%;" src='../recursos/Imagenes/index/error.png' alt='' /></a>
+        <a href="../index.jsp" id="imag"><img id='imgerror' style="width: 500px; margin-left: 30%;" src='../recursos/Imagenes/index/error.png' alt='' /></a>
     </body>
 </html>
