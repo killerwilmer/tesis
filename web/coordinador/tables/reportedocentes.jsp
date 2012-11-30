@@ -92,8 +92,9 @@
                             int suma = 0;
                             //String sql = "select usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuarioevaluador, proyecto, usuario, programa where usuario.idusuario=usuarioevaluador.idusuario and proyecto.idproyecto=usuarioevaluador.idproyecto and usuario.codigoprograma=programa.codigoprograma and programa.idprograma='" + idLlega + "';";
                             //String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono  from usuario,usuarioevaluador,usuarioasesor,programa where usuario.idusuario=usuarioevaluador.idusuario or usuario.idusuario=usuarioasesor.idusuario and programa.idprograma='" + idLlega + "';";
-                                String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuario,usuarioevaluador,usuarioasesor,programa where ((usuario.idusuario=usuarioevaluador.idusuario) or (usuario.idusuario=usuarioasesor.idusuario)) and usuario.codigoprograma='" + codPrograma + "';";
-
+                            //String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuario,usuarioevaluador,usuarioasesor,programa where ((usuario.idusuario=usuarioevaluador.idusuario) or (usuario.idusuario=usuarioasesor.idusuario)) and usuario.codigoprograma='" + codPrograma + "';";
+                            String sql = "select DISTINCT ON (usuario.idusuario) usuario.idusuario, usuario.codigousuario, usuario.nombres, usuario.apellidos, usuario.email, usuario.telefono from usuarioevaluador, usuarioasesor, proyecto, usuario, programa where ((usuario.idusuario=usuarioevaluador.idusuario and proyecto.idproyecto=usuarioevaluador.idproyecto) or (usuario.idusuario=usuarioasesor.idusuario and proyecto.idproyecto=usuarioasesor.idproyecto)) and usuario.codigoprograma=programa.codigoprograma and programa.idprograma='" + idLlega + "';";
+                            
                             ResultSet datos = control.consultas(sql);
 
                             while (datos.next()) {
