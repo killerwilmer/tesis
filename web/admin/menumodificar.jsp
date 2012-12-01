@@ -23,6 +23,10 @@
                     $("#contenido2").load('ediccion/modprograma.jsp');
                     $.getScript('js/b.js');
                 });
+                $("#usuario").click(function(event) {
+                    $("#contenido2").load('ediccion/listausuario.jsp');
+                    $.getScript('js/b.js');
+                });
             });
         </script>
         
@@ -30,12 +34,12 @@
     <body>
         <div id="contenedor2">
             <div class="submenu">
-                <div id="span"><span id="titulo">Modificar</span></div>
+                <div id="span"><span id="titulouno">Modificar</span></div>
                 <div id="menup">
                     <ul>
                         <li class="facu"><a href="#"><br/><br/><br/>Facultad</a></li><br/>
                         <li id="programa"><a href="#" ><br/><br/><br/>Programa</a></li><br/>
-                        <li><a href="#" ><br/><br/><br/>Usuario</a></li><br/>
+                        <li id="usuario"><a href="#" ><br/><br/><br/>Usuario</a></li><br/>
                         <li id="coor"><a href="#" ><br/><br/><br/>Coordinador</a></li><br/>
                     </ul>
                 </div>

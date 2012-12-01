@@ -5,7 +5,12 @@
 --%>
 
 <%@page import="com.umariana.control.ConectaDb"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.StringTokenizer"%>
+<%@page language="java" import="java.util.Enumeration" pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
+<%
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=utf-8");
+%>
 <% ConectaDb control = new ConectaDb(); %>
 <!DOCTYPE html>
 
@@ -13,11 +18,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>JSP Page</title>
-        
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/estiloFormularios.css" />
-        <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script type="text/javascript" src="funciones.js"></script>
-
     </head>
     <body >
             <br/><br/>

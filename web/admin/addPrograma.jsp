@@ -13,9 +13,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/estiloFormularios.css" />
-        <script src="../recursos/Js/jquery-1.7.1.js"></script>
         <script type="text/javascript" src="funciones.js"></script>
     </head>
     <body>
@@ -26,7 +23,7 @@
             Nombre<input type="text" name="programa" maxlength="100" id="programa"/>
             <br/><br/>
             <span>
-                <select id="combofacultades" name="combofacultades">
+                <select style="margin-left: 0px;" id="combofacultades" name="combofacultades">
                     <option selected="" value="*">Seleccione Facultad</option>
                     <%
                         out.print(control.combo("facultad"));

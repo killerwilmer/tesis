@@ -1,7 +1,7 @@
 <%-- 
-    Document   : eliminarfacultad
-    Created on : 14-abr-2012, 6:11:21
-    Author     : usuarui
+    Document   : eliminarprograma
+    Created on : 30/11/2012, 01:50:45 AM
+    Author     : Alex
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,8 +19,8 @@
     </head>
     <body>
         <%
-            int numero = Integer.parseInt(request.getParameter("idf"));
-            String consultas = "delete from facultad where idfacultad = '" + numero + "'";
+            int numero = Integer.parseInt(request.getParameter("idp"));
+            String consultas = "delete from programa where idprograma = '" + numero + "'";
             if (control.ejecutarOperacion(consultas)) {
                 out.print("<script languaje = javascript>showSuccessToast('Datos Borrados Correctamente');</script>");
             } else {
@@ -30,4 +30,5 @@
         %>
     </body>
 </html>
+
 

@@ -14,11 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="../../recursos/Css/admin/estiloFormularios.css" />
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/estiloFormularios.css" />
-        <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="../admin/ediccion/funcionesModificar.js"></script>
-        
+        <script type="text/javascript" src="../admin/ediccion/funcionesModificar.js"></script>        
     </head>
     <body>
 
@@ -32,7 +28,7 @@
 
                 while (resultado.next()) {
                     out.print(" <input type='hidden' name='idf' id='idf' value='" + numero + "'/>");
-                    out.print(" Codigio<input type='text' name='codigo' id='codigo' value='" + resultado.getString("codigofacultad") + "'/>");
+                    out.print(" Codigio<input type='text' disabled='true'  name='codigo' id='codigo' value='" + resultado.getString("codigofacultad") + "'/>");
                     out.print(" Nombre<input type='text' name='facultad1' id='facultad1' value='" + resultado.getString("nombrefacultad") + "'/>");
                     out.print("<br/>");
                     out.print("<br/>");

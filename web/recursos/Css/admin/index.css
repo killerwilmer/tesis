@@ -111,15 +111,15 @@ div#header img{
 
 /****************Titulo Principal del Header*****************/
 
-div#header h1#titulo{
-    margin-top: 10px;
-    font-size: 40px;
-    margin-left: 350px;
-    font-family: 'Aclonica', serif;
-    color: #fff;
-    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+#titulo {
+  color:#FFFFFF;
+  font-family:'Aclonica', serif;
+  font-size:40px;
+  margin-top:10px;
+  margin-right: 110px;
+  text-align:center;
+  text-shadow:#999999 0 1px 0px, #888888 0 2px 0px, #777777 0 3px 0px, #666666 0 4px 0px, #555555 0 5px 0px, #444444 0 6px 0px, #333333 0 7px 0px, #001135 0 8px 7px;
 }
-
 /****************Estilo para el Contenedor del Menu Principal*****************/
 
 div#menu {
@@ -148,9 +148,22 @@ div#menu ul.menu {
     padding-bottom: 2px;
     background: #222;
     display: inline-block;
+    z-index: 9;
+    position: relative;
 }
 
 div#menu ul #menseg {
+    z-index: 12;
+    padding: 0px 4px 10px 4px;
+    background: #222;
+    margin: 11px -20px 0 0; 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 5px;
+}
+
+div#menu ul #mensegdos {
     z-index: 12;
     padding: 0px 4px 10px 4px;
     background: #222;

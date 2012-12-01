@@ -14,11 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="../../recursos/Css/admin/estiloFormularios.css" />
-        <link rel="stylesheet" type="text/css" href="../recursos/Css/admin/estiloFormularios.css" />
-        <script src="../recursos/Js/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="../admin/ediccion/funcionesModificar.js"></script>
-        
+        <script type="text/javascript" src="../admin/ediccion/funcionesModificar.js"></script>       
     </head>
     <body>
 
@@ -26,14 +22,14 @@
             <%
                 String idfacultad = request.getParameter("codigo");
                 int numero = Integer.parseInt(idfacultad);
-                String sqlString = "select *  from  programa where idprograma = '" + numero + "'";
+                String sqlString = "select idprograma, codigoprograma, nombreprograma  from  programa where idprograma = '" + numero + "'";
 
                 ResultSet resultado = control.consultas(sqlString);
 
                 while (resultado.next()) {                         
                     out.print(" <input type='hidden' name='idp' id='idp' value='" + numero + "'/>");
-                    out.print(" Codigio<input type='text' disabled='true' name='codigo' id='codigo' value='" + resultado.getString("codigoprograma") + "'/>");
-                    out.print(" Nombre<input type='text' name='facultad1' id='facultad1' value='" + resultado.getString("nombreprograma") + "'/>");
+                    out.print(" Codigio<input type='text' disabled='true' name='codigop' id='codigop' value='" + resultado.getString("codigoprograma") + "'/>");
+                    out.print(" Nombre<input type='text'  name='nombrep' id='nombrep' value='" + resultado.getString("nombreprograma") + "'/>");
                     out.print("<br/>");
                     out.print("<br/>");
                     out.print("<span><input id='enviarp' type='submit' value='Modificar' name='enviarp'/></span>");

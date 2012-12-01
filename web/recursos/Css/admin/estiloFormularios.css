@@ -189,7 +189,7 @@ select#combofacultades{
 
 /********Estilo del titulo del formulario usuarios*****/
 
-h1#titusuario{
+h1{
     text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
@@ -452,4 +452,111 @@ h1#coor{
 
 #imagen:hover{
     opacity: 0.9;
+}
+
+/****************************************************
+*  Estilo Para Combos Modificar
+*****************************************************/
+
+select#combofacultades{
+    border-radius: 5px;
+    outline: none;
+    padding: 4px;
+    width: 260px;
+    margin-left: 10px;
+    border: solid 1px #aacfe4;
+}
+
+fieldset#combomodfac{
+    width: 270px;
+    margin: 0 auto;
+    border: none;
+    margin-top: 40px;
+}
+
+#com{
+    margin-left: 30px;
+}
+
+#salida{
+    width: auto;
+    height:auto;
+    overflow:auto;
+    margin: 0 auto;
+}
+
+.ui-widget-header{
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #5985a0 ),to( #aac4bf ));
+    background-image: -webkit-linear-gradient(  #5985a0,#aac4bf );
+    background-image: -moz-linear-gradient(  #5985a0,#aac4bf );
+    background-image: -ms-linear-gradient(  #5985a0,#aac4bf );
+    background-image: -o-linear-gradient(  #5985a0,#aac4bf );
+    background-image: linear-gradient(  #5985a0,#aac4bf);
+}
+
+.columna1, .columna2{
+    width: 42px;
+}
+
+.columna3{
+    width: 170px;
+}
+
+.columna4{
+    width: 105px;
+}
+
+.columna5{
+    width: 105px;
+}
+
+.columna6{
+    width: 60px;
+}
+
+.columna7, .columna8, .columna9{
+    width: 143px;
+}
+
+#inte {
+  color:#000000;
+  font-size:15px;
+  font-weight:bold;
+  text-align:center;
+}
+
+div#actoresproyecto span {
+    background: none repeat scroll 0 0 transparent;
+    color: #000000;
+    cursor: pointer;
+    line-height: 36px;
+    margin-top: 2px;
+    padding: 0 1px 4px 15px;
+}
+
+div#actoresproyecto span:hover{
+    color: #FFF;
+}
+
+div#actoresproyecto {
+    font-size: 13px;
+    text-align: center;
+}
+
+div#actoresproyecto ul{
+    list-style: none;
+    display: inline-block;
+    margin-top: -10px;
+}
+
+div#actoresproyecto ul li{
+    list-style: none;
+    display: inline-block; 
+    margin-top: -6px;
+}
+
+#tablados{
+    padding: 2px;
+    border-radius: 0px;
+    border-bottom: 1px solid #b9b9b9;
 }

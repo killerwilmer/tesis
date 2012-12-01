@@ -1,6 +1,6 @@
-/**
+/********************************************
  *Funcion para Modificar una facultad
- **/
+ ********************************************/
 
 var x;
 x=$(document);
@@ -26,9 +26,9 @@ function presionSubmit()
     return false;
 }
 
-/**
+/***************************************
  *Funcion para eliminar una facultad
- **/
+ ***************************************/
 
 var y;
 y=$(document);
@@ -50,6 +50,59 @@ function presionSubmity()
     return false;
 }
 
+/********************************************
+ *Funcion para Modificar una facultad
+ ********************************************/
+
+var xp;
+xp=$(document);
+xp.ready(inicializarEventosp);
+
+function inicializarEventosp()
+{
+    var x;
+    x=$("#enviarp");
+    x.click(presionSubmitp);
+}
+
+function presionSubmitp()
+{
+    var h=$("#idp").attr("value");
+    var c=$("#codigop").attr("value");
+    var vp=$("#nombrep").attr("value");
+    $.get("ediccion/actualizarprograma.jsp",{
+        nombre:vp,
+        codigop:c,
+        idpro:h
+    },llegadaDatos); 
+    return false;
+}
+
+/***************************************
+ *Funcion para eliminar una programa
+ ***************************************/
+
+var ypr;
+ypr=$(document);
+ypr.ready(inicializarEventosype);
+
+function inicializarEventosype()
+{
+    var y;
+    y=$("#eliminarp");
+    y.click(presionSubmitype);
+}
+
+function presionSubmitype()
+{
+    var h=$("#idp").attr("value");
+    $.get("eliminar/eliminarprograma.jsp",{
+        idp:h
+    },llegadaDatos); 
+    return false;
+}
+
+/******************************************************/
 
 function llegadaDatos(datos)
 {
